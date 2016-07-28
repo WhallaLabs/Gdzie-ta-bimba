@@ -36,6 +36,13 @@ final class ApiProvider: RestApiProvider {
         return self.post(resource, json: nil, mapper: mapper)
     }
     
+    func post<T : ObjectMappable, U : JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> {
+        guard let json = bodyMapper.mapToJson(bodyObject) else {
+            return Observable.error(ApiProviderError.JsonMapping)
+        }
+        return self.post(resource, json: json, mapper: resultMapper)
+    }
+    
     func post<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
         let request = RequestBuilder(endpoint: self.endpoint)
             .add(resource: resource)
@@ -58,6 +65,13 @@ final class ApiProvider: RestApiProvider {
         return self.put(resource, json: nil, mapper: mapper)
     }
     
+    func put<T : ObjectMappable, U : JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> {
+        guard let json = bodyMapper.mapToJson(bodyObject) else {
+            return Observable.error(ApiProviderError.JsonMapping)
+        }
+        return self.put(resource, json: json, mapper: resultMapper)
+    }
+    
     func put<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
         let request = RequestBuilder(endpoint: self.endpoint)
             .add(resource: resource)
@@ -69,6 +83,13 @@ final class ApiProvider: RestApiProvider {
     
     func delete<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T> {
         return self.delete(resource, json: nil, mapper: mapper)
+    }
+    
+    func delete<T : ObjectMappable, U : JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> {
+        guard let json = bodyMapper.mapToJson(bodyObject) else {
+            return Observable.error(ApiProviderError.JsonMapping)
+        }
+        return self.delete(resource, json: json, mapper: resultMapper)
     }
     
     func delete<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {

@@ -15,10 +15,13 @@ protocol RestApiProvider {
     func get<T: ObjectMappable>(resource: String, queryParameters: [String : String], mapper: T) -> Observable<T.T>
     func post<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T>
     func post<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T>
+    func post<T: ObjectMappable, U: JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T>
     func post<T: ObjectMappable>(resource: String, bodyParameters: [HttpBodyParameter], mapper: T) -> Observable<T.T>
     func put<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T>
+    func put<T: ObjectMappable, U: JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T>
     func put<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T>
     func delete<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T>
+    func delete<T: ObjectMappable, U: JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T>
     func delete<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T>
     
     func execute<T: ObjectMappable>(requestBuilder: BodyRequestBuilder, mapper: T) -> Observable<T.T>
