@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */; };
+		38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */; };
+		38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */; };
+		38DAC1F81D4A4B24001DF664 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1F41D4A4B24001DF664 /* Start.storyboard */; };
+		38DAC1F91D4A4B24001DF664 /* StartViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1F51D4A4B24001DF664 /* StartViewConfigurator.swift */; };
+		38DAC1FA1D4A4B24001DF664 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1F61D4A4B24001DF664 /* StartViewController.swift */; };
+		38DAC1FB1D4A4B24001DF664 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1F71D4A4B24001DF664 /* StartViewModel.swift */; };
+		38DAC2001D4A4B7D001DF664 /* Hub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1FC1D4A4B7D001DF664 /* Hub.storyboard */; };
+		38DAC2011D4A4B7D001DF664 /* HubViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FD1D4A4B7D001DF664 /* HubViewConfigurator.swift */; };
+		38DAC2021D4A4B7D001DF664 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FE1D4A4B7D001DF664 /* HubViewController.swift */; };
+		38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FF1D4A4B7D001DF664 /* HubViewModel.swift */; };
+		DDCA5DF07725D04D42D3BC28 /* Pods_pekaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA520050966D3BB131EDAFE /* Pods_pekaTests.framework */; };
+		F58146E762DAE6DA0ACC5F91 /* Pods_peka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C69FE4B7E69D0F004F07DB7 /* Pods_peka.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38DAC1D61D4A49F4001DF664 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38DAC1B91D4A49F4001DF664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38DAC1C01D4A49F4001DF664;
+			remoteInfo = peka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C69FE4B7E69D0F004F07DB7 /* Pods_peka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_peka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		263E1854A96347164565C55F /* Pods-pekaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38DAC1C11D4A49F4001DF664 /* peka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38DAC1CE1D4A49F4001DF664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38DAC1D01D4A49F4001DF664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38DAC1D51D4A49F4001DF664 /* pekaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pekaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DAC1DB1D4A49F4001DF664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38DAC1F41D4A4B24001DF664 /* Start.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		38DAC1F51D4A4B24001DF664 /* StartViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewConfigurator.swift; sourceTree = "<group>"; };
+		38DAC1F61D4A4B24001DF664 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		38DAC1F71D4A4B24001DF664 /* StartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		38DAC1FC1D4A4B7D001DF664 /* Hub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hub.storyboard; sourceTree = "<group>"; };
+		38DAC1FD1D4A4B7D001DF664 /* HubViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubViewConfigurator.swift; sourceTree = "<group>"; };
+		38DAC1FE1D4A4B7D001DF664 /* HubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubViewController.swift; sourceTree = "<group>"; };
+		38DAC1FF1D4A4B7D001DF664 /* HubViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubViewModel.swift; sourceTree = "<group>"; };
+		3DD5637EB6E58D6DB8BF16E1 /* Pods-peka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-peka.release.xcconfig"; path = "Pods/Target Support Files/Pods-peka/Pods-peka.release.xcconfig"; sourceTree = "<group>"; };
+		459517C145CE71468CF27A37 /* Pods-peka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-peka.debug.xcconfig"; path = "Pods/Target Support Files/Pods-peka/Pods-peka.debug.xcconfig"; sourceTree = "<group>"; };
+		9EA520050966D3BB131EDAFE /* Pods_pekaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pekaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DB40B2BE57C38384049AA8 /* Pods-pekaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38DAC1BE1D4A49F4001DF664 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58146E762DAE6DA0ACC5F91 /* Pods_peka.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAC1D21D4A49F4001DF664 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDCA5DF07725D04D42D3BC28 /* Pods_pekaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38DAC1B81D4A49F4001DF664 = {
+			isa = PBXGroup;
+			children = (
+				D5CB4B0F6A4A0D388E4CE91C /* Frameworks */,
+				B1C719E493AEF8D3A3B6330A /* Pods */,
+				38DAC1C21D4A49F4001DF664 /* Products */,
+				38DAC1C31D4A49F4001DF664 /* peka */,
+				38DAC1D81D4A49F4001DF664 /* pekaTests */,
+			);
+			sourceTree = "<group>";
+		};
+		38DAC1C21D4A49F4001DF664 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38DAC1C11D4A49F4001DF664 /* peka.app */,
+				38DAC1D51D4A49F4001DF664 /* pekaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38DAC1C31D4A49F4001DF664 /* peka */ = {
+			isa = PBXGroup;
+			children = (
+				38DAC1E41D4A4A0C001DF664 /* BLL */,
+				38DAC1E91D4A4A7A001DF664 /* Framework */,
+				38DAC1E51D4A4A13001DF664 /* Models */,
+				38DAC1E61D4A4A1B001DF664 /* Presentation */,
+				38DAC1EA1D4A4A80001DF664 /* Services */,
+				38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */,
+				38DAC1D01D4A49F4001DF664 /* Info.plist */,
+			);
+			path = peka;
+			sourceTree = "<group>";
+		};
+		38DAC1D81D4A49F4001DF664 /* pekaTests */ = {
+			isa = PBXGroup;
+			children = (
+				38DAC1DB1D4A49F4001DF664 /* Info.plist */,
+			);
+			path = pekaTests;
+			sourceTree = "<group>";
+		};
+		38DAC1E41D4A4A0C001DF664 /* BLL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BLL;
+			sourceTree = "<group>";
+		};
+		38DAC1E51D4A4A13001DF664 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		38DAC1E61D4A4A1B001DF664 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				38DAC1E71D4A4A2C001DF664 /* Views */,
+				38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */,
+				38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		38DAC1E71D4A4A2C001DF664 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38DAC1E81D4A4A31001DF664 /* Hub */,
+				38DAC1EB1D4A4AAE001DF664 /* Start */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		38DAC1E81D4A4A31001DF664 /* Hub */ = {
+			isa = PBXGroup;
+			children = (
+				38DAC1FC1D4A4B7D001DF664 /* Hub.storyboard */,
+				38DAC1FD1D4A4B7D001DF664 /* HubViewConfigurator.swift */,
+				38DAC1FE1D4A4B7D001DF664 /* HubViewController.swift */,
+				38DAC1FF1D4A4B7D001DF664 /* HubViewModel.swift */,
+			);
+			path = Hub;
+			sourceTree = "<group>";
+		};
+		38DAC1E91D4A4A7A001DF664 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		38DAC1EA1D4A4A80001DF664 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		38DAC1EB1D4A4AAE001DF664 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				38DAC1F41D4A4B24001DF664 /* Start.storyboard */,
+				38DAC1F51D4A4B24001DF664 /* StartViewConfigurator.swift */,
+				38DAC1F61D4A4B24001DF664 /* StartViewController.swift */,
+				38DAC1F71D4A4B24001DF664 /* StartViewModel.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		B1C719E493AEF8D3A3B6330A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				459517C145CE71468CF27A37 /* Pods-peka.debug.xcconfig */,
+				3DD5637EB6E58D6DB8BF16E1 /* Pods-peka.release.xcconfig */,
+				263E1854A96347164565C55F /* Pods-pekaTests.debug.xcconfig */,
+				F5DB40B2BE57C38384049AA8 /* Pods-pekaTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D5CB4B0F6A4A0D388E4CE91C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C69FE4B7E69D0F004F07DB7 /* Pods_peka.framework */,
+				9EA520050966D3BB131EDAFE /* Pods_pekaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38DAC1C01D4A49F4001DF664 /* peka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DAC1DE1D4A49F4001DF664 /* Build configuration list for PBXNativeTarget "peka" */;
+			buildPhases = (
+				09B71BBF6B06C7D243D2709E /* [CP] Check Pods Manifest.lock */,
+				38DAC1BD1D4A49F4001DF664 /* Sources */,
+				38DAC1BE1D4A49F4001DF664 /* Frameworks */,
+				38DAC1BF1D4A49F4001DF664 /* Resources */,
+				87F0CAE7EEA76105A3A9C538 /* [CP] Embed Pods Frameworks */,
+				F3058A542D1E4ED8620E88B0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = peka;
+			productName = peka;
+			productReference = 38DAC1C11D4A49F4001DF664 /* peka.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38DAC1D41D4A49F4001DF664 /* pekaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DAC1E11D4A49F4001DF664 /* Build configuration list for PBXNativeTarget "pekaTests" */;
+			buildPhases = (
+				C4F746E2C519419F59894B41 /* [CP] Check Pods Manifest.lock */,
+				38DAC1D11D4A49F4001DF664 /* Sources */,
+				38DAC1D21D4A49F4001DF664 /* Frameworks */,
+				38DAC1D31D4A49F4001DF664 /* Resources */,
+				BB6E55E40E10753E43C2081F /* [CP] Embed Pods Frameworks */,
+				4ED3ED39C0786FE864691F60 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38DAC1D71D4A49F4001DF664 /* PBXTargetDependency */,
+			);
+			name = pekaTests;
+			productName = pekaTests;
+			productReference = 38DAC1D51D4A49F4001DF664 /* pekaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38DAC1B91D4A49F4001DF664 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = WhallaLabs;
+				TargetAttributes = {
+					38DAC1C01D4A49F4001DF664 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					38DAC1D41D4A49F4001DF664 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 38DAC1C01D4A49F4001DF664;
+					};
+				};
+			};
+			buildConfigurationList = 38DAC1BC1D4A49F4001DF664 /* Build configuration list for PBXProject "peka" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38DAC1B81D4A49F4001DF664;
+			productRefGroup = 38DAC1C21D4A49F4001DF664 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38DAC1C01D4A49F4001DF664 /* peka */,
+				38DAC1D41D4A49F4001DF664 /* pekaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38DAC1BF1D4A49F4001DF664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DAC2001D4A4B7D001DF664 /* Hub.storyboard in Resources */,
+				38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */,
+				38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */,
+				38DAC1F81D4A4B24001DF664 /* Start.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAC1D31D4A49F4001DF664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09B71BBF6B06C7D243D2709E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4ED3ED39C0786FE864691F60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87F0CAE7EEA76105A3A9C538 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-peka/Pods-peka-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB6E55E40E10753E43C2081F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4F746E2C519419F59894B41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F3058A542D1E4ED8620E88B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-peka/Pods-peka-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38DAC1BD1D4A49F4001DF664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DAC1F91D4A4B24001DF664 /* StartViewConfigurator.swift in Sources */,
+				38DAC1FB1D4A4B24001DF664 /* StartViewModel.swift in Sources */,
+				38DAC2011D4A4B7D001DF664 /* HubViewConfigurator.swift in Sources */,
+				38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */,
+				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
+				38DAC2021D4A4B7D001DF664 /* HubViewController.swift in Sources */,
+				38DAC1FA1D4A4B24001DF664 /* StartViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DAC1D11D4A49F4001DF664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38DAC1D71D4A49F4001DF664 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38DAC1C01D4A49F4001DF664 /* peka */;
+			targetProxy = 38DAC1D61D4A49F4001DF664 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38DAC1CE1D4A49F4001DF664 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38DAC1DC1D4A49F4001DF664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		38DAC1DD1D4A49F4001DF664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		38DAC1DF1D4A49F4001DF664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 459517C145CE71468CF27A37 /* Pods-peka.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = peka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whallalabs.peka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		38DAC1E01D4A49F4001DF664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DD5637EB6E58D6DB8BF16E1 /* Pods-peka.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = peka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whallalabs.peka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		38DAC1E21D4A49F4001DF664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 263E1854A96347164565C55F /* Pods-pekaTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = pekaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whallalabs.pekaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/peka.app/peka";
+			};
+			name = Debug;
+		};
+		38DAC1E31D4A49F4001DF664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5DB40B2BE57C38384049AA8 /* Pods-pekaTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = pekaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whallalabs.pekaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/peka.app/peka";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38DAC1BC1D4A49F4001DF664 /* Build configuration list for PBXProject "peka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DAC1DC1D4A49F4001DF664 /* Debug */,
+				38DAC1DD1D4A49F4001DF664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38DAC1DE1D4A49F4001DF664 /* Build configuration list for PBXNativeTarget "peka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DAC1DF1D4A49F4001DF664 /* Debug */,
+				38DAC1E01D4A49F4001DF664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38DAC1E11D4A49F4001DF664 /* Build configuration list for PBXNativeTarget "pekaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DAC1E21D4A49F4001DF664 /* Debug */,
+				38DAC1E31D4A49F4001DF664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38DAC1B91D4A49F4001DF664 /* Project object */;
+}
