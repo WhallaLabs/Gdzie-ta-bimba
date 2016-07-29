@@ -1,5 +1,5 @@
 //
-//  DicrectionMapper.swift
+//  DirectionMapper.swift
 //  peka
 //
 //  Created by Tomasz Pikć on 29/07/16.
@@ -10,14 +10,14 @@
 import Foundation
 import SwiftyJSON
 
-final class DicrectionMapper: ObjectMappable {
+final class DirectionMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> Dicrection? {
+    func mapToObject(json: JSON) -> Direction? {
         guard let direction = json["direction"].string,
             lineName = json["lineName"].string,
             returnVariant = json["returnVariant"].bool else {
                 return nil
         }
-        return Dicrection(name: direction, line: lineName, returnVariant: returnVariant)
+        return Direction(name: direction, line: lineName, returnVariant: returnVariant)
     }
 }

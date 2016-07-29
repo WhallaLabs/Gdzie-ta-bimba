@@ -32,9 +32,14 @@
 		385737011D4B5F1900C8D772 /* Bollard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737001D4B5F1900C8D772 /* Bollard.swift */; };
 		385737031D4B5F6900C8D772 /* BollardMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737021D4B5F6900C8D772 /* BollardMapper.swift */; };
 		385737061D4B608800C8D772 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737051D4B608800C8D772 /* Direction.swift */; };
-		385737081D4B60B500C8D772 /* DicrectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737071D4B60B500C8D772 /* DicrectionMapper.swift */; };
+		385737081D4B60B500C8D772 /* DirectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737071D4B60B500C8D772 /* DirectionMapper.swift */; };
 		3857370B1D4B618B00C8D772 /* TimeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857370A1D4B618B00C8D772 /* TimeMapper.swift */; };
 		3857370D1D4B619C00C8D772 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857370C1D4B619C00C8D772 /* Time.swift */; };
+		385737101D4B641B00C8D772 /* LineBollardsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857370F1D4B641B00C8D772 /* LineBollardsMapper.swift */; };
+		385737121D4B642B00C8D772 /* LineBollards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737111D4B642B00C8D772 /* LineBollards.swift */; };
+		385737141D4B69B500C8D772 /* GroupedDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737131D4B69B500C8D772 /* GroupedDirections.swift */; };
+		385737161D4B6A1500C8D772 /* GroupedDirectionsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737151D4B6A1500C8D772 /* GroupedDirectionsMapper.swift */; };
+		385737181D4B6B2000C8D772 /* WrappedResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737171D4B6B2000C8D772 /* WrappedResponseMapper.swift */; };
 		38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */; };
 		38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */; };
 		38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */; };
@@ -122,9 +127,14 @@
 		385737001D4B5F1900C8D772 /* Bollard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bollard.swift; sourceTree = "<group>"; };
 		385737021D4B5F6900C8D772 /* BollardMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardMapper.swift; sourceTree = "<group>"; };
 		385737051D4B608800C8D772 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		385737071D4B60B500C8D772 /* DicrectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DicrectionMapper.swift; sourceTree = "<group>"; };
+		385737071D4B60B500C8D772 /* DirectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionMapper.swift; sourceTree = "<group>"; };
 		3857370A1D4B618B00C8D772 /* TimeMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMapper.swift; sourceTree = "<group>"; };
 		3857370C1D4B619C00C8D772 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		3857370F1D4B641B00C8D772 /* LineBollardsMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsMapper.swift; sourceTree = "<group>"; };
+		385737111D4B642B00C8D772 /* LineBollards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollards.swift; sourceTree = "<group>"; };
+		385737131D4B69B500C8D772 /* GroupedDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedDirections.swift; sourceTree = "<group>"; };
+		385737151D4B6A1500C8D772 /* GroupedDirectionsMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedDirectionsMapper.swift; sourceTree = "<group>"; };
+		385737171D4B6B2000C8D772 /* WrappedResponseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappedResponseMapper.swift; sourceTree = "<group>"; };
 		38DAC1C11D4A49F4001DF664 /* peka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -251,6 +261,8 @@
 			children = (
 				385737001D4B5F1900C8D772 /* Bollard.swift */,
 				385737021D4B5F6900C8D772 /* BollardMapper.swift */,
+				385737131D4B69B500C8D772 /* GroupedDirections.swift */,
+				385737151D4B6A1500C8D772 /* GroupedDirectionsMapper.swift */,
 			);
 			path = Bollard;
 			sourceTree = "<group>";
@@ -258,8 +270,8 @@
 		385737041D4B607400C8D772 /* Direction */ = {
 			isa = PBXGroup;
 			children = (
-				385737071D4B60B500C8D772 /* DicrectionMapper.swift */,
 				385737051D4B608800C8D772 /* Direction.swift */,
+				385737071D4B60B500C8D772 /* DirectionMapper.swift */,
 			);
 			path = Direction;
 			sourceTree = "<group>";
@@ -271,6 +283,15 @@
 				3857370A1D4B618B00C8D772 /* TimeMapper.swift */,
 			);
 			path = Time;
+			sourceTree = "<group>";
+		};
+		3857370E1D4B640C00C8D772 /* LineBollards */ = {
+			isa = PBXGroup;
+			children = (
+				385737111D4B642B00C8D772 /* LineBollards.swift */,
+				3857370F1D4B641B00C8D772 /* LineBollardsMapper.swift */,
+			);
+			path = LineBollards;
 			sourceTree = "<group>";
 		};
 		38DAC1B81D4A49F4001DF664 = {
@@ -331,12 +352,14 @@
 				385736FF1D4B5F0300C8D772 /* Bollard */,
 				385736C61D4B415F00C8D772 /* Coordinates */,
 				385737041D4B607400C8D772 /* Direction */,
+				3857370E1D4B640C00C8D772 /* LineBollards */,
 				385736CB1D4B431700C8D772 /* StopPoint */,
 				385737091D4B617900C8D772 /* Time */,
 				385736E71D4B4C1E00C8D772 /* LineMapper.swift */,
 				385736F31D4B4F0E00C8D772 /* ResponseMapper.swift */,
 				385736E91D4B4C6800C8D772 /* SearchResult.swift */,
 				385736E51D4B4BC700C8D772 /* StreetMapper.swift */,
+				385737171D4B6B2000C8D772 /* WrappedResponseMapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -710,6 +733,7 @@
 				38DAC1F91D4A4B24001DF664 /* StartViewConfigurator.swift in Sources */,
 				38F391611D4A53A9005F4A42 /* ArrayExtensions.swift in Sources */,
 				385736C51D4B40F700C8D772 /* Coordinates.swift in Sources */,
+				385737141D4B69B500C8D772 /* GroupedDirections.swift in Sources */,
 				385736FA1D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift in Sources */,
 				385736DE1D4B4A1A00C8D772 /* PekaHttpHeadersProvider.swift in Sources */,
 				384422101D4A5F9B007B44FA /* VariableExtensions.swift in Sources */,
@@ -726,6 +750,7 @@
 				385737061D4B608800C8D772 /* Direction.swift in Sources */,
 				385736CD1D4B434700C8D772 /* StopPoint.swift in Sources */,
 				38F391921D4A5C5D005F4A42 /* ApiProviderError.swift in Sources */,
+				385737161D4B6A1500C8D772 /* GroupedDirectionsMapper.swift in Sources */,
 				385736E81D4B4C1E00C8D772 /* LineMapper.swift in Sources */,
 				3857370D1D4B619C00C8D772 /* Time.swift in Sources */,
 				38F391881D4A59DE005F4A42 /* JsonMappable.swift in Sources */,
@@ -752,7 +777,7 @@
 				385736EF1D4B4CFC00C8D772 /* SearchQuery.swift in Sources */,
 				38F391511D4A523F005F4A42 /* Box.swift in Sources */,
 				38F391941D4A5CBA005F4A42 /* NSMutableDataExtensions.swift in Sources */,
-				385737081D4B60B500C8D772 /* DicrectionMapper.swift in Sources */,
+				385737081D4B60B500C8D772 /* DirectionMapper.swift in Sources */,
 				38F391741D4A57DD005F4A42 /* RequestBuilder.swift in Sources */,
 				38F391831D4A5952005F4A42 /* AttributedTextBuilder.swift in Sources */,
 				385736FE1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift in Sources */,
@@ -765,6 +790,7 @@
 				38F3917A1D4A58D9005F4A42 /* Query.swift in Sources */,
 				3857370B1D4B618B00C8D772 /* TimeMapper.swift in Sources */,
 				385736DC1D4B47B300C8D772 /* ApiConfig.swift in Sources */,
+				385737181D4B6B2000C8D772 /* WrappedResponseMapper.swift in Sources */,
 				385736D11D4B43C500C8D772 /* StopPointPushpinMapper.swift in Sources */,
 				38F3917F1D4A58EE005F4A42 /* CommandHandler.swift in Sources */,
 				38DAC2021D4A4B7D001DF664 /* HubViewController.swift in Sources */,
@@ -774,6 +800,8 @@
 				385737031D4B5F6900C8D772 /* BollardMapper.swift in Sources */,
 				38F391761D4A5814005F4A42 /* StringExtensions.swift in Sources */,
 				38F3916E1D4A5702005F4A42 /* HttpBodyParameter.swift in Sources */,
+				385737121D4B642B00C8D772 /* LineBollards.swift in Sources */,
+				385737101D4B641B00C8D772 /* LineBollardsMapper.swift in Sources */,
 				38DAC1FA1D4A4B24001DF664 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

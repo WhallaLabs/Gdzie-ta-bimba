@@ -1,5 +1,5 @@
 //
-//  Direction.swift
+//  LineBollards.swift
 //  peka
 //
 //  Created by Tomasz Pikć on 29/07/16.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct Direction {
-    let name: String
-    let line: String
-    let returnVariant: Bool
+struct LineBollards {
+    let direction: Direction
+    let bollards: [Bollard]
 }
