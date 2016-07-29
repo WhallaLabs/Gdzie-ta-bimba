@@ -12,7 +12,7 @@ import SwiftyJSON
 final class ArrayMapper<U: ObjectMappable>: ObjectMappable {
     let mapper: U
     
-    init(mapper: U) {
+    init(_ mapper: U) {
         self.mapper = mapper
     }
     
