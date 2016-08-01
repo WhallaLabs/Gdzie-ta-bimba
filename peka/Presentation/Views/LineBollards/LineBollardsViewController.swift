@@ -1,0 +1,58 @@
+//
+//  LineBollardsViewController.swift
+//  peka
+//
+//  Created by Tomasz Pikć on 01/08/16.
+//  Copyright © 2016 WhallaLabs. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
+
+final class LineBollardsViewController: UIViewController {
+
+	private let disposables = DisposeBag()
+	private var viewModel: LineBollardsViewModel!
+	private var navigationDelegate: LineBollardsNavigationControllerDelegate!
+    private let dataSource = RxTableViewSectionedReloadDataSource<LineBollards>()
+
+	@IBOutlet private weak var viewConfigurator: LineBollardsViewConfigurator!
+    @IBOutlet private weak var tableView: UITableView!
+    
+	func installDependencies(viewModel: LineBollardsViewModel, _ navigationDelegate: LineBollardsNavigationControllerDelegate) {
+		self.viewModel = viewModel
+		self.navigationDelegate = navigationDelegate
+	}
+    
+    func loadBollards(line: String) {
+        self.viewModel.loadBollards(line).addDisposableTo(self.disposables)
+    }
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.viewConfigurator.configure()
+        self.setupBinding()
+        self.configure()
+	}
+	
+    private func setupBinding() {
+        self.viewModel.lineBollards.asObservable()
+            .bindTo(self.tableView.rx_itemsWithDataSource(self.dataSource))
+            .addDisposableTo(self.disposables)
+    }
+    
+    private func configure() {
+        self.dataSource.configureCell = { dataSource, tableView, indexPath, bollard in
+            let cell: BollardCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(bollard)
+            return cell
+        }
+        
+        self.dataSource.titleForHeaderInSection = { dataSource, index in
+            let model = dataSource.sectionAtIndex(index)
+            return model.direction.description
+        }
+    }
+}

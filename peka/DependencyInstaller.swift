@@ -56,6 +56,11 @@ extension SwinjectStoryboard {
             let viewModel = r.resolve(BollardsViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
+        defaultContainer.registerForStoryboard(LineBollardsViewController.self) { r, c in
+            let navigationController = r.resolve(LineBollardsNavigationControllerDelegate.self, argument: c)!
+            let viewModel = r.resolve(LineBollardsViewModel.self)!
+            c.installDependencies(viewModel, navigationController)
+        }
     }
     
     private class func registerViewModels() {
@@ -64,6 +69,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(BollardsViewModel.self) { r in
             BollardsViewModel(executor: r.resolve(Executor.self)!)
+        }
+        defaultContainer.register(LineBollardsViewModel.self) { r in
+            LineBollardsViewModel(executor: r.resolve(Executor.self)!)
         }
     }
     
@@ -95,6 +103,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(BollardsNavigationControllerDelegate.self) { (_, arg: BollardsViewController) in
             BollardsNavigationController(viewController: arg)
+        }
+        defaultContainer.register(LineBollardsNavigationControllerDelegate.self) { (_, arg: LineBollardsViewController) in
+            LineBollardsNavigationController(viewController: arg)
         }
     }
 }

@@ -22,7 +22,7 @@ final class GetBollardsByLineQueryHandler: QueryHandler {
     func handle(query: Query) -> Any {
         let query = query as! GetBollardsByLineQuery
         let params = self.bodyBuilder.getBollardsByLine(query.line)
-        let mapper = WrappedObjectMapper(ArrayMapper(LineBollardsMapper()), pathToObject: "success", "bollards")
+        let mapper = WrappedObjectMapper(ArrayMapper(LineBollardsMapper()), pathToObject: "success", "directions")
         let observable = self.apiProvider.post(params, mapper: mapper)
         return observable
     }

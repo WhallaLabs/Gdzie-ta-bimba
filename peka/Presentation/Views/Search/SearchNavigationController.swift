@@ -33,6 +33,8 @@ final class SearchNavigationController: SearchNavigationControllerDelegate {
     }
     
     private func showBollardsByLine(name: String) {
-        
+        let lineBollardsViewController: LineBollardsViewController = UIStoryboard.instantiateInitialViewController()
+        lineBollardsViewController.loadBollards(name)
+        self.viewController?.navigationController?.pushViewController(lineBollardsViewController, animated: true)
     }
 }

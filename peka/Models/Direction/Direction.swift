@@ -12,4 +12,8 @@ struct Direction {
     let name: String
     let line: String
     let returnVariant: Bool
+    
+    var description: String {
+        return "\(self.line) ➙ \(self.name)"
+    }
 }

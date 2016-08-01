@@ -49,6 +49,15 @@
 		386898B41D4FA81F004CA51B /* GetBollardsByLineQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898B21D4FA81F004CA51B /* GetBollardsByLineQueryHandler.swift */; };
 		386898B81D4FA90A004CA51B /* GetBollardsByStreetQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898B61D4FA90A004CA51B /* GetBollardsByStreetQuery.swift */; };
 		386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898B71D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift */; };
+		386898C11D4FAF48004CA51B /* LineBollards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386898BB1D4FAF48004CA51B /* LineBollards.storyboard */; };
+		386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BC1D4FAF48004CA51B /* LineBollardsNavigationController.swift */; };
+		386898C31D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BD1D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift */; };
+		386898C41D4FAF48004CA51B /* LineBollardsViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */; };
+		386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */; };
+		386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */; };
+		38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE41D50081700937FD2 /* BollardCell.swift */; };
+		38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7FFE51D50081700937FD2 /* BollardCell.xib */; };
+		38DA92061D4FB0BC00B3EA08 /* LineBollardsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA92051D4FB0BC00B3EA08 /* LineBollardsSection.swift */; };
 		38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */; };
 		38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */; };
 		38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */; };
@@ -178,6 +187,15 @@
 		386898B21D4FA81F004CA51B /* GetBollardsByLineQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBollardsByLineQueryHandler.swift; sourceTree = "<group>"; };
 		386898B61D4FA90A004CA51B /* GetBollardsByStreetQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBollardsByStreetQuery.swift; sourceTree = "<group>"; };
 		386898B71D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBollardsByStreetQueryHandler.swift; sourceTree = "<group>"; };
+		386898BB1D4FAF48004CA51B /* LineBollards.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LineBollards.storyboard; sourceTree = "<group>"; };
+		386898BC1D4FAF48004CA51B /* LineBollardsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsNavigationController.swift; sourceTree = "<group>"; };
+		386898BD1D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewConfigurator.swift; sourceTree = "<group>"; };
+		386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewController.swift; sourceTree = "<group>"; };
+		386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewModel.swift; sourceTree = "<group>"; };
+		38D7FFE41D50081700937FD2 /* BollardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardCell.swift; sourceTree = "<group>"; };
+		38D7FFE51D50081700937FD2 /* BollardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollardCell.xib; sourceTree = "<group>"; };
+		38DA92051D4FB0BC00B3EA08 /* LineBollardsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsSection.swift; sourceTree = "<group>"; };
 		38DAC1C11D4A49F4001DF664 /* peka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -401,6 +419,29 @@
 			path = GetBollardsByStreet;
 			sourceTree = "<group>";
 		};
+		386898BA1D4FAF2B004CA51B /* LineBollards */ = {
+			isa = PBXGroup;
+			children = (
+				386898BB1D4FAF48004CA51B /* LineBollards.storyboard */,
+				386898BC1D4FAF48004CA51B /* LineBollardsNavigationController.swift */,
+				386898BD1D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift */,
+				38DA92051D4FB0BC00B3EA08 /* LineBollardsSection.swift */,
+				386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */,
+				386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */,
+				386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */,
+			);
+			path = LineBollards;
+			sourceTree = "<group>";
+		};
+		38D7FFE31D50080500937FD2 /* Bollard */ = {
+			isa = PBXGroup;
+			children = (
+				38D7FFE41D50081700937FD2 /* BollardCell.swift */,
+				38D7FFE51D50081700937FD2 /* BollardCell.xib */,
+			);
+			path = Bollard;
+			sourceTree = "<group>";
+		};
 		38DAC1B81D4A49F4001DF664 = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +531,7 @@
 				38FE8E011D4F914B00E6B5BF /* Bollards */,
 				38FE8D7E1D4F55CD00E6B5BF /* Favorite */,
 				38DAC1E81D4A4A31001DF664 /* Hub */,
+				386898BA1D4FAF2B004CA51B /* LineBollards */,
 				38FE8D901D4F561E00E6B5BF /* Map */,
 				38FE8D871D4F560500E6B5BF /* Search */,
 			);
@@ -660,6 +702,7 @@
 		38FE8DF21D4F811A00E6B5BF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				38D7FFE31D50080500937FD2 /* Bollard */,
 				38FE8DFC1D4F8F2C00E6B5BF /* GroupedDirections */,
 				38FE8DF71D4F824700E6B5BF /* SearchResult */,
 			);
@@ -805,7 +848,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DAC2001D4A4B7D001DF664 /* Hub.storyboard in Resources */,
+				386898C11D4FAF48004CA51B /* LineBollards.storyboard in Resources */,
 				38FE8D951D4F562700E6B5BF /* Map.storyboard in Resources */,
+				38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */,
 				38FE8E001D4F8F6900E6B5BF /* GroupedDirectionsCell.xib in Resources */,
 				38FE8E081D4F919700E6B5BF /* Bollards.storyboard in Resources */,
 				38FE8DFB1D4F825300E6B5BF /* SearchResultCell.xib in Resources */,
@@ -926,6 +971,7 @@
 				38F3917B1D4A58D9005F4A42 /* QueryHandler.swift in Sources */,
 				38FE8E0B1D4F919700E6B5BF /* BollardsViewConfigurator.swift in Sources */,
 				38F391611D4A53A9005F4A42 /* ArrayExtensions.swift in Sources */,
+				386898C41D4FAF48004CA51B /* LineBollardsViewConfigurator.swift in Sources */,
 				385736C51D4B40F700C8D772 /* Coordinates.swift in Sources */,
 				385737141D4B69B500C8D772 /* GroupedDirections.swift in Sources */,
 				385736FA1D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift in Sources */,
@@ -938,6 +984,7 @@
 				38FE8D971D4F562700E6B5BF /* MapViewController.swift in Sources */,
 				385736F81D4B56AA00C8D772 /* PekaApiProviderExtension.swift in Sources */,
 				385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */,
+				386898C31D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift in Sources */,
 				38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */,
 				385736F61D4B531A00C8D772 /* RequestBodyBuilder.swift in Sources */,
 				386898B31D4FA81F004CA51B /* GetBollardsByLineQuery.swift in Sources */,
@@ -967,6 +1014,8 @@
 				385736EA1D4B4C6800C8D772 /* SearchResult.swift in Sources */,
 				38F3918E1D4A5AE2005F4A42 /* RestApiProvider.swift in Sources */,
 				38FE8E0C1D4F919700E6B5BF /* BollardsViewController.swift in Sources */,
+				386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */,
+				386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */,
 				38FE8DFF1D4F8F6900E6B5BF /* GroupedDirectionsCell.swift in Sources */,
 				38F391591D4A52A6005F4A42 /* XibLoader.swift in Sources */,
 				38F3918C1D4A59FF005F4A42 /* ArrayMapper.swift in Sources */,
@@ -974,6 +1023,7 @@
 				38F3918A1D4A59E9005F4A42 /* NoContentMapper.swift in Sources */,
 				38F3917E1D4A58EE005F4A42 /* Command.swift in Sources */,
 				385736F01D4B4CFC00C8D772 /* SearchQueryHandler.swift in Sources */,
+				38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */,
 				38F391691D4A5664005F4A42 /* ObservableExtensions.swift in Sources */,
 				38F391571D4A528A005F4A42 /* NibLoadableView.swift in Sources */,
 				38F3915B1D4A52C0005F4A42 /* ReusableView.swift in Sources */,
@@ -997,11 +1047,13 @@
 				38F3915D1D4A52DF005F4A42 /* SegueHandler.swift in Sources */,
 				38F391901D4A5B28005F4A42 /* ApiProvider.swift in Sources */,
 				38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */,
+				38DA92061D4FB0BC00B3EA08 /* LineBollardsSection.swift in Sources */,
 				38FE8D8E1D4F561100E6B5BF /* SearchViewController.swift in Sources */,
 				38F391531D4A525C005F4A42 /* Configurable.swift in Sources */,
 				38F3916C1D4A56ED005F4A42 /* HttpHeadersProvider.swift in Sources */,
 				38F391651D4A560D005F4A42 /* UICollectionViewExtensions.swift in Sources */,
 				385736FC1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift in Sources */,
+				386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */,
 				38F3917A1D4A58D9005F4A42 /* Query.swift in Sources */,
 				38FE8E0A1D4F919700E6B5BF /* BollardsNavigationControllerDelegate.swift in Sources */,
 				3857370B1D4B618B00C8D772 /* TimeMapper.swift in Sources */,

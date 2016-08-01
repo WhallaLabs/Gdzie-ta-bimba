@@ -18,7 +18,7 @@ extension GroupedDirectionsCell: NibLoadableView {
 
 extension GroupedDirectionsCell: Configurable {
 	func configure(model: GroupedDirections) {
-        let directions = model.directions.map { direction in "\(direction.line) ➙ \(direction.name)" }
+        let directions = model.directions.map { $0.description }
         self.textLabel?.text = directions.joinWithSeparator(", ")
     }
 }
