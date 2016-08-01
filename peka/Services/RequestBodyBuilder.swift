@@ -19,6 +19,6 @@ final class RequestBodyBuilder {
     }
     
     private func methodParamter(methodName: String, value: String) -> [HttpBodyParameter] {
-        return [.Form(name: "method", value: methodName), .Form(name: "p0", value: value)]
+        return [.Form(name: "p0", value: value), .Form(name: "method", value: methodName)]
     }
 }

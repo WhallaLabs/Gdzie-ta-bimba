@@ -13,10 +13,12 @@ import SwiftyJSON
 final class ApiProvider: RestApiProvider {
     private let endpoint: String
     private let headersProvider: HttpHeadersProvider
+    private let formBodyBuilder: FormBodyBuilder
     
-    init(endpoint: String, httpHeadersProvider: HttpHeadersProvider) {
+    init(endpoint: String, httpHeadersProvider: HttpHeadersProvider, formBodyBuilder: FormBodyBuilder) {
         self.endpoint = endpoint
         self.headersProvider = httpHeadersProvider
+        self.formBodyBuilder = formBodyBuilder
     }
     
     func get<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T> {
@@ -24,7 +26,7 @@ final class ApiProvider: RestApiProvider {
     }
     
     func get<T: ObjectMappable>(resource: String, queryParameters: [String : String], mapper: T) -> Observable<T.T> {
-        let request = RequestBuilder(endpoint: self.endpoint)
+        let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(queryParameters: queryParameters)
             .setMethod(.GET)
@@ -44,7 +46,7 @@ final class ApiProvider: RestApiProvider {
     }
     
     func post<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
-        let request = RequestBuilder(endpoint: self.endpoint)
+        let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(json: json)
             .setMethod(.POST)
@@ -53,7 +55,7 @@ final class ApiProvider: RestApiProvider {
     }
     
     func post<T: ObjectMappable>(resource: String, bodyParameters: [HttpBodyParameter], mapper: T) -> Observable<T.T> {
-        let request = RequestBuilder(endpoint: self.endpoint)
+        let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(bodyParameters: bodyParameters)
             .setMethod(.POST)
@@ -73,7 +75,7 @@ final class ApiProvider: RestApiProvider {
     }
     
     func put<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
-        let request = RequestBuilder(endpoint: self.endpoint)
+        let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(json: json)
             .setMethod(.PUT)
@@ -93,7 +95,7 @@ final class ApiProvider: RestApiProvider {
     }
     
     func delete<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
-        let request = RequestBuilder(endpoint: self.endpoint)
+        let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(json: json)
             .setMethod(.DELETE)

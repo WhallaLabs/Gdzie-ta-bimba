@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="maV-nZ-G94">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="djb-qR-dlm">
+            <objects>
+                <viewController id="udh-io-FZk" customClass="MapViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9BR-G4-HyS"/>
+                        <viewControllerLayoutGuide type="bottom" id="aWz-Ju-CN4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="670-f4-S5G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.7725490196" green="0.1215686275" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nXR-Fp-2Sz"/>
+                    <connections>
+                        <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-8n-4Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="opz-Br-oXO" customClass="MapViewConfigurator" customModule="peka" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1246" y="366"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="eDv-9T-nU0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maV-nZ-G94" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapa" id="fBi-Gg-4WI"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3HS-sc-XjF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="udh-io-FZk" kind="relationship" relationship="rootViewController" id="wmn-nB-ayd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUl-Nc-VKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434" y="366"/>
+        </scene>
+    </scenes>
+</document>

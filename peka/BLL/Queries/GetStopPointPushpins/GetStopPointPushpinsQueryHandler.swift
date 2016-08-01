@@ -12,14 +12,17 @@ import RxSwift
 
 final class GetStopPointPushpinsQueryHandler: QueryHandler {
     private let apiProvider: RestApiProvider
+    private let stopPointsCache: StopPointPushpinsCache
     
-    init(apiProvider: RestApiProvider) {
+    init(apiProvider: RestApiProvider, stopPointsCache: StopPointPushpinsCache) {
         self.apiProvider = apiProvider
+        self.stopPointsCache = stopPointsCache
     }
     
     func handle(query: Query) -> Any {
-        let mapper = ArrayMapper(StopPointPushpinMapper())
-        let observable = self.apiProvider.get(ApiConfig.pushpins, mapper: mapper)
-        return observable
+        let mapper = WrappedObjectMapper(ArrayMapper(StopPointPushpinMapper()), pathToObject: "features")
+        let cache = self.stopPointsCache
+        let observable = self.apiProvider.get(ApiConfig.pushpins, mapper: mapper).flatMap { stopPoints in cache.save(stopPoints) }
+        return Observable.of(cache.cached(), observable).concat().take(1)
     }
 }

@@ -39,7 +39,7 @@ final class SearchQueryHandler: QueryHandler {
     }
     
     func observableForMethod<T: ObjectMappable>(method: String, query: SearchQuery, mapper: T) -> Observable<[T.T]> {
-        let responseMapper = ResponseMapper(ArrayMapper(mapper))
+        let responseMapper = WrappedObjectMapper(ArrayMapper(mapper), pathToObject: "success")
         let parameters = self.bodyBuilder.search(method, pattern: query.phrase)
         let observable = self.apiProvider.post(parameters, mapper: responseMapper)
         return observable

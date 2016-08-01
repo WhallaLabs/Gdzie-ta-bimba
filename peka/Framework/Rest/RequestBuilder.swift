@@ -30,10 +30,12 @@ final class RequestBuilder: QueryRequestBuilder {
     private var request: NSMutableURLRequest?
     private(set) var url: String
     private(set) var httpMethod: HttpMethod
+    private let formBodyBuilder: FormBodyBuilder
     
-    init(endpoint: String, method: HttpMethod = .GET) {
+    init(endpoint: String, formBodyBuilder: FormBodyBuilder, method: HttpMethod = .GET) {
         self.url = endpoint
         self.httpMethod = method
+        self.formBodyBuilder = formBodyBuilder
     }
     
     func add(resource resource: String) -> QueryRequestBuilder {
@@ -69,10 +71,11 @@ final class RequestBuilder: QueryRequestBuilder {
     
     func add(bodyParameters parameters: [HttpBodyParameter]) -> BodyRequestBuilder {
         self.getRequest()
-        let boundary = "Boundary-\(NSUUID().UUIDString)"
-        
-        self.request!.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        self.request!.HTTPBody = self.createBody(withBoundary: boundary, andParameters: parameters)
+        let headers = self.formBodyBuilder.prepareHeaders()
+        for (key, value) in headers {
+            self.request!.setValue(value, forHTTPHeaderField: key)
+        }
+        self.request!.HTTPBody = self.formBodyBuilder.createBody(parameters)
         
         return self
     }
@@ -101,26 +104,5 @@ final class RequestBuilder: QueryRequestBuilder {
             self.request!.HTTPMethod = self.httpMethod.rawValue
         }
         return self.request!
-    }
-    
-    private func createBody(withBoundary boundary: String, andParameters parameters: [HttpBodyParameter]) -> NSData {
-        let body = NSMutableData()
-        
-        for parameter in parameters {
-            body.appendString("--\(boundary)\r\n")
-            switch parameter {
-            case .Form(let name, let value):
-                body.appendString("Content-Disposition: form-data; name=\"\(name)\"\r\n\r\n")
-                body.appendString(value)
-            case .File(let name, let data, let fileName, let mime):
-                body.appendString("Content-Disposition: form-data; name=\"\(name)\"; filename=\"\(fileName)\"\r\n")
-                body.appendString("Content-Type: \(mime)\r\n\r\n")
-                body.appendData(data)
-            }
-            body.appendString("\r\n")
-        }
-        body.appendString("--\(boundary)--\r\n")
-        
-        return body
     }
 }
