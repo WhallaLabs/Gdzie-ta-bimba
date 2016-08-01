@@ -51,12 +51,19 @@ extension SwinjectStoryboard {
             let viewModel = r.resolve(SearchViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
-        
+        defaultContainer.registerForStoryboard(BollardsViewController.self) { r, c in
+            let navigationController = r.resolve(BollardsNavigationControllerDelegate.self, argument: c)!
+            let viewModel = r.resolve(BollardsViewModel.self)!
+            c.installDependencies(viewModel, navigationController)
+        }
     }
     
     private class func registerViewModels() {
         defaultContainer.register(SearchViewModel.self) { r in
             SearchViewModel(executor: r.resolve(Executor.self)!)
+        }
+        defaultContainer.register(BollardsViewModel.self) { r in
+            BollardsViewModel(executor: r.resolve(Executor.self)!)
         }
     }
     
@@ -71,12 +78,23 @@ extension SwinjectStoryboard {
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(SearchQuery)) { r in
             SearchQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStopPointQuery)) { r in
+            GetBollardsByStopPointQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+        }
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStreetQuery)) { r in
+            GetBollardsByStreetQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+        }
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByLineQuery)) { r in
+            GetBollardsByLineQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+        }
     }
     
     private class func registerNavigationControllers() {
-        defaultContainer.register(SearchNavigationControllerDelegate.self) { (r, arg: SearchViewController) in
+        defaultContainer.register(SearchNavigationControllerDelegate.self) { (_, arg: SearchViewController) in
             SearchNavigationController(viewController: arg)
         }
-        
+        defaultContainer.register(BollardsNavigationControllerDelegate.self) { (_, arg: BollardsViewController) in
+            BollardsNavigationController(viewController: arg)
+        }
     }
 }

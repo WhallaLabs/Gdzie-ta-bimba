@@ -24,17 +24,24 @@ final class BollardsViewController: UIViewController {
 		self.navigationDelegate = navigationDelegate
 	}
     
-    func loadBollardsByStop(name: String) {
-        
+    func loadBollardsByStopPoint(stopPoint: StopPoint) {
+        self.viewModel.loadBollardsByStopPoint(stopPoint).addDisposableTo(self.disposables)
     }
     
     func loadBoolardsByStreet(name: String) {
-        
+        self.viewModel.loadBollardsByStreet(name).addDisposableTo(self.disposables)
     }
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
+        
+        self.setupBinding()
 	}
 	
+    private func setupBinding() {
+        self.viewModel.bollards.asObservable()
+            .bindTo(self.tableView.configurableCells(GroupedDirectionsCell.self))
+            .addDisposableTo(self.disposables)
+    }
 }

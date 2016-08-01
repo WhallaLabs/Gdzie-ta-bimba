@@ -22,7 +22,7 @@ final class SearchNavigationController: SearchNavigationControllerDelegate {
             let bollardsViewContoller: BollardsViewController = UIStoryboard.instantiateInitialViewController()
             switch searchResult {
             case .Stop(let model):
-                bollardsViewContoller.loadBollardsByStop(model.name)
+                bollardsViewContoller.loadBollardsByStopPoint(model)
             case .Street(let name):
                 bollardsViewContoller.loadBoolardsByStreet(name)
             default:

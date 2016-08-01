@@ -9,5 +9,5 @@
 import Foundation
 
 protocol BollardsNavigationControllerDelegate {
-	
+    func showBollard(bollard: Bollard)
 }

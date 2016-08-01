@@ -8,11 +8,14 @@
 
 import UIKit
 
-final class BollardsNavigationController {
+final class BollardsNavigationController: BollardsNavigationControllerDelegate {
 	private weak var viewController: BollardsViewController?
 
 	init(viewController: BollardsViewController) {
 		self.viewController = viewController
 	}
-	
+    
+    func showBollard(bollard: Bollard) {
+        
+    }
 }

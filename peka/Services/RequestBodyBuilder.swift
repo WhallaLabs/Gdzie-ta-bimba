@@ -14,8 +14,27 @@ final class RequestBodyBuilder {
         return self.methodParamter(methodName, value: patternJson)
     }
     
+    func getBollardsByStopPoint(name: String) -> [HttpBodyParameter] {
+        let nameJson = self.nameJson(name)
+        return self.methodParamter("getBollardsByStopPoint", value: nameJson)
+    }
+    
+    func getBollardsByLine(name: String) -> [HttpBodyParameter] {
+        let nameJson = self.nameJson(name)
+        return self.methodParamter("getBollardsByLine", value: nameJson)
+    }
+    
+    func getBollardsByStreet(name: String) -> [HttpBodyParameter] {
+        let nameJson = self.nameJson(name)
+        return self.methodParamter("getBollardsByStreet", value: nameJson)
+    }
+    
     private func patternJson(pattern: String) -> String {
         return "{\"pattern\":\"\(pattern)\"}"
+    }
+    
+    private func nameJson(name: String) -> String {
+        return "{\"name\":\"\(name)\"}"
     }
     
     private func methodParamter(methodName: String, value: String) -> [HttpBodyParameter] {
