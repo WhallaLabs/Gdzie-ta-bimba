@@ -46,15 +46,18 @@ extension SwinjectStoryboard {
     }
     
     private class func registerViewControllers() {
-        defaultContainer.registerForStoryboard(StartViewController.self) { r, c in
-            let navigationController = r.resolve(StartNavigationControllerDelegate.self, argument: c)!
-            let viewModel = r.resolve(StartViewModel.self)!
-            c.installDependencies(viewModel, navigationDelegate: navigationController)
+        defaultContainer.registerForStoryboard(SearchViewController.self) { r, c in
+            let navigationController = r.resolve(SearchNavigationControllerDelegate.self, argument: c)!
+            let viewModel = r.resolve(SearchViewModel.self)!
+            c.installDependencies(viewModel, navigationController)
         }
+        
     }
     
     private class func registerViewModels() {
-        defaultContainer.register(StartViewModel.self) { r in StartViewModel() }
+        defaultContainer.register(SearchViewModel.self) { r in
+            SearchViewModel(executor: r.resolve(Executor.self)!)
+        }
     }
     
     private class func registerCommands() {
@@ -71,8 +74,8 @@ extension SwinjectStoryboard {
     }
     
     private class func registerNavigationControllers() {
-        defaultContainer.register(StartNavigationControllerDelegate.self) { (r, arg: StartViewController) in
-            StartNavigationController(viewController: arg)
+        defaultContainer.register(SearchNavigationControllerDelegate.self) { (r, arg: SearchViewController) in
+            SearchNavigationController(viewController: arg)
         }
         
     }

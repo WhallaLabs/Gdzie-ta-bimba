@@ -1,5 +1,5 @@
 //
-//  StartNavigationControllerDelegate.swift
+//  BollardsNavigationControllerDelegate.swift
 //  peka
 //
 //  Created by Tomasz Pikć on 01/08/16.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol StartNavigationControllerDelegate {
-    func showHub()
+protocol BollardsNavigationControllerDelegate {
+	
 }

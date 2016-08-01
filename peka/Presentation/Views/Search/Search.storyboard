@@ -15,16 +15,43 @@
                     <view key="view" contentMode="scaleToFill" id="670-f4-S5G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LgO-i7-bYU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Mwa-UY-SPh">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="HcL-cJ-VCf"/>
+                            <constraint firstAttribute="trailing" secondItem="LgO-i7-bYU" secondAttribute="trailing" id="VCS-j0-IlB"/>
+                            <constraint firstAttribute="bottom" secondItem="LgO-i7-bYU" secondAttribute="bottom" id="d3F-3t-MnL"/>
+                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="LgO-i7-bYU" secondAttribute="bottom" id="mMT-8O-Kue"/>
+                            <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="oa3-Dh-8j2"/>
+                            <constraint firstItem="LgO-i7-bYU" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="s1H-iV-Vie"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oa3-Dh-8j2"/>
+                                <exclude reference="mMT-8O-Kue"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="6db-bh-QhI"/>
                     <connections>
+                        <outlet property="tableView" destination="LgO-i7-bYU" id="1hQ-EQ-JOQ"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-8n-4Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="opz-Br-oXO" customClass="SearchViewConfigurator" customModule="peka" customModuleProvider="target">
                     <connections>
+                        <outlet property="tableView" destination="LgO-i7-bYU" id="scG-ad-xbn"/>
                         <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>
                     </connections>
                 </customObject>
