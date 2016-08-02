@@ -55,6 +55,10 @@
 		386898C41D4FAF48004CA51B /* LineBollardsViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */; };
 		386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */; };
 		386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */; };
+		38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */; };
+		38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */; };
+		38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */; };
+		38A68B081D50D54300BBC087 /* MapNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B071D50D54300BBC087 /* MapNavigationController.swift */; };
 		38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFFA1D50103600937FD2 /* BollardViewModel.swift */; };
 		38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE41D50081700937FD2 /* BollardCell.swift */; };
 		38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7FFE51D50081700937FD2 /* BollardCell.xib */; };
@@ -208,6 +212,10 @@
 		386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewConfigurator.swift; sourceTree = "<group>"; };
 		386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewController.swift; sourceTree = "<group>"; };
 		386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewModel.swift; sourceTree = "<group>"; };
+		38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointPushpinsToAnnotationsConverter.swift; sourceTree = "<group>"; };
+		38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointAnnotation.swift; sourceTree = "<group>"; };
+		38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		38A68B071D50D54300BBC087 /* MapNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationController.swift; sourceTree = "<group>"; };
 		38D7FFE41D50081700937FD2 /* BollardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardCell.swift; sourceTree = "<group>"; };
 		38D7FFE51D50081700937FD2 /* BollardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollardCell.xib; sourceTree = "<group>"; };
 		38D7FFE91D500BCF00937FD2 /* TimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
@@ -340,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				385736CC1D4B434700C8D772 /* StopPoint.swift */,
+				38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */,
 				385736D41D4B463B00C8D772 /* StopPointMapper.swift */,
 				385736CE1D4B437E00C8D772 /* StopPointPushpin.swift */,
 				385736D01D4B43C500C8D772 /* StopPointPushpinMapper.swift */,
@@ -761,9 +770,12 @@
 			isa = PBXGroup;
 			children = (
 				38FE8D911D4F562700E6B5BF /* Map.storyboard */,
+				38A68B071D50D54300BBC087 /* MapNavigationController.swift */,
+				38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */,
 				38FE8D921D4F562700E6B5BF /* MapViewConfigurator.swift */,
 				38FE8D931D4F562700E6B5BF /* MapViewController.swift */,
 				38FE8D941D4F562700E6B5BF /* MapViewModel.swift */,
+				38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1120,12 +1132,15 @@
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
 				38F391811D4A58F9005F4A42 /* Executor.swift in Sources */,
+				38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */,
+				38A68B081D50D54300BBC087 /* MapNavigationController.swift in Sources */,
 				385737011D4B5F1900C8D772 /* Bollard.swift in Sources */,
 				385736EF1D4B4CFC00C8D772 /* SearchQuery.swift in Sources */,
 				38F391511D4A523F005F4A42 /* Box.swift in Sources */,
 				38FE8DFA1D4F825300E6B5BF /* SearchResultCell.swift in Sources */,
 				38F391941D4A5CBA005F4A42 /* NSMutableDataExtensions.swift in Sources */,
 				385737081D4B60B500C8D772 /* DirectionMapper.swift in Sources */,
+				38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */,
 				38F391741D4A57DD005F4A42 /* RequestBuilder.swift in Sources */,
 				38F391831D4A5952005F4A42 /* AttributedTextBuilder.swift in Sources */,
 				38FE8D851D4F55F100E6B5BF /* FavoriteViewController.swift in Sources */,
@@ -1147,6 +1162,7 @@
 				386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */,
 				38F3917A1D4A58D9005F4A42 /* Query.swift in Sources */,
 				38FE8E0A1D4F919700E6B5BF /* BollardsNavigationControllerDelegate.swift in Sources */,
+				38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */,
 				3857370B1D4B618B00C8D772 /* TimeMapper.swift in Sources */,
 				385736DC1D4B47B300C8D772 /* ApiConfig.swift in Sources */,
 				385736D11D4B43C500C8D772 /* StopPointPushpinMapper.swift in Sources */,

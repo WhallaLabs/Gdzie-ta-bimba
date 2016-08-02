@@ -71,7 +71,10 @@ extension SwinjectStoryboard {
             c.installDependencies(viewModel, navigationController)
         }
         defaultContainer.registerForStoryboard(MapViewController.self) { r, c in
-            c.installDependencies(r.resolve(MapViewModel.self)!, r.resolve(LocationManager.self)!)
+            let navigationController = r.resolve(MapNavigationControllerDelegate.self, argument: c)!
+            let viewModel = r.resolve(MapViewModel.self)!
+            let locationManager = r.resolve(LocationManager.self)!
+            c.installDependencies(viewModel, navigationController, locationManager)
         }
         defaultContainer.registerForStoryboard(FavoriteViewController.self) { r, c in
             c.installDependencies(r.resolve(FavoriteViewModel.self)!, r.resolve(LocationManager.self)!)
@@ -92,7 +95,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(BollardViewModel.self) { r in
             BollardViewModel(executor: r.resolve(Executor.self)!)
         }
-        defaultContainer.register(MapViewModel.self) { _ in MapViewModel() }
+        defaultContainer.register(MapViewModel.self) { r in
+            MapViewModel(executor: r.resolve(Executor.self)!)
+        }
         defaultContainer.register(FavoriteViewModel.self) { _ in FavoriteViewModel() }
     }
     
@@ -133,6 +138,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(BollardNavigationControllerDelegate.self) { (_, arg: BollardViewController) in
             BollardNavigationController(viewController: arg)
+        }
+        defaultContainer.register(MapNavigationControllerDelegate.self) { (_, arg: MapViewController) in
+            MapNavigationController(viewController: arg)
         }
     }
 }

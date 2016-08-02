@@ -13,4 +13,5 @@ struct Bollard {
     let name: String
     let symbol: String
     let tag: String
+    let isFavourite: Bool
 }

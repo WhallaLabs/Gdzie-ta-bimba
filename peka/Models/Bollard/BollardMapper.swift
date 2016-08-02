@@ -19,6 +19,6 @@ final class BollardMapper: ObjectMappable {
             tag = json["tag"].string else {
                 return nil
         }
-        return Bollard(mainBollard: mainBollard, name: name, symbol: symbol, tag: tag)
+        return Bollard(mainBollard: mainBollard, name: name, symbol: symbol, tag: tag, isFavourite: false)
     }
 }

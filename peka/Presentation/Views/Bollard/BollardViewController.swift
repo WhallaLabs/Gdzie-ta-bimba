@@ -24,6 +24,10 @@ final class BollardViewController: UIViewController {
 		self.navigationDelegate = navigationDelegate
 	}
     
+    func loadBollard(symbol: String) {
+        
+    }
+    
     func loadTimes(bollard: Bollard) {
         self.viewModel.loadTimesForBollard(bollard).addDisposableTo(self.disposables)
     }

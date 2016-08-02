@@ -18,6 +18,6 @@ extension TimeCell: NibLoadableView {
 
 extension TimeCell: Configurable {
 	func configure(model: Time) {
-        self.textLabel?.text = "\(model.description) # \(model.minutes)min."
+        self.textLabel?.text = "\(model.description) # \(model.minutes)min. \(model.realTime)"
     }
 }

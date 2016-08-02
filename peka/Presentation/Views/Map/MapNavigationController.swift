@@ -1,0 +1,23 @@
+//
+//  MapNavigationController.swift
+//  peka
+//
+//  Created by Tomasz Pikć on 02/08/16.
+//  Copyright © 2016 WhallaLabs. All rights reserved.
+//
+
+import UIKit
+
+final class MapNavigationController: MapNavigationControllerDelegate {
+    private weak var viewController: MapViewController?
+    
+    init(viewController: MapViewController) {
+        self.viewController = viewController
+    }
+    
+    func showBollard(stopPointAnnotaion: StopPointAnnotation) {
+        let viewController: BollardViewController = UIStoryboard.instantiateInitialViewController()
+        viewController.loadBollard(stopPointAnnotaion.id)
+        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    }
+}

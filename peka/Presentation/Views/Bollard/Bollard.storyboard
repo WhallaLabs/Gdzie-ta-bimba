@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-NC-xZK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="dHU-g2-MA4">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
@@ -34,6 +34,11 @@
                             <constraint firstItem="KtG-NC-xZK" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="whf-jb-cig"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="hwn-fw-Omb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="hm0-Zj-hZ6"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="KtG-NC-xZK" id="gXa-iT-LyB"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
@@ -47,7 +52,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="434" y="366"/>
+            <point key="canvasLocation" x="1246" y="366"/>
         </scene>
     </scenes>
 </document>
