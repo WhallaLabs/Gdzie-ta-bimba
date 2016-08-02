@@ -12,4 +12,5 @@ struct StopPointPushpin {
     let id: String
     let name: String
     let coordinates: Coordinates
+    let headsigns: String
 }

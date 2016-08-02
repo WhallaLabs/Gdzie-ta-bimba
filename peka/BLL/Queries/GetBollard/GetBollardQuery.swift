@@ -1,5 +1,5 @@
 //
-//  GetTimesQuery.swift
+//  GetBollardQuery.swift
 //  peka
 //
 //  Created by Tomasz Pikć on 02/08/16.
@@ -9,10 +9,10 @@
 
 import Foundation
 
-final class GetTimesQuery: Query {
-    let bollard: String
+final class GetBollardQuery: Query {
+    let symbol: String
     
-    init(bollard: String) {
-        self.bollard = bollard
+    init(symbol: String) {
+        self.symbol = symbol
     }
 }

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3826AE771D50E1490020678C /* BollardRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE761D50E1490020678C /* BollardRealm.swift */; };
+		3826AE7A1D50E4340020678C /* FavoriteBollardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */; };
+		3826AE7C1D50E4860020678C /* RealmFavoriteBollardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE7B1D50E4860020678C /* RealmFavoriteBollardsRepository.swift */; };
+		3826AE7E1D50E6A70020678C /* BollardRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE7D1D50E6A70020678C /* BollardRealmMapper.swift */; };
+		3826AE821D511C620020678C /* GetBollardQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE801D511C620020678C /* GetBollardQuery.swift */; };
+		3826AE831D511C620020678C /* GetBollardQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE811D511C620020678C /* GetBollardQueryHandler.swift */; };
+		3826AE881D5135A10020678C /* ToggleBollardFavoriteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE861D5135A10020678C /* ToggleBollardFavoriteCommand.swift */; };
+		3826AE891D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */; };
+		3826AE8D1D5141AE0020678C /* GetFavoriteBollardsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */; };
+		3826AE8E1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */; };
 		38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F961D4B798B006AB84C /* FormBodyBuilder.swift */; };
 		38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */; };
 		38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */; };
@@ -163,6 +173,16 @@
 /* Begin PBXFileReference section */
 		0C69FE4B7E69D0F004F07DB7 /* Pods_peka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_peka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263E1854A96347164565C55F /* Pods-pekaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3826AE761D50E1490020678C /* BollardRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardRealm.swift; sourceTree = "<group>"; };
+		3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteBollardsRepository.swift; sourceTree = "<group>"; };
+		3826AE7B1D50E4860020678C /* RealmFavoriteBollardsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmFavoriteBollardsRepository.swift; sourceTree = "<group>"; };
+		3826AE7D1D50E6A70020678C /* BollardRealmMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardRealmMapper.swift; sourceTree = "<group>"; };
+		3826AE801D511C620020678C /* GetBollardQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBollardQuery.swift; sourceTree = "<group>"; };
+		3826AE811D511C620020678C /* GetBollardQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBollardQueryHandler.swift; sourceTree = "<group>"; };
+		3826AE861D5135A10020678C /* ToggleBollardFavoriteCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleBollardFavoriteCommand.swift; sourceTree = "<group>"; };
+		3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleBollardFavoriteCommandHandler.swift; sourceTree = "<group>"; };
+		3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQuery.swift; sourceTree = "<group>"; };
+		3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQueryHandler.swift; sourceTree = "<group>"; };
 		38403F961D4B798B006AB84C /* FormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormUrlEncodedBuilder.swift; sourceTree = "<group>"; };
@@ -335,6 +355,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3826AE781D50E4180020678C /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				3826AE7D1D50E6A70020678C /* BollardRealmMapper.swift */,
+				3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */,
+				3826AE7B1D50E4860020678C /* RealmFavoriteBollardsRepository.swift */,
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
+		3826AE7F1D511A9E0020678C /* GetBollard */ = {
+			isa = PBXGroup;
+			children = (
+				3826AE801D511C620020678C /* GetBollardQuery.swift */,
+				3826AE811D511C620020678C /* GetBollardQueryHandler.swift */,
+			);
+			path = GetBollard;
+			sourceTree = "<group>";
+		};
+		3826AE841D5120600020678C /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				3826AE851D5135880020678C /* ToggleBollardFavorite */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		3826AE851D5135880020678C /* ToggleBollardFavorite */ = {
+			isa = PBXGroup;
+			children = (
+				3826AE861D5135A10020678C /* ToggleBollardFavoriteCommand.swift */,
+				3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */,
+			);
+			path = ToggleBollardFavorite;
+			sourceTree = "<group>";
+		};
+		3826AE8A1D51419C0020678C /* GetFavoriteBollards */ = {
+			isa = PBXGroup;
+			children = (
+				3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */,
+				3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */,
+			);
+			path = GetFavoriteBollards;
+			sourceTree = "<group>";
+		};
 		385736C61D4B415F00C8D772 /* Coordinates */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,9 +424,11 @@
 		385736D61D4B46F000C8D772 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
+				3826AE7F1D511A9E0020678C /* GetBollard */,
 				386898B01D4FA80D004CA51B /* GetBollardsByLine */,
 				386898AB1D4F9F25004CA51B /* GetBollardsByStopPoint */,
 				386898B51D4FA8F9004CA51B /* GetBollardsByStreet */,
+				3826AE8A1D51419C0020678C /* GetFavoriteBollards */,
 				385736EB1D4B4CDD00C8D772 /* GetStopPointPushpins */,
 				38D7FFEF1D500DBD00937FD2 /* GetTimes */,
 				385736EC1D4B4CEC00C8D772 /* Search */,
@@ -393,6 +460,7 @@
 			children = (
 				385737001D4B5F1900C8D772 /* Bollard.swift */,
 				385737021D4B5F6900C8D772 /* BollardMapper.swift */,
+				3826AE761D50E1490020678C /* BollardRealm.swift */,
 				385737131D4B69B500C8D772 /* GroupedDirections.swift */,
 				385737151D4B6A1500C8D772 /* GroupedDirectionsMapper.swift */,
 			);
@@ -541,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				38DAC1E41D4A4A0C001DF664 /* BLL */,
+				3826AE781D50E4180020678C /* DAL */,
 				38DAC1E91D4A4A7A001DF664 /* Framework */,
 				38DAC1E51D4A4A13001DF664 /* Models */,
 				38DAC1E61D4A4A1B001DF664 /* Presentation */,
@@ -565,6 +634,7 @@
 		38DAC1E41D4A4A0C001DF664 /* BLL */ = {
 			isa = PBXGroup;
 			children = (
+				3826AE841D5120600020678C /* Commands */,
 				385736D61D4B46F000C8D772 /* Queries */,
 				385736DB1D4B47B300C8D772 /* ApiConfig.swift */,
 			);
@@ -1069,12 +1139,15 @@
 				385736C51D4B40F700C8D772 /* Coordinates.swift in Sources */,
 				385737141D4B69B500C8D772 /* GroupedDirections.swift in Sources */,
 				385736FA1D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift in Sources */,
+				3826AE891D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift in Sources */,
 				385736DE1D4B4A1A00C8D772 /* PekaHttpHeadersProvider.swift in Sources */,
 				384422101D4A5F9B007B44FA /* VariableExtensions.swift in Sources */,
+				3826AE8E1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift in Sources */,
 				38FE8D841D4F55F100E6B5BF /* FavoriteViewConfigurator.swift in Sources */,
 				38F391671D4A5645005F4A42 /* UITableViewExtensions.swift in Sources */,
 				386898B41D4FA81F004CA51B /* GetBollardsByLineQueryHandler.swift in Sources */,
 				38FE8E0F1D4F932800E6B5BF /* SearchNavigationControllerDelegate.swift in Sources */,
+				3826AE8D1D5141AE0020678C /* GetFavoriteBollardsQuery.swift in Sources */,
 				38FE8D971D4F562700E6B5BF /* MapViewController.swift in Sources */,
 				385736F81D4B56AA00C8D772 /* PekaApiProviderExtension.swift in Sources */,
 				385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */,
@@ -1083,11 +1156,13 @@
 				385736F61D4B531A00C8D772 /* RequestBodyBuilder.swift in Sources */,
 				386898B31D4FA81F004CA51B /* GetBollardsByLineQuery.swift in Sources */,
 				38D7FFF31D500DED00937FD2 /* GetTimesQueryHandler.swift in Sources */,
+				3826AE821D511C620020678C /* GetBollardQuery.swift in Sources */,
 				38D7FFF21D500DED00937FD2 /* GetTimesQuery.swift in Sources */,
 				38FE8D8D1D4F561100E6B5BF /* SearchViewConfigurator.swift in Sources */,
 				38D7FFFE1D50103600937FD2 /* BollardViewConfigurator.swift in Sources */,
 				38FE8D981D4F562700E6B5BF /* MapViewModel.swift in Sources */,
 				385736D91D4B470A00C8D772 /* GetStopPointPushpinsQuery.swift in Sources */,
+				3826AE7C1D50E4860020678C /* RealmFavoriteBollardsRepository.swift in Sources */,
 				38F391701D4A576C005F4A42 /* HttpMethod.swift in Sources */,
 				38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */,
 				38FE8D961D4F562700E6B5BF /* MapViewConfigurator.swift in Sources */,
@@ -1102,6 +1177,7 @@
 				385736E81D4B4C1E00C8D772 /* LineMapper.swift in Sources */,
 				3857370D1D4B619C00C8D772 /* Time.swift in Sources */,
 				38FE8D861D4F55F100E6B5BF /* FavoriteViewModel.swift in Sources */,
+				3826AE831D511C620020678C /* GetBollardQueryHandler.swift in Sources */,
 				38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */,
 				38F391881D4A59DE005F4A42 /* JsonMappable.swift in Sources */,
 				38F391961D4A5CFF005F4A42 /* SwinjectContainerExtensions.swift in Sources */,
@@ -1118,9 +1194,11 @@
 				38FE8DFF1D4F8F6900E6B5BF /* GroupedDirectionsCell.swift in Sources */,
 				38F391591D4A52A6005F4A42 /* XibLoader.swift in Sources */,
 				38F3918C1D4A59FF005F4A42 /* ArrayMapper.swift in Sources */,
+				3826AE881D5135A10020678C /* ToggleBollardFavoriteCommand.swift in Sources */,
 				38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */,
 				38F3918A1D4A59E9005F4A42 /* NoContentMapper.swift in Sources */,
 				38F3917E1D4A58EE005F4A42 /* Command.swift in Sources */,
+				3826AE7A1D50E4340020678C /* FavoriteBollardsRepository.swift in Sources */,
 				385736F01D4B4CFC00C8D772 /* SearchQueryHandler.swift in Sources */,
 				38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */,
 				38F391691D4A5664005F4A42 /* ObservableExtensions.swift in Sources */,
@@ -1128,6 +1206,7 @@
 				38F3915B1D4A52C0005F4A42 /* ReusableView.swift in Sources */,
 				385736D51D4B463B00C8D772 /* StopPointMapper.swift in Sources */,
 				386898AF1D4F9F7F004CA51B /* GetBollardsByStopPointQueryHandler.swift in Sources */,
+				3826AE7E1D50E6A70020678C /* BollardRealmMapper.swift in Sources */,
 				38FE8DEE1D4F731800E6B5BF /* UIStoryboardExtensions.swift in Sources */,
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
@@ -1138,6 +1217,7 @@
 				385736EF1D4B4CFC00C8D772 /* SearchQuery.swift in Sources */,
 				38F391511D4A523F005F4A42 /* Box.swift in Sources */,
 				38FE8DFA1D4F825300E6B5BF /* SearchResultCell.swift in Sources */,
+				3826AE771D50E1490020678C /* BollardRealm.swift in Sources */,
 				38F391941D4A5CBA005F4A42 /* NSMutableDataExtensions.swift in Sources */,
 				385737081D4B60B500C8D772 /* DirectionMapper.swift in Sources */,
 				38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */,

@@ -25,7 +25,7 @@ final class BollardViewController: UIViewController {
 	}
     
     func loadBollard(symbol: String) {
-        
+        self.viewModel.loadBollard(symbol).addDisposableTo(self.disposables)
     }
     
     func loadTimes(bollard: Bollard) {
@@ -42,5 +42,9 @@ final class BollardViewController: UIViewController {
         self.viewModel.times.asObservable()
             .bindTo(self.tableView.configurableCells(TimeCell.self))
             .addDisposableTo(self.disposables)
+    }
+    
+    @IBAction func toggleFavorite() {
+        self.viewModel.toggleFavorite()
     }
 }

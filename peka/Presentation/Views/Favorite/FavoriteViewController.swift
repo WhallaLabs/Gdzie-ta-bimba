@@ -18,7 +18,8 @@ final class FavoriteViewController: UIViewController {
     private var locationManager: LocationManager!
 
 	@IBOutlet private weak var viewConfigurator: FavoriteViewConfigurator!
-
+    @IBOutlet private weak var tableView: UITableView!
+    
 	func installDependencies(viewModel: FavoriteViewModel, _ locationManager: LocationManager!) {
 		self.viewModel = viewModel
         self.locationManager = locationManager
@@ -27,6 +28,8 @@ final class FavoriteViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
+        self.viewModel.loadFavouriteBollards().addDisposableTo(self.disposables)
+        self.setupBinding()
 	}
 	
     override func viewWillAppear(animated: Bool) {
@@ -39,5 +42,11 @@ final class FavoriteViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.viewDisposables = DisposeBag()
+    }
+    
+    private func setupBinding() {
+        self.viewModel.bollards.asObservable()
+            .bindTo(self.tableView.configurableCells(BollardCell.self))
+            .addDisposableTo(self.disposables)
     }
 }

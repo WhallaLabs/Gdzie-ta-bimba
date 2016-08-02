@@ -42,7 +42,8 @@ extension SwinjectStoryboard {
                         formBodyBuilder: r.resolve(FormBodyBuilder.self)!)
         }
         
-        defaultContainer.registerPerContainerLifetime(StopPointPushpinsCache.self) { r in StopPointPushpinsCache() }
+        defaultContainer.registerPerContainerLifetime(StopPointPushpinsCache.self) { _ in StopPointPushpinsCache() }
+        defaultContainer.register(FavoriteBollardsRepository.self) { _ in RealmFavoriteBollardsRepository() }
 
     }
     
@@ -98,11 +99,15 @@ extension SwinjectStoryboard {
         defaultContainer.register(MapViewModel.self) { r in
             MapViewModel(executor: r.resolve(Executor.self)!)
         }
-        defaultContainer.register(FavoriteViewModel.self) { _ in FavoriteViewModel() }
+        defaultContainer.register(FavoriteViewModel.self) { r in
+            FavoriteViewModel(executor: r.resolve(Executor.self)!)
+        }
     }
     
     private class func registerCommands() {
-        
+        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(ToggleBollardFavoriteCommand)) { r in
+            ToggleBollardFavoriteCommandHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
+        }
     }
     
     private class func registerQueries() {
@@ -123,6 +128,12 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetTimesQuery)) { r in
             GetTimesQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+        }
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardQuery)) { r in
+            GetBollardQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+        }
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetFavoriteBollardsQuery)) { r in
+            GetFavoriteBollardsQueryHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
         }
     }
     

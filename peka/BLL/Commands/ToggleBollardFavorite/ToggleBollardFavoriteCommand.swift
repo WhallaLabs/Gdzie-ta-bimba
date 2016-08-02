@@ -1,5 +1,5 @@
 //
-//  GetTimesQuery.swift
+//  ToggleBollardFavoriteCommand.swift
 //  peka
 //
 //  Created by Tomasz Pikć on 02/08/16.
@@ -9,10 +9,10 @@
 
 import Foundation
 
-final class GetTimesQuery: Query {
-    let bollard: String
+final class ToggleBollardFavoriteCommand: Command {
+    let bollard: Bollard
     
-    init(bollard: String) {
+    init(bollard: Bollard) {
         self.bollard = bollard
     }
 }

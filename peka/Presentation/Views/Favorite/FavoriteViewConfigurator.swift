@@ -11,8 +11,9 @@ import UIKit
 final class FavoriteViewConfigurator: NSObject {
 
 	@IBOutlet private weak var viewController: FavoriteViewController!
-
+    @IBOutlet private weak var tableView: UITableView!
+    
 	func configure() {
-		
+		self.tableView.register(BollardCell.self)
 	}
 }

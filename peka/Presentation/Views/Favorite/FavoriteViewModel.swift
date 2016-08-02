@@ -10,5 +10,16 @@ import Foundation
 import RxSwift
 
 final class FavoriteViewModel {
-	
+    private let executor: Executor
+    
+    let bollards = Variable<[Bollard]>([])
+    
+    init(executor: Executor) {
+        self.executor = executor
+    }
+    
+    func loadFavouriteBollards() -> Disposable {
+        let observable: Observable<[Bollard]> = self.executor.execute(GetFavoriteBollardsQuery())
+        return observable.bindTo(self.bollards)
+    }
 }

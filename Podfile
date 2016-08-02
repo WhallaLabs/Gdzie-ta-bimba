@@ -17,3 +17,5 @@ pod 'Swinject'
 pod 'SwiftyJSON'
 pod 'RxDataSources'
 pod "RxMKMapView"
+pod 'RealmSwift'
+pod "RxRealm"
