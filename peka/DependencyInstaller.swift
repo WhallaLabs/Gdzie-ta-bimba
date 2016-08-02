@@ -61,6 +61,11 @@ extension SwinjectStoryboard {
             let viewModel = r.resolve(LineBollardsViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
+        defaultContainer.registerForStoryboard(BollardViewController.self) { r, c in
+            let navigationController = r.resolve(BollardNavigationControllerDelegate.self, argument: c)!
+            let viewModel = r.resolve(BollardViewModel.self)!
+            c.installDependencies(viewModel, navigationController)
+        }
     }
     
     private class func registerViewModels() {
@@ -72,6 +77,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(LineBollardsViewModel.self) { r in
             LineBollardsViewModel(executor: r.resolve(Executor.self)!)
+        }
+        defaultContainer.register(BollardViewModel.self) { r in
+            BollardViewModel(executor: r.resolve(Executor.self)!)
         }
     }
     
@@ -95,6 +103,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByLineQuery)) { r in
             GetBollardsByLineQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetTimesQuery)) { r in
+            GetTimesQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+        }
     }
     
     private class func registerNavigationControllers() {
@@ -106,6 +117,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(LineBollardsNavigationControllerDelegate.self) { (_, arg: LineBollardsViewController) in
             LineBollardsNavigationController(viewController: arg)
+        }
+        defaultContainer.register(BollardNavigationControllerDelegate.self) { (_, arg: BollardViewController) in
+            BollardNavigationController(viewController: arg)
         }
     }
 }

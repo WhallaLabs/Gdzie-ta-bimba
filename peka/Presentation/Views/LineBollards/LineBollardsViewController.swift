@@ -35,12 +35,19 @@ final class LineBollardsViewController: UIViewController {
 		self.viewConfigurator.configure()
         self.setupBinding()
         self.configure()
+        self.registerForEvents()
 	}
 	
     private func setupBinding() {
         self.viewModel.lineBollards.asObservable()
             .bindTo(self.tableView.rx_itemsWithDataSource(self.dataSource))
             .addDisposableTo(self.disposables)
+    }
+    
+    private func registerForEvents() {
+        self.tableView.rx_modelSelected(Bollard.self).subscribeNext { [unowned self] bollard in
+            self.navigationDelegate.showTimes(bollard)
+        }.addDisposableTo(self.disposables)
     }
     
     private func configure() {

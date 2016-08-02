@@ -22,7 +22,7 @@ final class TimeMapper: ObjectMappable {
         }
         //TODO: map departure time
         let time = Time(departure: NSDate(),
-                        direction: direction,
+                        directionName: direction,
                         line: line,
                         minutes: minutes,
                         onStopPoint: onStopPoint,

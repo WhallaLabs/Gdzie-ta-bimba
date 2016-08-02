@@ -29,12 +29,21 @@ final class RequestBodyBuilder {
         return self.methodParamter("getBollardsByStreet", value: nameJson)
     }
     
+    func getTimes(bollardSymbol: String) -> [HttpBodyParameter] {
+        let symbolJson = self.symbolJson(bollardSymbol)
+        return self.methodParamter("getTimes", value: symbolJson)
+    }
+    
     private func patternJson(pattern: String) -> String {
         return "{\"pattern\":\"\(pattern)\"}"
     }
     
     private func nameJson(name: String) -> String {
         return "{\"name\":\"\(name)\"}"
+    }
+    
+    private func symbolJson(name: String) -> String {
+        return "{\"symbol\":\"\(name)\"}"
     }
     
     private func methodParamter(methodName: String, value: String) -> [HttpBodyParameter] {

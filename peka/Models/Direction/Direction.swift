@@ -8,12 +8,8 @@
 
 import Foundation
 
-struct Direction {
-    let name: String
+struct Direction: DirectionDescription {
+    let directionName: String
     let line: String
     let returnVariant: Bool
-    
-    var description: String {
-        return "\(self.line) ➙ \(self.name)"
-    }
 }

@@ -18,6 +18,6 @@ final class DirectionMapper: ObjectMappable {
             returnVariant = json["returnVariant"].bool else {
                 return nil
         }
-        return Direction(name: direction, line: lineName, returnVariant: returnVariant)
+        return Direction(directionName: direction, line: lineName, returnVariant: returnVariant)
     }
 }

@@ -35,13 +35,21 @@ final class BollardsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
-        
         self.setupBinding()
+        self.registerForEvents()
 	}
 	
     private func setupBinding() {
         self.viewModel.bollards.asObservable()
             .bindTo(self.tableView.configurableCells(GroupedDirectionsCell.self))
             .addDisposableTo(self.disposables)
+    }
+    
+    private func registerForEvents() {
+        self.tableView.rx_modelSelected(GroupedDirections.self)
+            .map { $0.bollard }
+            .subscribeNext { [unowned self] bollard in
+                self.navigationDelegate.showBollard(bollard)
+            }.addDisposableTo(self.disposables)
     }
 }

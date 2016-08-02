@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="djb-qR-dlm">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="udh-io-FZk" customClass="BollardsViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="udh-io-FZk" customClass="BollardViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9BR-G4-HyS"/>
                         <viewControllerLayoutGuide type="bottom" id="aWz-Ju-CN4"/>
@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-V0-hq9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-NC-xZK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="auk-GV-8qK">
+                                <view key="tableFooterView" contentMode="scaleToFill" id="dHU-g2-MA4">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,21 +28,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jpf-V0-hq9" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="J02-1r-pJr"/>
-                            <constraint firstAttribute="trailing" secondItem="jpf-V0-hq9" secondAttribute="trailing" id="L1D-8x-kfl"/>
-                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="jpf-V0-hq9" secondAttribute="bottom" id="cyd-Qs-KW9"/>
-                            <constraint firstItem="jpf-V0-hq9" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="eSH-ah-vEE"/>
+                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="KtG-NC-xZK" secondAttribute="bottom" id="4dj-qR-Jt6"/>
+                            <constraint firstItem="KtG-NC-xZK" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="Idg-OQ-zTo"/>
+                            <constraint firstAttribute="trailing" secondItem="KtG-NC-xZK" secondAttribute="trailing" id="uHI-YH-jGc"/>
+                            <constraint firstItem="KtG-NC-xZK" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="whf-jb-cig"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="jpf-V0-hq9" id="Vhi-M1-R4Z"/>
+                        <outlet property="tableView" destination="KtG-NC-xZK" id="gXa-iT-LyB"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-8n-4Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="opz-Br-oXO" customClass="BollardsViewConfigurator" customModule="peka" customModuleProvider="target">
+                <customObject id="opz-Br-oXO" customClass="BollardViewConfigurator" customModule="peka" customModuleProvider="target">
                     <connections>
-                        <outlet property="tableView" destination="jpf-V0-hq9" id="0Ac-vC-jVc"/>
+                        <outlet property="tableView" destination="KtG-NC-xZK" id="ehi-IS-pjw"/>
                         <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>
                     </connections>
                 </customObject>

@@ -15,4 +15,9 @@ final class LineBollardsNavigationController: LineBollardsNavigationControllerDe
 		self.viewController = viewController
 	}
 	
+    func showTimes(bollard: Bollard) {
+        let viewController: BollardViewController = UIStoryboard.instantiateInitialViewController()
+        viewController.loadTimes(bollard)
+        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

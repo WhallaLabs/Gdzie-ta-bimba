@@ -23,7 +23,7 @@ final class SearchViewConfigurator: NSObject {
     private func addSearchBar() {
         //let searchController = UISearchController(searchResultsController: nil)
         //self.searchBar = searchController.searchBar
-        
+        self.searchBar.placeholder = "Szukaj przystanków, linii lub ulic"
         self.viewController.navigationItem.titleView = self.searchBar
     }
 }

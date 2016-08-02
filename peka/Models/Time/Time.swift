@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Time {
+struct Time: DirectionDescription {
     let departure: NSDate
-    let direction: String
+    let directionName: String
     let line: String
     let minutes: Int
     let onStopPoint: Bool
