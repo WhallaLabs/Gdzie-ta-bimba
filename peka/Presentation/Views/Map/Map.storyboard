@@ -15,10 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="670-f4-S5G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jJz-sa-BjR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jJz-sa-BjR" secondAttribute="trailing" id="72Y-wF-ywZ"/>
+                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="jJz-sa-BjR" secondAttribute="bottom" id="HRk-Pz-bPk"/>
+                            <constraint firstItem="jJz-sa-BjR" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="daM-uz-hNl"/>
+                            <constraint firstItem="jJz-sa-BjR" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="wgS-cH-gG5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nXR-Fp-2Sz"/>
                     <connections>
+                        <outlet property="mapView" destination="jJz-sa-BjR" id="6Ss-pj-plB"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
                 </viewController>

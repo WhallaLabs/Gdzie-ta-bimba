@@ -17,6 +17,6 @@ final class StopPointMapper: ObjectMappable {
             name = json["name"].string else {
                 return nil
         }
-        return StopPoint(id: id, name: name, isFavourite: false)
+        return StopPoint(id: id, name: name)
     }
 }

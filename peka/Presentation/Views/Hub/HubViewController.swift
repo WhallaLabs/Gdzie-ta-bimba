@@ -14,14 +14,17 @@ final class HubViewController: UITabBarController {
 
 	private let disposables = DisposeBag()
 	private var viewModel: HubViewModel!
+    private var locationManager: LocationManager!
 
 	@IBOutlet private weak var viewConfigurator: HubViewConfigurator!
 
-	func installDependencies(viewModel: HubViewModel) {
+	func installDependencies(viewModel: HubViewModel, _ locationManager: LocationManager) {
 		self.viewModel = viewModel
+        self.locationManager = locationManager
 	}
 
-	override func viewDidLoad() {
+    override func viewDidLoad() {
+        self.locationManager.requestPermission()
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
 	}

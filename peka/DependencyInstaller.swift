@@ -27,6 +27,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(Executor.self) { _ in Executor() }
         defaultContainer.register(HttpHeadersProvider.self) { _ in PekaHttpHeadersProvider() }
         defaultContainer.register(FormBodyBuilder.self) { _ in FormUrlEncodedBuilder() }
+        defaultContainer.registerPerContainerLifetime(LocationManager.self) { _ in PekaLocationManager() }
     }
     
     private class func registerProviders() {
@@ -46,6 +47,9 @@ extension SwinjectStoryboard {
     }
     
     private class func registerViewControllers() {
+        defaultContainer.registerForStoryboard(HubViewController.self) { r, c in
+            c.installDependencies(r.resolve(HubViewModel.self)!, r.resolve(LocationManager.self)!)
+        }
         defaultContainer.registerForStoryboard(SearchViewController.self) { r, c in
             let navigationController = r.resolve(SearchNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(SearchViewModel.self)!
@@ -66,9 +70,16 @@ extension SwinjectStoryboard {
             let viewModel = r.resolve(BollardViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
+        defaultContainer.registerForStoryboard(MapViewController.self) { r, c in
+            c.installDependencies(r.resolve(MapViewModel.self)!, r.resolve(LocationManager.self)!)
+        }
+        defaultContainer.registerForStoryboard(FavoriteViewController.self) { r, c in
+            c.installDependencies(r.resolve(FavoriteViewModel.self)!, r.resolve(LocationManager.self)!)
+        }
     }
     
     private class func registerViewModels() {
+        defaultContainer.register(HubViewModel.self) { _ in HubViewModel() }
         defaultContainer.register(SearchViewModel.self) { r in
             SearchViewModel(executor: r.resolve(Executor.self)!)
         }
@@ -81,6 +92,8 @@ extension SwinjectStoryboard {
         defaultContainer.register(BollardViewModel.self) { r in
             BollardViewModel(executor: r.resolve(Executor.self)!)
         }
+        defaultContainer.register(MapViewModel.self) { _ in MapViewModel() }
+        defaultContainer.register(FavoriteViewModel.self) { _ in FavoriteViewModel() }
     }
     
     private class func registerCommands() {

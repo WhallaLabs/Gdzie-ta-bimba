@@ -16,3 +16,4 @@ pod 'RxOptional'
 pod 'Swinject'
 pod 'SwiftyJSON'
 pod 'RxDataSources'
+pod "RxMKMapView"

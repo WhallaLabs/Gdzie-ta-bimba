@@ -11,5 +11,4 @@ import Foundation
 struct StopPoint {
     let id: String
     let name: String
-    var isFavourite: Bool
 }

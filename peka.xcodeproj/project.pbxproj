@@ -110,6 +110,10 @@
 		38F391941D4A5CBA005F4A42 /* NSMutableDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391931D4A5CBA005F4A42 /* NSMutableDataExtensions.swift */; };
 		38F391961D4A5CFF005F4A42 /* SwinjectContainerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391951D4A5CFF005F4A42 /* SwinjectContainerExtensions.swift */; };
 		38F391981D4A5D1F005F4A42 /* DependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391971D4A5D1F005F4A42 /* DependencyInstaller.swift */; };
+		38F777881D507F490070265E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F777871D507F490070265E /* MapKit.framework */; };
+		38F7778A1D5083100070265E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F777891D5083100070265E /* CoreLocation.framework */; };
+		38F7778D1D50861A0070265E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7778C1D50861A0070265E /* LocationManager.swift */; };
+		38F7778F1D5086C70070265E /* PekaLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7778E1D5086C70070265E /* PekaLocationManager.swift */; };
 		38FE8D791D4F44DB00E6B5BF /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE8D781D4F44DB00E6B5BF /* Caching.swift */; };
 		38FE8D7B1D4F470C00E6B5BF /* StopPointPushpinsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE8D7A1D4F470C00E6B5BF /* StopPointPushpinsCache.swift */; };
 		38FE8D7D1D4F49F900E6B5BF /* GetStopPointPushpinsQueryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE8D7C1D4F49F900E6B5BF /* GetStopPointPushpinsQueryHandlerTests.swift */; };
@@ -263,6 +267,10 @@
 		38F391931D4A5CBA005F4A42 /* NSMutableDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableDataExtensions.swift; sourceTree = "<group>"; };
 		38F391951D4A5CFF005F4A42 /* SwinjectContainerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwinjectContainerExtensions.swift; sourceTree = "<group>"; };
 		38F391971D4A5D1F005F4A42 /* DependencyInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInstaller.swift; sourceTree = "<group>"; };
+		38F777871D507F490070265E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		38F777891D5083100070265E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		38F7778C1D50861A0070265E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		38F7778E1D5086C70070265E /* PekaLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PekaLocationManager.swift; sourceTree = "<group>"; };
 		38FE8D781D4F44DB00E6B5BF /* Caching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
 		38FE8D7A1D4F470C00E6B5BF /* StopPointPushpinsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointPushpinsCache.swift; sourceTree = "<group>"; };
 		38FE8D7C1D4F49F900E6B5BF /* GetStopPointPushpinsQueryHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStopPointPushpinsQueryHandlerTests.swift; sourceTree = "<group>"; };
@@ -302,6 +310,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F7778A1D5083100070265E /* CoreLocation.framework in Frameworks */,
+				38F777881D507F490070265E /* MapKit.framework in Frameworks */,
 				F58146E762DAE6DA0ACC5F91 /* Pods_peka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				385736CC1D4B434700C8D772 /* StopPoint.swift */,
+				385736D41D4B463B00C8D772 /* StopPointMapper.swift */,
 				385736CE1D4B437E00C8D772 /* StopPointPushpin.swift */,
 				385736D01D4B43C500C8D772 /* StopPointPushpinMapper.swift */,
 			);
@@ -615,7 +626,6 @@
 				38F3916A1D4A56C0005F4A42 /* Rest */,
 				38F391821D4A5952005F4A42 /* AttributedTextBuilder.swift */,
 				38F391501D4A523F005F4A42 /* Box.swift */,
-				385736D41D4B463B00C8D772 /* StopPointMapper.swift */,
 				38F391581D4A52A6005F4A42 /* XibLoader.swift */,
 			);
 			path = Framework;
@@ -624,6 +634,7 @@
 		38DAC1EA1D4A4A80001DF664 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				38F7778B1D5086090070265E /* LocationManager */,
 				385736F71D4B56AA00C8D772 /* PekaApiProviderExtension.swift */,
 				385736DD1D4B4A1A00C8D772 /* PekaHttpHeadersProvider.swift */,
 				385736F51D4B531A00C8D772 /* RequestBodyBuilder.swift */,
@@ -711,6 +722,15 @@
 				38F391851D4A59BC005F4A42 /* ObjectMappable.swift */,
 			);
 			path = Mappers;
+			sourceTree = "<group>";
+		};
+		38F7778B1D5086090070265E /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				38F7778C1D50861A0070265E /* LocationManager.swift */,
+				38F7778E1D5086C70070265E /* PekaLocationManager.swift */,
+			);
+			path = LocationManager;
 			sourceTree = "<group>";
 		};
 		38FE8D7E1D4F55CD00E6B5BF /* Favorite */ = {
@@ -811,6 +831,8 @@
 		D5CB4B0F6A4A0D388E4CE91C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38F777891D5083100070265E /* CoreLocation.framework */,
+				38F777871D507F490070265E /* MapKit.framework */,
 				0C69FE4B7E69D0F004F07DB7 /* Pods_peka.framework */,
 				9EA520050966D3BB131EDAFE /* Pods_pekaTests.framework */,
 			);
@@ -1078,6 +1100,7 @@
 				385736EA1D4B4C6800C8D772 /* SearchResult.swift in Sources */,
 				38F3918E1D4A5AE2005F4A42 /* RestApiProvider.swift in Sources */,
 				38FE8E0C1D4F919700E6B5BF /* BollardsViewController.swift in Sources */,
+				38F7778F1D5086C70070265E /* PekaLocationManager.swift in Sources */,
 				386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */,
 				386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */,
 				38FE8DFF1D4F8F6900E6B5BF /* GroupedDirectionsCell.swift in Sources */,
@@ -1143,6 +1166,7 @@
 				38FE8D791D4F44DB00E6B5BF /* Caching.swift in Sources */,
 				385737101D4B641B00C8D772 /* LineBollardsMapper.swift in Sources */,
 				38FE8E111D4F937700E6B5BF /* SearchNavigationController.swift in Sources */,
+				38F7778D1D50861A0070265E /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
