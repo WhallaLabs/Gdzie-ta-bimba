@@ -22,4 +22,9 @@ final class FavoriteViewModel {
         let observable: Observable<[Bollard]> = self.executor.execute(GetFavoriteBollardsQuery())
         return observable.bindTo(self.bollards)
     }
+    
+    func nearesStop(coordinates: Coordinates) -> Observable<StopPointPushpin> {
+        let observable: Observable<StopPointPushpin> = self.executor.execute(GetNearestStopQuery(coordinates: coordinates))
+        return observable
+    }
 }

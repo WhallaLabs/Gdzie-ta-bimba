@@ -14,3 +14,11 @@ struct StopPointPushpin {
     let coordinates: Coordinates
     let headsigns: String
 }
+
+extension StopPointPushpin: Equatable {
+    
+}
+
+func ==(lhs: StopPointPushpin, rhs: StopPointPushpin) -> Bool {
+    return lhs.id == rhs.id
+}

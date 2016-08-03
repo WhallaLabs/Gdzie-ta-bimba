@@ -20,6 +20,7 @@ final class FavoriteViewController: UIViewController {
 
 	@IBOutlet private weak var viewConfigurator: FavoriteViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var nearestStopPointView: NearestStopPointView!
     
 	func installDependencies(viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
 		self.viewModel = viewModel
@@ -37,9 +38,14 @@ final class FavoriteViewController: UIViewController {
 	
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.locationManager.userLocation().subscribeNext { coordinates in
-            print(coordinates)
-        }.addDisposableTo(self.viewDisposables)
+        
+        self.locationManager.userLocation().doOnNext { print($0) }
+            .throttle(1, scheduler: MainScheduler.instance)
+            .flatMap { [unowned self] coordinates in self.viewModel.nearesStop(coordinates) }
+            .distinctUntilChanged()
+            .map { $0 as StopPointPushpin? }
+            .bindTo(self.nearestStopPointView.stopPoint)
+            .addDisposableTo(self.viewDisposables)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -54,8 +60,13 @@ final class FavoriteViewController: UIViewController {
     }
     
     private func registerForEvents() {
-        self.tableView.rx_modelSelected(Bollard.self).subscribeNext { [unowned self] bollard in
-            self.navigationDelegate.showBollard(bollard)
-        }.addDisposableTo(self.disposables)
+        let favoriteBollardObservable = self.tableView.rx_modelSelected(Bollard.self).map { $0.symbol }
+        let nearestStopAction = self.nearestStopPointView.action.map { $0.id }
+        
+        Observable.of(favoriteBollardObservable, nearestStopAction)
+            .merge()
+            .subscribeNext { [unowned self] symbol in
+                self.navigationDelegate.showBollard(symbol)
+            }.addDisposableTo(self.disposables)
     }
 }

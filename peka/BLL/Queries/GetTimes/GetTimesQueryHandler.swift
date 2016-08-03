@@ -24,7 +24,7 @@ final class GetTimesQueryHandler: QueryHandler {
         let parameters = self.bodyBuilder.getTimes(query.bollard)
         let mapper = WrappedObjectMapper(ArrayMapper(TimeMapper()), pathToObject: "success", "times")
         let apiProvider = self.apiProvider
-        let observable = Observable<Int>.timer(0, period: 10, scheduler: MainScheduler.instance).flatMap { _ in apiProvider.post(parameters, mapper: mapper) }
+        let observable = Observable<Int>.timer(0, period: 20, scheduler: MainScheduler.instance).flatMap { _ in apiProvider.post(parameters, mapper: mapper) }
         return observable
     }
 }

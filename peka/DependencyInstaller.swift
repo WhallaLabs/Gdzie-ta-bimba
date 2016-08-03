@@ -155,6 +155,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetSearchHistoryQuery)) { r in
             GetSearchHistoryQueryHandler(recentSearchRepository: r.resolve(RecentSearchRepository.self)!)
         }
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetNearestStopQuery)) { r in
+            GetNearestStopQueryHandler(stopPointsCache: r.resolve(StopPointPushpinsCache.self)!)
+        }
     }
     
     private class func registerNavigationControllers() {

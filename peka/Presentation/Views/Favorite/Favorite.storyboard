@@ -16,11 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSB-nz-Y92" customClass="NearestStopPointView" customModule="peka" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="124"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="wjq-2P-bZg"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-O5-Jhc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="188" width="600" height="412"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="4lX-op-ngV">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
@@ -28,22 +35,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fSB-nz-Y92" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="9aj-g7-wTq"/>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="APj-xg-UPx"/>
+                            <constraint firstAttribute="trailing" secondItem="fSB-nz-Y92" secondAttribute="trailing" id="Auc-aK-YHK"/>
                             <constraint firstAttribute="bottom" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="AxC-4l-2fs"/>
+                            <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="fSB-nz-Y92" secondAttribute="bottom" id="Qp1-fZ-m8W"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="Vch-w2-7Hn"/>
+                            <constraint firstItem="fSB-nz-Y92" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="cQR-xj-6Zk"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="eLq-Ya-LAP"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="mUi-0e-cxM"/>
+                            <constraint firstItem="fSB-nz-Y92" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="qeP-sd-Ego"/>
                             <constraint firstAttribute="trailing" secondItem="UWU-O5-Jhc" secondAttribute="trailing" id="ydp-xP-0jL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="cQR-xj-6Zk"/>
                                 <exclude reference="Vch-w2-7Hn"/>
+                                <exclude reference="mUi-0e-cxM"/>
                                 <exclude reference="APj-xg-UPx"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Wxv-lE-I25"/>
                     <connections>
+                        <outlet property="nearestStopPointView" destination="fSB-nz-Y92" id="yLm-za-ruw"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="PQV-bQ-gGI"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>

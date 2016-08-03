@@ -65,6 +65,8 @@
 		386898C41D4FAF48004CA51B /* LineBollardsViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */; };
 		386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */; };
 		386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */; };
+		389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */; };
+		389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BE9781D5223F70033FF87 /* NearestStopPointView.swift */; };
 		38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */; };
 		38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */; };
 		38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */; };
@@ -84,6 +86,8 @@
 		38ABF5291D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5271D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift */; };
 		38ABF52D1D5207D800B6E9F7 /* SaveSearchResultCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF52B1D5207D800B6E9F7 /* SaveSearchResultCommand.swift */; };
 		38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */; };
+		38ABF5321D5219DA00B6E9F7 /* GetNearestStopQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5301D5219DA00B6E9F7 /* GetNearestStopQuery.swift */; };
+		38ABF5331D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5311D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift */; };
 		38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFFA1D50103600937FD2 /* BollardViewModel.swift */; };
 		38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE41D50081700937FD2 /* BollardCell.swift */; };
 		38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7FFE51D50081700937FD2 /* BollardCell.xib */; };
@@ -247,6 +251,8 @@
 		386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewConfigurator.swift; sourceTree = "<group>"; };
 		386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewController.swift; sourceTree = "<group>"; };
 		386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewModel.swift; sourceTree = "<group>"; };
+		389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearestStopPointView.xib; sourceTree = "<group>"; };
+		389BE9781D5223F70033FF87 /* NearestStopPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearestStopPointView.swift; sourceTree = "<group>"; };
 		38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointPushpinsToAnnotationsConverter.swift; sourceTree = "<group>"; };
 		38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointAnnotation.swift; sourceTree = "<group>"; };
 		38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +272,8 @@
 		38ABF5271D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSearchHistoryQueryHandler.swift; sourceTree = "<group>"; };
 		38ABF52B1D5207D800B6E9F7 /* SaveSearchResultCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSearchResultCommand.swift; sourceTree = "<group>"; };
 		38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSearchResultCommandHandler.swift; sourceTree = "<group>"; };
+		38ABF5301D5219DA00B6E9F7 /* GetNearestStopQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNearestStopQuery.swift; sourceTree = "<group>"; };
+		38ABF5311D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNearestStopQueryHandler.swift; sourceTree = "<group>"; };
 		38D7FFE41D50081700937FD2 /* BollardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardCell.swift; sourceTree = "<group>"; };
 		38D7FFE51D50081700937FD2 /* BollardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollardCell.xib; sourceTree = "<group>"; };
 		38D7FFE91D500BCF00937FD2 /* TimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
@@ -460,6 +468,7 @@
 				386898AB1D4F9F25004CA51B /* GetBollardsByStopPoint */,
 				386898B51D4FA8F9004CA51B /* GetBollardsByStreet */,
 				3826AE8A1D51419C0020678C /* GetFavoriteBollards */,
+				38ABF52F1D52199000B6E9F7 /* GetNearestStop */,
 				38ABF5251D52073900B6E9F7 /* GetSearchHistory */,
 				385736EB1D4B4CDD00C8D772 /* GetStopPointPushpins */,
 				38D7FFEF1D500DBD00937FD2 /* GetTimes */,
@@ -577,6 +586,15 @@
 			path = LineBollards;
 			sourceTree = "<group>";
 		};
+		389BE9751D5223C20033FF87 /* NearestStopPoint */ = {
+			isa = PBXGroup;
+			children = (
+				389BE9781D5223F70033FF87 /* NearestStopPointView.swift */,
+				389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */,
+			);
+			path = NearestStopPoint;
+			sourceTree = "<group>";
+		};
 		38ABF5021D51DF5600B6E9F7 /* FavoriteBollardsRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +668,15 @@
 				38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */,
 			);
 			path = SaveSearchResult;
+			sourceTree = "<group>";
+		};
+		38ABF52F1D52199000B6E9F7 /* GetNearestStop */ = {
+			isa = PBXGroup;
+			children = (
+				38ABF5301D5219DA00B6E9F7 /* GetNearestStopQuery.swift */,
+				38ABF5311D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift */,
+			);
+			path = GetNearestStop;
 			sourceTree = "<group>";
 		};
 		38D7FFE31D50080500937FD2 /* Bollard */ = {
@@ -962,6 +989,7 @@
 		38FE8DF11D4F810C00E6B5BF /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				389BE9751D5223C20033FF87 /* NearestStopPoint */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1127,6 +1155,7 @@
 				38FE8E081D4F919700E6B5BF /* Bollards.storyboard in Resources */,
 				38FE8DFB1D4F825300E6B5BF /* SearchResultCell.xib in Resources */,
 				38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */,
+				389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */,
 				38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */,
 				38FE8D831D4F55F100E6B5BF /* Favorite.storyboard in Resources */,
 				38FE8D8C1D4F561100E6B5BF /* Search.storyboard in Resources */,
@@ -1259,6 +1288,7 @@
 				38FE8E0F1D4F932800E6B5BF /* SearchNavigationControllerDelegate.swift in Sources */,
 				3826AE8D1D5141AE0020678C /* GetFavoriteBollardsQuery.swift in Sources */,
 				38FE8D971D4F562700E6B5BF /* MapViewController.swift in Sources */,
+				38ABF5331D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift in Sources */,
 				385736F81D4B56AA00C8D772 /* PekaApiProviderExtension.swift in Sources */,
 				38ABF5281D52074B00B6E9F7 /* GetSearchHistoryQuery.swift in Sources */,
 				385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */,
@@ -1373,6 +1403,7 @@
 				38FE8D7B1D4F470C00E6B5BF /* StopPointPushpinsCache.swift in Sources */,
 				38F391981D4A5D1F005F4A42 /* DependencyInstaller.swift in Sources */,
 				38FE8E091D4F919700E6B5BF /* BollardsNavigationController.swift in Sources */,
+				389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */,
 				38F391631D4A54F3005F4A42 /* Filtering.swift in Sources */,
 				385736CF1D4B437E00C8D772 /* StopPointPushpin.swift in Sources */,
 				38ABF50C1D51EE2700B6E9F7 /* FavoriteNavigationController.swift in Sources */,
@@ -1382,6 +1413,7 @@
 				38FE8D8F1D4F561100E6B5BF /* SearchViewModel.swift in Sources */,
 				38F3916E1D4A5702005F4A42 /* HttpBodyParameter.swift in Sources */,
 				385737121D4B642B00C8D772 /* LineBollards.swift in Sources */,
+				38ABF5321D5219DA00B6E9F7 /* GetNearestStopQuery.swift in Sources */,
 				38FE8D791D4F44DB00E6B5BF /* Caching.swift in Sources */,
 				385737101D4B641B00C8D772 /* LineBollardsMapper.swift in Sources */,
 				38ABF5131D51F37B00B6E9F7 /* RawJsonMapper.swift in Sources */,
