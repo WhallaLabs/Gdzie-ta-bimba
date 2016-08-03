@@ -34,6 +34,11 @@ final class RequestBodyBuilder {
         return self.methodParamter("getTimes", value: symbolJson)
     }
     
+    func bollardMessage(bollardSymbol: String) -> [HttpBodyParameter] {
+        let symbolJson = self.symbolJson(bollardSymbol)
+        return self.methodParamter("findMessagesForBollard", value: symbolJson)
+    }
+    
     private func patternJson(pattern: String) -> String {
         return "{\"pattern\":\"\(pattern)\"}"
     }

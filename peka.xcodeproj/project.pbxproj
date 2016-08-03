@@ -73,6 +73,17 @@
 		38ABF5081D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */; };
 		38ABF50A1D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */; };
 		38ABF50C1D51EE2700B6E9F7 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF50B1D51EE2700B6E9F7 /* FavoriteNavigationController.swift */; };
+		38ABF5101D51F23A00B6E9F7 /* GetBollardMessageQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF50E1D51F23A00B6E9F7 /* GetBollardMessageQuery.swift */; };
+		38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF50F1D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift */; };
+		38ABF5131D51F37B00B6E9F7 /* RawJsonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5121D51F37B00B6E9F7 /* RawJsonMapper.swift */; };
+		38ABF51D1D51FFDA00B6E9F7 /* RecentSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF51C1D51FFDA00B6E9F7 /* RecentSearchRepository.swift */; };
+		38ABF51F1D52002E00B6E9F7 /* RealmRecentSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF51E1D52002E00B6E9F7 /* RealmRecentSearchRepository.swift */; };
+		38ABF5221D52006700B6E9F7 /* SearchResultRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5211D52006700B6E9F7 /* SearchResultRealm.swift */; };
+		38ABF5241D52027700B6E9F7 /* SearchResultRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5231D52027700B6E9F7 /* SearchResultRealmMapper.swift */; };
+		38ABF5281D52074B00B6E9F7 /* GetSearchHistoryQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5261D52074B00B6E9F7 /* GetSearchHistoryQuery.swift */; };
+		38ABF5291D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5271D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift */; };
+		38ABF52D1D5207D800B6E9F7 /* SaveSearchResultCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF52B1D5207D800B6E9F7 /* SaveSearchResultCommand.swift */; };
+		38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */; };
 		38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFFA1D50103600937FD2 /* BollardViewModel.swift */; };
 		38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE41D50081700937FD2 /* BollardCell.swift */; };
 		38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7FFE51D50081700937FD2 /* BollardCell.xib */; };
@@ -244,6 +255,17 @@
 		38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteGroupedDirectionsComparator.swift; sourceTree = "<group>"; };
 		38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		38ABF50B1D51EE2700B6E9F7 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
+		38ABF50E1D51F23A00B6E9F7 /* GetBollardMessageQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBollardMessageQuery.swift; sourceTree = "<group>"; };
+		38ABF50F1D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBollardMessageQueryHandler.swift; sourceTree = "<group>"; };
+		38ABF5121D51F37B00B6E9F7 /* RawJsonMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawJsonMapper.swift; sourceTree = "<group>"; };
+		38ABF51C1D51FFDA00B6E9F7 /* RecentSearchRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchRepository.swift; sourceTree = "<group>"; };
+		38ABF51E1D52002E00B6E9F7 /* RealmRecentSearchRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmRecentSearchRepository.swift; sourceTree = "<group>"; };
+		38ABF5211D52006700B6E9F7 /* SearchResultRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultRealm.swift; sourceTree = "<group>"; };
+		38ABF5231D52027700B6E9F7 /* SearchResultRealmMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultRealmMapper.swift; sourceTree = "<group>"; };
+		38ABF5261D52074B00B6E9F7 /* GetSearchHistoryQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSearchHistoryQuery.swift; sourceTree = "<group>"; };
+		38ABF5271D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSearchHistoryQueryHandler.swift; sourceTree = "<group>"; };
+		38ABF52B1D5207D800B6E9F7 /* SaveSearchResultCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSearchResultCommand.swift; sourceTree = "<group>"; };
+		38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSearchResultCommandHandler.swift; sourceTree = "<group>"; };
 		38D7FFE41D50081700937FD2 /* BollardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardCell.swift; sourceTree = "<group>"; };
 		38D7FFE51D50081700937FD2 /* BollardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollardCell.xib; sourceTree = "<group>"; };
 		38D7FFE91D500BCF00937FD2 /* TimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
@@ -367,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				38ABF5021D51DF5600B6E9F7 /* FavoriteBollardsRepository */,
+				38ABF51B1D51FFC400B6E9F7 /* RecentSearchRepository */,
 			);
 			path = DAL;
 			sourceTree = "<group>";
@@ -383,6 +406,7 @@
 		3826AE841D5120600020678C /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				38ABF52A1D5207CA00B6E9F7 /* SaveSearchResult */,
 				3826AE851D5135880020678C /* ToggleBollardFavorite */,
 			);
 			path = Commands;
@@ -431,10 +455,12 @@
 			isa = PBXGroup;
 			children = (
 				3826AE7F1D511A9E0020678C /* GetBollard */,
+				38ABF50D1D51F20F00B6E9F7 /* GetBollardMessage */,
 				386898B01D4FA80D004CA51B /* GetBollardsByLine */,
 				386898AB1D4F9F25004CA51B /* GetBollardsByStopPoint */,
 				386898B51D4FA8F9004CA51B /* GetBollardsByStreet */,
 				3826AE8A1D51419C0020678C /* GetFavoriteBollards */,
+				38ABF5251D52073900B6E9F7 /* GetSearchHistory */,
 				385736EB1D4B4CDD00C8D772 /* GetStopPointPushpins */,
 				38D7FFEF1D500DBD00937FD2 /* GetTimes */,
 				385736EC1D4B4CEC00C8D772 /* Search */,
@@ -580,6 +606,52 @@
 			path = FavoriteBollards;
 			sourceTree = "<group>";
 		};
+		38ABF50D1D51F20F00B6E9F7 /* GetBollardMessage */ = {
+			isa = PBXGroup;
+			children = (
+				38ABF50E1D51F23A00B6E9F7 /* GetBollardMessageQuery.swift */,
+				38ABF50F1D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift */,
+			);
+			path = GetBollardMessage;
+			sourceTree = "<group>";
+		};
+		38ABF51B1D51FFC400B6E9F7 /* RecentSearchRepository */ = {
+			isa = PBXGroup;
+			children = (
+				38ABF51E1D52002E00B6E9F7 /* RealmRecentSearchRepository.swift */,
+				38ABF51C1D51FFDA00B6E9F7 /* RecentSearchRepository.swift */,
+				38ABF5231D52027700B6E9F7 /* SearchResultRealmMapper.swift */,
+			);
+			path = RecentSearchRepository;
+			sourceTree = "<group>";
+		};
+		38ABF5201D52005100B6E9F7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				385736E91D4B4C6800C8D772 /* SearchResult.swift */,
+				38ABF5211D52006700B6E9F7 /* SearchResultRealm.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		38ABF5251D52073900B6E9F7 /* GetSearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				38ABF5261D52074B00B6E9F7 /* GetSearchHistoryQuery.swift */,
+				38ABF5271D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift */,
+			);
+			path = GetSearchHistory;
+			sourceTree = "<group>";
+		};
+		38ABF52A1D5207CA00B6E9F7 /* SaveSearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				38ABF52B1D5207D800B6E9F7 /* SaveSearchResultCommand.swift */,
+				38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */,
+			);
+			path = SaveSearchResult;
+			sourceTree = "<group>";
+		};
 		38D7FFE31D50080500937FD2 /* Bollard */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,10 +755,10 @@
 				385736C61D4B415F00C8D772 /* Coordinates */,
 				385737041D4B607400C8D772 /* Direction */,
 				3857370E1D4B640C00C8D772 /* LineBollards */,
+				38ABF5201D52005100B6E9F7 /* Search */,
 				385736CB1D4B431700C8D772 /* StopPoint */,
 				385737091D4B617900C8D772 /* Time */,
 				385736E71D4B4C1E00C8D772 /* LineMapper.swift */,
-				385736E91D4B4C6800C8D772 /* SearchResult.swift */,
 				385736E51D4B4BC700C8D772 /* StreetMapper.swift */,
 				385736F31D4B4F0E00C8D772 /* WrappedObjectMapper.swift */,
 			);
@@ -833,6 +905,7 @@
 				38F391871D4A59DE005F4A42 /* JsonMappable.swift */,
 				38F391891D4A59E9005F4A42 /* NoContentMapper.swift */,
 				38F391851D4A59BC005F4A42 /* ObjectMappable.swift */,
+				38ABF5121D51F37B00B6E9F7 /* RawJsonMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -1175,6 +1248,7 @@
 				385736C51D4B40F700C8D772 /* Coordinates.swift in Sources */,
 				385737141D4B69B500C8D772 /* GroupedDirections.swift in Sources */,
 				385736FA1D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift in Sources */,
+				38ABF5221D52006700B6E9F7 /* SearchResultRealm.swift in Sources */,
 				3826AE891D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift in Sources */,
 				385736DE1D4B4A1A00C8D772 /* PekaHttpHeadersProvider.swift in Sources */,
 				384422101D4A5F9B007B44FA /* VariableExtensions.swift in Sources */,
@@ -1186,10 +1260,12 @@
 				3826AE8D1D5141AE0020678C /* GetFavoriteBollardsQuery.swift in Sources */,
 				38FE8D971D4F562700E6B5BF /* MapViewController.swift in Sources */,
 				385736F81D4B56AA00C8D772 /* PekaApiProviderExtension.swift in Sources */,
+				38ABF5281D52074B00B6E9F7 /* GetSearchHistoryQuery.swift in Sources */,
 				385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */,
 				386898C31D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift in Sources */,
 				38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */,
 				385736F61D4B531A00C8D772 /* RequestBodyBuilder.swift in Sources */,
+				38ABF5101D51F23A00B6E9F7 /* GetBollardMessageQuery.swift in Sources */,
 				386898B31D4FA81F004CA51B /* GetBollardsByLineQuery.swift in Sources */,
 				38D7FFF31D500DED00937FD2 /* GetTimesQueryHandler.swift in Sources */,
 				3826AE821D511C620020678C /* GetBollardQuery.swift in Sources */,
@@ -1227,6 +1303,7 @@
 				38F7778F1D5086C70070265E /* PekaLocationManager.swift in Sources */,
 				386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */,
 				386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */,
+				38ABF52D1D5207D800B6E9F7 /* SaveSearchResultCommand.swift in Sources */,
 				38FE8DFF1D4F8F6900E6B5BF /* GroupedDirectionsCell.swift in Sources */,
 				38F391591D4A52A6005F4A42 /* XibLoader.swift in Sources */,
 				38ABF5081D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift in Sources */,
@@ -1245,8 +1322,10 @@
 				385736D51D4B463B00C8D772 /* StopPointMapper.swift in Sources */,
 				386898AF1D4F9F7F004CA51B /* GetBollardsByStopPointQueryHandler.swift in Sources */,
 				3826AE7E1D50E6A70020678C /* BollardRealmMapper.swift in Sources */,
+				38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */,
 				38FE8DEE1D4F731800E6B5BF /* UIStoryboardExtensions.swift in Sources */,
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
+				38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
 				38F391811D4A58F9005F4A42 /* Executor.swift in Sources */,
 				38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */,
@@ -1262,6 +1341,7 @@
 				38F391741D4A57DD005F4A42 /* RequestBuilder.swift in Sources */,
 				38F391831D4A5952005F4A42 /* AttributedTextBuilder.swift in Sources */,
 				38FE8D851D4F55F100E6B5BF /* FavoriteViewController.swift in Sources */,
+				38ABF51F1D52002E00B6E9F7 /* RealmRecentSearchRepository.swift in Sources */,
 				38D7FFEE1D500C3800937FD2 /* DirectionDescription.swift in Sources */,
 				385736FE1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift in Sources */,
 				386898AE1D4F9F7F004CA51B /* GetBollardsByStopPointQuery.swift in Sources */,
@@ -1275,15 +1355,18 @@
 				38F3916C1D4A56ED005F4A42 /* HttpHeadersProvider.swift in Sources */,
 				38F391651D4A560D005F4A42 /* UICollectionViewExtensions.swift in Sources */,
 				38D7FFEB1D500BCF00937FD2 /* TimeCell.swift in Sources */,
+				38ABF51D1D51FFDA00B6E9F7 /* RecentSearchRepository.swift in Sources */,
 				38D7FFFF1D50103600937FD2 /* BollardViewController.swift in Sources */,
 				385736FC1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift in Sources */,
 				386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */,
 				38F3917A1D4A58D9005F4A42 /* Query.swift in Sources */,
 				38FE8E0A1D4F919700E6B5BF /* BollardsNavigationControllerDelegate.swift in Sources */,
 				38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */,
+				38ABF5291D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift in Sources */,
 				3857370B1D4B618B00C8D772 /* TimeMapper.swift in Sources */,
 				385736DC1D4B47B300C8D772 /* ApiConfig.swift in Sources */,
 				385736D11D4B43C500C8D772 /* StopPointPushpinMapper.swift in Sources */,
+				38ABF5241D52027700B6E9F7 /* SearchResultRealmMapper.swift in Sources */,
 				386898B81D4FA90A004CA51B /* GetBollardsByStreetQuery.swift in Sources */,
 				38F3917F1D4A58EE005F4A42 /* CommandHandler.swift in Sources */,
 				38DAC2021D4A4B7D001DF664 /* HubViewController.swift in Sources */,
@@ -1301,6 +1384,7 @@
 				385737121D4B642B00C8D772 /* LineBollards.swift in Sources */,
 				38FE8D791D4F44DB00E6B5BF /* Caching.swift in Sources */,
 				385737101D4B641B00C8D772 /* LineBollardsMapper.swift in Sources */,
+				38ABF5131D51F37B00B6E9F7 /* RawJsonMapper.swift in Sources */,
 				38FE8E111D4F937700E6B5BF /* SearchNavigationController.swift in Sources */,
 				38F7778D1D50861A0070265E /* LocationManager.swift in Sources */,
 			);
@@ -1426,12 +1510,15 @@
 			baseConfigurationReference = 459517C145CE71468CF27A37 /* Pods-peka.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = peka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whallalabs.peka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1440,12 +1527,14 @@
 			baseConfigurationReference = 3DD5637EB6E58D6DB8BF16E1 /* Pods-peka.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = peka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whallalabs.peka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

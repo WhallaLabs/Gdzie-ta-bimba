@@ -33,19 +33,31 @@ final class SearchViewController: UIViewController {
         self.setupBinding()
         self.viewModel.initializeSearch().addDisposableTo(self.disposables)
         self.resigsterForEvents()
+        self.viewModel.loadSearchHistory()
 	}
 	
     private func setupBinding() {
         self.searchBar.rx_text.bindTo(self.viewModel.searchPhrase)
             .addDisposableTo(self.disposables)
         
-        self.viewModel.searchResult.bindTo(self.tableView.configurableCells(SearchResultCell.self))
+        let searchIsEmptyObservable = self.searchBar.rx_text.map { $0.isEmpty }
+        
+        let seachItemsObservable = Observable<[SearchResult]>.combineLatest(searchIsEmptyObservable, self.viewModel.searchResult, self.viewModel.searchHistory.asObservable()) { searchIsEmpty, searchResult, searchHistory in
+            if searchIsEmpty {
+                return searchHistory
+            } else {
+                return searchResult
+            }
+        }
+        
+        seachItemsObservable.bindTo(self.tableView.configurableCells(SearchResultCell.self))
             .addDisposableTo(self.disposables)
     }
     
     private func resigsterForEvents() {
         self.tableView.rx_modelSelected(SearchResult.self)
             .subscribeNext { [unowned self] searchResult in
+                self.viewModel.saveSearch(searchResult)
                 self.navigationDelegate.showBollards(searchResult)
             }.addDisposableTo(self.disposables)
         

@@ -17,6 +17,8 @@ final class SearchViewModel {
         return self.searchResultSubject.asObservable()
     }
     
+    let searchHistory = Variable<[SearchResult]>([])
+    
     init(executor: Executor) {
         self.executor = executor
     }
@@ -32,5 +34,14 @@ final class SearchViewModel {
             }.startWith([])
             .catchErrorJustReturn([])
             .bindTo(self.searchResultSubject)
+    }
+    
+    func loadSearchHistory() -> Disposable {
+        let observable: Observable<[SearchResult]> = self.executor.execute(GetSearchHistoryQuery())
+        return observable.bindTo(self.searchHistory)
+    }
+    
+    func saveSearch(searchResult: SearchResult) {
+        self.executor.execute(SaveSearchResultCommand(searchResult: searchResult))
     }
 }
