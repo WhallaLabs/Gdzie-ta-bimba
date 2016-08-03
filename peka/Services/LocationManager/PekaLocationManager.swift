@@ -11,6 +11,7 @@ import RxSwift
 import CoreLocation
 
 final class PekaLocationManager : LocationManager {
+    
     private let manager = CLLocationManager()
     
     var hasPermission: Bool {

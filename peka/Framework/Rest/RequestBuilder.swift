@@ -9,22 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-protocol BodyRequestBuilder {
-    var url: String { get }
-    var httpMethod: HttpMethod { get }
-    func add(json json: JSON?) -> BodyRequestBuilder
-    func add(headers headers: [String: String]) -> BodyRequestBuilder
-    func getRequest() -> NSMutableURLRequest
-    func setMethod(method: HttpMethod) -> BodyRequestBuilder
-}
-
-protocol QueryRequestBuilder: BodyRequestBuilder {
-    func add(resource resource: String) -> QueryRequestBuilder
-    func add(pathParameter pathParameter: String?) -> QueryRequestBuilder
-    func add(queryParameters queryParameters: [String: String]) -> BodyRequestBuilder
-    func add(bodyParameters parameters: [HttpBodyParameter]) -> BodyRequestBuilder
-}
-
 final class RequestBuilder: QueryRequestBuilder {
     
     private var request: NSMutableURLRequest?

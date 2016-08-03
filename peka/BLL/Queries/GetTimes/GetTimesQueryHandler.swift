@@ -11,6 +11,7 @@ import Foundation
 import RxSwift
 
 final class GetTimesQueryHandler: QueryHandler {
+    
     private let apiProvider: RestApiProvider
     private let bodyBuilder: RequestBodyBuilder
     

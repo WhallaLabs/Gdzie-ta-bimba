@@ -10,6 +10,7 @@
 import Foundation
 
 final class GetBollardsByStopPointQuery: Query {
+    
     let stopPoint: StopPoint
     
     init(stopPoint: StopPoint) {

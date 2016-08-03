@@ -12,8 +12,8 @@ import Foundation
 final class GetBollardsByLineQueryHandler: QueryHandler {
     
     private let apiProvider: RestApiProvider
-    private let bodyBuilder: RequestBodyBuilder
     private let favoriteLineBollardsComparator: FavoriteLineBollardComparator
+    private let bodyBuilder: RequestBodyBuilder
     
     init(apiProvider: RestApiProvider, favoriteLineBollardsComparator: FavoriteLineBollardComparator) {
         self.apiProvider = apiProvider

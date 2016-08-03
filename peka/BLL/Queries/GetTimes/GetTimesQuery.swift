@@ -10,6 +10,7 @@
 import Foundation
 
 final class GetTimesQuery: Query {
+    
     let bollard: String
     
     init(bollard: String) {

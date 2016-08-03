@@ -109,6 +109,8 @@
 		38DAC2011D4A4B7D001DF664 /* HubViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FD1D4A4B7D001DF664 /* HubViewConfigurator.swift */; };
 		38DAC2021D4A4B7D001DF664 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FE1D4A4B7D001DF664 /* HubViewController.swift */; };
 		38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FF1D4A4B7D001DF664 /* HubViewModel.swift */; };
+		38E2C1231D523DAC0071C9E7 /* BodyRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C1221D523DAC0071C9E7 /* BodyRequestBuilder.swift */; };
+		38E2C1251D523DB70071C9E7 /* QueryRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C1241D523DB70071C9E7 /* QueryRequestBuilder.swift */; };
 		38F391511D4A523F005F4A42 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391501D4A523F005F4A42 /* Box.swift */; };
 		38F391531D4A525C005F4A42 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391521D4A525C005F4A42 /* Configurable.swift */; };
 		38F391551D4A5271005F4A42 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391541D4A5271005F4A42 /* Convertible.swift */; };
@@ -299,6 +301,8 @@
 		38DAC1FD1D4A4B7D001DF664 /* HubViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubViewConfigurator.swift; sourceTree = "<group>"; };
 		38DAC1FE1D4A4B7D001DF664 /* HubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubViewController.swift; sourceTree = "<group>"; };
 		38DAC1FF1D4A4B7D001DF664 /* HubViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubViewModel.swift; sourceTree = "<group>"; };
+		38E2C1221D523DAC0071C9E7 /* BodyRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyRequestBuilder.swift; sourceTree = "<group>"; };
+		38E2C1241D523DB70071C9E7 /* QueryRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryRequestBuilder.swift; sourceTree = "<group>"; };
 		38F391501D4A523F005F4A42 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		38F391521D4A525C005F4A42 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		38F391541D4A5271005F4A42 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
@@ -854,6 +858,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		38E2C1211D523D590071C9E7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				38E2C1221D523DAC0071C9E7 /* BodyRequestBuilder.swift */,
+				38403F961D4B798B006AB84C /* FormBodyBuilder.swift */,
+				38F3916B1D4A56ED005F4A42 /* HttpHeadersProvider.swift */,
+				38E2C1241D523DB70071C9E7 /* QueryRequestBuilder.swift */,
+				38F3918D1D4A5AE2005F4A42 /* RestApiProvider.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		38F3914F1D4A521F005F4A42 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,17 +914,15 @@
 			isa = PBXGroup;
 			children = (
 				38F391841D4A5983005F4A42 /* Mappers */,
+				38E2C1211D523D590071C9E7 /* Protocols */,
 				38F3918F1D4A5B28005F4A42 /* ApiProvider.swift */,
 				38F391911D4A5C5D005F4A42 /* ApiProviderError.swift */,
-				38403F961D4B798B006AB84C /* FormBodyBuilder.swift */,
 				38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */,
 				38F3916D1D4A5702005F4A42 /* HttpBodyParameter.swift */,
-				38F3916B1D4A56ED005F4A42 /* HttpHeadersProvider.swift */,
 				38F3916F1D4A576C005F4A42 /* HttpMethod.swift */,
 				38F391711D4A57A0005F4A42 /* HttpResponseCode.swift */,
 				38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */,
 				38F391731D4A57DD005F4A42 /* RequestBuilder.swift */,
-				38F3918D1D4A5AE2005F4A42 /* RestApiProvider.swift */,
 			);
 			path = Rest;
 			sourceTree = "<group>";
@@ -1315,6 +1329,7 @@
 				385736CD1D4B434700C8D772 /* StopPoint.swift in Sources */,
 				38F391921D4A5C5D005F4A42 /* ApiProviderError.swift in Sources */,
 				385737161D4B6A1500C8D772 /* GroupedDirectionsMapper.swift in Sources */,
+				38E2C1231D523DAC0071C9E7 /* BodyRequestBuilder.swift in Sources */,
 				38FE8E0D1D4F919700E6B5BF /* BollardsViewModel.swift in Sources */,
 				385736E81D4B4C1E00C8D772 /* LineMapper.swift in Sources */,
 				3857370D1D4B619C00C8D772 /* Time.swift in Sources */,
@@ -1350,6 +1365,7 @@
 				38F391571D4A528A005F4A42 /* NibLoadableView.swift in Sources */,
 				38F3915B1D4A52C0005F4A42 /* ReusableView.swift in Sources */,
 				385736D51D4B463B00C8D772 /* StopPointMapper.swift in Sources */,
+				38E2C1251D523DB70071C9E7 /* QueryRequestBuilder.swift in Sources */,
 				386898AF1D4F9F7F004CA51B /* GetBollardsByStopPointQueryHandler.swift in Sources */,
 				3826AE7E1D50E6A70020678C /* BollardRealmMapper.swift in Sources */,
 				38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */,

@@ -12,6 +12,7 @@ import RealmSwift
 import RxRealm
 
 final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
+    
     private let realm = try! Realm()
     
     func favoriteBollards() -> Observable<[Bollard]> {

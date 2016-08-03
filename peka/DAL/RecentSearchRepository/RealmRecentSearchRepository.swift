@@ -12,6 +12,7 @@ import RealmSwift
 import RxRealm
 
 final class RealmRecentSearchRepository: RecentSearchRepository {
+    
     private let realm = try! Realm()
     
     func searchHistory() -> Observable<[SearchResult]> {
@@ -32,6 +33,7 @@ final class RealmRecentSearchRepository: RecentSearchRepository {
 }
 
 private final class DistinctOrdered: Convertible {
+    
     func convert(value: [SearchResult]) -> [SearchResult] {
         return value.groupBy { $0 }
             .sortBy { (key, value) in value.count }

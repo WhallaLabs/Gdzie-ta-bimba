@@ -10,6 +10,7 @@
 import Foundation
 
 final class ToggleBollardFavoriteCommand: Command {
+    
     let bollard: Bollard
     
     init(bollard: Bollard) {

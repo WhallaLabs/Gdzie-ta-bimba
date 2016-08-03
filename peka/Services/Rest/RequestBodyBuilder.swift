@@ -9,34 +9,34 @@
 import Foundation
 
 final class RequestBodyBuilder {
-    func search(methodName: String, pattern: String) -> [HttpBodyParameter] {
+    func search(methodName: SearchMethod, pattern: String) -> [HttpBodyParameter] {
         let patternJson = self.patternJson(pattern)
         return self.methodParamter(methodName, value: patternJson)
     }
     
     func getBollardsByStopPoint(name: String) -> [HttpBodyParameter] {
         let nameJson = self.nameJson(name)
-        return self.methodParamter("getBollardsByStopPoint", value: nameJson)
+        return self.methodParamter(ApiConfig.getBollardsByStopPoint, value: nameJson)
     }
     
     func getBollardsByLine(name: String) -> [HttpBodyParameter] {
         let nameJson = self.nameJson(name)
-        return self.methodParamter("getBollardsByLine", value: nameJson)
+        return self.methodParamter(ApiConfig.getBollardsByLine, value: nameJson)
     }
     
     func getBollardsByStreet(name: String) -> [HttpBodyParameter] {
         let nameJson = self.nameJson(name)
-        return self.methodParamter("getBollardsByStreet", value: nameJson)
+        return self.methodParamter(ApiConfig.getBollardsByStreet, value: nameJson)
     }
     
     func getTimes(bollardSymbol: String) -> [HttpBodyParameter] {
         let symbolJson = self.symbolJson(bollardSymbol)
-        return self.methodParamter("getTimes", value: symbolJson)
+        return self.methodParamter(ApiConfig.getTimes, value: symbolJson)
     }
     
     func bollardMessage(bollardSymbol: String) -> [HttpBodyParameter] {
         let symbolJson = self.symbolJson(bollardSymbol)
-        return self.methodParamter("findMessagesForBollard", value: symbolJson)
+        return self.methodParamter(ApiConfig.findMessagesForBollard, value: symbolJson)
     }
     
     private func patternJson(pattern: String) -> String {

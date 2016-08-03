@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 final class FavoriteLineBollardComparator {
+    
     private let favoriteBollardsRepository: FavoriteBollardsRepository
     
     init(favoriteBollardsRepository: FavoriteBollardsRepository) {

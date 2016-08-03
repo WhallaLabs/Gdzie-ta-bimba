@@ -13,8 +13,8 @@ import RxSwift
 final class GetBollardQueryHandler: QueryHandler {
     
     private let apiProvider: RestApiProvider
-    private let bodyBuilder: RequestBodyBuilder
     private let bollardRepository: FavoriteBollardsRepository
+    private let bodyBuilder: RequestBodyBuilder
     
     init(apiProvider: RestApiProvider, bollardRepository: FavoriteBollardsRepository) {
         self.apiProvider = apiProvider

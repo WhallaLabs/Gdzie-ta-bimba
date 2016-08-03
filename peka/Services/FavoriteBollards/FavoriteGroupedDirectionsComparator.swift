@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 final class FavoriteGroupedDirectionsComparator {
+    
     private let favouriteBollardsRepository: FavoriteBollardsRepository
     
     init(favouriteBollardsRepository: FavoriteBollardsRepository) {

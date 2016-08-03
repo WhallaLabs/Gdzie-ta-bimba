@@ -11,6 +11,7 @@ import Foundation
 import RxSwift
 
 final class GetStopPointPushpinsQueryHandler: QueryHandler {
+    
     private let apiProvider: RestApiProvider
     private let stopPointsCache: StopPointPushpinsCache
     

@@ -39,7 +39,7 @@ final class FavoriteViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.locationManager.userLocation().doOnNext { print($0) }
+        self.locationManager.userLocation()
             .throttle(1, scheduler: MainScheduler.instance)
             .flatMap { [unowned self] coordinates in self.viewModel.nearesStop(coordinates) }
             .distinctUntilChanged()

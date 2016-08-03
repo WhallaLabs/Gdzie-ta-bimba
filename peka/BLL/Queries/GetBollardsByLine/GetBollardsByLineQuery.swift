@@ -10,6 +10,7 @@
 import Foundation
 
 final class GetBollardsByLineQuery: Query {
+    
     let line: String
     
     init(line: String) {

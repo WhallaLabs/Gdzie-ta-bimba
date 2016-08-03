@@ -10,6 +10,7 @@
 import Foundation
 
 final class GetBollardMessageQuery: Query {
+    
     let symbol: String
     
     init(symbol: String) {

@@ -10,6 +10,7 @@
 import Foundation
 
 final class GetBollardsByStreetQuery: Query {
+    
     let street: String
     
     init(street: String) {
