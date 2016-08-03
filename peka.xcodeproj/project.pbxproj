@@ -69,6 +69,10 @@
 		38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */; };
 		38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */; };
 		38A68B081D50D54300BBC087 /* MapNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B071D50D54300BBC087 /* MapNavigationController.swift */; };
+		38ABF5061D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */; };
+		38ABF5081D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */; };
+		38ABF50A1D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */; };
+		38ABF50C1D51EE2700B6E9F7 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF50B1D51EE2700B6E9F7 /* FavoriteNavigationController.swift */; };
 		38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFFA1D50103600937FD2 /* BollardViewModel.swift */; };
 		38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE41D50081700937FD2 /* BollardCell.swift */; };
 		38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7FFE51D50081700937FD2 /* BollardCell.xib */; };
@@ -236,6 +240,10 @@
 		38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointAnnotation.swift; sourceTree = "<group>"; };
 		38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		38A68B071D50D54300BBC087 /* MapNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationController.swift; sourceTree = "<group>"; };
+		38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteLineBollardComparator.swift; sourceTree = "<group>"; };
+		38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteGroupedDirectionsComparator.swift; sourceTree = "<group>"; };
+		38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		38ABF50B1D51EE2700B6E9F7 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		38D7FFE41D50081700937FD2 /* BollardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardCell.swift; sourceTree = "<group>"; };
 		38D7FFE51D50081700937FD2 /* BollardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollardCell.xib; sourceTree = "<group>"; };
 		38D7FFE91D500BCF00937FD2 /* TimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
@@ -358,9 +366,7 @@
 		3826AE781D50E4180020678C /* DAL */ = {
 			isa = PBXGroup;
 			children = (
-				3826AE7D1D50E6A70020678C /* BollardRealmMapper.swift */,
-				3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */,
-				3826AE7B1D50E4860020678C /* RealmFavoriteBollardsRepository.swift */,
+				38ABF5021D51DF5600B6E9F7 /* FavoriteBollardsRepository */,
 			);
 			path = DAL;
 			sourceTree = "<group>";
@@ -545,6 +551,35 @@
 			path = LineBollards;
 			sourceTree = "<group>";
 		};
+		38ABF5021D51DF5600B6E9F7 /* FavoriteBollardsRepository */ = {
+			isa = PBXGroup;
+			children = (
+				3826AE7D1D50E6A70020678C /* BollardRealmMapper.swift */,
+				3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */,
+				3826AE7B1D50E4860020678C /* RealmFavoriteBollardsRepository.swift */,
+			);
+			path = FavoriteBollardsRepository;
+			sourceTree = "<group>";
+		};
+		38ABF5031D51E2EB00B6E9F7 /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				385736F71D4B56AA00C8D772 /* PekaApiProviderExtension.swift */,
+				385736DD1D4B4A1A00C8D772 /* PekaHttpHeadersProvider.swift */,
+				385736F51D4B531A00C8D772 /* RequestBodyBuilder.swift */,
+			);
+			path = Rest;
+			sourceTree = "<group>";
+		};
+		38ABF5041D51E2F600B6E9F7 /* FavoriteBollards */ = {
+			isa = PBXGroup;
+			children = (
+				38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */,
+				38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */,
+			);
+			path = FavoriteBollards;
+			sourceTree = "<group>";
+		};
 		38D7FFE31D50080500937FD2 /* Bollard */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,10 +748,9 @@
 		38DAC1EA1D4A4A80001DF664 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				38ABF5041D51E2F600B6E9F7 /* FavoriteBollards */,
 				38F7778B1D5086090070265E /* LocationManager */,
-				385736F71D4B56AA00C8D772 /* PekaApiProviderExtension.swift */,
-				385736DD1D4B4A1A00C8D772 /* PekaHttpHeadersProvider.swift */,
-				385736F51D4B531A00C8D772 /* RequestBodyBuilder.swift */,
+				38ABF5031D51E2EB00B6E9F7 /* Rest */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -816,6 +850,8 @@
 			isa = PBXGroup;
 			children = (
 				38FE8D7F1D4F55F100E6B5BF /* Favorite.storyboard */,
+				38ABF50B1D51EE2700B6E9F7 /* FavoriteNavigationController.swift */,
+				38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */,
 				38FE8D801D4F55F100E6B5BF /* FavoriteViewConfigurator.swift */,
 				38FE8D811D4F55F100E6B5BF /* FavoriteViewController.swift */,
 				38FE8D821D4F55F100E6B5BF /* FavoriteViewModel.swift */,
@@ -1193,9 +1229,11 @@
 				386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */,
 				38FE8DFF1D4F8F6900E6B5BF /* GroupedDirectionsCell.swift in Sources */,
 				38F391591D4A52A6005F4A42 /* XibLoader.swift in Sources */,
+				38ABF5081D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift in Sources */,
 				38F3918C1D4A59FF005F4A42 /* ArrayMapper.swift in Sources */,
 				3826AE881D5135A10020678C /* ToggleBollardFavoriteCommand.swift in Sources */,
 				38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */,
+				38ABF50A1D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift in Sources */,
 				38F3918A1D4A59E9005F4A42 /* NoContentMapper.swift in Sources */,
 				38F3917E1D4A58EE005F4A42 /* Command.swift in Sources */,
 				3826AE7A1D50E4340020678C /* FavoriteBollardsRepository.swift in Sources */,
@@ -1254,8 +1292,10 @@
 				38FE8E091D4F919700E6B5BF /* BollardsNavigationController.swift in Sources */,
 				38F391631D4A54F3005F4A42 /* Filtering.swift in Sources */,
 				385736CF1D4B437E00C8D772 /* StopPointPushpin.swift in Sources */,
+				38ABF50C1D51EE2700B6E9F7 /* FavoriteNavigationController.swift in Sources */,
 				385737031D4B5F6900C8D772 /* BollardMapper.swift in Sources */,
 				38F391761D4A5814005F4A42 /* StringExtensions.swift in Sources */,
+				38ABF5061D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift in Sources */,
 				38FE8D8F1D4F561100E6B5BF /* SearchViewModel.swift in Sources */,
 				38F3916E1D4A5702005F4A42 /* HttpBodyParameter.swift in Sources */,
 				385737121D4B642B00C8D772 /* LineBollards.swift in Sources */,

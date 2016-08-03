@@ -15,13 +15,15 @@ final class FavoriteViewController: UIViewController {
 	private let disposables = DisposeBag()
     private var viewDisposables = DisposeBag()
 	private var viewModel: FavoriteViewModel!
+    private var navigationDelegate: FavoriteNavigationControllerDelegate!
     private var locationManager: LocationManager!
 
 	@IBOutlet private weak var viewConfigurator: FavoriteViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
     
-	func installDependencies(viewModel: FavoriteViewModel, _ locationManager: LocationManager!) {
+	func installDependencies(viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
 		self.viewModel = viewModel
+        self.navigationDelegate = navigationDelegate
         self.locationManager = locationManager
 	}
 
@@ -30,6 +32,7 @@ final class FavoriteViewController: UIViewController {
 		self.viewConfigurator.configure()
         self.viewModel.loadFavouriteBollards().addDisposableTo(self.disposables)
         self.setupBinding()
+        self.registerForEvents()
 	}
 	
     override func viewWillAppear(animated: Bool) {
@@ -48,5 +51,11 @@ final class FavoriteViewController: UIViewController {
         self.viewModel.bollards.asObservable()
             .bindTo(self.tableView.configurableCells(BollardCell.self))
             .addDisposableTo(self.disposables)
+    }
+    
+    private func registerForEvents() {
+        self.tableView.rx_modelSelected(Bollard.self).subscribeNext { [unowned self] bollard in
+            self.navigationDelegate.showBollard(bollard)
+        }.addDisposableTo(self.disposables)
     }
 }

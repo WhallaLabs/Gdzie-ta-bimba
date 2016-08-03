@@ -13,5 +13,13 @@ struct Bollard {
     let name: String
     let symbol: String
     let tag: String
-    var isFavourite: Bool
+    var isFavorite: Bool
+}
+
+extension Bollard: Equatable {
+    
+}
+
+func ==(lhs: Bollard, rhs: Bollard) -> Bool {
+    return lhs.symbol == rhs.symbol
 }

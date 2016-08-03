@@ -12,10 +12,12 @@ import Foundation
 final class GetBollardsByStreetQueryHandler: QueryHandler {
     
     private let apiProvider: RestApiProvider
+    private let favoriteGroupedDirectionsComparator: FavoriteGroupedDirectionsComparator
     private let bodyBuilder: RequestBodyBuilder
     
-    init(apiProvider: RestApiProvider) {
+    init(apiProvider: RestApiProvider, favoriteGroupedDirectionsComparator: FavoriteGroupedDirectionsComparator) {
         self.apiProvider = apiProvider
+        self.favoriteGroupedDirectionsComparator = favoriteGroupedDirectionsComparator
         self.bodyBuilder = RequestBodyBuilder()
     }
     
@@ -24,6 +26,6 @@ final class GetBollardsByStreetQueryHandler: QueryHandler {
         let params = self.bodyBuilder.getBollardsByStreet(query.street)
         let mapper = WrappedObjectMapper(ArrayMapper(GroupedDirectionsMapper()), pathToObject: "success", "bollards")
         let observable = self.apiProvider.post(params, mapper: mapper)
-        return observable
+        return self.favoriteGroupedDirectionsComparator.checkFavourite(observable)
     }
 }

@@ -10,5 +10,14 @@ import Foundation
 import RxSwift
 
 final class HubViewModel {
-	
+    private let executor: Executor
+    
+    init(executor: Executor) {
+        self.executor = executor
+    }
+    
+    func prepareStopPoints() -> Disposable {
+        let observable: Observable<[StopPointPushpin]> = self.executor.execute(GetStopPointPushpinsQuery())
+        return observable.subscribe()
+    }
 }

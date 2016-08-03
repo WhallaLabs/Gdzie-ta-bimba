@@ -14,9 +14,11 @@ final class GetBollardQueryHandler: QueryHandler {
     
     private let apiProvider: RestApiProvider
     private let bodyBuilder: RequestBodyBuilder
+    private let bollardRepository: FavoriteBollardsRepository
     
-    init(apiProvider: RestApiProvider) {
+    init(apiProvider: RestApiProvider, bollardRepository: FavoriteBollardsRepository) {
         self.apiProvider = apiProvider
+        self.bollardRepository = bollardRepository
         self.bodyBuilder = RequestBodyBuilder()
     }
     
@@ -25,6 +27,7 @@ final class GetBollardQueryHandler: QueryHandler {
         let parameters = self.bodyBuilder.getTimes(query.symbol)
         let mapper = WrappedObjectMapper(BollardMapper(), pathToObject: "success", "bollard")
         let observable = self.apiProvider.post(parameters, mapper: mapper)
-        return observable
+        let favouriteBollardObservable = self.bollardRepository.favouriteBollard(query.symbol)
+        return Observable.of(favouriteBollardObservable, observable).concat().take(1)
     }
 }

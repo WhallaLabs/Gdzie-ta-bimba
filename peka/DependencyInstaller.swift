@@ -44,7 +44,12 @@ extension SwinjectStoryboard {
         
         defaultContainer.registerPerContainerLifetime(StopPointPushpinsCache.self) { _ in StopPointPushpinsCache() }
         defaultContainer.register(FavoriteBollardsRepository.self) { _ in RealmFavoriteBollardsRepository() }
-
+        defaultContainer.register(FavoriteGroupedDirectionsComparator.self) { r in
+            FavoriteGroupedDirectionsComparator(favouriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
+        }
+        defaultContainer.register(FavoriteLineBollardComparator.self) { r in
+            FavoriteLineBollardComparator(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
+        }
     }
     
     private class func registerViewControllers() {
@@ -78,12 +83,17 @@ extension SwinjectStoryboard {
             c.installDependencies(viewModel, navigationController, locationManager)
         }
         defaultContainer.registerForStoryboard(FavoriteViewController.self) { r, c in
-            c.installDependencies(r.resolve(FavoriteViewModel.self)!, r.resolve(LocationManager.self)!)
+            let navigationController = r.resolve(FavoriteNavigationControllerDelegate.self, argument: c)!
+            let viewModel = r.resolve(FavoriteViewModel.self)!
+            let locationManager = r.resolve(LocationManager.self)!
+            c.installDependencies(viewModel, navigationController, locationManager)
         }
     }
     
     private class func registerViewModels() {
-        defaultContainer.register(HubViewModel.self) { _ in HubViewModel() }
+        defaultContainer.register(HubViewModel.self) { r in
+            HubViewModel(executor: r.resolve(Executor.self)!)
+        }
         defaultContainer.register(SearchViewModel.self) { r in
             SearchViewModel(executor: r.resolve(Executor.self)!)
         }
@@ -118,19 +128,19 @@ extension SwinjectStoryboard {
             SearchQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStopPointQuery)) { r in
-            GetBollardsByStopPointQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+            GetBollardsByStopPointQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteGroupedDirectionsComparator: r.resolve(FavoriteGroupedDirectionsComparator.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStreetQuery)) { r in
-            GetBollardsByStreetQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+            GetBollardsByStreetQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteGroupedDirectionsComparator: r.resolve(FavoriteGroupedDirectionsComparator.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByLineQuery)) { r in
-            GetBollardsByLineQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+            GetBollardsByLineQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteLineBollardsComparator: r.resolve(FavoriteLineBollardComparator.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetTimesQuery)) { r in
             GetTimesQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardQuery)) { r in
-            GetBollardQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
+            GetBollardQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, bollardRepository: r.resolve(FavoriteBollardsRepository.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetFavoriteBollardsQuery)) { r in
             GetFavoriteBollardsQueryHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
@@ -152,6 +162,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(MapNavigationControllerDelegate.self) { (_, arg: MapViewController) in
             MapNavigationController(viewController: arg)
+        }
+        defaultContainer.register(FavoriteNavigationControllerDelegate.self) { (_, arg: FavoriteViewController) in
+            FavoriteNavigationController(viewController: arg)
         }
     }
 }

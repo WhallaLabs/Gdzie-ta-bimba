@@ -181,6 +181,18 @@ extension Array where Element: Equatable {
         }
         self[index] = element
     }
+    
+    func replaceElements(elements: [Element]) -> [Element] {
+        var result = [Element]()
+        for element in self {
+            if let index = elements.indexOf(element) {
+                result.append(elements[index])
+            } else {
+                result.append(element)
+            }
+        }
+        return result
+    }
 }
 
 extension Array {

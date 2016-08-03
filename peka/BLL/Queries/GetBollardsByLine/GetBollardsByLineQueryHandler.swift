@@ -13,9 +13,11 @@ final class GetBollardsByLineQueryHandler: QueryHandler {
     
     private let apiProvider: RestApiProvider
     private let bodyBuilder: RequestBodyBuilder
+    private let favoriteLineBollardsComparator: FavoriteLineBollardComparator
     
-    init(apiProvider: RestApiProvider) {
+    init(apiProvider: RestApiProvider, favoriteLineBollardsComparator: FavoriteLineBollardComparator) {
         self.apiProvider = apiProvider
+        self.favoriteLineBollardsComparator = favoriteLineBollardsComparator
         self.bodyBuilder = RequestBodyBuilder()
     }
     
@@ -24,6 +26,6 @@ final class GetBollardsByLineQueryHandler: QueryHandler {
         let params = self.bodyBuilder.getBollardsByLine(query.line)
         let mapper = WrappedObjectMapper(ArrayMapper(LineBollardsMapper()), pathToObject: "success", "directions")
         let observable = self.apiProvider.post(params, mapper: mapper)
-        return observable
+        return self.favoriteLineBollardsComparator.checkFavorite(observable)
     }
 }

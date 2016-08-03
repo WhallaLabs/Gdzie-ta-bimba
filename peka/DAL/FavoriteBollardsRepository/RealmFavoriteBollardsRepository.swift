@@ -20,6 +20,15 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
             .map(BollardsRealmToBollardsMapper())
     }
     
+    func favouriteBollard(symbol: String) -> Observable<Bollard> {
+        guard let bollardRealm = self.realm.objectForPrimaryKey(BollardRealm.self, key: symbol) else {
+            return Observable.empty()
+        }
+        let mapper = BollardRealmToBollardMapper()
+        let bollard = mapper.convert(bollardRealm)
+        return Observable.just(bollard)
+    }
+    
     func add(bollard: Bollard) {
         let bollardRealm = self.mapToRealmObject(bollard)
         try! self.realm.write {

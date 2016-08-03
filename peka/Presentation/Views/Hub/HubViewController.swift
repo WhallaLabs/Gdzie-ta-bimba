@@ -27,6 +27,7 @@ final class HubViewController: UITabBarController {
         self.locationManager.requestPermission()
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
+        self.viewModel.prepareStopPoints().addDisposableTo(self.disposables)
 	}
 	
 }
