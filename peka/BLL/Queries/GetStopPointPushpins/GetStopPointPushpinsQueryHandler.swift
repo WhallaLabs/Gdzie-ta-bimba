@@ -23,7 +23,10 @@ final class GetStopPointPushpinsQueryHandler: QueryHandler {
     func handle(query: Query) -> Any {
         let mapper = WrappedObjectMapper(ArrayMapper(StopPointPushpinMapper()), pathToObject: "features")
         let cache = self.stopPointsCache
-        let observable = self.apiProvider.get(ApiConfig.pushpins, mapper: mapper).flatMap { stopPoints in cache.save(stopPoints) }
+        
+        let observable = self.apiProvider.get(ApiConfig.pushpins, mapper: mapper)
+            .map(GroupStopPointsConverter())
+            .flatMap { stopPoints in cache.save(stopPoints) }
         return Observable.of(cache.cached(), observable).concat().take(1)
     }
 }

@@ -65,6 +65,7 @@
 		386898C41D4FAF48004CA51B /* LineBollardsViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */; };
 		386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */; };
 		386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */; };
+		3872714C1D52A1710074B570 /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872714B1D52A1710074B570 /* RouteType.swift */; };
 		389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */; };
 		389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BE9781D5223F70033FF87 /* NearestStopPointView.swift */; };
 		38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */; };
@@ -111,6 +112,8 @@
 		38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FF1D4A4B7D001DF664 /* HubViewModel.swift */; };
 		38E2C1231D523DAC0071C9E7 /* BodyRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C1221D523DAC0071C9E7 /* BodyRequestBuilder.swift */; };
 		38E2C1251D523DB70071C9E7 /* QueryRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C1241D523DB70071C9E7 /* QueryRequestBuilder.swift */; };
+		38E3326E1D52784E001A5077 /* GroupStopPointsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */; };
+		38E332701D529BB0001A5077 /* DateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3326F1D529BB0001A5077 /* DateMapper.swift */; };
 		38F391511D4A523F005F4A42 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391501D4A523F005F4A42 /* Box.swift */; };
 		38F391531D4A525C005F4A42 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391521D4A525C005F4A42 /* Configurable.swift */; };
 		38F391551D4A5271005F4A42 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391541D4A5271005F4A42 /* Convertible.swift */; };
@@ -253,6 +256,7 @@
 		386898BE1D4FAF48004CA51B /* LineBollardsViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewConfigurator.swift; sourceTree = "<group>"; };
 		386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewController.swift; sourceTree = "<group>"; };
 		386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewModel.swift; sourceTree = "<group>"; };
+		3872714B1D52A1710074B570 /* RouteType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
 		389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearestStopPointView.xib; sourceTree = "<group>"; };
 		389BE9781D5223F70033FF87 /* NearestStopPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearestStopPointView.swift; sourceTree = "<group>"; };
 		38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointPushpinsToAnnotationsConverter.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 		38DAC1FF1D4A4B7D001DF664 /* HubViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubViewModel.swift; sourceTree = "<group>"; };
 		38E2C1221D523DAC0071C9E7 /* BodyRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyRequestBuilder.swift; sourceTree = "<group>"; };
 		38E2C1241D523DB70071C9E7 /* QueryRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryRequestBuilder.swift; sourceTree = "<group>"; };
+		38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStopPointsConverter.swift; sourceTree = "<group>"; };
+		38E3326F1D529BB0001A5077 /* DateMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateMapper.swift; sourceTree = "<group>"; };
 		38F391501D4A523F005F4A42 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		38F391521D4A525C005F4A42 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		38F391541D4A5271005F4A42 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
@@ -454,6 +460,7 @@
 		385736CB1D4B431700C8D772 /* StopPoint */ = {
 			isa = PBXGroup;
 			children = (
+				3872714B1D52A1710074B570 /* RouteType.swift */,
 				385736CC1D4B434700C8D772 /* StopPoint.swift */,
 				38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */,
 				385736D41D4B463B00C8D772 /* StopPointMapper.swift */,
@@ -791,7 +798,6 @@
 				385737091D4B617900C8D772 /* Time */,
 				385736E71D4B4C1E00C8D772 /* LineMapper.swift */,
 				385736E51D4B4BC700C8D772 /* StreetMapper.swift */,
-				385736F31D4B4F0E00C8D772 /* WrappedObjectMapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 		38F3915E1D4A532B005F4A42 /* Converters */ = {
 			isa = PBXGroup;
 			children = (
+				38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */,
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
@@ -943,10 +950,12 @@
 			isa = PBXGroup;
 			children = (
 				38F3918B1D4A59FF005F4A42 /* ArrayMapper.swift */,
+				38E3326F1D529BB0001A5077 /* DateMapper.swift */,
 				38F391871D4A59DE005F4A42 /* JsonMappable.swift */,
 				38F391891D4A59E9005F4A42 /* NoContentMapper.swift */,
 				38F391851D4A59BC005F4A42 /* ObjectMappable.swift */,
 				38ABF5121D51F37B00B6E9F7 /* RawJsonMapper.swift */,
+				385736F31D4B4F0E00C8D772 /* WrappedObjectMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -1290,6 +1299,7 @@
 				38D7FFFD1D50103600937FD2 /* BollardNavigationControllerDelegate.swift in Sources */,
 				385736C51D4B40F700C8D772 /* Coordinates.swift in Sources */,
 				385737141D4B69B500C8D772 /* GroupedDirections.swift in Sources */,
+				38E3326E1D52784E001A5077 /* GroupStopPointsConverter.swift in Sources */,
 				385736FA1D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift in Sources */,
 				38ABF5221D52006700B6E9F7 /* SearchResultRealm.swift in Sources */,
 				3826AE891D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift in Sources */,
@@ -1309,6 +1319,7 @@
 				386898C31D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift in Sources */,
 				38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */,
 				385736F61D4B531A00C8D772 /* RequestBodyBuilder.swift in Sources */,
+				3872714C1D52A1710074B570 /* RouteType.swift in Sources */,
 				38ABF5101D51F23A00B6E9F7 /* GetBollardMessageQuery.swift in Sources */,
 				386898B31D4FA81F004CA51B /* GetBollardsByLineQuery.swift in Sources */,
 				38D7FFF31D500DED00937FD2 /* GetTimesQueryHandler.swift in Sources */,
@@ -1364,6 +1375,7 @@
 				38F391691D4A5664005F4A42 /* ObservableExtensions.swift in Sources */,
 				38F391571D4A528A005F4A42 /* NibLoadableView.swift in Sources */,
 				38F3915B1D4A52C0005F4A42 /* ReusableView.swift in Sources */,
+				38E332701D529BB0001A5077 /* DateMapper.swift in Sources */,
 				385736D51D4B463B00C8D772 /* StopPointMapper.swift in Sources */,
 				38E2C1251D523DB70071C9E7 /* QueryRequestBuilder.swift in Sources */,
 				386898AF1D4F9F7F004CA51B /* GetBollardsByStopPointQueryHandler.swift in Sources */,

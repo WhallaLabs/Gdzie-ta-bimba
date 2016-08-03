@@ -19,33 +19,13 @@ extension SequenceType {
         return self.filter(predicate).first
     }
     
-    func selectMany<U: SequenceType>(@noescape collection: (Self.Generator.Element -> U)) -> [U.Generator.Element] {
-        var result: [U.Generator.Element] = []
-        let collections = self.map { collection($0) }
-        for element in collections {
-            for item in element {
-                result.append(item)
+    func categorise<U : Hashable>(@noescape keyFunc: Generator.Element -> U) -> [U : [Generator.Element]] {
+        var dict: [U : [Generator.Element]] = [:]
+        for element in self {
+            let key = keyFunc(element)
+            if case nil = dict[key]?.append(element) {
+                dict[key] = [element]
             }
-        }
-        
-        return result
-    }
-    
-    func groupBy<U: Hashable>(@noescape keyFunc: Self.Generator.Element -> U) -> [U:[Generator.Element]] {
-        let hashes = self.map { element -> (hash: Int, key: U, item: Generator.Element) in
-            return (keyFunc(element).hashValue, keyFunc(element), element)
-        }
-        var hashedDict: [Int: [Generator.Element]] = [:]
-        for hash in hashes {
-            if case nil = hashedDict[hash.hash]?.append(hash.item) {
-                hashedDict[hash.hash] = [hash.item]
-            }
-        }
-        var dict: [U: [Generator.Element]] = [:]
-        for (groupKey, groupValue) in hashedDict {
-            let key = hashes.filter { $0.hash == groupKey }
-                .first!.key
-            dict[key] = groupValue
         }
         return dict
     }
@@ -123,6 +103,13 @@ extension Array {
         }
         return self[index]
     }
+    
+    func splitBy(subSize: Int) -> [[Element]] {
+        return 0.stride(to: self.count, by: subSize).map { startIndex in
+            let endIndex = startIndex.advancedBy(subSize, limit: self.count)
+            return Array(self[startIndex ..< endIndex])
+        }
+    }
 }
 
 extension Array where Element: Equatable {
@@ -192,14 +179,5 @@ extension Array where Element: Equatable {
             }
         }
         return result
-    }
-}
-
-extension Array {
-    func splitBy(subSize: Int) -> [[Element]] {
-        return 0.stride(to: self.count, by: subSize).map { startIndex in
-            let endIndex = startIndex.advancedBy(subSize, limit: self.count)
-            return Array(self[startIndex ..< endIndex])
-        }
     }
 }

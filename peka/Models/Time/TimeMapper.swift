@@ -20,8 +20,12 @@ final class TimeMapper: ObjectMappable {
             realTime = json["realTime"].bool else {
                 return nil
         }
-        //TODO: map departure time
-        let time = Time(departure: NSDate(),
+        let dateMapper = DateMapper(format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+        guard let departure = dateMapper.mapToObject(json["departure"]) else {
+            return nil
+        }
+        
+        let time = Time(departure: departure,
                         directionName: direction,
                         line: line,
                         minutes: minutes,

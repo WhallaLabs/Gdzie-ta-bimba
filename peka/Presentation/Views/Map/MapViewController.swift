@@ -58,9 +58,10 @@ final class MapViewController: UIViewController {
                 self.mapView.setRegion(region, animated: true)
             }.addDisposableTo(self.disposables)
         
-        self.mapView.rx_didSelectAnnotationView.subscribeNext { annotationView in
-            annotationView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
-        }.addDisposableTo(self.disposables)
+        self.mapView.rx_didSelectAnnotationView.filter { $0.annotation is StopPointAnnotation }
+            .subscribeNext { annotationView in
+                annotationView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+            }.addDisposableTo(self.disposables)
         
         self.mapView.rx_annotationViewCalloutAccessoryControlTapped.map { $0.view.annotation as? StopPointAnnotation }
             .filterNil()

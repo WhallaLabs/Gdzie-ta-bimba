@@ -13,10 +13,14 @@ struct StopPointPushpin {
     let name: String
     let coordinates: Coordinates
     let headsigns: String
+    let routeTypes: [RouteType]
+    let zone: String
 }
 
-extension StopPointPushpin: Equatable {
-    
+extension StopPointPushpin: Hashable {
+    var hashValue: Int {
+        return self.id.hashValue
+    }
 }
 
 func ==(lhs: StopPointPushpin, rhs: StopPointPushpin) -> Bool {

@@ -35,7 +35,7 @@ final class RealmRecentSearchRepository: RecentSearchRepository {
 private final class DistinctOrdered: Convertible {
     
     func convert(value: [SearchResult]) -> [SearchResult] {
-        return value.groupBy { $0 }
+        return value.categorise { $0 }
             .sortBy { (key, value) in value.count }
             .map { (key, value) in key }
             .take(20)
