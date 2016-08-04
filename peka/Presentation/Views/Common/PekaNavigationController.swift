@@ -11,16 +11,17 @@ import UIKit
 final class PekaNavigaitonController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.transparentNavigationBar()
+        self.configureNavigationBar()
         self.configureColors()
     }
     
-    private func transparentNavigationBar() {
+    private func configureNavigationBar() {
         self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.translucent = true
+        self.navigationBar.translucent = false
         self.view.backgroundColor = UIColor(color: .Background)
         self.navigationBar.backgroundColor = UIColor.clearColor()
+        self.navigationBar.barTintColor = UIColor(color: .Background)
     }
     
     private func configureColors() {

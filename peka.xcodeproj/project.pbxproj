@@ -20,6 +20,7 @@
 		3833CF9E1D534238000B74C2 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9D1D534238000B74C2 /* UIViewControllerExtensions.swift */; };
 		3833CFA01D535233000B74C2 /* FavoriteStateToImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */; };
 		3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */; };
+		3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */; };
 		38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F961D4B798B006AB84C /* FormBodyBuilder.swift */; };
 		38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */; };
 		38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */; };
@@ -215,6 +216,7 @@
 		3833CF9D1D534238000B74C2 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStateToImageConverter.swift; sourceTree = "<group>"; };
 		3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureTimeToStringConverter.swift; sourceTree = "<group>"; };
 		38403F961D4B798B006AB84C /* FormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormUrlEncodedBuilder.swift; sourceTree = "<group>"; };
@@ -917,6 +919,7 @@
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
+				3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */,
 			);
 			path = Converters;
 			sourceTree = "<group>";
@@ -1409,6 +1412,7 @@
 				38FE8DEE1D4F731800E6B5BF /* UIStoryboardExtensions.swift in Sources */,
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */,
+				3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
 				3833CFA01D535233000B74C2 /* FavoriteStateToImageConverter.swift in Sources */,
 				38F391811D4A58F9005F4A42 /* Executor.swift in Sources */,

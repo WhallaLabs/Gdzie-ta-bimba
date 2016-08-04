@@ -16,6 +16,6 @@ final class BollardViewConfigurator: NSObject {
     
 	func configure() {
 		self.tableView.register(TimeCell.self)
-        self.viewController.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.viewController.navigationController?.setNavigationBarHidden(false, animated: true)
 	}
 }

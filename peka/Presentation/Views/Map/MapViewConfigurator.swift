@@ -14,7 +14,5 @@ final class MapViewConfigurator: NSObject {
 
 	func configure() {
         self.viewController.updateTitle("")
-        let cos = self.viewController.tabBarItem
-        print(cos)
 	}
 }
