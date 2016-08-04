@@ -41,6 +41,7 @@ final class MapViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.mapView.showsUserLocation = self.locationManager.hasPermission
     }
     

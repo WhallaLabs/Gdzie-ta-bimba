@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="djb-qR-dlm">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="udh-io-FZk" customClass="BollardViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="udh-io-FZk" customClass="BollardViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9BR-G4-HyS"/>
                         <viewControllerLayoutGuide type="bottom" id="aWz-Ju-CN4"/>
@@ -16,9 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-NC-xZK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-NC-xZK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="dHU-g2-MA4">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -26,7 +26,7 @@
                                 </view>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="KtG-NC-xZK" secondAttribute="bottom" id="4dj-qR-Jt6"/>
                             <constraint firstItem="KtG-NC-xZK" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="Idg-OQ-zTo"/>
@@ -36,15 +36,17 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="hwn-fw-Omb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="hm0-Zj-hZ6">
+                        <barButtonItem key="rightBarButtonItem" image="star-empty" style="plain" id="hm0-Zj-hZ6">
                             <connections>
                                 <action selector="toggleFavorite" destination="udh-io-FZk" id="aPn-yT-G3z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="KtG-NC-xZK" id="gXa-iT-LyB"/>
+                        <outlet property="toggleFavoriteButton" destination="hm0-Zj-hZ6" id="6wo-fn-MEB"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
                 </viewController>
@@ -52,6 +54,7 @@
                 <customObject id="opz-Br-oXO" customClass="BollardViewConfigurator" customModule="peka" customModuleProvider="target">
                     <connections>
                         <outlet property="tableView" destination="KtG-NC-xZK" id="ehi-IS-pjw"/>
+                        <outlet property="toggleFavoriteButton" destination="hm0-Zj-hZ6" id="Jxv-Th-OFK"/>
                         <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>
                     </connections>
                 </customObject>
@@ -59,4 +62,7 @@
             <point key="canvasLocation" x="1246" y="366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star-empty" width="23" height="22"/>
+    </resources>
 </document>

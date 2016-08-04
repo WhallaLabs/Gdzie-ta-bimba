@@ -13,6 +13,8 @@ final class MapViewConfigurator: NSObject {
 	@IBOutlet private weak var viewController: MapViewController!
 
 	func configure() {
-		
+        self.viewController.updateTitle("")
+        let cos = self.viewController.tabBarItem
+        print(cos)
 	}
 }

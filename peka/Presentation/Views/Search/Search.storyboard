@@ -26,7 +26,7 @@
                                 </view>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="HcL-cJ-VCf"/>
                             <constraint firstAttribute="trailing" secondItem="LgO-i7-bYU" secondAttribute="trailing" id="VCS-j0-IlB"/>
@@ -58,11 +58,11 @@
             </objects>
             <point key="canvasLocation" x="1246" y="366"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Wyszukaj-->
         <scene sceneID="UeH-TT-LJB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ei2-3k-Wqq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="bfg-4M-bQT"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ei2-3k-Wqq" customClass="PekaNavigaitonController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Wyszukaj" image="search" id="bfg-4M-bQT"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vsS-Mp-fZX">
@@ -79,4 +79,7 @@
             <point key="canvasLocation" x="434" y="366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search" width="19" height="21"/>
+    </resources>
 </document>

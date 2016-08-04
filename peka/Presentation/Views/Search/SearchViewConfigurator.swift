@@ -18,6 +18,7 @@ final class SearchViewConfigurator: NSObject {
 	func configure() {
         self.tableView.register(SearchResultCell.self)
         self.addSearchBar()
+        self.viewController.updateTitle("")
 	}
     
     private func addSearchBar() {

@@ -25,10 +25,12 @@ final class BollardsViewController: UIViewController {
 	}
     
     func loadBollardsByStopPoint(stopPoint: StopPoint) {
+        self.title = stopPoint.name
         self.viewModel.loadBollardsByStopPoint(stopPoint).addDisposableTo(self.disposables)
     }
     
     func loadBoolardsByStreet(name: String) {
+        self.title = name
         self.viewModel.loadBollardsByStreet(name).addDisposableTo(self.disposables)
     }
 
@@ -37,6 +39,7 @@ final class BollardsViewController: UIViewController {
 		self.viewConfigurator.configure()
         self.setupBinding()
         self.registerForEvents()
+        self.updateTitle(self.title!)
 	}
 	
     private func setupBinding() {

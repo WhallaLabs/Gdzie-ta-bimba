@@ -17,16 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jJz-sa-BjR">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="jJz-sa-BjR" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="3p6-kz-b8K"/>
                             <constraint firstAttribute="trailing" secondItem="jJz-sa-BjR" secondAttribute="trailing" id="72Y-wF-ywZ"/>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="jJz-sa-BjR" secondAttribute="bottom" id="HRk-Pz-bPk"/>
                             <constraint firstItem="jJz-sa-BjR" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="daM-uz-hNl"/>
                             <constraint firstItem="jJz-sa-BjR" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="wgS-cH-gG5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="daM-uz-hNl"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="nXR-Fp-2Sz"/>
                     <connections>
@@ -46,8 +52,8 @@
         <!--Mapa-->
         <scene sceneID="eDv-9T-nU0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maV-nZ-G94" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mapa" id="fBi-Gg-4WI"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maV-nZ-G94" customClass="PekaNavigaitonController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapa" image="map" id="fBi-Gg-4WI"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3HS-sc-XjF">
@@ -64,4 +70,7 @@
             <point key="canvasLocation" x="434" y="366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="21" height="22"/>
+    </resources>
 </document>

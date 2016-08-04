@@ -4,14 +4,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Hub View Controller-->
+        <!--View Controller-->
         <scene sceneID="rOe-Q5-Nel">
             <objects>
                 <tabBarController id="Fap-sF-U2M" customClass="HubViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="eTg-ku-PRG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <outlet property="viewConfigurator" destination="hwl-N3-lRL" id="I1L-er-o5O"/>
@@ -21,7 +20,11 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3L-nK-4wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="hwl-N3-lRL" customClass="HubViewConfigurator" customModule="peka" customModuleProvider="target"/>
+                <customObject id="hwl-N3-lRL" customClass="HubViewConfigurator" customModule="peka" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Fap-sF-U2M" id="g4w-uW-Ghh"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="362" y="422"/>
         </scene>

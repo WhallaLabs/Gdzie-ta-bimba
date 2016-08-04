@@ -13,6 +13,13 @@ final class HubViewConfigurator: NSObject {
 	@IBOutlet private weak var viewController: HubViewController!
 
 	func configure() {
-		
+		self.configureTabBar()
 	}
+    
+    private func configureTabBar() {
+        let tabBar = self.viewController.tabBar
+        tabBar.translucent = false
+        tabBar.barTintColor = UIColor(color: .BackgroundLight)
+        tabBar.tintColor = UIColor(argbHex: 0xFFB3C6D3)
+    }
 }

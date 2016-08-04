@@ -40,7 +40,8 @@ final class BollardViewModel {
         let messageQuery = GetBollardMessageQuery(symbol: symbol)
         let messageObservable: Observable<JSON> = self.executor.execute(messageQuery)
         //TODO
-        let messageDisposable = messageObservable.filter { $0["success"].array?.count != 0 }
+        let messageDisposable = messageObservable.doOnNext { print($0) }
+            .filter { $0["success"].array?.count != 0 }
             .map { "\($0)\n\($0.rawString() ?? String.empty)" }
             .bindTo(self.message)
         return CompositeDisposable(timesDisposable, messageDisposable)

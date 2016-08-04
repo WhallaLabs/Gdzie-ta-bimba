@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="djb-qR-dlm">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="udh-io-FZk" customClass="BollardsViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="udh-io-FZk" customClass="BollardsViewController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9BR-G4-HyS"/>
                         <viewControllerLayoutGuide type="bottom" id="aWz-Ju-CN4"/>
@@ -26,7 +26,7 @@
                                 </view>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.050980392159999999" green="0.1450980392" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jpf-V0-hq9" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="J02-1r-pJr"/>
                             <constraint firstAttribute="trailing" secondItem="jpf-V0-hq9" secondAttribute="trailing" id="L1D-8x-kfl"/>

@@ -15,6 +15,6 @@ protocol DirectionDescription {
 
 extension DirectionDescription {
     var description: String {
-        return "\(self.line) ➙ \(self.directionName)"
+        return "\(self.line)\u{00a0}➙\u{00a0}\(self.directionName)"
     }
 }

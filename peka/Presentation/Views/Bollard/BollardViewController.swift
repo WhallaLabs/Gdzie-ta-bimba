@@ -18,6 +18,7 @@ final class BollardViewController: UIViewController {
 
 	@IBOutlet private weak var viewConfigurator: BollardViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var toggleFavoriteButton: UIBarButtonItem!
     
 	func installDependencies(viewModel: BollardViewModel, _ navigationDelegate: BollardNavigationControllerDelegate) {
 		self.viewModel = viewModel
@@ -42,6 +43,16 @@ final class BollardViewController: UIViewController {
         self.viewModel.times.asObservable()
             .bindTo(self.tableView.configurableCells(TimeCell.self))
             .addDisposableTo(self.disposables)
+        
+        let bollardObservable = self.viewModel.bollard.asObservable().filterNil()
+        
+        bollardObservable.map(FavoriteStateToImageConverter()).subscribeNext { [unowned self] image in
+            self.toggleFavoriteButton.image = image
+        }.addDisposableTo(self.disposables)
+        
+        bollardObservable.subscribeNext { [unowned self] bollard in
+            self.updateTitle(bollard.name)
+        }.addDisposableTo(self.disposables)
         
         //TODO
         self.viewModel.message.asObservable()

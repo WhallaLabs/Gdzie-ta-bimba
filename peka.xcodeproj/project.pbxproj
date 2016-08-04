@@ -17,6 +17,9 @@
 		3826AE891D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */; };
 		3826AE8D1D5141AE0020678C /* GetFavoriteBollardsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */; };
 		3826AE8E1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */; };
+		3833CF9E1D534238000B74C2 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9D1D534238000B74C2 /* UIViewControllerExtensions.swift */; };
+		3833CFA01D535233000B74C2 /* FavoriteStateToImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */; };
+		3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */; };
 		38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F961D4B798B006AB84C /* FormBodyBuilder.swift */; };
 		38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */; };
 		38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */; };
@@ -66,6 +69,8 @@
 		386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */; };
 		386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */; };
 		3872714C1D52A1710074B570 /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872714B1D52A1710074B570 /* RouteType.swift */; };
+		388205191D533E1E0000F58E /* PekaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388205181D533E1E0000F58E /* PekaNavigationController.swift */; };
+		3882051B1D5340600000F58E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882051A1D5340600000F58E /* UIColorExtensions.swift */; };
 		389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */; };
 		389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BE9781D5223F70033FF87 /* NearestStopPointView.swift */; };
 		38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */; };
@@ -207,6 +212,9 @@
 		3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleBollardFavoriteCommandHandler.swift; sourceTree = "<group>"; };
 		3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQuery.swift; sourceTree = "<group>"; };
 		3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQueryHandler.swift; sourceTree = "<group>"; };
+		3833CF9D1D534238000B74C2 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStateToImageConverter.swift; sourceTree = "<group>"; };
+		3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		38403F961D4B798B006AB84C /* FormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormUrlEncodedBuilder.swift; sourceTree = "<group>"; };
@@ -257,6 +265,8 @@
 		386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewController.swift; sourceTree = "<group>"; };
 		386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewModel.swift; sourceTree = "<group>"; };
 		3872714B1D52A1710074B570 /* RouteType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
+		388205181D533E1E0000F58E /* PekaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PekaNavigationController.swift; sourceTree = "<group>"; };
+		3882051A1D5340600000F58E /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearestStopPointView.xib; sourceTree = "<group>"; };
 		389BE9781D5223F70033FF87 /* NearestStopPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearestStopPointView.swift; sourceTree = "<group>"; };
 		38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointPushpinsToAnnotationsConverter.swift; sourceTree = "<group>"; };
@@ -597,6 +607,14 @@
 			path = LineBollards;
 			sourceTree = "<group>";
 		};
+		388205171D533E0C0000F58E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				388205181D533E1E0000F58E /* PekaNavigationController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		389BE9751D5223C20033FF87 /* NearestStopPoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +837,7 @@
 			children = (
 				38D7FFF41D50102300937FD2 /* Bollard */,
 				38FE8E011D4F914B00E6B5BF /* Bollards */,
+				388205171D533E0C0000F58E /* Common */,
 				38FE8D7E1D4F55CD00E6B5BF /* Favorite */,
 				38DAC1E81D4A4A31001DF664 /* Hub */,
 				386898BA1D4FAF2B004CA51B /* LineBollards */,
@@ -893,6 +912,7 @@
 		38F3915E1D4A532B005F4A42 /* Converters */ = {
 			isa = PBXGroup;
 			children = (
+				3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */,
 				38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */,
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
@@ -910,8 +930,11 @@
 				38F391751D4A5814005F4A42 /* StringExtensions.swift */,
 				38F391951D4A5CFF005F4A42 /* SwinjectContainerExtensions.swift */,
 				38F391641D4A560D005F4A42 /* UICollectionViewExtensions.swift */,
+				3882051A1D5340600000F58E /* UIColorExtensions.swift */,
+				3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */,
 				38FE8DED1D4F731800E6B5BF /* UIStoryboardExtensions.swift */,
 				38F391661D4A5645005F4A42 /* UITableViewExtensions.swift */,
+				3833CF9D1D534238000B74C2 /* UIViewControllerExtensions.swift */,
 				3844220F1D4A5F9B007B44FA /* VariableExtensions.swift */,
 			);
 			path = Extensions;
@@ -1359,6 +1382,7 @@
 				38F7778F1D5086C70070265E /* PekaLocationManager.swift in Sources */,
 				386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */,
 				386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */,
+				3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */,
 				38ABF52D1D5207D800B6E9F7 /* SaveSearchResultCommand.swift in Sources */,
 				38FE8DFF1D4F8F6900E6B5BF /* GroupedDirectionsCell.swift in Sources */,
 				38F391591D4A52A6005F4A42 /* XibLoader.swift in Sources */,
@@ -1366,6 +1390,7 @@
 				38F3918C1D4A59FF005F4A42 /* ArrayMapper.swift in Sources */,
 				3826AE881D5135A10020678C /* ToggleBollardFavoriteCommand.swift in Sources */,
 				38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */,
+				3833CF9E1D534238000B74C2 /* UIViewControllerExtensions.swift in Sources */,
 				38ABF50A1D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift in Sources */,
 				38F3918A1D4A59E9005F4A42 /* NoContentMapper.swift in Sources */,
 				38F3917E1D4A58EE005F4A42 /* Command.swift in Sources */,
@@ -1385,11 +1410,13 @@
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
+				3833CFA01D535233000B74C2 /* FavoriteStateToImageConverter.swift in Sources */,
 				38F391811D4A58F9005F4A42 /* Executor.swift in Sources */,
 				38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */,
 				38A68B081D50D54300BBC087 /* MapNavigationController.swift in Sources */,
 				385737011D4B5F1900C8D772 /* Bollard.swift in Sources */,
 				385736EF1D4B4CFC00C8D772 /* SearchQuery.swift in Sources */,
+				388205191D533E1E0000F58E /* PekaNavigationController.swift in Sources */,
 				38F391511D4A523F005F4A42 /* Box.swift in Sources */,
 				38FE8DFA1D4F825300E6B5BF /* SearchResultCell.swift in Sources */,
 				3826AE771D50E1490020678C /* BollardRealm.swift in Sources */,
@@ -1421,6 +1448,7 @@
 				38FE8E0A1D4F919700E6B5BF /* BollardsNavigationControllerDelegate.swift in Sources */,
 				38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */,
 				38ABF5291D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift in Sources */,
+				3882051B1D5340600000F58E /* UIColorExtensions.swift in Sources */,
 				3857370B1D4B618B00C8D772 /* TimeMapper.swift in Sources */,
 				385736DC1D4B47B300C8D772 /* ApiConfig.swift in Sources */,
 				385736D11D4B43C500C8D772 /* StopPointPushpinMapper.swift in Sources */,

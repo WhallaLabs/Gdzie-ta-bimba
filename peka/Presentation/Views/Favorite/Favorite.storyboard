@@ -33,7 +33,7 @@
                                 </view>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fSB-nz-Y92" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="9aj-g7-wTq"/>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="APj-xg-UPx"/>
@@ -73,11 +73,11 @@
             </objects>
             <point key="canvasLocation" x="1246" y="366"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Ulubione-->
         <scene sceneID="XPf-Bh-Ipa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xxd-jz-bnH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="pUn-Bc-d0o"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xxd-jz-bnH" customClass="PekaNavigaitonController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ulubione" image="star-empty" id="pUn-Bc-d0o"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1K2-iN-Fs0">
@@ -94,4 +94,7 @@
             <point key="canvasLocation" x="434" y="366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star-empty" width="23" height="22"/>
+    </resources>
 </document>

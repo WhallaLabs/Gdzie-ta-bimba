@@ -17,6 +17,7 @@ final class LineBollardsViewController: UIViewController {
 	private var viewModel: LineBollardsViewModel!
 	private var navigationDelegate: LineBollardsNavigationControllerDelegate!
     private let dataSource = RxTableViewSectionedReloadDataSource<LineBollards>()
+    private var line: String!
 
 	@IBOutlet private weak var viewConfigurator: LineBollardsViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
@@ -27,6 +28,7 @@ final class LineBollardsViewController: UIViewController {
 	}
     
     func loadBollards(line: String) {
+        self.line = line
         self.viewModel.loadBollards(line).addDisposableTo(self.disposables)
     }
 
@@ -36,6 +38,7 @@ final class LineBollardsViewController: UIViewController {
         self.setupBinding()
         self.configure()
         self.registerForEvents()
+        self.updateTitle(self.line)
 	}
 	
     private func setupBinding() {
