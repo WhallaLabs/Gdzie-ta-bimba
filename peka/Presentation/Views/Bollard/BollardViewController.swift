@@ -12,9 +12,11 @@ import RxCocoa
 
 final class BollardViewController: UIViewController {
 
-	private let disposables = DisposeBag()
+    private let disposables = DisposeBag()
+    private let disableEditingBehavior = DisableEditingTableViewDelegate()
 	private var viewModel: BollardViewModel!
 	private var navigationDelegate: BollardNavigationControllerDelegate!
+    private let favoriteStateToImageConverter = FavoriteStateToImageConverter()
 
 	@IBOutlet private weak var viewConfigurator: BollardViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
@@ -37,6 +39,7 @@ final class BollardViewController: UIViewController {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
         self.setupBinding()
+        self.tableView.rx_setDelegate(self.disableEditingBehavior)
 	}
 	
     private func setupBinding() {
@@ -46,7 +49,7 @@ final class BollardViewController: UIViewController {
         
         let bollardObservable = self.viewModel.bollard.asObservable().filterNil()
         
-        bollardObservable.map(FavoriteStateToImageConverter()).subscribeNext { [unowned self] image in
+        bollardObservable.map(self.favoriteStateToImageConverter).subscribeNext { [unowned self] image in
             self.toggleFavoriteButton.image = image
         }.addDisposableTo(self.disposables)
         

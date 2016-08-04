@@ -13,6 +13,7 @@ import RxCocoa
 final class BollardsViewController: UIViewController {
 
 	private let disposables = DisposeBag()
+    private let disableEditingBehavior = DisableEditingTableViewDelegate()
 	private var viewModel: BollardsViewModel!
 	private var navigationDelegate: BollardsNavigationControllerDelegate!
 
@@ -40,12 +41,15 @@ final class BollardsViewController: UIViewController {
         self.setupBinding()
         self.registerForEvents()
         self.updateTitle(self.title!)
+        self.tableView.rx_setDelegate(self.disableEditingBehavior)
 	}
 	
     private func setupBinding() {
         self.viewModel.bollards.asObservable()
-            .bindTo(self.tableView.configurableCells(GroupedDirectionsCell.self))
-            .addDisposableTo(self.disposables)
+            .bindTo(self.tableView.rx_itemsWithCellIdentifier(GroupedDirectionsCell.identifier, cellType: GroupedDirectionsCell.self)) { [unowned self] _, model, cell in
+                cell.delegate = self
+                cell.configure(model)
+            }.addDisposableTo(self.disposables)
     }
     
     private func registerForEvents() {
@@ -54,5 +58,11 @@ final class BollardsViewController: UIViewController {
             .subscribeNext { [unowned self] bollard in
                 self.navigationDelegate.showBollard(bollard)
             }.addDisposableTo(self.disposables)
+    }
+}
+
+extension BollardsViewController: GroupedDirectionsCellDelegate {
+    func toggleFavorite(bollard: Bollard) {
+        self.viewModel.toggleFavorite(bollard)
     }
 }

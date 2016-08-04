@@ -15,5 +15,7 @@ final class BollardsViewConfigurator: NSObject {
     
 	func configure() {
 		self.tableView.register(GroupedDirectionsCell.self)
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 56.0
 	}
 }

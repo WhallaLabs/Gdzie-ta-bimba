@@ -28,4 +28,8 @@ final class BollardsViewModel {
         
         return observable.bindTo(self.bollards)
     }
+    
+    func toggleFavorite(bollard: Bollard) {
+        let _: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
+    }
 }

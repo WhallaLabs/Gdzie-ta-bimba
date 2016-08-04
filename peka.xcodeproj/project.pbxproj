@@ -21,6 +21,7 @@
 		3833CFA01D535233000B74C2 /* FavoriteStateToImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */; };
 		3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */; };
 		3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */; };
+		3833CFA81D538029000B74C2 /* DisableEditingTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA71D538029000B74C2 /* DisableEditingTableViewDelegate.swift */; };
 		38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F961D4B798B006AB84C /* FormBodyBuilder.swift */; };
 		38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */; };
 		38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */; };
@@ -217,6 +218,7 @@
 		3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStateToImageConverter.swift; sourceTree = "<group>"; };
 		3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureTimeToStringConverter.swift; sourceTree = "<group>"; };
+		3833CFA71D538029000B74C2 /* DisableEditingTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableEditingTableViewDelegate.swift; sourceTree = "<group>"; };
 		38403F961D4B798B006AB84C /* FormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormUrlEncodedBuilder.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				388205181D533E1E0000F58E /* PekaNavigationController.swift */,
+				3833CFA71D538029000B74C2 /* DisableEditingTableViewDelegate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1318,6 +1321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3833CFA81D538029000B74C2 /* DisableEditingTableViewDelegate.swift in Sources */,
 				38F3917B1D4A58D9005F4A42 /* QueryHandler.swift in Sources */,
 				38FE8E0B1D4F919700E6B5BF /* BollardsViewConfigurator.swift in Sources */,
 				38F391611D4A53A9005F4A42 /* ArrayExtensions.swift in Sources */,
