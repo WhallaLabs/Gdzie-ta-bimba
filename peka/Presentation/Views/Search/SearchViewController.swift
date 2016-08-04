@@ -12,15 +12,14 @@ import RxCocoa
 
 final class SearchViewController: UIViewController {
 
-	private let disposables = DisposeBag()
+    private let disposables = DisposeBag()
+    private let disableEditingBehavior = DisableEditingTableViewDelegate()
 	private var viewModel: SearchViewModel!
     private var navigationDelegate: SearchNavigationControllerDelegate!
 
 	@IBOutlet private weak var viewConfigurator: SearchViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
-    private var searchBar: UISearchBar {
-        return self.viewConfigurator.searchBar
-    }
+    @IBOutlet private weak var searchBar: SearchBarView!
     
 	func installDependencies(viewModel: SearchViewModel, _ navigationDelegate: SearchNavigationControllerDelegate) {
 		self.viewModel = viewModel
@@ -34,13 +33,19 @@ final class SearchViewController: UIViewController {
         self.viewModel.initializeSearch().addDisposableTo(self.disposables)
         self.resigsterForEvents()
         self.viewModel.loadSearchHistory()
+        self.tableView.rx_setDelegate(self.disableEditingBehavior)
 	}
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 	
     private func setupBinding() {
-        self.searchBar.rx_text.bindTo(self.viewModel.searchPhrase)
+        self.searchBar.text.bindTo(self.viewModel.searchPhrase)
             .addDisposableTo(self.disposables)
         
-        let searchIsEmptyObservable = self.searchBar.rx_text.map { $0.isEmpty }
+        let searchIsEmptyObservable = self.searchBar.text.map { $0.isEmpty }
         
         let seachItemsObservable = Observable<[SearchResult]>.combineLatest(searchIsEmptyObservable, self.viewModel.searchResult, self.viewModel.searchHistory.asObservable()) { searchIsEmpty, searchResult, searchHistory in
             if searchIsEmpty {
@@ -59,11 +64,6 @@ final class SearchViewController: UIViewController {
             .subscribeNext { [unowned self] searchResult in
                 self.viewModel.saveSearch(searchResult)
                 self.navigationDelegate.showBollards(searchResult)
-            }.addDisposableTo(self.disposables)
-        
-        Observable.of(self.searchBar.rx_searchButtonClicked, self.searchBar.rx_cancelButtonClicked).merge()
-            .subscribeNext { [unowned self] in
-                self.searchBar.resignFirstResponder()
             }.addDisposableTo(self.disposables)
     }
 }

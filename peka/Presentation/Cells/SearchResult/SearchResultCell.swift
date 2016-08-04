@@ -9,7 +9,14 @@
 import UIKit
 
 final class SearchResultCell: UITableViewCell {
+    @IBOutlet private weak var roundBackgroundView: UIView!
+    @IBOutlet private weak var iconImage: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.roundBackgroundView.layer.cornerRadius = 5
+    }
 }
 
 extension SearchResultCell: NibLoadableView {
@@ -20,11 +27,14 @@ extension SearchResultCell: Configurable {
     func configure(model: SearchResult) {
         switch model {
         case .Line(let name):
-            self.textLabel?.text = "linia - \(name)"
+            self.nameLabel.text = name
+            self.iconImage.image = UIImage(asset: .Tram)
         case .Stop(let model):
-            self.textLabel?.text = "przystanek - \(model.name)"
+            self.nameLabel.text = model.name
+            self.iconImage.image = UIImage(asset: .PushpinEmpty)
         case .Street(let name):
-            self.textLabel?.text = "ulica - \(name)"
+            self.nameLabel.text = name
+            self.iconImage.image = UIImage(asset: .Bus)
         }
     }
 }

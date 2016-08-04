@@ -36,7 +36,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="hwn-fw-Omb">
-                        <barButtonItem key="rightBarButtonItem" image="star-empty" style="plain" id="hm0-Zj-hZ6">
+                        <barButtonItem key="rightBarButtonItem" image="star-empty" id="hm0-Zj-hZ6">
                             <connections>
                                 <action selector="toggleFavorite" destination="udh-io-FZk" id="aPn-yT-G3z"/>
                             </connections>

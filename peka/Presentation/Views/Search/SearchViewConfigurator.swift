@@ -12,19 +12,11 @@ final class SearchViewConfigurator: NSObject {
 
 	@IBOutlet private weak var viewController: SearchViewController!
     @IBOutlet private weak var tableView: UITableView!
-    
-    let searchBar: UISearchBar = UISearchBar()
 
 	func configure() {
         self.tableView.register(SearchResultCell.self)
-        self.addSearchBar()
         self.viewController.updateTitle("")
+        self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(-20, 0, 0, 0)
 	}
-    
-    private func addSearchBar() {
-        //let searchController = UISearchController(searchResultsController: nil)
-        //self.searchBar = searchController.searchBar
-        self.searchBar.placeholder = "Szukaj przystanków, linii lub ulic"
-        self.viewController.navigationItem.titleView = self.searchBar
-    }
 }

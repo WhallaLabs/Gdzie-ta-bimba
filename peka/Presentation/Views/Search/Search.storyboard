@@ -16,34 +16,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LgO-i7-bYU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="56" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="LgO-i7-bYU">
+                                <rect key="frame" x="0.0" y="88" width="600" height="512"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Mwa-UY-SPh">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvV-DT-JdW" customClass="SearchBarView" customModule="peka" customModuleProvider="target">
+                                <rect key="frame" x="12" y="32" width="576" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZJB-Cd-Qu8"/>
+                                    <constraint firstAttribute="height" constant="44" id="dy3-sj-zJD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZJB-Cd-Qu8"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AvV-DT-JdW" secondAttribute="trailing" constant="12" id="7G4-zl-iWs"/>
+                            <constraint firstItem="AvV-DT-JdW" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" constant="12" id="HUG-Vw-Drv"/>
                             <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="HcL-cJ-VCf"/>
+                            <constraint firstItem="AvV-DT-JdW" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" constant="12" id="U9L-9O-frb"/>
                             <constraint firstAttribute="trailing" secondItem="LgO-i7-bYU" secondAttribute="trailing" id="VCS-j0-IlB"/>
                             <constraint firstAttribute="bottom" secondItem="LgO-i7-bYU" secondAttribute="bottom" id="d3F-3t-MnL"/>
+                            <constraint firstItem="AvV-DT-JdW" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" constant="12" id="gEQ-Mi-i0c"/>
+                            <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="AvV-DT-JdW" secondAttribute="bottom" constant="12" id="lrV-Af-Nk1"/>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="LgO-i7-bYU" secondAttribute="bottom" id="mMT-8O-Kue"/>
                             <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="oa3-Dh-8j2"/>
                             <constraint firstItem="LgO-i7-bYU" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="s1H-iV-Vie"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="gEQ-Mi-i0c"/>
+                                <exclude reference="HcL-cJ-VCf"/>
                                 <exclude reference="oa3-Dh-8j2"/>
                                 <exclude reference="mMT-8O-Kue"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="6db-bh-QhI"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="searchBar" destination="AvV-DT-JdW" id="Eix-qH-Clv"/>
                         <outlet property="tableView" destination="LgO-i7-bYU" id="1hQ-EQ-JOQ"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>

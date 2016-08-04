@@ -61,7 +61,9 @@ final class MapViewController: UIViewController {
         
         self.mapView.rx_didSelectAnnotationView.filter { $0.annotation is StopPointAnnotation }
             .subscribeNext { annotationView in
-                annotationView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+                let button = UIButton(type: .DetailDisclosure)
+                button.tintColor = UIColor(color: .BackgroundLight)
+                annotationView.rightCalloutAccessoryView = button
             }.addDisposableTo(self.disposables)
         
         self.mapView.rx_annotationViewCalloutAccessoryControlTapped.map { $0.view.annotation as? StopPointAnnotation }
@@ -69,6 +71,13 @@ final class MapViewController: UIViewController {
             .subscribeNext { [unowned self] stopPointAnnotation in
                 self.navigationDelegate.showBollard(stopPointAnnotation)
             }.addDisposableTo(self.disposables)
+        
+        //TODO
+        self.mapView.rx_didAddAnnotationViews.subscribeNext { annotations in
+            annotations.flatMap {  $0 as? MKPinAnnotationView }.forEach { annotation in
+                annotation.pinTintColor = UIColor(color: .BackgroundLight)
+            }
+        }.addDisposableTo(self.disposables)
     }
     
     private func setupBinding() {

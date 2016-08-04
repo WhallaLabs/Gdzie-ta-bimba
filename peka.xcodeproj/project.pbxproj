@@ -22,6 +22,9 @@
 		3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */; };
 		3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */; };
 		3833CFA81D538029000B74C2 /* DisableEditingTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA71D538029000B74C2 /* DisableEditingTableViewDelegate.swift */; };
+		3833CFAC1D539270000B74C2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFAA1D539270000B74C2 /* SearchBarView.swift */; };
+		3833CFAD1D539270000B74C2 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3833CFAB1D539270000B74C2 /* SearchBarView.xib */; };
+		3833CFAF1D5395AF000B74C2 /* TextFieldWithInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */; };
 		38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F961D4B798B006AB84C /* FormBodyBuilder.swift */; };
 		38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */; };
 		38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */; };
@@ -219,6 +222,9 @@
 		3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureTimeToStringConverter.swift; sourceTree = "<group>"; };
 		3833CFA71D538029000B74C2 /* DisableEditingTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableEditingTableViewDelegate.swift; sourceTree = "<group>"; };
+		3833CFAA1D539270000B74C2 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		3833CFAB1D539270000B74C2 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
+		3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithInset.swift; sourceTree = "<group>"; };
 		38403F961D4B798B006AB84C /* FormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormUrlEncodedBuilder.swift; sourceTree = "<group>"; };
@@ -462,6 +468,15 @@
 			path = GetFavoriteBollards;
 			sourceTree = "<group>";
 		};
+		3833CFA91D539260000B74C2 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				3833CFAA1D539270000B74C2 /* SearchBarView.swift */,
+				3833CFAB1D539270000B74C2 /* SearchBarView.xib */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		385736C61D4B415F00C8D772 /* Coordinates */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,8 +629,8 @@
 		388205171D533E0C0000F58E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				388205181D533E1E0000F58E /* PekaNavigationController.swift */,
 				3833CFA71D538029000B74C2 /* DisableEditingTableViewDelegate.swift */,
+				388205181D533E1E0000F58E /* PekaNavigationController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -917,12 +932,12 @@
 		38F3915E1D4A532B005F4A42 /* Converters */ = {
 			isa = PBXGroup;
 			children = (
+				3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */,
 				3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */,
 				38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */,
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
-				3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */,
 			);
 			path = Converters;
 			sourceTree = "<group>";
@@ -1042,6 +1057,8 @@
 			isa = PBXGroup;
 			children = (
 				389BE9751D5223C20033FF87 /* NearestStopPoint */,
+				3833CFA91D539260000B74C2 /* SearchBar */,
+				3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1203,6 +1220,7 @@
 				38FE8D951D4F562700E6B5BF /* Map.storyboard in Resources */,
 				38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */,
 				38D7FFFB1D50103600937FD2 /* Bollard.storyboard in Resources */,
+				3833CFAD1D539270000B74C2 /* SearchBarView.xib in Resources */,
 				38FE8E001D4F8F6900E6B5BF /* GroupedDirectionsCell.xib in Resources */,
 				38FE8E081D4F919700E6B5BF /* Bollards.storyboard in Resources */,
 				38FE8DFB1D4F825300E6B5BF /* SearchResultCell.xib in Resources */,
@@ -1354,6 +1372,7 @@
 				386898B31D4FA81F004CA51B /* GetBollardsByLineQuery.swift in Sources */,
 				38D7FFF31D500DED00937FD2 /* GetTimesQueryHandler.swift in Sources */,
 				3826AE821D511C620020678C /* GetBollardQuery.swift in Sources */,
+				3833CFAC1D539270000B74C2 /* SearchBarView.swift in Sources */,
 				38D7FFF21D500DED00937FD2 /* GetTimesQuery.swift in Sources */,
 				38FE8D8D1D4F561100E6B5BF /* SearchViewConfigurator.swift in Sources */,
 				38D7FFFE1D50103600937FD2 /* BollardViewConfigurator.swift in Sources */,
@@ -1411,6 +1430,7 @@
 				385736D51D4B463B00C8D772 /* StopPointMapper.swift in Sources */,
 				38E2C1251D523DB70071C9E7 /* QueryRequestBuilder.swift in Sources */,
 				386898AF1D4F9F7F004CA51B /* GetBollardsByStopPointQueryHandler.swift in Sources */,
+				3833CFAF1D5395AF000B74C2 /* TextFieldWithInset.swift in Sources */,
 				3826AE7E1D50E6A70020678C /* BollardRealmMapper.swift in Sources */,
 				38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */,
 				38FE8DEE1D4F731800E6B5BF /* UIStoryboardExtensions.swift in Sources */,

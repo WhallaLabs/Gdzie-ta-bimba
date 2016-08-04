@@ -21,5 +21,7 @@ final class HubViewConfigurator: NSObject {
         tabBar.translucent = false
         tabBar.barTintColor = UIColor(color: .BackgroundLight)
         tabBar.tintColor = UIColor(argbHex: 0xFFB3C6D3)
+        
+        //TODO configure unselected color
     }
 }

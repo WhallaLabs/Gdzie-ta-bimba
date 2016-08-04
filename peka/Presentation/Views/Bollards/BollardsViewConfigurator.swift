@@ -17,5 +17,6 @@ final class BollardsViewConfigurator: NSObject {
 		self.tableView.register(GroupedDirectionsCell.self)
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 56.0
+        self.viewController.navigationController?.setNavigationBarHidden(false, animated: true)
 	}
 }

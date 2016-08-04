@@ -11,6 +11,9 @@ import UIKit
 enum ImageAssets: String {
     case StarEmpty = "star-empty"
     case StarFull = "star-full"
+    case PushpinEmpty = "pushpin-empty"
+    case Bus = "bus"
+    case Tram = "tram"
 }
 
 extension UIImage {
