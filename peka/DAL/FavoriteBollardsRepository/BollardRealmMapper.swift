@@ -15,8 +15,7 @@ final class BollardRealmToBollardMapper: Convertible {
                        name: value.name,
                        symbol: value.symbol,
                        tag: value.tag,
-                       isFavorite: true,
-                       localId: value.localId)
+                       isFavorite: true)
     }
 }
 
@@ -36,7 +35,6 @@ final class BollardToBollardRealmMapper: Convertible {
         bollard.name = value.name
         bollard.symbol = value.symbol
         bollard.tag = value.tag
-        bollard.localId = value.localId
         return bollard
     }
 }

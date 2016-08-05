@@ -12,6 +12,8 @@ import SwiftyJSON
 
 final class BollardMapper: ObjectMappable {
     
+    private let stopPointNameConverter = StopPointNameRemoveNumberConverter()
+    
     func mapToObject(json: JSON) -> Bollard? {
         guard let mainBollard = json["mainBollard"].bool,
             name = json["name"].string,
@@ -19,9 +21,7 @@ final class BollardMapper: ObjectMappable {
             symbol = json["symbol"].string else {
                 return nil
         }
-        var localId = symbol
-        let index = localId.endIndex.advancedBy(-2)
-        localId.removeAtIndex(index)
-        return Bollard(mainBollard: mainBollard, name: name, symbol: symbol, tag: tag, isFavorite: false, localId: localId)
+        let convertedName = stopPointNameConverter.convert(name)
+        return Bollard(mainBollard: mainBollard, name: convertedName, symbol: symbol, tag: tag, isFavorite: false)
     }
 }

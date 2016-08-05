@@ -14,9 +14,8 @@ final class BollardRealm: Object {
     dynamic var name: String = ""
     dynamic var symbol: String = ""
     dynamic var tag: String = ""
-    dynamic var localId: String = ""
     
     override static func primaryKey() -> String? {
-        return "localId"
+        return "symbol"
     }
 }

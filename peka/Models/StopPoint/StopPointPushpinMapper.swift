@@ -28,9 +28,6 @@ final class StopPointPushpinMapper: ObjectMappable {
             routeType = RouteType(rawValue: routeTypeRawValue) else {
                 return nil
         }
-        var localId = id
-        let index = localId.endIndex.advancedBy(-2)
-        localId.removeAtIndex(index)
         
         return StopPointPushpin(id: id,
                                 name: name,

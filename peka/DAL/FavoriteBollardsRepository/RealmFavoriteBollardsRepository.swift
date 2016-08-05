@@ -23,7 +23,6 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
     }
     
     func add(bollard: Bollard) {
-        
         let bollardRealm = self.mapToRealmObject(bollard)
         try! self.realm.write {
             self.realm.add(bollardRealm)
@@ -31,7 +30,7 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
     }
     
     func remove(bollard: Bollard) -> Bool {
-        guard let bollardRealm = self.realm.objectForPrimaryKey(BollardRealm.self, key: bollard.localId) else {
+        guard let bollardRealm = self.realm.objectForPrimaryKey(BollardRealm.self, key: bollard.symbol) ?? self.realm.objectForPrimaryKey(BollardRealm.self, key: bollard.tag) else {
             return false
         }
         try! self.realm.write {
