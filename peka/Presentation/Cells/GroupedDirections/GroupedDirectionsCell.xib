@@ -17,7 +17,7 @@
                         <rect key="frame" x="12" y="0.0" width="296" height="58"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oe-qb-YLb">
-                                <rect key="frame" x="10" y="14" width="36" height="30"/>
+                                <rect key="frame" x="10" y="14" width="239" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.70196078431372544" green="0.77647058823529413" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sIv-at-SRF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0oe-qb-YLb" secondAttribute="trailing" constant="4" id="X1L-M1-PAx"/>
+                            <constraint firstItem="sIv-at-SRF" firstAttribute="leading" secondItem="0oe-qb-YLb" secondAttribute="trailing" constant="4" id="X1L-M1-PAx"/>
                             <constraint firstAttribute="trailing" secondItem="0oe-qb-YLb" secondAttribute="trailing" constant="10" id="afF-65-gLr"/>
                             <constraint firstAttribute="bottom" secondItem="0oe-qb-YLb" secondAttribute="bottom" constant="14" id="bh0-s2-3mn"/>
                             <constraint firstItem="0oe-qb-YLb" firstAttribute="leading" secondItem="gqO-gi-qp9" secondAttribute="leading" constant="10" id="d3Z-mB-SL6"/>

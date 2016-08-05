@@ -29,7 +29,7 @@ extension TimeCell: NibLoadableView {
 extension TimeCell: Configurable {
 	func configure(model: Time) {
         self.lineLabel.text = model.line
-        self.directionLabel.text = model.directionName
+        self.directionLabel.text = "➙ \(model.directionName)"
         self.minutesLabel.text = "\(model.minutes) min"
         let converter = DepartureTimeToStringConverter()
         self.departureTimeLabel.text = converter.convert(model.departure)

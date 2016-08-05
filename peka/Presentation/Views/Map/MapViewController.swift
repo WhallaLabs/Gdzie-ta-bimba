@@ -24,6 +24,7 @@ final class MapViewController: UIViewController {
 
 	@IBOutlet private weak var viewConfigurator: MapViewConfigurator!
     @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var showUserLocationButton: UIButton!
 
 	func installDependencies(viewModel: MapViewModel, _ navigationDelegate: MapNavigationControllerDelegate, _ locationManager: LocationManager) {
 		self.viewModel = viewModel
@@ -43,6 +44,7 @@ final class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.mapView.showsUserLocation = self.locationManager.hasPermission
+        self.showUserLocationButton.hidden = self.locationManager.hasPermission == false
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -55,8 +57,7 @@ final class MapViewController: UIViewController {
             .map { $0.coordinate }
             .startWith(poznanCoordinates)
             .subscribeNext { [unowned self] coordinates in
-                let region = MKCoordinateRegionMakeWithDistance(coordinates, 1000, 1000)
-                self.mapView.setRegion(region, animated: true)
+                self.showRegion(coordinates)
             }.addDisposableTo(self.disposables)
         
         self.mapView.rx_didSelectAnnotationView.filter { $0.annotation is StopPointAnnotation }
@@ -88,5 +89,15 @@ final class MapViewController: UIViewController {
                 self.mapView.removeAnnotations(self.mapView.annotations)
                 self.mapView.addAnnotations(annotations)
             }.addDisposableTo(self.disposables)
+    }
+    
+    @IBAction private func showUserOnMap() {
+        let location = self.mapView.userLocation.coordinate
+        self.showRegion(location)
+    }
+    
+    private func showRegion(coordinates: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegionMakeWithDistance(coordinates, 1000, 1000)
+        self.mapView.setRegion(region, animated: true)
     }
 }

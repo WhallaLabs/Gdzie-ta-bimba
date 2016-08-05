@@ -13,6 +13,9 @@ final class SearchResultCell: UITableViewCell {
     @IBOutlet private weak var iconImage: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     
+    private let lineNameToRouteTypeConverter = LineNameToRouteTypeConverter()
+    private let routeTypeToImageConverter = RouteTypeToIconImageConverter()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.roundBackgroundView.layer.cornerRadius = 5
@@ -28,13 +31,14 @@ extension SearchResultCell: Configurable {
         switch model {
         case .Line(let name):
             self.nameLabel.text = name
-            self.iconImage.image = UIImage(asset: .Tram)
+            let routeType = self.lineNameToRouteTypeConverter.convert(name)
+            self.iconImage.image = self.routeTypeToImageConverter.convert(routeType)
         case .Stop(let model):
             self.nameLabel.text = model.name
             self.iconImage.image = UIImage(asset: .PushpinEmpty)
         case .Street(let name):
             self.nameLabel.text = name
-            self.iconImage.image = UIImage(asset: .Bus)
+            self.iconImage.image = UIImage(asset: .Street)
         }
     }
 }

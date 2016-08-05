@@ -27,4 +27,8 @@ final class FavoriteViewModel {
         let observable: Observable<StopPointPushpin> = self.executor.execute(GetNearestStopQuery(coordinates: coordinates))
         return observable
     }
+    
+    func toggleFavorite(bollard: Bollard) {
+        let _: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
+    }
 }

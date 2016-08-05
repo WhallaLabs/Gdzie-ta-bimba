@@ -23,9 +23,9 @@
                                     <constraint firstAttribute="height" constant="124" id="wjq-2P-bZg"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-O5-Jhc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-O5-Jhc">
                                 <rect key="frame" x="0.0" y="188" width="600" height="412"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="4lX-op-ngV">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,11 +73,11 @@
             </objects>
             <point key="canvasLocation" x="1246" y="366"/>
         </scene>
-        <!--Ulubione-->
+        <!--Moje przystanki-->
         <scene sceneID="XPf-Bh-Ipa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xxd-jz-bnH" customClass="PekaNavigaitonController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ulubione" image="star-empty" id="pUn-Bc-d0o"/>
+                    <tabBarItem key="tabBarItem" title="Moje przystanki" image="star-empty" id="pUn-Bc-d0o"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1K2-iN-Fs0">

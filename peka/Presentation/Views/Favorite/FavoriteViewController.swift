@@ -55,8 +55,10 @@ final class FavoriteViewController: UIViewController {
     
     private func setupBinding() {
         self.viewModel.bollards.asObservable()
-            .bindTo(self.tableView.configurableCells(BollardCell.self))
-            .addDisposableTo(self.disposables)
+            .bindTo(self.tableView.rx_itemsWithCellIdentifier(BollardCell.identifier, cellType: BollardCell.self)) { [unowned self] _, model, cell in
+                cell.configure(model)
+                cell.delegate = self
+            }.addDisposableTo(self.disposables)
     }
     
     private func registerForEvents() {
@@ -68,5 +70,11 @@ final class FavoriteViewController: UIViewController {
             .subscribeNext { [unowned self] symbol in
                 self.navigationDelegate.showBollard(symbol)
             }.addDisposableTo(self.disposables)
+    }
+}
+
+extension FavoriteViewController: BollardCellDelegate {
+    func toggleFavorite(bollard: Bollard) {
+        self.viewModel.toggleFavorite(bollard)
     }
 }

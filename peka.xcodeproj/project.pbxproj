@@ -25,6 +25,8 @@
 		3833CFAC1D539270000B74C2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFAA1D539270000B74C2 /* SearchBarView.swift */; };
 		3833CFAD1D539270000B74C2 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3833CFAB1D539270000B74C2 /* SearchBarView.xib */; };
 		3833CFAF1D5395AF000B74C2 /* TextFieldWithInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */; };
+		383FEB331D54926700945E88 /* LineNameToRouteTypeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383FEB321D54926700945E88 /* LineNameToRouteTypeConverter.swift */; };
+		383FEB351D54941F00945E88 /* RouteTypeToIconImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383FEB341D54941F00945E88 /* RouteTypeToIconImageConverter.swift */; };
 		38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F961D4B798B006AB84C /* FormBodyBuilder.swift */; };
 		38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */; };
 		38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */; };
@@ -225,6 +227,8 @@
 		3833CFAA1D539270000B74C2 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		3833CFAB1D539270000B74C2 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
 		3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithInset.swift; sourceTree = "<group>"; };
+		383FEB321D54926700945E88 /* LineNameToRouteTypeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNameToRouteTypeConverter.swift; sourceTree = "<group>"; };
+		383FEB341D54941F00945E88 /* RouteTypeToIconImageConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTypeToIconImageConverter.swift; sourceTree = "<group>"; };
 		38403F961D4B798B006AB84C /* FormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F981D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormBodyBuilder.swift; sourceTree = "<group>"; };
 		38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormUrlEncodedBuilder.swift; sourceTree = "<group>"; };
@@ -935,7 +939,9 @@
 				3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */,
 				3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */,
 				38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */,
+				383FEB321D54926700945E88 /* LineNameToRouteTypeConverter.swift */,
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
+				383FEB341D54941F00945E88 /* RouteTypeToIconImageConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
 			);
@@ -1445,6 +1451,7 @@
 				385737011D4B5F1900C8D772 /* Bollard.swift in Sources */,
 				385736EF1D4B4CFC00C8D772 /* SearchQuery.swift in Sources */,
 				388205191D533E1E0000F58E /* PekaNavigationController.swift in Sources */,
+				383FEB331D54926700945E88 /* LineNameToRouteTypeConverter.swift in Sources */,
 				38F391511D4A523F005F4A42 /* Box.swift in Sources */,
 				38FE8DFA1D4F825300E6B5BF /* SearchResultCell.swift in Sources */,
 				3826AE771D50E1490020678C /* BollardRealm.swift in Sources */,
@@ -1454,6 +1461,7 @@
 				38F391741D4A57DD005F4A42 /* RequestBuilder.swift in Sources */,
 				38F391831D4A5952005F4A42 /* AttributedTextBuilder.swift in Sources */,
 				38FE8D851D4F55F100E6B5BF /* FavoriteViewController.swift in Sources */,
+				383FEB351D54941F00945E88 /* RouteTypeToIconImageConverter.swift in Sources */,
 				38ABF51F1D52002E00B6E9F7 /* RealmRecentSearchRepository.swift in Sources */,
 				38D7FFEE1D500C3800937FD2 /* DirectionDescription.swift in Sources */,
 				385736FE1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift in Sources */,

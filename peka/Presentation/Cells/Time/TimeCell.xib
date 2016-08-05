@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7BT-zB-mzL" id="QRr-lK-Jcn">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-07-q4f">
@@ -25,11 +25,8 @@
                                 <color key="textColor" red="0.44313725490196076" green="0.55686274509803924" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="direction-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="s8h-qV-7pe">
-                                <rect key="frame" x="80" y="23" width="11" height="12"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkS-Ci-Lwy">
-                                <rect key="frame" x="95" y="19" width="43" height="20"/>
+                                <rect key="frame" x="80" y="19" width="43" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.4431372549" green="0.5568627451" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -69,15 +66,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s8h-qV-7pe" firstAttribute="centerY" secondItem="jV8-07-q4f" secondAttribute="centerY" id="2Sx-cV-6Of"/>
-                            <constraint firstItem="s8h-qV-7pe" firstAttribute="leading" secondItem="2r0-Ip-RAa" secondAttribute="trailing" id="FeT-V3-YKE"/>
                             <constraint firstItem="a6p-w6-5OL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RkS-Ci-Lwy" secondAttribute="trailing" id="IHf-ZG-q2O"/>
                             <constraint firstItem="2r0-Ip-RAa" firstAttribute="leading" secondItem="jV8-07-q4f" secondAttribute="leading" id="PZ7-ir-wIb"/>
                             <constraint firstItem="RkS-Ci-Lwy" firstAttribute="centerY" secondItem="jV8-07-q4f" secondAttribute="centerY" id="U8J-Dd-pAt"/>
                             <constraint firstItem="a6p-w6-5OL" firstAttribute="leading" secondItem="RkS-Ci-Lwy" secondAttribute="trailing" constant="4" id="V1W-df-e2J"/>
                             <constraint firstItem="2r0-Ip-RAa" firstAttribute="centerY" secondItem="jV8-07-q4f" secondAttribute="centerY" id="k0q-1Y-WmW"/>
-                            <constraint firstItem="RkS-Ci-Lwy" firstAttribute="leading" secondItem="s8h-qV-7pe" secondAttribute="trailing" constant="4" id="o4S-hX-fXp"/>
                             <constraint firstItem="a6p-w6-5OL" firstAttribute="centerY" secondItem="jV8-07-q4f" secondAttribute="centerY" id="owG-4T-V2J"/>
+                            <constraint firstItem="RkS-Ci-Lwy" firstAttribute="leading" secondItem="2r0-Ip-RAa" secondAttribute="trailing" id="xwx-ae-EoS"/>
                             <constraint firstAttribute="trailing" secondItem="a6p-w6-5OL" secondAttribute="trailing" constant="12" id="z8u-Mt-GTR"/>
                         </constraints>
                         <variation key="default">
@@ -108,6 +103,5 @@
     </objects>
     <resources>
         <image name="clock" width="11" height="11"/>
-        <image name="direction-arrow" width="11" height="12"/>
     </resources>
 </document>

@@ -8,8 +8,28 @@
 
 import UIKit
 
+protocol BollardCellDelegate: class {
+    func toggleFavorite(bollard: Bollard)
+}
+
 final class BollardCell: UITableViewCell {
+    @IBOutlet private weak var roundBackgroundView: UIView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var symbolLabel: UILabel!
+    @IBOutlet private weak var favoriteButton: UIButton!
+    private let converter = FavoriteStateToImageConverter()
+    private var bollard: Bollard!
     
+    weak var delegate: BollardCellDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.roundBackgroundView.layer.cornerRadius = 5
+    }
+    
+    @IBAction private func toggleFavorite() {
+        self.delegate?.toggleFavorite(self.bollard)
+    }
 }
 
 extension BollardCell: NibLoadableView {
@@ -18,6 +38,10 @@ extension BollardCell: NibLoadableView {
 
 extension BollardCell: Configurable {
 	func configure(model: Bollard) {
-        self.textLabel?.text = model.name
+        self.bollard = model
+        self.nameLabel.text = model.name
+        self.symbolLabel.text = model.symbol
+        
+        self.favoriteButton.setImage(self.converter.convert(model), forState: .Normal)
     }
 }

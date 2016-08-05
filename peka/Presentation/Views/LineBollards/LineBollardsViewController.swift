@@ -54,9 +54,10 @@ final class LineBollardsViewController: UIViewController {
     }
     
     private func configure() {
-        self.dataSource.configureCell = { dataSource, tableView, indexPath, bollard in
+        self.dataSource.configureCell = { [unowned self] dataSource, tableView, indexPath, bollard in
             let cell: BollardCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.configure(bollard)
+            cell.delegate = self
             return cell
         }
         
@@ -64,5 +65,11 @@ final class LineBollardsViewController: UIViewController {
             let model = dataSource.sectionAtIndex(index)
             return model.direction.description
         }
+    }
+}
+
+extension LineBollardsViewController: BollardCellDelegate {
+    func toggleFavorite(bollard: Bollard) {
+        self.viewModel.toggleFavorite(bollard)
     }
 }

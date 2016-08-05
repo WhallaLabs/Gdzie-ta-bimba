@@ -51,8 +51,6 @@ extension GroupedDirectionsCell: NibLoadableView {
 extension GroupedDirectionsCell: Configurable {
 	func configure(model: GroupedDirections) {
         self.bollard = model.bollard
-        //let directions = model.directions.map { $0.description }
-        //self.directionsLabel.text = directions.joinWithSeparator("\u{00a0}⋮ ")
         let attributedString = NSMutableAttributedString()
         for (index, direction) in model.directions.enumerate() {
             let directionString = self.directionAttributedString(direction, appendSeperator: index < model.directions.count - 1)

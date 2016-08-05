@@ -19,24 +19,38 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jJz-sa-BjR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azk-jN-K4H">
+                                <rect key="frame" x="528" y="479" width="52" height="52"/>
+                                <state key="normal" image="gps-icon"/>
+                                <connections>
+                                    <action selector="showUserOnMap" destination="udh-io-FZk" eventType="touchUpInside" id="HTj-3p-OVW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jJz-sa-BjR" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="3p6-kz-b8K"/>
                             <constraint firstAttribute="trailing" secondItem="jJz-sa-BjR" secondAttribute="trailing" id="72Y-wF-ywZ"/>
+                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="Azk-jN-K4H" secondAttribute="bottom" constant="20" id="8FC-2V-zxP"/>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="jJz-sa-BjR" secondAttribute="bottom" id="HRk-Pz-bPk"/>
+                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="Azk-jN-K4H" secondAttribute="bottom" constant="20" id="Iu9-2s-Wcg"/>
+                            <constraint firstItem="Azk-jN-K4H" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" constant="20" id="Kcb-Ms-Igp"/>
+                            <constraint firstAttribute="trailing" secondItem="Azk-jN-K4H" secondAttribute="trailing" constant="20" id="WBQ-ud-feG"/>
                             <constraint firstItem="jJz-sa-BjR" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="daM-uz-hNl"/>
                             <constraint firstItem="jJz-sa-BjR" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="wgS-cH-gG5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="daM-uz-hNl"/>
+                                <exclude reference="8FC-2V-zxP"/>
+                                <exclude reference="Kcb-Ms-Igp"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="nXR-Fp-2Sz"/>
                     <connections>
                         <outlet property="mapView" destination="jJz-sa-BjR" id="6Ss-pj-plB"/>
+                        <outlet property="showUserLocationButton" destination="Azk-jN-K4H" id="pKg-c9-J1J"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
                 </viewController>
@@ -71,6 +85,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gps-icon" width="52" height="52"/>
         <image name="map" width="21" height="22"/>
     </resources>
 </document>

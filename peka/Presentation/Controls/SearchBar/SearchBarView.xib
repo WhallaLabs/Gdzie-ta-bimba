@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-in-4sl">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-big" translatesAutoresizingMaskIntoConstraints="NO" id="Elf-3g-Cqy">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="search-big" translatesAutoresizingMaskIntoConstraints="NO" id="Elf-3g-Cqy">
                             <rect key="frame" x="14" y="290" width="19" height="21"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Szukaj przystanków, linii i ulic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnJ-bu-rAo" customClass="TextFieldWithInset" customModule="peka" customModuleProvider="target">
