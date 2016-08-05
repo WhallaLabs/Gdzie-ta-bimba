@@ -51,6 +51,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(FavoriteLineBollardComparator.self) { r in
             FavoriteLineBollardComparator(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
         }
+        defaultContainer.register(FavoriteBollardComparator.self) { r in
+            FavoriteBollardComparator(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
+        }
     }
     
     private class func registerViewControllers() {
@@ -144,7 +147,7 @@ extension SwinjectStoryboard {
             GetTimesQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardQuery)) { r in
-            GetBollardQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, bollardRepository: r.resolve(FavoriteBollardsRepository.self)!)
+            GetBollardQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteBollardComparator: r.resolve(FavoriteBollardComparator.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetFavoriteBollardsQuery)) { r in
             GetFavoriteBollardsQueryHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)

@@ -26,6 +26,7 @@ final class FavoriteViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var nearestStopPointView: NearestStopPointView!
     @IBOutlet private weak var nearestStopPointHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var emptyState: UIView!
     
 	func installDependencies(viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
 		self.viewModel = viewModel
@@ -71,6 +72,11 @@ final class FavoriteViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }
         }.addDisposableTo(self.disposables)
+        
+        self.viewModel.bollards.asObservable()
+            .map { $0.any() }
+            .bindTo(self.emptyState.rx_hidden)
+            .addDisposableTo(self.disposables)
     }
     
     private func registerForEvents() {

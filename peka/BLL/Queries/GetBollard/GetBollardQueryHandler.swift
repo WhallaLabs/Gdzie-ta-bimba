@@ -13,12 +13,12 @@ import RxSwift
 final class GetBollardQueryHandler: QueryHandler {
     
     private let apiProvider: RestApiProvider
-    private let bollardRepository: FavoriteBollardsRepository
+    private let favoriteBollardComparator: FavoriteBollardComparator
     private let bodyBuilder: RequestBodyBuilder
     
-    init(apiProvider: RestApiProvider, bollardRepository: FavoriteBollardsRepository) {
+    init(apiProvider: RestApiProvider, favoriteBollardComparator: FavoriteBollardComparator) {
         self.apiProvider = apiProvider
-        self.bollardRepository = bollardRepository
+        self.favoriteBollardComparator = favoriteBollardComparator
         self.bodyBuilder = RequestBodyBuilder()
     }
     
@@ -27,7 +27,6 @@ final class GetBollardQueryHandler: QueryHandler {
         let parameters = self.bodyBuilder.getTimes(query.symbol)
         let mapper = WrappedObjectMapper(BollardMapper(), pathToObject: "success", "bollard")
         let observable = self.apiProvider.post(parameters, mapper: mapper)
-        let favouriteBollardObservable = self.bollardRepository.favouriteBollard(query.symbol)
-        return Observable.of(favouriteBollardObservable, observable).concat().take(1)
+        return self.favoriteBollardComparator.checkFavorite(observable)
     }
 }

@@ -51,7 +51,7 @@ final class BollardViewModel {
         guard let bollard = self.bollard.value else {
             return
         }
-        let updatedBollard: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
-        self.bollard.value = updatedBollard
+        let _: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
+        //self.bollard.value = updatedBollard
     }
 }

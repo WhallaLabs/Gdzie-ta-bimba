@@ -37,7 +37,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Chf-Dd-I6c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="akj-vG-59S"/>
                 <constraint firstItem="Chf-Dd-I6c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="k8T-N8-Af0"/>

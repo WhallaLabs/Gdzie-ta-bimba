@@ -34,6 +34,7 @@
 		3855871A1D54D5B70011C6BE /* DirectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385587191D54D5B70011C6BE /* DirectionHeader.swift */; };
 		3855871C1D54D5F00011C6BE /* DirectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3855871B1D54D5F00011C6BE /* DirectionHeader.xib */; };
 		3855871E1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */; };
+		385587201D54E7570011C6BE /* FavoriteBollardComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855871F1D54E7570011C6BE /* FavoriteBollardComparator.swift */; };
 		385736C51D4B40F700C8D772 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736C41D4B40F700C8D772 /* Coordinates.swift */; };
 		385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736C91D4B418600C8D772 /* CoordinatesMapper.swift */; };
 		385736CD1D4B434700C8D772 /* StopPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736CC1D4B434700C8D772 /* StopPoint.swift */; };
@@ -239,6 +240,7 @@
 		385587191D54D5B70011C6BE /* DirectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionHeader.swift; sourceTree = "<group>"; };
 		3855871B1D54D5F00011C6BE /* DirectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectionHeader.xib; sourceTree = "<group>"; };
 		3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointNameRemoveNumberConverter.swift; sourceTree = "<group>"; };
+		3855871F1D54E7570011C6BE /* FavoriteBollardComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteBollardComparator.swift; sourceTree = "<group>"; };
 		385736C41D4B40F700C8D772 /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		385736C91D4B418600C8D772 /* CoordinatesMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatesMapper.swift; sourceTree = "<group>"; };
 		385736CC1D4B434700C8D772 /* StopPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPoint.swift; sourceTree = "<group>"; };
@@ -493,7 +495,7 @@
 				385587191D54D5B70011C6BE /* DirectionHeader.swift */,
 				3855871B1D54D5F00011C6BE /* DirectionHeader.xib */,
 			);
-			name = DirectionHeader;
+			path = DirectionHeader;
 			sourceTree = "<group>";
 		};
 		385736C61D4B415F00C8D772 /* Coordinates */ = {
@@ -686,6 +688,7 @@
 		38ABF5041D51E2F600B6E9F7 /* FavoriteBollards */ = {
 			isa = PBXGroup;
 			children = (
+				3855871F1D54E7570011C6BE /* FavoriteBollardComparator.swift */,
 				38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */,
 				38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */,
 			);
@@ -957,9 +960,9 @@
 				383FEB321D54926700945E88 /* LineNameToRouteTypeConverter.swift */,
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
 				383FEB341D54941F00945E88 /* RouteTypeToIconImageConverter.swift */,
+				3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
-				3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */,
 			);
 			path = Converters;
 			sourceTree = "<group>";
@@ -1493,6 +1496,7 @@
 				38FE8D8E1D4F561100E6B5BF /* SearchViewController.swift in Sources */,
 				38F391531D4A525C005F4A42 /* Configurable.swift in Sources */,
 				38F3916C1D4A56ED005F4A42 /* HttpHeadersProvider.swift in Sources */,
+				385587201D54E7570011C6BE /* FavoriteBollardComparator.swift in Sources */,
 				38F391651D4A560D005F4A42 /* UICollectionViewExtensions.swift in Sources */,
 				38D7FFEB1D500BCF00937FD2 /* TimeCell.swift in Sources */,
 				38ABF51D1D51FFDA00B6E9F7 /* RecentSearchRepository.swift in Sources */,
