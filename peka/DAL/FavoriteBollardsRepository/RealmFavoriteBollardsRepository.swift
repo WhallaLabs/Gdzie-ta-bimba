@@ -22,11 +22,8 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
             .shareReplayLatestWhileConnected()
     }
     
-    func favouriteBollard(symbol: String) -> Observable<Bollard> {
-        return self.favoriteBollards().map { $0.firstOrDefault { $0.symbol == symbol } }.filterNil()
-    }
-    
     func add(bollard: Bollard) {
+        
         let bollardRealm = self.mapToRealmObject(bollard)
         try! self.realm.write {
             self.realm.add(bollardRealm)
@@ -34,7 +31,7 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
     }
     
     func remove(bollard: Bollard) -> Bool {
-        guard let bollardRealm = self.realm.objectForPrimaryKey(BollardRealm.self, key: bollard.symbol) else {
+        guard let bollardRealm = self.realm.objectForPrimaryKey(BollardRealm.self, key: bollard.localId) else {
             return false
         }
         try! self.realm.write {

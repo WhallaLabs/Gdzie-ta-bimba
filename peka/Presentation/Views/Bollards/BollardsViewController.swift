@@ -46,6 +46,7 @@ final class BollardsViewController: UIViewController {
 	
     private func setupBinding() {
         self.viewModel.bollards.asObservable()
+            .map(GroupBollardDirectionsConverter())
             .bindTo(self.tableView.rx_itemsWithCellIdentifier(GroupedDirectionsCell.identifier, cellType: GroupedDirectionsCell.self)) { [unowned self] _, model, cell in
                 cell.delegate = self
                 cell.configure(model)

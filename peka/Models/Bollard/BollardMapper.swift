@@ -15,10 +15,13 @@ final class BollardMapper: ObjectMappable {
     func mapToObject(json: JSON) -> Bollard? {
         guard let mainBollard = json["mainBollard"].bool,
             name = json["name"].string,
-            symbol = json["symbol"].string,
-            tag = json["tag"].string else {
+            tag = json["tag"].string,
+            symbol = json["symbol"].string else {
                 return nil
         }
-        return Bollard(mainBollard: mainBollard, name: name, symbol: symbol, tag: tag, isFavorite: false)
+        var localId = symbol
+        let index = localId.endIndex.advancedBy(-2)
+        localId.removeAtIndex(index)
+        return Bollard(mainBollard: mainBollard, name: name, symbol: symbol, tag: tag, isFavorite: false, localId: localId)
     }
 }

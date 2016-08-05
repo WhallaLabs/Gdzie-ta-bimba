@@ -13,3 +13,13 @@ struct Direction: DirectionDescription {
     let line: String
     let returnVariant: Bool
 }
+
+extension Direction: Hashable {
+    var hashValue: Int {
+        return "\(self.line)-\(self.directionName)".hashValue
+    }
+}
+
+func ==(lhs: Direction, rhs: Direction) -> Bool {
+    return lhs.line == rhs.line && lhs.directionName == rhs.directionName
+}

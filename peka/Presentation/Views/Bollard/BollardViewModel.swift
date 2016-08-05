@@ -22,7 +22,7 @@ final class BollardViewModel {
     
     func loadTimesForBollard(bollard: Bollard) -> Disposable {
         self.bollard.value = bollard
-        return self.loadTimesAndMessage(bollard.symbol)
+        return self.loadBollard(bollard.symbol)
     }
     
     func loadBollard(symbol: String) -> Disposable {
@@ -52,6 +52,5 @@ final class BollardViewModel {
             return
         }
         let _: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
-        //self.bollard.value = updatedBollard
     }
 }

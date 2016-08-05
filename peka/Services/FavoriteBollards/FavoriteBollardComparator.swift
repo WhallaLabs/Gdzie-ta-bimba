@@ -19,11 +19,11 @@ final class FavoriteBollardComparator {
     
     func checkFavorite(observable: Observable<Bollard>) -> Observable<Bollard> {
         return Observable.combineLatest(observable, self.favoriteBollardsRepository.favoriteBollards()) { bollard, favouriteBollards in
-            let favoriteBollard = favouriteBollards.firstOrDefault { $0.symbol == bollard.symbol }
+            let favoriteBollard = favouriteBollards.firstOrDefault { $0.localId == bollard.localId }
             if let favoriteBollard = favoriteBollard {
                 return favoriteBollard
             }
             return bollard
-            }.shareReplayLatestWhileConnected()
+        }.shareReplayLatestWhileConnected()
     }
 }

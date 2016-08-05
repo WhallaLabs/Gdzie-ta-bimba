@@ -38,15 +38,73 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HI2-v0-kfo">
+                                <rect key="frame" x="202" y="161" width="197" height="199"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-emtpy-state" translatesAutoresizingMaskIntoConstraints="NO" id="6Mt-fO-bfI">
+                                        <rect key="frame" x="56" y="0.0" width="85" height="94"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podaj przystanek, linię lub ulicę i sprawdź, kiedy odjedzie Twój autobus lub tramwaj." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTN-Z1-TqP">
+                                        <rect key="frame" x="0.0" y="122" width="197" height="77"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" red="0.86274509803921573" green="0.8901960784313725" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6Mt-fO-bfI" firstAttribute="top" secondItem="HI2-v0-kfo" secondAttribute="top" id="33X-xa-Wlo"/>
+                                    <constraint firstAttribute="bottom" secondItem="wTN-Z1-TqP" secondAttribute="bottom" id="5Y9-PX-wX0"/>
+                                    <constraint firstItem="6Mt-fO-bfI" firstAttribute="centerX" secondItem="HI2-v0-kfo" secondAttribute="centerX" id="Gra-yc-jG6"/>
+                                    <constraint firstAttribute="trailing" secondItem="wTN-Z1-TqP" secondAttribute="trailing" id="a69-dI-7N1"/>
+                                    <constraint firstItem="wTN-Z1-TqP" firstAttribute="top" secondItem="6Mt-fO-bfI" secondAttribute="bottom" constant="28" id="d2c-dz-usY"/>
+                                    <constraint firstItem="wTN-Z1-TqP" firstAttribute="leading" secondItem="HI2-v0-kfo" secondAttribute="leading" id="jwb-if-CB5"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-eM-I1L">
+                                <rect key="frame" x="205" y="125" width="190" height="271"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ups..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN3-YT-adV">
+                                        <rect key="frame" x="63" y="153" width="65" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" red="0.86274509803921573" green="0.8901960784313725" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nie możemy znaleźć tego, czego szukasz. Sprawdź, czy Twoje zapytanie jest poprawne." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpX-zf-Uz5">
+                                        <rect key="frame" x="0.0" y="194" width="190" height="77"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" red="0.86274509803921573" green="0.8901960784313725" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad-tram" translatesAutoresizingMaskIntoConstraints="NO" id="7th-O5-t7m">
+                                        <rect key="frame" x="52" y="0.0" width="87" height="125"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JpX-zf-Uz5" secondAttribute="trailing" id="49D-UQ-yz3"/>
+                                    <constraint firstAttribute="bottom" secondItem="JpX-zf-Uz5" secondAttribute="bottom" id="671-Y7-Voc"/>
+                                    <constraint firstItem="pN3-YT-adV" firstAttribute="centerX" secondItem="t9Y-eM-I1L" secondAttribute="centerX" id="BM1-Kb-BiO"/>
+                                    <constraint firstItem="7th-O5-t7m" firstAttribute="top" secondItem="t9Y-eM-I1L" secondAttribute="top" id="Huf-YR-1Hd"/>
+                                    <constraint firstItem="JpX-zf-Uz5" firstAttribute="top" secondItem="pN3-YT-adV" secondAttribute="bottom" constant="12" id="NQJ-OC-f2z"/>
+                                    <constraint firstItem="JpX-zf-Uz5" firstAttribute="leading" secondItem="t9Y-eM-I1L" secondAttribute="leading" id="oPg-MC-FdD"/>
+                                    <constraint firstItem="pN3-YT-adV" firstAttribute="top" secondItem="7th-O5-t7m" secondAttribute="bottom" constant="28" id="pUc-Tt-dY2"/>
+                                    <constraint firstItem="7th-O5-t7m" firstAttribute="centerX" secondItem="t9Y-eM-I1L" secondAttribute="centerX" id="qnL-r2-6Td"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AvV-DT-JdW" secondAttribute="trailing" constant="12" id="7G4-zl-iWs"/>
                             <constraint firstItem="AvV-DT-JdW" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" constant="12" id="HUG-Vw-Drv"/>
                             <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="HcL-cJ-VCf"/>
+                            <constraint firstItem="t9Y-eM-I1L" firstAttribute="centerX" secondItem="670-f4-S5G" secondAttribute="centerX" id="Plo-gP-9bU"/>
                             <constraint firstItem="AvV-DT-JdW" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" constant="12" id="U9L-9O-frb"/>
                             <constraint firstAttribute="trailing" secondItem="LgO-i7-bYU" secondAttribute="trailing" id="VCS-j0-IlB"/>
+                            <constraint firstItem="HI2-v0-kfo" firstAttribute="centerY" secondItem="670-f4-S5G" secondAttribute="centerY" constant="-40" id="cRR-pb-QyY"/>
+                            <constraint firstItem="t9Y-eM-I1L" firstAttribute="centerY" secondItem="670-f4-S5G" secondAttribute="centerY" constant="-40" id="cpE-pB-lqA"/>
                             <constraint firstAttribute="bottom" secondItem="LgO-i7-bYU" secondAttribute="bottom" id="d3F-3t-MnL"/>
+                            <constraint firstItem="HI2-v0-kfo" firstAttribute="centerX" secondItem="670-f4-S5G" secondAttribute="centerX" id="eGN-bd-DZ6"/>
                             <constraint firstItem="AvV-DT-JdW" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" constant="12" id="gEQ-Mi-i0c"/>
                             <constraint firstItem="LgO-i7-bYU" firstAttribute="top" secondItem="AvV-DT-JdW" secondAttribute="bottom" constant="12" id="lrV-Af-Nk1"/>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="LgO-i7-bYU" secondAttribute="bottom" id="mMT-8O-Kue"/>
@@ -65,6 +123,8 @@
                     <navigationItem key="navigationItem" id="6db-bh-QhI"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="emptyState" destination="HI2-v0-kfo" id="0of-GF-64V"/>
+                        <outlet property="noResults" destination="t9Y-eM-I1L" id="vSo-nU-9kC"/>
                         <outlet property="searchBar" destination="AvV-DT-JdW" id="Eix-qH-Clv"/>
                         <outlet property="tableView" destination="LgO-i7-bYU" id="1hQ-EQ-JOQ"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
@@ -102,6 +162,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sad-tram" width="87" height="125"/>
         <image name="search" width="19" height="21"/>
+        <image name="search-emtpy-state" width="85" height="94"/>
     </resources>
 </document>

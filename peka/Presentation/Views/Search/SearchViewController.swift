@@ -20,6 +20,8 @@ final class SearchViewController: UIViewController {
 	@IBOutlet private weak var viewConfigurator: SearchViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: SearchBarView!
+    @IBOutlet private weak var emptyState: UIView!
+    @IBOutlet private weak var noResults: UIView!
     
 	func installDependencies(viewModel: SearchViewModel, _ navigationDelegate: SearchNavigationControllerDelegate) {
 		self.viewModel = viewModel
@@ -56,6 +58,11 @@ final class SearchViewController: UIViewController {
         }
         
         seachItemsObservable.bindTo(self.tableView.configurableCells(SearchResultCell.self))
+            .addDisposableTo(self.disposables)
+        
+        Observable<Bool>.combineLatest(searchIsEmptyObservable, seachItemsObservable.map { $0.any() == false }) { $0 && $1 }
+            .map { $0 == false }
+            .bindTo(self.emptyState.rx_hidden)
             .addDisposableTo(self.disposables)
     }
     

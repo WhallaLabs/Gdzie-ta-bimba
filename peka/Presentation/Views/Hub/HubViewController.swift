@@ -29,5 +29,10 @@ final class HubViewController: UITabBarController {
 		self.viewConfigurator.configure()
         self.viewModel.prepareStopPoints().addDisposableTo(self.disposables)
 	}
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewConfigurator.configureTabBarItems()
+    }
 	
 }

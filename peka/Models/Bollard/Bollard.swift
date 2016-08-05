@@ -14,12 +14,15 @@ struct Bollard {
     let symbol: String
     let tag: String
     var isFavorite: Bool
+    let localId: String
 }
 
-extension Bollard: Equatable {
-    
+extension Bollard: Hashable {
+    var hashValue: Int {
+        return self.localId.hashValue
+    }
 }
 
 func ==(lhs: Bollard, rhs: Bollard) -> Bool {
-    return lhs.symbol == rhs.symbol
+    return lhs.localId == rhs.localId
 }

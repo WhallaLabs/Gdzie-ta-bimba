@@ -12,3 +12,13 @@ struct GroupedDirections {
     let bollard: Bollard
     let directions: [Direction]
 }
+
+extension GroupedDirections: Hashable {
+    var hashValue: Int {
+        return bollard.hashValue
+    }
+}
+
+func ==(lhs: GroupedDirections, rhs: GroupedDirections) -> Bool {
+    return lhs.bollard == rhs.bollard
+}
