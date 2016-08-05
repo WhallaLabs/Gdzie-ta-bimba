@@ -17,7 +17,8 @@ final class BollardCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var symbolLabel: UILabel!
     @IBOutlet private weak var favoriteButton: UIButton!
-    private let converter = FavoriteStateToImageConverter()
+    private let favoriteStateToImageConverter = FavoriteStateToImageConverter()
+    private let stopPointNameConverter = StopPointNameRemoveNumberConverter()
     private var bollard: Bollard!
     
     weak var delegate: BollardCellDelegate?
@@ -39,9 +40,9 @@ extension BollardCell: NibLoadableView {
 extension BollardCell: Configurable {
 	func configure(model: Bollard) {
         self.bollard = model
-        self.nameLabel.text = model.name
+        self.nameLabel.text = self.stopPointNameConverter.convert(model.name)
         self.symbolLabel.text = model.symbol
         
-        self.favoriteButton.setImage(self.converter.convert(model), forState: .Normal)
+        self.favoriteButton.setImage(self.favoriteStateToImageConverter.convert(model), forState: .Normal)
     }
 }

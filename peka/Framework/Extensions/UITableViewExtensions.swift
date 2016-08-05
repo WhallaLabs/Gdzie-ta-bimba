@@ -21,11 +21,27 @@ extension UITableView {
         self.registerNib(nib, forCellReuseIdentifier: T.identifier)
     }
     
+    func register<T: UITableViewHeaderFooterView where T: ReusableView>(_: T.Type) {
+        self.registerClass(T.self, forHeaderFooterViewReuseIdentifier: T.identifier)
+    }
+    
+    func register<T: UITableViewHeaderFooterView where T: protocol<ReusableView, NibLoadableView>>(_: T.Type) {
+        let nib = UINib(nibName: T.nibName, bundle: nil)
+        self.registerNib(nib, forHeaderFooterViewReuseIdentifier: T.identifier)
+    }
+    
     func dequeueReusableCell<T: UITableViewCell where T: ReusableView>(forIndexPath indexPath: NSIndexPath) -> T {
         guard let cell = self.dequeueReusableCellWithIdentifier(T.identifier, forIndexPath: indexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.identifier)")
         }
         return cell
+    }
+    
+    func dequeueReusableHeaderFooter<T: UITableViewHeaderFooterView where T: ReusableView>() -> T {
+        guard let headerFooter = self.dequeueReusableHeaderFooterViewWithIdentifier(T.identifier) as? T else {
+            fatalError("Could not dequeue HeaderFooterView with identifier: \(T.identifier)")
+        }
+        return headerFooter
     }
     
     func configurableCells<S: SequenceType, Cell: UITableViewCell, O : ObservableType where O.E == S, Cell: protocol<ReusableView, Configurable>, Cell.T == S.Generator.Element>

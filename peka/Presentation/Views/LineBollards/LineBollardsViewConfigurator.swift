@@ -15,6 +15,7 @@ final class LineBollardsViewConfigurator: NSObject {
     
 	func configure() {
         self.tableView.register(BollardCell.self)
+        self.tableView.register(DirectionHeader.self)
         self.viewController.navigationController?.setNavigationBarHidden(false, animated: true)
 	}
 }

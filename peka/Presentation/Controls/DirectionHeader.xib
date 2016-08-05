@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DirectionHeader" customModule="peka" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chf-Dd-I6c">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-aU-nVl">
+                            <rect key="frame" x="14" y="25" width="20" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="Pvk-q9-hdM"/>
+                                <constraint firstAttribute="width" constant="20" id="zC8-lG-iky"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ux7-en-T5c">
+                            <rect key="frame" x="44" y="24" width="536" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            <color key="textColor" red="0.86274509803921573" green="0.8901960784313725" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ux7-en-T5c" secondAttribute="trailing" constant="20" id="Ula-py-YeB"/>
+                        <constraint firstItem="eCU-aU-nVl" firstAttribute="leading" secondItem="Chf-Dd-I6c" secondAttribute="leading" constant="14" id="Zmp-kw-rIG"/>
+                        <constraint firstAttribute="bottom" secondItem="ux7-en-T5c" secondAttribute="bottom" constant="12" id="c6L-Hg-o4s"/>
+                        <constraint firstItem="ux7-en-T5c" firstAttribute="leading" secondItem="eCU-aU-nVl" secondAttribute="trailing" constant="10" id="nia-Xh-Rv5"/>
+                        <constraint firstItem="eCU-aU-nVl" firstAttribute="centerY" secondItem="ux7-en-T5c" secondAttribute="centerY" id="va4-l9-EZz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Chf-Dd-I6c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="akj-vG-59S"/>
+                <constraint firstItem="Chf-Dd-I6c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="k8T-N8-Af0"/>
+                <constraint firstAttribute="trailing" secondItem="Chf-Dd-I6c" secondAttribute="trailing" id="oUf-si-fZx"/>
+                <constraint firstAttribute="bottom" secondItem="Chf-Dd-I6c" secondAttribute="bottom" id="oe7-mr-kIy"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="directionLabel" destination="ux7-en-T5c" id="SrC-wf-JQ6"/>
+                <outlet property="routeTypeIcon" destination="eCU-aU-nVl" id="dPW-uD-i0q"/>
+            </connections>
+            <point key="canvasLocation" x="525" y="72.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bus" width="20" height="23"/>
+    </resources>
+</document>

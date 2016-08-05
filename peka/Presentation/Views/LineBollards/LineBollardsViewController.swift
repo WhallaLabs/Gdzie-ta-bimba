@@ -61,11 +61,6 @@ final class LineBollardsViewController: UIViewController {
             cell.delegate = self
             return cell
         }
-        
-        self.dataSource.titleForHeaderInSection = { dataSource, index in
-            let model = dataSource.sectionAtIndex(index)
-            return model.direction.description
-        }
     }
 }
 
@@ -78,5 +73,12 @@ extension LineBollardsViewController: BollardCellDelegate {
 extension LineBollardsViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return .None
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view: DirectionHeader = tableView.dequeueReusableHeaderFooter()
+        let model = self.dataSource.sectionAtIndex(section)
+        view.configure(model.direction)
+        return view
     }
 }
