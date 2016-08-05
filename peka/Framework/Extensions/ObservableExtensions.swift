@@ -15,5 +15,9 @@ extension ObservableType {
             return converter.convert(value)
         }
     }
+    
+    func filter<T: Filtering where T.T == E>(filter: T) -> Observable<E> {
+        return self.filter { filter.filter($0) }
+    }
 
 }

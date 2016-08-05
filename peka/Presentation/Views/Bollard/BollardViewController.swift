@@ -68,7 +68,7 @@ final class BollardViewController: UIViewController {
             }.addDisposableTo(self.disposables)
     }
     
-    @IBAction func toggleFavorite() {
+    @IBAction private func toggleFavorite() {
         self.viewModel.toggleFavorite()
     }
 }

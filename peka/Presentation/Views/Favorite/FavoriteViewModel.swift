@@ -33,7 +33,7 @@ final class FavoriteViewModel {
     }
     
     func toggleFavorite(bollard: Bollard) {
-        let _: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
+        self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
     }
     
     private func nearesStop(coordinates: Coordinates) -> Observable<StopPointPushpin> {

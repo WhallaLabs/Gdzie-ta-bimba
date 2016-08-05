@@ -47,7 +47,7 @@ final class FavoriteViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.viewModel.initializeNearestStopPoint(self.locationManager.userLocation()).addDisposableTo(self.disposables)
+        self.viewModel.initializeNearestStopPoint(self.locationManager.userLocation()).addDisposableTo(self.viewDisposables)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -66,12 +66,14 @@ final class FavoriteViewController: UIViewController {
             .bindTo(self.nearestStopPointView.stopPoint)
             .addDisposableTo(self.disposables)
         
-        self.viewModel.nearestStopPoint.asObservable().map {  $0 == nil ? 0 : nearestStopPointDefaultHeight }.subscribeNext { [unowned self] height in
-            self.nearestStopPointHeightConstraint.constant = height
-            UIView.animateWithDuration(heightAnimationDuration) {
-                self.view.layoutIfNeeded()
-            }
-        }.addDisposableTo(self.disposables)
+        self.viewModel.nearestStopPoint.asObservable()
+            .map {  $0 == nil ? 0 : nearestStopPointDefaultHeight }
+            .subscribeNext { [unowned self] height in
+                self.nearestStopPointHeightConstraint.constant = height
+                UIView.animateWithDuration(heightAnimationDuration) {
+                    self.view.layoutIfNeeded()
+                }
+            }.addDisposableTo(self.disposables)
         
         self.viewModel.bollards.asObservable()
             .map { $0.any() }

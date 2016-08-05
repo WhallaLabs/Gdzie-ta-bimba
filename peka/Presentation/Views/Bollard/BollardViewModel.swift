@@ -39,6 +39,7 @@ final class BollardViewModel {
         
         let messageQuery = GetBollardMessageQuery(symbol: symbol)
         let messageObservable: Observable<JSON> = self.executor.execute(messageQuery)
+        
         //TODO
         let messageDisposable = messageObservable.doOnNext { print($0) }
             .filter { $0["success"].array?.count != 0 }
@@ -51,6 +52,6 @@ final class BollardViewModel {
         guard let bollard = self.bollard.value else {
             return
         }
-        let _: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
+        self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
     }
 }

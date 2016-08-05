@@ -25,8 +25,6 @@ extension String {
     }
     
     static var empty: String {
-        get {
-            return ""
-        }
+        return ""
     }
 }

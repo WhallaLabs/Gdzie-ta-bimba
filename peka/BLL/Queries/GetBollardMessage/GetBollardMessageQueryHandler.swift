@@ -24,7 +24,7 @@ final class GetBollardMessageQueryHandler: QueryHandler {
         let query = query as! GetBollardMessageQuery
         let parameters = self.bodyBuilder.bollardMessage(query.symbol)
         //TODO: message mapper
-        let mapper = RawJsonMapper()//WrappedObjectMapper(BollardMapper(), pathToObject: "success", "bollard")
+        let mapper = RawJsonMapper()
         let apiProvider = self.apiProvider
         return Observable<Int>.timer(0, period: 50, scheduler: MainScheduler.instance)
             .flatMap { _ in apiProvider.post(parameters, mapper: mapper) }

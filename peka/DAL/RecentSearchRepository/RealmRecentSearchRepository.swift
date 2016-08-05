@@ -19,7 +19,7 @@ final class RealmRecentSearchRepository: RecentSearchRepository {
         return self.realm.objects(SearchResultRealm.self)
             .asObservableArray()
             .map(SearchResultsRealmToSearchResultsMapper())
-            .map(DistinctOrdered())
+            .map(SearchResultsDistinctOrderedConverter())
             .shareReplayLatestWhileConnected()
     }
     
@@ -29,15 +29,5 @@ final class RealmRecentSearchRepository: RecentSearchRepository {
         try! self.realm.write {
             self.realm.add(searchResultRealm)
         }
-    }
-}
-
-private final class DistinctOrdered: Convertible {
-    
-    func convert(value: [SearchResult]) -> [SearchResult] {
-        return value.categorise { $0 }
-            .sortBy { (key, value) in value.count }
-            .map { (key, value) in key }
-            .take(20)
     }
 }

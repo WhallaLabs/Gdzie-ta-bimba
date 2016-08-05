@@ -33,7 +33,7 @@ extension UICollectionView {
         self.registerNib(nib, forSupplementaryViewOfKind: supplementaryViewOfKind, withReuseIdentifier: T.identifier)
     }
     
-    func dequeueReusableView<T: UICollectionViewCell where T: ReusableView>(elementKind elementKind: String, forIndexPath indexPath: NSIndexPath) -> T {
+    func dequeueReusableView<T: UICollectionReusableView where T: ReusableView>(elementKind elementKind: String, forIndexPath indexPath: NSIndexPath) -> T {
         guard let view = self.dequeueReusableSupplementaryViewOfKind(elementKind, withReuseIdentifier: T.identifier, forIndexPath: indexPath) as? T else {
             fatalError("Could not dequeue view with identifier: \(T.identifier)")
         }

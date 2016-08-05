@@ -41,9 +41,3 @@ final class PekaLocationManager : LocationManager {
         return startTrackingObservable.flatMap { locationObservable }
     }
 }
-
-private final class CLLocationToCoordinatesConverter: Convertible {
-    func convert(value: CLLocation) -> Coordinates {
-        return Coordinates(latitude: value.coordinate.latitude, longitude: value.coordinate.longitude)
-    }
-}

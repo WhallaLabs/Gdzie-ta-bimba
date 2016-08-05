@@ -39,7 +39,7 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
         return true
     }
     
-    func mapToRealmObject(bollard: Bollard) -> BollardRealm {
+    private func mapToRealmObject(bollard: Bollard) -> BollardRealm {
         let mapper = BollardToBollardRealmMapper()
         let bollardRealm = mapper.convert(bollard)
         return bollardRealm

@@ -30,6 +30,6 @@ final class BollardsViewModel {
     }
     
     func toggleFavorite(bollard: Bollard) {
-        let _: Bollard = self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
+        self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
     }
 }

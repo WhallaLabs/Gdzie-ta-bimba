@@ -26,7 +26,6 @@ final class NearestStopPointView: UIView {
     
     let stopPoint = Variable<StopPointPushpin?>(nil)
     
-    @IBInspectable
     var animationDelay: NSTimeInterval = 0
     
     var action: Observable<StopPointPushpin> {

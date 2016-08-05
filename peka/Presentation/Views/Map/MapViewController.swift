@@ -75,9 +75,10 @@ final class MapViewController: UIViewController {
         
         //TODO
         self.mapView.rx_didAddAnnotationViews.subscribeNext { annotations in
-            annotations.flatMap {  $0 as? MKPinAnnotationView }.forEach { annotation in
-                annotation.pinTintColor = UIColor(color: .BackgroundLight)
-            }
+            annotations.flatMap {  $0 as? MKPinAnnotationView }
+                .forEach { annotation in
+                    annotation.pinTintColor = UIColor(color: .BackgroundLight)
+                }
         }.addDisposableTo(self.disposables)
     }
     
