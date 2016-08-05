@@ -13,7 +13,7 @@ import RxDataSources
 
 final class LineBollardsViewController: UIViewController {
 
-	private let disposables = DisposeBag()
+    private let disposables = DisposeBag()
 	private var viewModel: LineBollardsViewModel!
 	private var navigationDelegate: LineBollardsNavigationControllerDelegate!
     private let dataSource = RxTableViewSectionedReloadDataSource<LineBollards>()
@@ -39,6 +39,7 @@ final class LineBollardsViewController: UIViewController {
         self.configure()
         self.registerForEvents()
         self.updateTitle(self.line)
+        self.tableView.rx_setDelegate(self)
 	}
 	
     private func setupBinding() {
@@ -71,5 +72,11 @@ final class LineBollardsViewController: UIViewController {
 extension LineBollardsViewController: BollardCellDelegate {
     func toggleFavorite(bollard: Bollard) {
         self.viewModel.toggleFavorite(bollard)
+    }
+}
+
+extension LineBollardsViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return .None
     }
 }

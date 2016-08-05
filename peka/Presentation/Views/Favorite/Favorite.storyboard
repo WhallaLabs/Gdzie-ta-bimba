@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSB-nz-Y92" customClass="NearestStopPointView" customModule="peka" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="600" height="124"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="124" id="wjq-2P-bZg"/>
+                                    <constraint firstAttribute="height" id="wjq-2P-bZg"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-O5-Jhc">
-                                <rect key="frame" x="0.0" y="188" width="600" height="412"/>
+                                <rect key="frame" x="0.0" y="109" width="600" height="491"/>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="4lX-op-ngV">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
@@ -32,24 +32,44 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-small" translatesAutoresizingMaskIntoConstraints="NO" id="JdQ-Lv-4Kf">
+                                <rect key="frame" x="14" y="81" width="20" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="PSp-sJ-CY6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ulubione" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM3-jm-zTA">
+                                <rect key="frame" x="44" y="76" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" red="0.86274509803921573" green="0.8901960784313725" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="AM3-jm-zTA" firstAttribute="leading" secondItem="JdQ-Lv-4Kf" secondAttribute="trailing" constant="10" id="1I8-F8-4Pe"/>
+                            <constraint firstItem="UWU-O5-Jhc" firstAttribute="leading" secondItem="AM3-jm-zTA" secondAttribute="trailing" constant="-140" id="4Dj-8P-1TV"/>
                             <constraint firstItem="fSB-nz-Y92" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="9aj-g7-wTq"/>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="APj-xg-UPx"/>
                             <constraint firstAttribute="trailing" secondItem="fSB-nz-Y92" secondAttribute="trailing" id="Auc-aK-YHK"/>
                             <constraint firstAttribute="bottom" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="AxC-4l-2fs"/>
+                            <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="AM3-jm-zTA" secondAttribute="bottom" constant="12" id="CTR-Vw-S1s"/>
+                            <constraint firstItem="JdQ-Lv-4Kf" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" constant="14" id="G0k-J0-olm"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="fSB-nz-Y92" secondAttribute="bottom" id="Qp1-fZ-m8W"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="Vch-w2-7Hn"/>
                             <constraint firstItem="fSB-nz-Y92" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="cQR-xj-6Zk"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="eLq-Ya-LAP"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="mUi-0e-cxM"/>
+                            <constraint firstItem="AM3-jm-zTA" firstAttribute="top" secondItem="fSB-nz-Y92" secondAttribute="bottom" constant="12" id="p2T-Kg-Tez"/>
                             <constraint firstItem="fSB-nz-Y92" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="qeP-sd-Ego"/>
+                            <constraint firstItem="JdQ-Lv-4Kf" firstAttribute="centerY" secondItem="AM3-jm-zTA" secondAttribute="centerY" id="sPt-2P-ogd"/>
                             <constraint firstAttribute="trailing" secondItem="UWU-O5-Jhc" secondAttribute="trailing" id="ydp-xP-0jL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="cQR-xj-6Zk"/>
+                                <exclude reference="4Dj-8P-1TV"/>
+                                <exclude reference="Qp1-fZ-m8W"/>
                                 <exclude reference="Vch-w2-7Hn"/>
                                 <exclude reference="mUi-0e-cxM"/>
                                 <exclude reference="APj-xg-UPx"/>
@@ -58,6 +78,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wxv-lE-I25"/>
                     <connections>
+                        <outlet property="nearestStopPointHeightConstraint" destination="wjq-2P-bZg" id="Ix4-3S-wLf"/>
                         <outlet property="nearestStopPointView" destination="fSB-nz-Y92" id="yLm-za-ruw"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="PQV-bQ-gGI"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
@@ -96,5 +117,6 @@
     </scenes>
     <resources>
         <image name="star-empty" width="23" height="22"/>
+        <image name="star-small" width="13" height="12"/>
     </resources>
 </document>

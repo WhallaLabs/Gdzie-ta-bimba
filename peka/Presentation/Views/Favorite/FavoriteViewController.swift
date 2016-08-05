@@ -10,10 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+private let nearestStopPointDefaultHeight: CGFloat = 97
+private let heightAnimationDuration: NSTimeInterval = 0.3
+
 final class FavoriteViewController: UIViewController {
 
 	private let disposables = DisposeBag()
     private var viewDisposables = DisposeBag()
+    private let disableEditingBehavior = DisableEditingTableViewDelegate()
 	private var viewModel: FavoriteViewModel!
     private var navigationDelegate: FavoriteNavigationControllerDelegate!
     private var locationManager: LocationManager!
@@ -21,6 +25,7 @@ final class FavoriteViewController: UIViewController {
 	@IBOutlet private weak var viewConfigurator: FavoriteViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var nearestStopPointView: NearestStopPointView!
+    @IBOutlet private weak var nearestStopPointHeightConstraint: NSLayoutConstraint!
     
 	func installDependencies(viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
 		self.viewModel = viewModel
@@ -29,23 +34,19 @@ final class FavoriteViewController: UIViewController {
 	}
 
 	override func viewDidLoad() {
-		super.viewDidLoad()
+        super.viewDidLoad()
+        self.nearestStopPointView.animationDelay = heightAnimationDuration
 		self.viewConfigurator.configure()
         self.viewModel.loadFavouriteBollards().addDisposableTo(self.disposables)
         self.setupBinding()
         self.registerForEvents()
+        self.tableView.rx_setDelegate(self.disableEditingBehavior)
 	}
 	
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.locationManager.userLocation()
-            .throttle(1, scheduler: MainScheduler.instance)
-            .flatMap { [unowned self] coordinates in self.viewModel.nearesStop(coordinates) }
-            .distinctUntilChanged()
-            .map { $0 as StopPointPushpin? }
-            .bindTo(self.nearestStopPointView.stopPoint)
-            .addDisposableTo(self.viewDisposables)
+        self.viewModel.initializeNearestStopPoint(self.locationManager.userLocation()).addDisposableTo(self.disposables)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -59,6 +60,17 @@ final class FavoriteViewController: UIViewController {
                 cell.configure(model)
                 cell.delegate = self
             }.addDisposableTo(self.disposables)
+        
+        self.viewModel.nearestStopPoint.asObservable()
+            .bindTo(self.nearestStopPointView.stopPoint)
+            .addDisposableTo(self.disposables)
+        
+        self.viewModel.nearestStopPoint.asObservable().map {  $0 == nil ? 0 : nearestStopPointDefaultHeight }.subscribeNext { [unowned self] height in
+            self.nearestStopPointHeightConstraint.constant = height
+            UIView.animateWithDuration(heightAnimationDuration) {
+                self.view.layoutIfNeeded()
+            }
+        }.addDisposableTo(self.disposables)
     }
     
     private func registerForEvents() {
