@@ -12,6 +12,7 @@ import RxCocoa
 import MapKit
 import RxMKMapView
 import RxOptional
+import FBAnnotationClusteringSwift
 
 private let poznanCoordinates = CLLocationCoordinate2DMake(52.407720, 16.933497)
 
@@ -21,6 +22,7 @@ final class MapViewController: UIViewController {
 	private var viewModel: MapViewModel!
     private var locationManager: LocationManager!
     private var navigationDelegate: MapNavigationControllerDelegate!
+    private let clusteringManager = FBClusteringManager()
 
 	@IBOutlet private weak var viewConfigurator: MapViewConfigurator!
     @IBOutlet private weak var mapView: MKMapView!
@@ -33,7 +35,8 @@ final class MapViewController: UIViewController {
 	}
 
 	override func viewDidLoad() {
-		super.viewDidLoad()
+        super.viewDidLoad()
+        self.mapView.delegate = self
         self.viewModel.loadStopPoints().addDisposableTo(self.disposables)
 		self.viewConfigurator.configure()
         self.registerForEvents()
@@ -67,19 +70,18 @@ final class MapViewController: UIViewController {
                 annotationView.rightCalloutAccessoryView = button
             }.addDisposableTo(self.disposables)
         
+        self.mapView.rx_didSelectAnnotationView.map { $0.annotation as? FBAnnotationCluster }
+            .filterNil()
+            .map { $0.coordinate }
+            .subscribeNext { [unowned self] coordinate in
+                self.zoomToCluster(coordinate)
+            }.addDisposableTo(self.disposables)
+        
         self.mapView.rx_annotationViewCalloutAccessoryControlTapped.map { $0.view.annotation as? StopPointAnnotation }
             .filterNil()
             .subscribeNext { [unowned self] stopPointAnnotation in
                 self.navigationDelegate.showBollard(stopPointAnnotation)
             }.addDisposableTo(self.disposables)
-        
-        //TODO
-        self.mapView.rx_didAddAnnotationViews.subscribeNext { annotations in
-            annotations.flatMap {  $0 as? MKPinAnnotationView }
-                .forEach { annotation in
-                    annotation.pinTintColor = UIColor(color: .BackgroundLight)
-                }
-        }.addDisposableTo(self.disposables)
     }
     
     private func setupBinding() {
@@ -87,8 +89,7 @@ final class MapViewController: UIViewController {
             .filter{ $0.any() }
             .map(StopPointPushpinsToAnnotationsConverter())
             .subscribeNext { [unowned self] annotations in
-                self.mapView.removeAnnotations(self.mapView.annotations)
-                self.mapView.addAnnotations(annotations)
+                self.clusteringManager.addAnnotations(annotations)
             }.addDisposableTo(self.disposables)
     }
     
@@ -100,5 +101,37 @@ final class MapViewController: UIViewController {
     private func showRegion(coordinates: CLLocationCoordinate2D) {
         let region = MKCoordinateRegionMakeWithDistance(coordinates, 1000, 1000)
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    private func zoomToCluster(coordinates: CLLocationCoordinate2D) {
+        var span = self.mapView.region.span
+        span.latitudeDelta = span.latitudeDelta / 2
+        span.longitudeDelta = span.longitudeDelta / 2
+        let region = MKCoordinateRegionMake(coordinates, span)
+        self.mapView.setRegion(region, animated: true)
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if let clusterAnnotation = annotation as? FBAnnotationCluster {
+            return FBAnnotationClusterView(annotation: clusterAnnotation)
+        }
+        if let stopPointAnnotation = annotation as? StopPointAnnotation {
+            let pushpinView = mapView.dequeueReusableAnnotationViewWithIdentifier(Pushpin.identifier) as? Pushpin ?? Pushpin(pushpinAnnotation: stopPointAnnotation)
+            return pushpinView
+        }
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        NSOperationQueue().addOperationWithBlock { 
+            let mapBoundsWidth = Double(self.mapView.bounds.size.width)
+            let mapRectWidth: Double = self.mapView.visibleMapRect.size.width
+            let scale: Double = mapBoundsWidth / mapRectWidth
+            
+            let annotations = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
+            self.clusteringManager.displayAnnotations(annotations, onMapView: self.mapView)
+        }
     }
 }

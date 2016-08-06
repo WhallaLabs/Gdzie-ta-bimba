@@ -17,6 +17,9 @@
 		3826AE891D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */; };
 		3826AE8D1D5141AE0020678C /* GetFavoriteBollardsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */; };
 		3826AE8E1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */; };
+		383214A41D5631E000DBD22E /* MapScaleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383214A31D5631E000DBD22E /* MapScaleConverter.swift */; };
+		383214A61D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383214A51D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift */; };
+		383214A81D563CF000DBD22E /* Pushpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383214A71D563CF000DBD22E /* Pushpin.swift */; };
 		3833CF9E1D534238000B74C2 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9D1D534238000B74C2 /* UIViewControllerExtensions.swift */; };
 		3833CFA01D535233000B74C2 /* FavoriteStateToImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */; };
 		3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */; };
@@ -227,6 +230,9 @@
 		3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleBollardFavoriteCommandHandler.swift; sourceTree = "<group>"; };
 		3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQuery.swift; sourceTree = "<group>"; };
 		3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQueryHandler.swift; sourceTree = "<group>"; };
+		383214A31D5631E000DBD22E /* MapScaleConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScaleConverter.swift; sourceTree = "<group>"; };
+		383214A51D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterViewExtensions.swift; sourceTree = "<group>"; };
+		383214A71D563CF000DBD22E /* Pushpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pushpin.swift; sourceTree = "<group>"; };
 		3833CF9D1D534238000B74C2 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStateToImageConverter.swift; sourceTree = "<group>"; };
 		3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
@@ -970,6 +976,7 @@
 				38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */,
 				383FEB321D54926700945E88 /* LineNameToRouteTypeConverter.swift */,
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
+				383214A31D5631E000DBD22E /* MapScaleConverter.swift */,
 				383FEB341D54941F00945E88 /* RouteTypeToIconImageConverter.swift */,
 				38F78BD91D5552FF006EB5C8 /* SearchResultsDistinctOrderedConverter.swift */,
 				3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */,
@@ -984,6 +991,7 @@
 			isa = PBXGroup;
 			children = (
 				38F391601D4A53A9005F4A42 /* ArrayExtensions.swift */,
+				383214A51D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift */,
 				38F391931D4A5CBA005F4A42 /* NSMutableDataExtensions.swift */,
 				38F391681D4A5664005F4A42 /* ObservableExtensions.swift */,
 				38F391751D4A5814005F4A42 /* StringExtensions.swift */,
@@ -1096,6 +1104,7 @@
 				385587181D54D3D60011C6BE /* DirectionHeader */,
 				389BE9751D5223C20033FF87 /* NearestStopPoint */,
 				3833CFA91D539260000B74C2 /* SearchBar */,
+				383214A71D563CF000DBD22E /* Pushpin.swift */,
 				3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */,
 			);
 			path = Controls;
@@ -1485,6 +1494,7 @@
 				38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */,
 				38A68B081D50D54300BBC087 /* MapNavigationController.swift in Sources */,
 				385737011D4B5F1900C8D772 /* Bollard.swift in Sources */,
+				383214A61D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift in Sources */,
 				385736EF1D4B4CFC00C8D772 /* SearchQuery.swift in Sources */,
 				388205191D533E1E0000F58E /* PekaNavigationController.swift in Sources */,
 				383FEB331D54926700945E88 /* LineNameToRouteTypeConverter.swift in Sources */,
@@ -1504,6 +1514,7 @@
 				385736FE1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift in Sources */,
 				386898AE1D4F9F7F004CA51B /* GetBollardsByStopPointQuery.swift in Sources */,
 				38F3915D1D4A52DF005F4A42 /* SegueHandler.swift in Sources */,
+				383214A81D563CF000DBD22E /* Pushpin.swift in Sources */,
 				38D7FFFC1D50103600937FD2 /* BollardNavigationController.swift in Sources */,
 				38F391901D4A5B28005F4A42 /* ApiProvider.swift in Sources */,
 				38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */,
@@ -1544,6 +1555,7 @@
 				38ABF5061D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift in Sources */,
 				38FE8D8F1D4F561100E6B5BF /* SearchViewModel.swift in Sources */,
 				38F3916E1D4A5702005F4A42 /* HttpBodyParameter.swift in Sources */,
+				383214A41D5631E000DBD22E /* MapScaleConverter.swift in Sources */,
 				385737121D4B642B00C8D772 /* LineBollards.swift in Sources */,
 				38ABF5321D5219DA00B6E9F7 /* GetNearestStopQuery.swift in Sources */,
 				38FE8D791D4F44DB00E6B5BF /* Caching.swift in Sources */,

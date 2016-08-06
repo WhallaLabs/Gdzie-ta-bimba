@@ -19,3 +19,4 @@ pod 'RxDataSources'
 pod "RxMKMapView"
 pod 'RealmSwift'
 pod "RxRealm"
+pod 'FBAnnotationClusteringSwift'
