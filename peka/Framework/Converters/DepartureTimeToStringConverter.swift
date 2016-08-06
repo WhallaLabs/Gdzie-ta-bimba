@@ -14,10 +14,14 @@ final class DepartureTimeToStringConverter: Convertible {
     
     init(format: String = "H:mm") {
         self.format = format
+        
+        let timeZone = "GMT"
+        DepartureTimeToStringConverter.dateFormatter.timeZone = NSTimeZone(name: timeZone)
     }
     
     func convert(value: NSDate) -> String {
         DepartureTimeToStringConverter.dateFormatter.dateFormat = self.format
-        return DepartureTimeToStringConverter.dateFormatter.stringFromDate(value)
+        let dateString = DepartureTimeToStringConverter.dateFormatter.stringFromDate(value)
+        return dateString
     }
 }

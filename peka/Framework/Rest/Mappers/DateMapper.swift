@@ -24,6 +24,7 @@ final class DateMapper: ObjectMappable {
             return nil
         }
         DateMapper.dateFormatter.dateFormat = self.format
-        return DateMapper.dateFormatter.dateFromString(dateString)
+        let date = DateMapper.dateFormatter.dateFromString(dateString)
+        return date
     }
 }
