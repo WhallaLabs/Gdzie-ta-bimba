@@ -53,10 +53,6 @@ final class BollardViewController: UIViewController {
             self.toggleFavoriteButton.image = image
         }.addDisposableTo(self.disposables)
         
-        /*bollardObservable.subscribeNext { [unowned self] bollard in
-            self.updateTitle(bollard.name)
-        }.addDisposableTo(self.disposables)*/
-        
         //TODO
         self.viewModel.message.asObservable()
             .filter { $0.isNotEmpty }
