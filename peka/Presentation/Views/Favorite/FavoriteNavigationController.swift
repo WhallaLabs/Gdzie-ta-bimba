@@ -15,9 +15,10 @@ final class FavoriteNavigationController: FavoriteNavigationControllerDelegate {
         self.viewController = viewController
     }
     
-    func showBollard(bollardSymbol: String) {
+    func showBollard(bollardSymbol: String, name: String) {
         let viewController: BollardViewController = UIStoryboard.instantiateInitialViewController()
         viewController.loadBollard(bollardSymbol)
+        viewController.title = name
         self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }
 }

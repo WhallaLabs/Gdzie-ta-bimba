@@ -82,13 +82,13 @@ final class FavoriteViewController: UIViewController {
     }
     
     private func registerForEvents() {
-        let favoriteBollardObservable = self.tableView.rx_modelSelected(Bollard.self).map { $0.symbol }
-        let nearestStopAction = self.nearestStopPointView.action.map { $0.id }
+        let favoriteBollardObservable = self.tableView.rx_modelSelected(Bollard.self).map { ($0.symbol, $0.name) }
+        let nearestStopAction = self.nearestStopPointView.action.map { ($0.id, $0.name) }
         
         Observable.of(favoriteBollardObservable, nearestStopAction)
             .merge()
-            .subscribeNext { [unowned self] symbol in
-                self.navigationDelegate.showBollard(symbol)
+            .subscribeNext { [unowned self] symbol, name in
+                self.navigationDelegate.showBollard(symbol, name: name)
             }.addDisposableTo(self.disposables)
     }
 }

@@ -18,6 +18,7 @@ final class MapNavigationController: MapNavigationControllerDelegate {
     func showBollard(stopPointAnnotaion: StopPointAnnotation) {
         let viewController: BollardViewController = UIStoryboard.instantiateInitialViewController()
         viewController.loadBollard(stopPointAnnotaion.id)
+        viewController.title = stopPointAnnotaion.title
         self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }
 }

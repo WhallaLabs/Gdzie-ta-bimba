@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FavoriteNavigationControllerDelegate {
-    func showBollard(bollardSymbol: String)
+    func showBollard(bollardSymbol: String, name: String)
 }
