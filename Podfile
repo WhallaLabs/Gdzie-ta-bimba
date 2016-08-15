@@ -16,7 +16,8 @@ pod 'RxOptional'
 pod 'Swinject'
 pod 'SwiftyJSON'
 pod 'RxDataSources'
-pod "RxMKMapView"
+pod 'RxMKMapView'
 pod 'RealmSwift'
-pod "RxRealm"
+pod 'RxRealm'
 pod 'FBAnnotationClusteringSwift'
+pod 'TTTAttributedLabel'

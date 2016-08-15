@@ -9,19 +9,22 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import TTTAttributedLabel
 
 @IBDesignable
 final class MessageBubbleView: UIView {
     private let disposables = DisposeBag()
+    private let layoutSubviewsSubject = PublishSubject<Void>()
     
     let content: Variable<NSAttributedString?> = Variable(nil)
 
     @IBOutlet private weak var leftConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var label: TTTAttributedLabel!
     
 	required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupXib()
+        self.configureLabel()
 #if !TARGET_INTERFACE_BUILDER
         self.setupBinding()
 #endif
@@ -30,22 +33,42 @@ final class MessageBubbleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupXib()
+        self.configureLabel()
 #if !TARGET_INTERFACE_BUILDER
         self.setupBinding()
 #endif
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layoutSubviewsSubject.onNext()
+    }
+    
     private func setupBinding() {
-        self.content.asObservable()
+        
+        let contentObservable = self.content.asObservable()
+        
+        contentObservable.map(IsNilConverter())
+            .bindTo(self.rx_hidden)
+            .addDisposableTo(self.disposables)
+        
+        let resumeObservable = self.layoutSubviewsSubject.asObservable()
+            .skip(1)
+            .flatMap { [unowned self] in self.content.asObservable() }
+        
+        Observable.of(resumeObservable, contentObservable)
+            .merge()
             .filterNil()
             .subscribeNext { [unowned self] content in
                 self.updateMessage(content)
             }.addDisposableTo(self.disposables)
-        
-        self.content.asObservable()
-            .map(IsNilConverter())
-            .bindTo(self.rx_hidden)
-            .addDisposableTo(self.disposables)
+    }
+    
+    private func configureLabel() {
+        self.label.delegate = self
+        self.label.userInteractionEnabled = true
+        self.label.enabledTextCheckingTypes = NSTextCheckingAllTypes
+        self.label.linkAttributes = [kCTUnderlineStyleAttributeName : NSNumber(int: CTUnderlineStyle.None.rawValue)]
     }
     
     private func updateMessage(attributedString: NSAttributedString) {
@@ -55,7 +78,7 @@ final class MessageBubbleView: UIView {
                                                 NSFontAttributeName : UIFont.systemFontOfSize(16, weight: UIFontWeightBold)]
         mutableString.addAttributes(attributes, range: range)
         
-        self.label.attributedText = mutableString
+        self.label.setText(mutableString)
         self.beginAnimation()
     }
     
@@ -87,10 +110,20 @@ final class MessageBubbleView: UIView {
                                    options: [.TransitionNone, .Repeat, .CurveLinear],
                                    animations: {
                                     self.layoutIfNeeded()
-            }, completion: nil)
+            },
+                                   completion: { _ in
+                                    self.leftConstraint.constant = 0
+                                    self.setNeedsLayout()
+        })
     }
 }
 
 extension MessageBubbleView: NibLoadableView {
 
+}
+
+extension MessageBubbleView: TTTAttributedLabelDelegate {
+    func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
+        print(url)
+    }
 }
