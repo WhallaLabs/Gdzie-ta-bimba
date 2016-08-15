@@ -14,7 +14,7 @@ final class BollardViewModel {
     private let executor: Executor
     let times = Variable<[Time]>([])
     let bollard = Variable<Bollard?>(nil)
-    let message = Variable(String.empty)
+    let message = Variable<NSAttributedString?>(nil)
     
     init(executor: Executor) {
         self.executor = executor
@@ -38,12 +38,9 @@ final class BollardViewModel {
         let timesDisposable = timesObservable.retry(10).bindTo(self.times)
         
         let messageQuery = GetBollardMessageQuery(symbol: symbol)
-        let messageObservable: Observable<JSON> = self.executor.execute(messageQuery)
+        let messageObservable: Observable<NSAttributedString> = self.executor.execute(messageQuery)
         
-        //TODO
-        let messageDisposable = messageObservable.doOnNext { print($0) }
-            .filter { $0["success"].array?.count != 0 }
-            .map { "\($0)\n\($0.rawString() ?? String.empty)" }
+        let messageDisposable = messageObservable.map(ToOptionalConverter())
             .bindTo(self.message)
         return CompositeDisposable(timesDisposable, messageDisposable)
     }

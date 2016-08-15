@@ -109,6 +109,11 @@
 		38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */; };
 		38ABF5321D5219DA00B6E9F7 /* GetNearestStopQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5301D5219DA00B6E9F7 /* GetNearestStopQuery.swift */; };
 		38ABF5331D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5311D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift */; };
+		38B163A01D621EE200D512F2 /* MessageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1639F1D621EE200D512F2 /* MessageMapper.swift */; };
+		38B163A21D6221E800D512F2 /* ToOptionalConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B163A11D6221E800D512F2 /* ToOptionalConverter.swift */; };
+		38B163A61D6225CD00D512F2 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B163A41D6225CD00D512F2 /* MessageBubbleView.swift */; };
+		38B163A71D6225CD00D512F2 /* MessageBubbleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B163A51D6225CD00D512F2 /* MessageBubbleView.xib */; };
+		38B163A91D623D1600D512F2 /* IsNilConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B163A81D623D1600D512F2 /* IsNilConverter.swift */; };
 		38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFFA1D50103600937FD2 /* BollardViewModel.swift */; };
 		38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE41D50081700937FD2 /* BollardCell.swift */; };
 		38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7FFE51D50081700937FD2 /* BollardCell.xib */; };
@@ -323,6 +328,11 @@
 		38ABF52C1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSearchResultCommandHandler.swift; sourceTree = "<group>"; };
 		38ABF5301D5219DA00B6E9F7 /* GetNearestStopQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNearestStopQuery.swift; sourceTree = "<group>"; };
 		38ABF5311D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNearestStopQueryHandler.swift; sourceTree = "<group>"; };
+		38B1639F1D621EE200D512F2 /* MessageMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageMapper.swift; sourceTree = "<group>"; };
+		38B163A11D6221E800D512F2 /* ToOptionalConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToOptionalConverter.swift; sourceTree = "<group>"; };
+		38B163A41D6225CD00D512F2 /* MessageBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
+		38B163A51D6225CD00D512F2 /* MessageBubbleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageBubbleView.xib; sourceTree = "<group>"; };
+		38B163A81D623D1600D512F2 /* IsNilConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsNilConverter.swift; sourceTree = "<group>"; };
 		38D7FFE41D50081700937FD2 /* BollardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardCell.swift; sourceTree = "<group>"; };
 		38D7FFE51D50081700937FD2 /* BollardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollardCell.xib; sourceTree = "<group>"; };
 		38D7FFE91D500BCF00937FD2 /* TimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
@@ -764,6 +774,15 @@
 			path = GetNearestStop;
 			sourceTree = "<group>";
 		};
+		38B163A31D6225BC00D512F2 /* MessageBubble */ = {
+			isa = PBXGroup;
+			children = (
+				38B163A41D6225CD00D512F2 /* MessageBubbleView.swift */,
+				38B163A51D6225CD00D512F2 /* MessageBubbleView.xib */,
+			);
+			path = MessageBubble;
+			sourceTree = "<group>";
+		};
 		38D7FFE31D50080500937FD2 /* Bollard */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,6 +890,7 @@
 				385736CB1D4B431700C8D772 /* StopPoint */,
 				385737091D4B617900C8D772 /* Time */,
 				385736E71D4B4C1E00C8D772 /* LineMapper.swift */,
+				38B1639F1D621EE200D512F2 /* MessageMapper.swift */,
 				385736E51D4B4BC700C8D772 /* StreetMapper.swift */,
 			);
 			path = Models;
@@ -974,6 +994,7 @@
 				38F78BD71D555252006EB5C8 /* FindNearesStopConverter.swift */,
 				3895023A1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift */,
 				38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */,
+				38B163A81D623D1600D512F2 /* IsNilConverter.swift */,
 				383FEB321D54926700945E88 /* LineNameToRouteTypeConverter.swift */,
 				385736FB1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift */,
 				383214A31D5631E000DBD22E /* MapScaleConverter.swift */,
@@ -983,6 +1004,7 @@
 				38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
+				38B163A11D6221E800D512F2 /* ToOptionalConverter.swift */,
 			);
 			path = Converters;
 			sourceTree = "<group>";
@@ -1102,6 +1124,7 @@
 			isa = PBXGroup;
 			children = (
 				385587181D54D3D60011C6BE /* DirectionHeader */,
+				38B163A31D6225BC00D512F2 /* MessageBubble */,
 				389BE9751D5223C20033FF87 /* NearestStopPoint */,
 				3833CFA91D539260000B74C2 /* SearchBar */,
 				383214A71D563CF000DBD22E /* Pushpin.swift */,
@@ -1272,6 +1295,7 @@
 				38FE8E081D4F919700E6B5BF /* Bollards.storyboard in Resources */,
 				38FE8DFB1D4F825300E6B5BF /* SearchResultCell.xib in Resources */,
 				38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */,
+				38B163A71D6225CD00D512F2 /* MessageBubbleView.xib in Resources */,
 				389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */,
 				38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */,
 				38FE8D831D4F55F100E6B5BF /* Favorite.storyboard in Resources */,
@@ -1412,6 +1436,7 @@
 				385736F81D4B56AA00C8D772 /* PekaApiProviderExtension.swift in Sources */,
 				38ABF5281D52074B00B6E9F7 /* GetSearchHistoryQuery.swift in Sources */,
 				385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */,
+				38B163A61D6225CD00D512F2 /* MessageBubbleView.swift in Sources */,
 				386898C31D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift in Sources */,
 				38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */,
 				385736F61D4B531A00C8D772 /* RequestBodyBuilder.swift in Sources */,
@@ -1456,6 +1481,7 @@
 				38F7778F1D5086C70070265E /* PekaLocationManager.swift in Sources */,
 				3855871E1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift in Sources */,
 				386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */,
+				38B163A91D623D1600D512F2 /* IsNilConverter.swift in Sources */,
 				386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */,
 				3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */,
 				38ABF52D1D5207D800B6E9F7 /* SaveSearchResultCommand.swift in Sources */,
@@ -1484,6 +1510,7 @@
 				3826AE7E1D50E6A70020678C /* BollardRealmMapper.swift in Sources */,
 				38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */,
 				38FE8DEE1D4F731800E6B5BF /* UIStoryboardExtensions.swift in Sources */,
+				38B163A01D621EE200D512F2 /* MessageMapper.swift in Sources */,
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				3895023B1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift in Sources */,
 				38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */,
@@ -1519,6 +1546,7 @@
 				38F391901D4A5B28005F4A42 /* ApiProvider.swift in Sources */,
 				38403F971D4B798B006AB84C /* FormBodyBuilder.swift in Sources */,
 				38DA92061D4FB0BC00B3EA08 /* LineBollardsSection.swift in Sources */,
+				38B163A21D6221E800D512F2 /* ToOptionalConverter.swift in Sources */,
 				38FE8D8E1D4F561100E6B5BF /* SearchViewController.swift in Sources */,
 				38F391531D4A525C005F4A42 /* Configurable.swift in Sources */,
 				38F3916C1D4A56ED005F4A42 /* HttpHeadersProvider.swift in Sources */,

@@ -21,7 +21,7 @@ final class BollardViewController: UIViewController {
 	@IBOutlet private weak var viewConfigurator: BollardViewConfigurator!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var toggleFavoriteButton: UIBarButtonItem!
-    
+    @IBOutlet private weak var messageBubble: MessageBubbleView!
 	func installDependencies(viewModel: BollardViewModel, _ navigationDelegate: BollardNavigationControllerDelegate) {
 		self.viewModel = viewModel
 		self.navigationDelegate = navigationDelegate
@@ -53,14 +53,17 @@ final class BollardViewController: UIViewController {
             self.toggleFavoriteButton.image = image
         }.addDisposableTo(self.disposables)
         
-        //TODO
         self.viewModel.message.asObservable()
-            .filter { $0.isNotEmpty }
-            .take(1)
-            .subscribeNext { [unowned self] value in
-                let alertViewController = UIAlertController(title: nil, message: value, preferredStyle: .Alert)
-                alertViewController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-                self.presentViewController(alertViewController, animated: true, completion: nil)
+            .bindTo(self.messageBubble.content)
+            .addDisposableTo(self.disposables)
+        
+        self.viewModel.message.asObservable()
+            .map(IsNilConverter())
+            .map { $0 ? CGFloat(0) : CGFloat(36) }
+            .subscribeNext { [unowned self] messageHeight in
+                let inset = UIEdgeInsetsMake(0, 0, messageHeight, 0)
+                self.tableView.contentInset = inset
+                self.tableView.scrollIndicatorInsets = inset
             }.addDisposableTo(self.disposables)
     }
     

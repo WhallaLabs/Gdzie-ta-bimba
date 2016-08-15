@@ -23,10 +23,11 @@ final class GetBollardMessageQueryHandler: QueryHandler {
     func handle(query: Query) -> Any {
         let query = query as! GetBollardMessageQuery
         let parameters = self.bodyBuilder.bollardMessage(query.symbol)
-        //TODO: message mapper
-        let mapper = RawJsonMapper()
+        
+        let mapper = MessageMapper()
         let apiProvider = self.apiProvider
-        return Observable<Int>.timer(0, period: 50, scheduler: MainScheduler.instance)
+        let observable = Observable<Int>.timer(0, period: 50, scheduler: MainScheduler.instance)
             .flatMap { _ in apiProvider.post(parameters, mapper: mapper) }
+        return observable.distinctUntilChanged()
     }
 }
