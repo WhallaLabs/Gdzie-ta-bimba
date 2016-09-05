@@ -1,0 +1,6 @@
+framework module Pods_peka {
+  umbrella header "Pods-peka-umbrella.h"
+
+  export *
+  module * { export * }
+}

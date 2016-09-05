@@ -1,0 +1,56 @@
+PODS:
+  - FBAnnotationClusteringSwift (1.0.1)
+  - Realm (1.0.2):
+    - Realm/Headers (= 1.0.2)
+  - Realm/Headers (1.0.2)
+  - RealmSwift (1.0.2):
+    - Realm (= 1.0.2)
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxDataSources (0.9):
+    - RxCocoa (~> 2.2)
+    - RxSwift (~> 2.2)
+  - RxMKMapView (2.1.0):
+    - RxCocoa (~> 2)
+    - RxSwift (~> 2)
+  - RxOptional (2.0.0):
+    - RxCocoa (~> 2.0)
+    - RxSwift (~> 2.0)
+  - RxRealm (0.1.8):
+    - RealmSwift (~> 1.0)
+    - RxSwift
+  - RxSwift (2.6.0)
+  - SwiftyJSON (2.3.2)
+  - Swinject (1.1.3)
+  - TTTAttributedLabel (2.0.0)
+
+DEPENDENCIES:
+  - FBAnnotationClusteringSwift
+  - RealmSwift
+  - RxCocoa
+  - RxDataSources
+  - RxMKMapView
+  - RxOptional
+  - RxRealm
+  - RxSwift
+  - SwiftyJSON
+  - Swinject
+  - TTTAttributedLabel
+
+SPEC CHECKSUMS:
+  FBAnnotationClusteringSwift: a1f4c07f5472b13acd69de04c61e68e2d7daaad3
+  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
+  RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxDataSources: e169bba94a7be584df7c1e1487fa56edc8753ae6
+  RxMKMapView: 13035c88d8c9212caca7bd4c70b52a2866084d77
+  RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
+  RxRealm: e1620fd20f5dc0d14c10e92bcc6c2c70bfb03ebe
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  Swinject: 69273c2419f93d52603c3a546f5d2792ee1a5e98
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+
+PODFILE CHECKSUM: 418edb231807d5611ecf6ca8275484b4de3019c1
+
+COCOAPODS: 1.0.1
