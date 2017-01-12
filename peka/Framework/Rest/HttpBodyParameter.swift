@@ -9,16 +9,16 @@
 import Foundation
 
 enum HttpBodyParameter {
-    case File(name: String, data: NSData, fileName: String, mime: String)
-    case Form(name: String, value: String)
+    case file(name: String, data: Data, fileName: String, mime: String)
+    case form(name: String, value: String)
 }
 
 extension HttpBodyParameter: Hashable {
     var hashValue: Int {
         switch self {
-        case .File(let name, _, _, _):
+        case .file(let name, _, _, _):
             return name.hashValue
-        case .Form(let name, _):
+        case .form(let name, _):
             return name.hashValue
         }
     }

@@ -15,14 +15,10 @@ final class Pushpin: MKAnnotationView {
         
         self.image = UIImage(asset: .Pushpin)
         self.canShowCallout = true
-        self.layer.anchorPoint = CGPointMake(0.5, 644.0 / 676.0)
+        self.layer.anchorPoint = CGPoint(x: 0.5, y: 644.0 / 676.0)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
     }
 }

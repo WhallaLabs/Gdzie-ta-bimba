@@ -11,9 +11,9 @@ import Foundation
 
 final class GetBollardsByStreetQueryHandler: QueryHandler {
     
-    private let apiProvider: RestApiProvider
-    private let favoriteGroupedDirectionsComparator: FavoriteGroupedDirectionsComparator
-    private let bodyBuilder: RequestBodyBuilder
+    fileprivate let apiProvider: RestApiProvider
+    fileprivate let favoriteGroupedDirectionsComparator: FavoriteGroupedDirectionsComparator
+    fileprivate let bodyBuilder: RequestBodyBuilder
     
     init(apiProvider: RestApiProvider, favoriteGroupedDirectionsComparator: FavoriteGroupedDirectionsComparator) {
         self.apiProvider = apiProvider
@@ -21,7 +21,7 @@ final class GetBollardsByStreetQueryHandler: QueryHandler {
         self.bodyBuilder = RequestBodyBuilder()
     }
     
-    func handle(query: Query) -> Any {
+    func handle(_ query: Query) -> Any {
         let query = query as! GetBollardsByStreetQuery
         let params = self.bodyBuilder.getBollardsByStreet(query.street)
         let mapper = WrappedObjectMapper(ArrayMapper(GroupedDirectionsMapper()), pathToObject: "success", "bollards")

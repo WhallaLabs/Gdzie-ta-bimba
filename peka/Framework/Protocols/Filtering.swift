@@ -10,5 +10,5 @@ import Foundation
 
 protocol Filtering {
     associatedtype T
-    func filter(value: T) -> Bool
+    func filter(_ value: T) -> Bool
 }

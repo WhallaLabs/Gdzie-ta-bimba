@@ -11,13 +11,13 @@ import Foundation
 
 final class ToggleBollardFavoriteCommandHandler: CommandHandler {
     
-    private let favoriteBollardsRepository: FavoriteBollardsRepository
+    fileprivate let favoriteBollardsRepository: FavoriteBollardsRepository
     
     init(favoriteBollardsRepository: FavoriteBollardsRepository) {
         self.favoriteBollardsRepository = favoriteBollardsRepository
     }
     
-    func handle(command: Command) -> Any {
+    func handle(_ command: Command) -> Any {
         let command = command as! ToggleBollardFavoriteCommand
         let bollard = command.bollard
         if bollard.isFavorite {

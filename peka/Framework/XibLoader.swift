@@ -9,16 +9,16 @@
 import UIKit
 
 final class XibLoader {
-    private let xibName: String
+    fileprivate let xibName: String
     
     init(xibName: String) {
         self.xibName = xibName
     }
     
-    func load(owner: UIView, autoresizingOptions: UIViewAutoresizing = [.FlexibleWidth, .FlexibleHeight]) -> UIView {
-        let bundle = NSBundle(forClass: owner.dynamicType)
+    func load(_ owner: UIView, autoresizingOptions: UIViewAutoresizing = [.flexibleWidth, .flexibleHeight]) -> UIView {
+        let bundle = Bundle(for: type(of: owner))
         let nib = UINib(nibName: self.xibName, bundle: bundle)
-        let views = nib.instantiateWithOwner(owner, options: nil)
+        let views = nib.instantiate(withOwner: owner, options: nil)
         let view = views.first as! UIView
         
         view.frame = owner.bounds
@@ -29,7 +29,7 @@ final class XibLoader {
     
     func load() -> UIView {
         let nib = UINib(nibName: self.xibName, bundle: nil)
-        let views = nib.instantiateWithOwner(nil, options: nil)
+        let views = nib.instantiate(withOwner: nil, options: nil)
         let view = views.first as! UIView
         
         return view

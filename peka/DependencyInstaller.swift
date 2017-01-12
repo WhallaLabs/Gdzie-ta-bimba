@@ -8,6 +8,7 @@
 
 import Foundation
 import Swinject
+import SwinjectStoryboard
 
 private let stopPointsApiProvider = "stopPointsApiProvider"
 
@@ -23,14 +24,14 @@ extension SwinjectStoryboard {
         self.registerNavigationControllers()
     }
     
-    private class func registerServices() {
+    fileprivate class func registerServices() {
         defaultContainer.register(Executor.self) { _ in Executor() }
         defaultContainer.register(HttpHeadersProvider.self) { _ in PekaHttpHeadersProvider() }
         defaultContainer.register(FormBodyBuilder.self) { _ in FormUrlEncodedBuilder() }
         defaultContainer.registerPerContainerLifetime(LocationManager.self) { _ in PekaLocationManager() }
     }
     
-    private class func registerProviders() {
+    fileprivate class func registerProviders() {
         defaultContainer.register(RestApiProvider.self) { r in
             ApiProvider(endpoint: ApiConfig.pekaEndpoint,
                         httpHeadersProvider: r.resolve(HttpHeadersProvider.self)!,
@@ -56,37 +57,37 @@ extension SwinjectStoryboard {
         }
     }
     
-    private class func registerViewControllers() {
-        defaultContainer.registerForStoryboard(HubViewController.self) { r, c in
+    fileprivate class func registerViewControllers() {
+        defaultContainer.storyboardInitCompleted(HubViewController.self) { r, c in
             c.installDependencies(r.resolve(HubViewModel.self)!, r.resolve(LocationManager.self)!)
         }
-        defaultContainer.registerForStoryboard(SearchViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(SearchViewController.self) { r, c in
             let navigationController = r.resolve(SearchNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(SearchViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
-        defaultContainer.registerForStoryboard(BollardsViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(BollardsViewController.self) { r, c in
             let navigationController = r.resolve(BollardsNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(BollardsViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
-        defaultContainer.registerForStoryboard(LineBollardsViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(LineBollardsViewController.self) { r, c in
             let navigationController = r.resolve(LineBollardsNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(LineBollardsViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
-        defaultContainer.registerForStoryboard(BollardViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(BollardViewController.self) { r, c in
             let navigationController = r.resolve(BollardNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(BollardViewModel.self)!
             c.installDependencies(viewModel, navigationController)
         }
-        defaultContainer.registerForStoryboard(MapViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(MapViewController.self) { r, c in
             let navigationController = r.resolve(MapNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(MapViewModel.self)!
             let locationManager = r.resolve(LocationManager.self)!
             c.installDependencies(viewModel, navigationController, locationManager)
         }
-        defaultContainer.registerForStoryboard(FavoriteViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(FavoriteViewController.self) { r, c in
             let navigationController = r.resolve(FavoriteNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(FavoriteViewModel.self)!
             let locationManager = r.resolve(LocationManager.self)!
@@ -94,7 +95,7 @@ extension SwinjectStoryboard {
         }
     }
     
-    private class func registerViewModels() {
+    fileprivate class func registerViewModels() {
         defaultContainer.register(HubViewModel.self) { r in
             HubViewModel(executor: r.resolve(Executor.self)!)
         }
@@ -118,52 +119,52 @@ extension SwinjectStoryboard {
         }
     }
     
-    private class func registerCommands() {
-        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(ToggleBollardFavoriteCommand)) { r in
+    fileprivate class func registerCommands() {
+        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(ToggleBollardFavoriteCommand.self)) { r in
             ToggleBollardFavoriteCommandHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
         }
-        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(SaveSearchResultCommand)) { r in
+        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(SaveSearchResultCommand.self)) { r in
             SaveSearchResultCommandHandler(recentSearchRepository: r.resolve(RecentSearchRepository.self)!)
         }
     }
     
-    private class func registerQueries() {
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetStopPointPushpinsQuery)) { r in
+    fileprivate class func registerQueries() {
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetStopPointPushpinsQuery.self)) { r in
             GetStopPointPushpinsQueryHandler(apiProvider: r.resolve(RestApiProvider.self, name: stopPointsApiProvider)!, stopPointsCache: r.resolve(StopPointPushpinsCache.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(SearchQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(SearchQuery.self)) { r in
             SearchQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStopPointQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStopPointQuery.self)) { r in
             GetBollardsByStopPointQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteGroupedDirectionsComparator: r.resolve(FavoriteGroupedDirectionsComparator.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStreetQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByStreetQuery.self)) { r in
             GetBollardsByStreetQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteGroupedDirectionsComparator: r.resolve(FavoriteGroupedDirectionsComparator.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByLineQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardsByLineQuery.self)) { r in
             GetBollardsByLineQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteLineBollardsComparator: r.resolve(FavoriteLineBollardComparator.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetTimesQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetTimesQuery.self)) { r in
             GetTimesQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardQuery.self)) { r in
             GetBollardQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!, favoriteBollardComparator: r.resolve(FavoriteBollardComparator.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetFavoriteBollardsQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetFavoriteBollardsQuery.self)) { r in
             GetFavoriteBollardsQueryHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardMessageQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetBollardMessageQuery.self)) { r in
             GetBollardMessageQueryHandler(apiProvider: r.resolve(RestApiProvider.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetSearchHistoryQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetSearchHistoryQuery.self)) { r in
             GetSearchHistoryQueryHandler(recentSearchRepository: r.resolve(RecentSearchRepository.self)!)
         }
-        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetNearestStopQuery)) { r in
+        defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetNearestStopQuery.self)) { r in
             GetNearestStopQueryHandler(stopPointsCache: r.resolve(StopPointPushpinsCache.self)!)
         }
     }
     
-    private class func registerNavigationControllers() {
+    fileprivate class func registerNavigationControllers() {
         defaultContainer.register(SearchNavigationControllerDelegate.self) { (_, arg: SearchViewController) in
             SearchNavigationController(viewController: arg)
         }

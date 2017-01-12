@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 final class FavoriteViewModel {
-    private let executor: Executor
+    fileprivate let executor: Executor
     
     let bollards = Variable<[Bollard]>([])
     let nearestStopPoint = Variable<StopPointPushpin?>(nil)
@@ -24,7 +24,7 @@ final class FavoriteViewModel {
         return observable.bindTo(self.bollards)
     }
     
-    func initializeNearestStopPoint(locationObservable: Observable<Coordinates>) -> Disposable {
+    func initializeNearestStopPoint(_ locationObservable: Observable<Coordinates>) -> Disposable {
         return locationObservable.throttle(1, scheduler: MainScheduler.instance)
             .flatMap { [unowned self] coordinates in self.nearesStop(coordinates) }
             .distinctUntilChanged()
@@ -32,11 +32,11 @@ final class FavoriteViewModel {
             .bindTo(self.nearestStopPoint)
     }
     
-    func toggleFavorite(bollard: Bollard) {
+    func toggleFavorite(_ bollard: Bollard) {
         self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
     }
     
-    private func nearesStop(coordinates: Coordinates) -> Observable<StopPointPushpin> {
+    fileprivate func nearesStop(_ coordinates: Coordinates) -> Observable<StopPointPushpin> {
         let observable: Observable<StopPointPushpin> = self.executor.execute(GetNearestStopQuery(coordinates: coordinates))
         return observable
     }

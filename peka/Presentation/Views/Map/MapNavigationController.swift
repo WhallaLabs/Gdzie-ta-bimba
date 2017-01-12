@@ -9,13 +9,13 @@
 import UIKit
 
 final class MapNavigationController: MapNavigationControllerDelegate {
-    private weak var viewController: MapViewController?
+    fileprivate weak var viewController: MapViewController?
     
     init(viewController: MapViewController) {
         self.viewController = viewController
     }
     
-    func showBollard(stopPointAnnotaion: StopPointAnnotation) {
+    func showBollard(_ stopPointAnnotaion: StopPointAnnotation) {
         let viewController: BollardViewController = UIStoryboard.instantiateInitialViewController()
         viewController.loadBollard(stopPointAnnotaion.id)
         viewController.title = stopPointAnnotaion.title

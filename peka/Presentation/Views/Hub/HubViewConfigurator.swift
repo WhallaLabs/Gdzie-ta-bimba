@@ -10,22 +10,22 @@ import UIKit
 
 final class HubViewConfigurator: NSObject {
 
-	@IBOutlet private weak var viewController: HubViewController!
+	@IBOutlet fileprivate weak var viewController: HubViewController!
     
-    private let selectedColor = UIColor(argbHex: 0xFFB3C6D3).colorWithAlphaComponent(0.6)
-    private let unselectedColor = UIColor(argbHex: 0xFFB3C6D3)
+    fileprivate let selectedColor = UIColor(argbHex: 0xFFB3C6D3).withAlphaComponent(0.6)
+    fileprivate let unselectedColor = UIColor(argbHex: 0xFFB3C6D3)
 
 	func configure() {
 		self.configureTabBar()
 	}
     
-    private func configureTabBar() {
+    fileprivate func configureTabBar() {
         let tabBar = self.viewController.tabBar
-        tabBar.translucent = false
-        tabBar.barTintColor = UIColor(color: .BackgroundLight)
+        tabBar.isTranslucent = false
+        tabBar.barTintColor = UIColor(color: .backgroundLight)
         tabBar.tintColor = self.selectedColor
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : self.unselectedColor], forState: .Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : self.unselectedColor], for: UIControlState())
     }
     
     func configureTabBarItems() {
@@ -34,7 +34,7 @@ final class HubViewConfigurator: NSObject {
         }
         
         for item in items {
-            item.image = item.image?.imageWithColor(self.unselectedColor).imageWithRenderingMode(.AlwaysOriginal)
+            item.image = item.image?.imageWithColor(self.unselectedColor).withRenderingMode(.alwaysOriginal)
         }
     }
 }

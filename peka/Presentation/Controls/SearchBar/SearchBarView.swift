@@ -11,16 +11,16 @@ import RxCocoa
 import RxSwift
 
 final class SearchBarView: UIView {
-    @IBOutlet private weak var roundBackgroundView: UIView!
-    @IBOutlet private weak var searchField: TextFieldWithInset!
-    @IBOutlet private weak var clearButton: UIButton!
+    @IBOutlet fileprivate weak var roundBackgroundView: UIView!
+    @IBOutlet fileprivate weak var searchField: TextFieldWithInset!
+    @IBOutlet fileprivate weak var clearButton: UIButton!
     
-    private let disposables = DisposeBag()
+    fileprivate let disposables = DisposeBag()
     
     var text: Observable<String> {
-        let clearObservable = self.clearButton.rx_tap.map { String.empty }
-        let textObservable = self.searchField.rx_text.asObservable()
-        return Observable.of(clearObservable, textObservable).merge()
+        let clearObservable = self.clearButton.rx.tap.map { String.empty }
+        let textObservable = self.searchField.rx.text.asObservable().map { $0 ?? String.empty }
+        return Observable<Observable<String>>.of(clearObservable, textObservable).merge()
     }
 
 	required init?(coder aDecoder: NSCoder) {
@@ -47,14 +47,14 @@ final class SearchBarView: UIView {
         return self.searchField.resignFirstResponder()
     }
     
-    private func configure() {
+    fileprivate func configure() {
         self.roundBackgroundView.layer.cornerRadius = 5
         self.searchField.delegate = self
         self.searchField.attributedPlaceholder = AttributedTextBuilder(string: self.searchField.placeholder!)
-            .setColor(UIColor.whiteColor())
+            .setColor(UIColor.white)
             .attributedText
     }
-    @IBAction private func clearText() {
+    @IBAction fileprivate func clearText() {
         self.searchField.text = String.empty
     }
 }
@@ -64,7 +64,7 @@ extension SearchBarView: NibLoadableView {
 }
 
 extension SearchBarView: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.resignFirstResponder()
         return false
     }

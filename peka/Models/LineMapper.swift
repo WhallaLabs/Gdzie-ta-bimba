@@ -12,7 +12,7 @@ import SwiftyJSON
 
 final class LineMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> String? {
+    func mapToObject(_ json: JSON) -> String? {
     	return json["name"].string
     }
 }

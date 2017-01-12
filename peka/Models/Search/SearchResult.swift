@@ -9,19 +9,19 @@
 import Foundation
 
 enum SearchResult {
-    case Stop(model: StopPoint)
-    case Street(name: String)
-    case Line(name: String)
+    case stop(model: StopPoint)
+    case street(name: String)
+    case line(name: String)
 }
 
 extension SearchResult: Hashable {
     var hashValue: Int {
         switch self {
-        case .Stop(let model):
+        case .stop(let model):
             return model.id.hashValue
-        case .Line(let name):
+        case .line(let name):
             return "line\(name)".hashValue
-        case .Street(let name):
+        case .street(let name):
             return "street\(name)".hashValue
         }
     }
@@ -29,11 +29,11 @@ extension SearchResult: Hashable {
 
 func ==(lhs: SearchResult, rhs: SearchResult) -> Bool {
     switch (lhs, rhs) {
-    case (.Stop(let lModel), .Stop(let rModel)):
+    case (.stop(let lModel), .stop(let rModel)):
         return lModel.id == rModel.id
-    case (.Street(let lName), .Street(let rName)):
+    case (.street(let lName), .street(let rName)):
         return lName == rName
-    case (.Line(let lName), .Line(let rName)):
+    case (.line(let lName), .line(let rName)):
         return lName == rName
     default:
         return false

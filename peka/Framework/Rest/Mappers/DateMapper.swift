@@ -12,19 +12,19 @@ import SwiftyJSON
 
 final class DateMapper: ObjectMappable {
     
-    private let format: String
-    private static let dateFormatter = NSDateFormatter()
+    fileprivate let format: String
+    fileprivate static let dateFormatter = DateFormatter()
     
     init(format: String) {
         self.format = format
     }
     
-    func mapToObject(json: JSON) -> NSDate? {
+    func mapToObject(_ json: JSON) -> Date? {
         guard let dateString = json.string else {
             return nil
         }
         DateMapper.dateFormatter.dateFormat = self.format
-        let date = DateMapper.dateFormatter.dateFromString(dateString)
+        let date = DateMapper.dateFormatter.date(from: dateString)
         return date
     }
 }

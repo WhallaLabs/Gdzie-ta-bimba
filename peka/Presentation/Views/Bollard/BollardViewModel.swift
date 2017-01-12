@@ -11,7 +11,7 @@ import RxSwift
 import SwiftyJSON
 
 final class BollardViewModel {
-    private let executor: Executor
+    fileprivate let executor: Executor
     let times = Variable<[Time]>([])
     let bollard = Variable<Bollard?>(nil)
     let message = Variable<NSAttributedString?>(nil)
@@ -20,19 +20,19 @@ final class BollardViewModel {
         self.executor = executor
     }
     
-    func loadTimesForBollard(bollard: Bollard) -> Disposable {
+    func loadTimesForBollard(_ bollard: Bollard) -> Disposable {
         self.bollard.value = bollard
         return self.loadBollard(bollard.symbol)
     }
     
-    func loadBollard(symbol: String) -> Disposable {
+    func loadBollard(_ symbol: String) -> Disposable {
         let observable: Observable<Bollard> = self.executor.execute(GetBollardQuery(symbol: symbol))
         let bollardDisposable = observable.retry(2).map { $0 as Bollard? }.bindTo(self.bollard)
         let timesDisposable = self.loadTimesAndMessage(symbol)
         return CompositeDisposable(bollardDisposable, timesDisposable)
     }
     
-    private func loadTimesAndMessage(symbol: String) -> Disposable  {
+    fileprivate func loadTimesAndMessage(_ symbol: String) -> Disposable  {
         let timesQuery = GetTimesQuery(bollard: symbol)
         let timesObservable: Observable<[Time]> = self.executor.execute(timesQuery)
         let timesDisposable = timesObservable.retry(10).bindTo(self.times)

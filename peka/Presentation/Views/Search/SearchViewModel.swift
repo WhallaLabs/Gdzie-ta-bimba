@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 
 final class SearchViewModel {
-    private let executor: Executor
-    private let searchResultSubject = PublishSubject<[SearchResult]>()
+    fileprivate let executor: Executor
+    fileprivate let searchResultSubject = PublishSubject<[SearchResult]>()
     let searchPhrase = Variable(String.empty)
     var searchResult: Observable<[SearchResult]> {
         return self.searchResultSubject.asObservable()
@@ -41,7 +41,7 @@ final class SearchViewModel {
         return observable.bindTo(self.searchHistory)
     }
     
-    func saveSearch(searchResult: SearchResult) {
+    func saveSearch(_ searchResult: SearchResult) {
         self.executor.execute(SaveSearchResultCommand(searchResult: searchResult))
     }
 }

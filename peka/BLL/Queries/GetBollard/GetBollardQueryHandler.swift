@@ -12,9 +12,9 @@ import RxSwift
 
 final class GetBollardQueryHandler: QueryHandler {
     
-    private let apiProvider: RestApiProvider
-    private let favoriteBollardComparator: FavoriteBollardComparator
-    private let bodyBuilder: RequestBodyBuilder
+    fileprivate let apiProvider: RestApiProvider
+    fileprivate let favoriteBollardComparator: FavoriteBollardComparator
+    fileprivate let bodyBuilder: RequestBodyBuilder
     
     init(apiProvider: RestApiProvider, favoriteBollardComparator: FavoriteBollardComparator) {
         self.apiProvider = apiProvider
@@ -22,7 +22,7 @@ final class GetBollardQueryHandler: QueryHandler {
         self.bodyBuilder = RequestBodyBuilder()
     }
     
-    func handle(query: Query) -> Any {
+    func handle(_ query: Query) -> Any {
         let query = query as! GetBollardQuery
         let parameters = self.bodyBuilder.getTimes(query.symbol)
         let mapper = WrappedObjectMapper(BollardMapper(), pathToObject: "success", "bollard")

@@ -9,7 +9,7 @@
 import Foundation
 
 final class LinesToSearchResultsConverter: Convertible {
-    func convert(value: [String]) -> [SearchResult] {
-        return value.map { SearchResult.Line(name: $0) }
+    func convert(_ value: [String]) -> [SearchResult] {
+        return value.map { SearchResult.line(name: $0) }
     }
 }

@@ -9,21 +9,21 @@
 import UIKit
 
 final class SearchNavigationController: SearchNavigationControllerDelegate {
-    private weak var viewController: SearchViewController?
+    fileprivate weak var viewController: SearchViewController?
     
     init(viewController: SearchViewController) {
         self.viewController = viewController
     }
     
-    func showBollards(searchResult: SearchResult) {
-        if case .Line(let name) = searchResult {
+    func showBollards(_ searchResult: SearchResult) {
+        if case .line(let name) = searchResult {
             self.showBollardsByLine(name)
         } else {
             let bollardsViewContoller: BollardsViewController = UIStoryboard.instantiateInitialViewController()
             switch searchResult {
-            case .Stop(let model):
+            case .stop(let model):
                 bollardsViewContoller.loadBollardsByStopPoint(model)
-            case .Street(let name):
+            case .street(let name):
                 bollardsViewContoller.loadBoolardsByStreet(name)
             default:
                 fatalError()
@@ -32,7 +32,7 @@ final class SearchNavigationController: SearchNavigationControllerDelegate {
         }
     }
     
-    private func showBollardsByLine(name: String) {
+    fileprivate func showBollardsByLine(_ name: String) {
         let lineBollardsViewController: LineBollardsViewController = UIStoryboard.instantiateInitialViewController()
         lineBollardsViewController.loadBollards(name)
         self.viewController?.navigationController?.pushViewController(lineBollardsViewController, animated: true)

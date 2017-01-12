@@ -10,8 +10,8 @@ import UIKit
 
 final class BollardsViewConfigurator: NSObject {
 
-	@IBOutlet private weak var viewController: BollardsViewController!
-    @IBOutlet private weak var tableView: UITableView!
+	@IBOutlet fileprivate weak var viewController: BollardsViewController!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
 	func configure() {
 		self.tableView.register(GroupedDirectionsCell.self)

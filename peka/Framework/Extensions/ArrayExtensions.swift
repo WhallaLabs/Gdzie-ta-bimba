@@ -14,13 +14,13 @@ extension Array where Element: Hashable {
     }
 }
 
-extension SequenceType {
-    func firstOrDefault(@noescape predicate: (Self.Generator.Element -> Bool)) -> Generator.Element? {
+extension Sequence {
+    func firstOrDefault(_ predicate: ((Self.Iterator.Element) -> Bool)) -> Iterator.Element? {
         return self.filter(predicate).first
     }
     
-    func categorise<U : Hashable>(@noescape keyFunc: Generator.Element -> U) -> [U : [Generator.Element]] {
-        var dict: [U : [Generator.Element]] = [:]
+    func categorise<U : Hashable>(_ keyFunc: (Iterator.Element) -> U) -> [U : [Iterator.Element]] {
+        var dict: [U : [Iterator.Element]] = [:]
         for element in self {
             let key = keyFunc(element)
             if case nil = dict[key]?.append(element) {
@@ -30,13 +30,13 @@ extension SequenceType {
         return dict
     }
     
-    func sortBy<T: Comparable>(@noescape key: Self.Generator.Element -> T) -> [Self.Generator.Element] {
-        return self.sort { key($0) > key($1) }
+    func sortBy<T: Comparable>(_ key: (Self.Iterator.Element) -> T) -> [Self.Iterator.Element] {
+        return self.sorted { key($0) > key($1) }
     }
     
-    func skip(count: Int) -> [Generator.Element] {
+    func skip(_ count: Int) -> [Iterator.Element] {
         let array = Array(self)
-        var result: [Self.Generator.Element] = []
+        var result: [Self.Iterator.Element] = []
         guard count <= array.count else {
             return []
         }
@@ -46,17 +46,17 @@ extension SequenceType {
         return result
     }
     
-    func take(count: Int) -> [Generator.Element] {
+    func take(_ count: Int) -> [Iterator.Element] {
         let array = Array(self)
-        let count = min(count, array.count)
-        var result: [Self.Generator.Element] = []
+        let count = count < array.count ? count : array.count//min(count, array.count) //To jest jakas kpina
+        var result: [Self.Iterator.Element] = []
         for index in 0..<count {
             result.append(array[index])
         }
         return result
     }
     
-    func any(@noescape predicate: Generator.Element -> Bool) -> Bool {
+    func any(_ predicate: (Iterator.Element) -> Bool) -> Bool {
         for item in self {
             if predicate(item) {
                 return true
@@ -65,11 +65,11 @@ extension SequenceType {
         return false
     }
     
-    func filter<T: Filtering where T.T == Generator.Element>(filter: T) -> [Generator.Element] {
+    func filter<T: Filtering>(_ filter: T) -> [Iterator.Element] where T.T == Iterator.Element {
         return self.filter { filter.filter($0) }
     }
     
-    func map<T: Convertible where T.TIn == Self.Generator.Element>(converter: T) -> [T.TOut] {
+    func map<T: Convertible>(_ converter: T) -> [T.TOut] where T.TIn == Self.Iterator.Element {
         return self.map { value -> T.TOut in
             return converter.convert(value)
         }
@@ -81,32 +81,32 @@ extension Array {
         return self.count > 0
     }
     
-    mutating func remove(@noescape predicate: (Array.Generator.Element -> Bool)) -> Generator.Element? {
-        var result: Generator.Element?
-        if let index = self.indexOf(predicate) {
+    mutating func remove(_ predicate: ((Array.Iterator.Element) -> Bool)) -> Iterator.Element? {
+        var result: Iterator.Element?
+        if let index = self.index(where: predicate) {
             let itemToRemove = self[index]
-            self.removeAtIndex(index)
+            self.remove(at: index)
             result = itemToRemove
         }
         return result
     }
     
-    mutating func append(elements: [Array.Generator.Element]) {
+    mutating func append(_ elements: [Array.Iterator.Element]) {
         for item in elements {
             self.append(item)
         }
     }
     
-    func elementAtIndex(index: Int) -> Array.Generator.Element? {
+    func elementAtIndex(_ index: Int) -> Array.Iterator.Element? {
         guard index >= 0 && index < self.count else {
             return nil
         }
         return self[index]
     }
     
-    func splitBy(subSize: Int) -> [[Element]] {
-        return 0.stride(to: self.count, by: subSize).map { startIndex in
-            let endIndex = startIndex.advancedBy(subSize, limit: self.count)
+    func splitBy(_ subSize: Int) -> [[Element]] {
+        return stride(from: 0, to: self.count, by: subSize).map { startIndex in
+            let endIndex = startIndex.advanced(by: subSize)
             return Array(self[startIndex ..< endIndex])
         }
     }
@@ -114,7 +114,7 @@ extension Array {
 
 extension Array where Element: Equatable {
     
-    mutating func appendDistinct(elements: [Element]) {
+    mutating func appendDistinct(_ elements: [Element]) {
         for item in elements {
             if self.contains(item) == false {
                 self.append(item)
@@ -122,9 +122,9 @@ extension Array where Element: Equatable {
         }
     }
     
-    mutating func appendDistinctOrReplace(elements: [Element]) {
+    mutating func appendDistinctOrReplace(_ elements: [Element]) {
         for item in elements {
-            if let index = self.indexOf(item) {
+            if let index = self.index(of: item) {
                 self[index] = item
             } else {
                 self.append(item)
@@ -132,7 +132,7 @@ extension Array where Element: Equatable {
         }
     }
     
-    mutating func appendDistinct(element: Element) -> Bool {
+    mutating func appendDistinct(_ element: Element) -> Bool {
         guard self.contains(element) == false else {
             return false
         }
@@ -140,39 +140,39 @@ extension Array where Element: Equatable {
         return true
     }
     
-    mutating func insertDistinct(element: Element, atIndex index: Index) -> Bool {
+    mutating func insertDistinct(_ element: Element, atIndex index: Index) -> Bool {
         guard self.contains(element) == false else {
             return false
         }
-        self.insert(element, atIndex: index)
+        self.insert(element, at: index)
         return true
     }
     
-    func previousOf(element: Element) -> Element? {
-        guard let index = self.indexOf(element) where index > 0 else {
+    func previousOf(_ element: Element) -> Element? {
+        guard let index = self.index(of: element), index > 0 else {
             return nil
         }
         return self[index - 1]
     }
     
-    mutating func remove(element: Element) -> Element? {
-        guard let index = self.indexOf(element) else {
+    mutating func remove(_ element: Element) -> Element? {
+        guard let index = self.index(of: element) else {
             return nil
         }
-        return self.removeAtIndex(index)
+        return self.remove(at: index)
     }
     
-    mutating func replaceWithElement(element: Element) {
-        guard let index = self.indexOf(element) else {
+    mutating func replaceWithElement(_ element: Element) {
+        guard let index = self.index(of: element) else {
             return
         }
         self[index] = element
     }
     
-    func replaceElements(elements: [Element]) -> [Element] {
+    func replaceElements(_ elements: [Element]) -> [Element] {
         var result = [Element]()
         for element in self {
-            if let index = elements.indexOf(element) {
+            if let index = elements.index(of: element) {
                 result.append(elements[index])
             } else {
                 result.append(element)

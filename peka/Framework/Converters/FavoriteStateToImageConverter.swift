@@ -9,9 +9,9 @@
 import UIKit
 
 final class FavoriteStateToImageConverter: Convertible {
-    private let images = [true : UIImage(asset: .StarFull), false : UIImage(asset: .StarEmpty)]
+    fileprivate let images = [true : UIImage(asset: .StarFull), false : UIImage(asset: .StarEmpty)]
     
-    func convert(value: Bollard) -> UIImage {
+    func convert(_ value: Bollard) -> UIImage {
         return self.images[value.isFavorite]!
     }
 }

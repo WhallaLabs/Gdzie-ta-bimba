@@ -7,21 +7,21 @@
 //
 
 import Foundation
-import Swinject
+import SwinjectStoryboard
 
 final class Executor {
     
-    func execute<T: Command, TResult>(command: T) -> TResult {
+    func execute<T: Command, TResult>(_ command: T) -> TResult {
         let handler = SwinjectStoryboard.defaultContainer.resolve(CommandHandler.self, name: NSStringFromClass(T.self))!
         return handler.handle(command) as! TResult
     }
     
-    func execute<T: Command>(command: T) {
+    func execute<T: Command>(_ command: T) {
         let handler = SwinjectStoryboard.defaultContainer.resolve(CommandHandler.self, name: NSStringFromClass(T.self))!
         handler.handle(command)
     }
     
-    func execute<T: Query, TResult>(query: T) -> TResult {
+    func execute<T: Query, TResult>(_ query: T) -> TResult {
         let handler = SwinjectStoryboard.defaultContainer.resolve(QueryHandler.self, name: NSStringFromClass(T.self))!
         return handler.handle(query) as! TResult
     }

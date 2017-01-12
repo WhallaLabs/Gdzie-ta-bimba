@@ -9,7 +9,7 @@
 import Foundation
 
 final class StopPointsToSearchResultsConverter: Convertible {
-    func convert(value: [StopPoint]) -> [SearchResult] {
-        return value.map { SearchResult.Stop(model: $0) }
+    func convert(_ value: [StopPoint]) -> [SearchResult] {
+        return value.map { SearchResult.stop(model: $0) }
     }
 }

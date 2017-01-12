@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MapNavigationControllerDelegate {
-    func showBollard(stopPointAnnotaion: StopPointAnnotation)
+    func showBollard(_ stopPointAnnotaion: StopPointAnnotation)
 }

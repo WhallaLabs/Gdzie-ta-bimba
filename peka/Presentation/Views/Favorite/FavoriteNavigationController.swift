@@ -9,13 +9,13 @@
 import UIKit
 
 final class FavoriteNavigationController: FavoriteNavigationControllerDelegate {
-    private weak var viewController: FavoriteViewController?
+    fileprivate weak var viewController: FavoriteViewController?
     
     init(viewController: FavoriteViewController) {
         self.viewController = viewController
     }
     
-    func showBollard(bollardSymbol: String, name: String) {
+    func showBollard(_ bollardSymbol: String, name: String) {
         let viewController: BollardViewController = UIStoryboard.instantiateInitialViewController()
         viewController.loadBollard(bollardSymbol)
         viewController.title = name

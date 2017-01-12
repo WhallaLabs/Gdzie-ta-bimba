@@ -8,11 +8,13 @@
 
 import Foundation
 import MapKit
-import FBAnnotationClusteringSwift
 
 extension FBAnnotationClusterView {
     convenience init(annotation: FBAnnotationCluster) {
-        self.init(annotation: annotation, reuseIdentifier: FBAnnotationClusterView.identifier, options: FBAnnotationClusterViewOptions(smallClusterImage: "cluster-small", mediumClusterImage: "cluster-medium", largeClusterImage: "cluster-large"))
+        let smallTemplate = FBAnnotationClusterTemplate(range: Range(uncheckedBounds: (lower: 0, upper: 6)), displayMode: .Image(imageName: "cluster-small"))
+        let mediumTemplate = FBAnnotationClusterTemplate(range: Range(uncheckedBounds: (lower: 6, upper: 15)), displayMode: .Image(imageName: "cluster-medium"))
+        let largeTemplate = FBAnnotationClusterTemplate(range: nil, displayMode: .Image(imageName: "cluster-large"))
+        self.init(annotation: annotation, reuseIdentifier: FBAnnotationClusterView.identifier, configuration: FBAnnotationClusterViewConfiguration(templates: [smallTemplate, mediumTemplate], defaultTemplate: largeTemplate))
     }
 }
 

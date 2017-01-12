@@ -10,7 +10,7 @@ import Foundation
 
 final class SearchResultsDistinctOrderedConverter: Convertible {
     
-    func convert(value: [SearchResult]) -> [SearchResult] {
+    func convert(_ value: [SearchResult]) -> [SearchResult] {
         return value.categorise { $0 }
             .sortBy { (key, value) in value.count }
             .map { (key, value) in key }

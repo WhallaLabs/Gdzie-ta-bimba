@@ -15,12 +15,12 @@ extension String {
         return localizedString
     }
     
-    mutating func appendPathComponent(path: String) {
-        let path = path.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "/"))
+    mutating func appendPathComponent(_ path: String) {
+        let path = path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
         if self.hasSuffix("/") {
-            self.appendContentsOf(path)
+            self.append(path)
         } else {
-            self.appendContentsOf("/" + path)
+            self.append("/" + path)
         }
     }
     

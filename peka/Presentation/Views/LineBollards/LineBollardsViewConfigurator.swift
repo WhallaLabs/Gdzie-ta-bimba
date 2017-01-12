@@ -10,8 +10,8 @@ import UIKit
 
 final class LineBollardsViewConfigurator: NSObject {
 
-	@IBOutlet private weak var viewController: LineBollardsViewController!
-    @IBOutlet private weak var tableView: UITableView!
+	@IBOutlet fileprivate weak var viewController: LineBollardsViewController!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
 	func configure() {
         self.tableView.register(BollardCell.self)

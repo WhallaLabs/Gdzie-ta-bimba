@@ -12,10 +12,10 @@ import SwiftyJSON
 
 final class DirectionMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> Direction? {
+    func mapToObject(_ json: JSON) -> Direction? {
         guard let direction = json["direction"].string,
-            lineName = json["lineName"].string,
-            returnVariant = json["returnVariant"].bool else {
+            let lineName = json["lineName"].string,
+            let returnVariant = json["returnVariant"].bool else {
                 return nil
         }
         return Direction(directionName: direction, line: lineName, returnVariant: returnVariant)

@@ -11,13 +11,13 @@ import Foundation
 
 final class GetSearchHistoryQueryHandler: QueryHandler {
     
-    private let recentSearchRepository: RecentSearchRepository
+    fileprivate let recentSearchRepository: RecentSearchRepository
     
     init(recentSearchRepository: RecentSearchRepository) {
         self.recentSearchRepository = recentSearchRepository
     }
     
-    func handle(query: Query) -> Any {
+    func handle(_ query: Query) -> Any {
         let observable = self.recentSearchRepository.searchHistory()
         return observable
     }

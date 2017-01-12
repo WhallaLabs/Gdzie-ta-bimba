@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIViewController {
-    func updateTitle(title: String) {
+    func updateTitle(_ title: String) {
         self.navigationItem.title = title
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }

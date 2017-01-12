@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchNavigationControllerDelegate {
-    func showBollards(searchResult: SearchResult)
+    func showBollards(_ searchResult: SearchResult)
 }

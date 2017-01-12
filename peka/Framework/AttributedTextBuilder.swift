@@ -10,25 +10,25 @@ import UIKit
 
 final class AttributedTextBuilder {
     let attributedText: NSMutableAttributedString
-    private let textRange: NSRange
-    private var paragraphStyle: NSMutableParagraphStyle?
+    fileprivate let textRange: NSRange
+    fileprivate var paragraphStyle: NSMutableParagraphStyle?
     
     init(string: String) {
         self.attributedText = NSMutableAttributedString(string: string)
         self.textRange = NSMakeRange(0, attributedText.length)
     }
     
-    func setFont(font: UIFont, textRange: NSRange? = nil) -> AttributedTextBuilder {
+    func setFont(_ font: UIFont, textRange: NSRange? = nil) -> AttributedTextBuilder {
         self.attributedText.addAttribute(NSFontAttributeName, value: font, range: textRange ?? self.textRange)
         return self
     }
     
-    func setKern(value: CGFloat, textRange: NSRange? = nil) -> AttributedTextBuilder {
+    func setKern(_ value: CGFloat, textRange: NSRange? = nil) -> AttributedTextBuilder {
         self.attributedText.addAttribute(NSKernAttributeName, value: value, range: textRange ?? self.textRange)
         return self
     }
     
-    func setLineHeight(value: CGFloat, textRange: NSRange? = nil) -> AttributedTextBuilder {
+    func setLineHeight(_ value: CGFloat, textRange: NSRange? = nil) -> AttributedTextBuilder {
         if self.paragraphStyle == nil {
             self.paragraphStyle = NSMutableParagraphStyle()
         }
@@ -39,12 +39,12 @@ final class AttributedTextBuilder {
         return self
     }
     
-    func setColor(color: UIColor, textRange: NSRange? = nil) -> AttributedTextBuilder {
+    func setColor(_ color: UIColor, textRange: NSRange? = nil) -> AttributedTextBuilder {
         self.attributedText.addAttribute(NSForegroundColorAttributeName, value: color, range: textRange ?? self.textRange)
         return self
     }
     
-    func setAlignment(alignment: NSTextAlignment, textRange: NSRange? = nil) -> AttributedTextBuilder {
+    func setAlignment(_ alignment: NSTextAlignment, textRange: NSRange? = nil) -> AttributedTextBuilder {
         if self.paragraphStyle == nil {
             self.paragraphStyle = NSMutableParagraphStyle()
         }
@@ -57,7 +57,7 @@ final class AttributedTextBuilder {
     
     func getAttributes() -> [String : AnyObject] {
         var range = self.textRange
-        let attributes = self.attributedText.attributesAtIndex(0, effectiveRange: &range)
-        return attributes
+        let attributes = self.attributedText.attributes(at: 0, effectiveRange: &range)
+        return attributes as [String : AnyObject]
     }
 }

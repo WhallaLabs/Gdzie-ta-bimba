@@ -12,7 +12,7 @@ import SwiftyJSON
 
 final class RawJsonMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> JSON? {
+    func mapToObject(_ json: JSON) -> JSON? {
     	return json
     }
 }

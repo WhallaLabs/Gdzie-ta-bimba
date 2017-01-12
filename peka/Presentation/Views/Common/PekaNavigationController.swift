@@ -15,17 +15,17 @@ final class PekaNavigaitonController: UINavigationController {
         self.configureColors()
     }
     
-    private func configureNavigationBar() {
-        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+    fileprivate func configureNavigationBar() {
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.translucent = false
-        self.view.backgroundColor = UIColor(color: .Background)
-        self.navigationBar.backgroundColor = UIColor.clearColor()
-        self.navigationBar.barTintColor = UIColor(color: .Background)
+        self.navigationBar.isTranslucent = false
+        self.view.backgroundColor = UIColor(color: .background)
+        self.navigationBar.backgroundColor = UIColor.clear
+        self.navigationBar.barTintColor = UIColor(color: .background)
     }
     
-    private func configureColors() {
-        self.navigationBar.tintColor = UIColor(color: .MainLight)
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor(color: .MainLight)]
+    fileprivate func configureColors() {
+        self.navigationBar.tintColor = UIColor(color: .mainLight)
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor(color: .mainLight)]
     }
 }

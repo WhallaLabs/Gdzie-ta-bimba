@@ -12,9 +12,9 @@ import SwiftyJSON
 
 final class StopPointMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> StopPoint? {
+    func mapToObject(_ json: JSON) -> StopPoint? {
         guard let id = json["symbol"].string,
-            name = json["name"].string else {
+            let name = json["name"].string else {
                 return nil
         }
         return StopPoint(id: id, name: name)

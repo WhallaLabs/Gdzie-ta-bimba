@@ -11,24 +11,24 @@ import RxSwift
 import RxCocoa
 
 private let nearestStopPointDefaultHeight: CGFloat = 97
-private let heightAnimationDuration: NSTimeInterval = 0.3
+private let heightAnimationDuration: TimeInterval = 0.3
 
 final class FavoriteViewController: UIViewController {
 
-	private let disposables = DisposeBag()
-    private var viewDisposables = DisposeBag()
-    private let disableEditingBehavior = DisableEditingTableViewDelegate()
-	private var viewModel: FavoriteViewModel!
-    private var navigationDelegate: FavoriteNavigationControllerDelegate!
-    private var locationManager: LocationManager!
+	fileprivate let disposables = DisposeBag()
+    fileprivate var viewDisposables = DisposeBag()
+    fileprivate let disableEditingBehavior = DisableEditingTableViewDelegate()
+	fileprivate var viewModel: FavoriteViewModel!
+    fileprivate var navigationDelegate: FavoriteNavigationControllerDelegate!
+    fileprivate var locationManager: LocationManager!
 
-	@IBOutlet private weak var viewConfigurator: FavoriteViewConfigurator!
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var nearestStopPointView: NearestStopPointView!
-    @IBOutlet private weak var nearestStopPointHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var emptyState: UIView!
+	@IBOutlet fileprivate weak var viewConfigurator: FavoriteViewConfigurator!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var nearestStopPointView: NearestStopPointView!
+    @IBOutlet fileprivate weak var nearestStopPointHeightConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var emptyState: UIView!
     
-	func installDependencies(viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
+	func installDependencies(_ viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
 		self.viewModel = viewModel
         self.navigationDelegate = navigationDelegate
         self.locationManager = locationManager
@@ -41,23 +41,23 @@ final class FavoriteViewController: UIViewController {
         self.viewModel.loadFavouriteBollards().addDisposableTo(self.disposables)
         self.setupBinding()
         self.registerForEvents()
-        self.tableView.rx_setDelegate(self.disableEditingBehavior)
+        self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
 	}
 	
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.viewModel.initializeNearestStopPoint(self.locationManager.userLocation()).addDisposableTo(self.viewDisposables)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.viewDisposables = DisposeBag()
     }
     
-    private func setupBinding() {
+    fileprivate func setupBinding() {
         self.viewModel.bollards.asObservable()
-            .bindTo(self.tableView.rx_itemsWithCellIdentifier(BollardCell.identifier, cellType: BollardCell.self)) { [unowned self] _, model, cell in
+            .bindTo(self.tableView.rx.items(cellIdentifier: BollardCell.identifier, cellType: BollardCell.self)) { [unowned self] _, model, cell in
                 cell.configure(model)
                 cell.delegate = self
             }.addDisposableTo(self.disposables)
@@ -70,19 +70,19 @@ final class FavoriteViewController: UIViewController {
             .map {  $0 == nil ? 0 : nearestStopPointDefaultHeight }
             .subscribeNext { [unowned self] height in
                 self.nearestStopPointHeightConstraint.constant = height
-                UIView.animateWithDuration(heightAnimationDuration) {
+                UIView.animate(withDuration: heightAnimationDuration) {
                     self.view.layoutIfNeeded()
                 }
             }.addDisposableTo(self.disposables)
         
         self.viewModel.bollards.asObservable()
             .map { $0.any() }
-            .bindTo(self.emptyState.rx_hidden)
+            .bindTo(self.emptyState.rx.isHidden)
             .addDisposableTo(self.disposables)
     }
     
-    private func registerForEvents() {
-        let favoriteBollardObservable = self.tableView.rx_modelSelected(Bollard.self).map { ($0.symbol, $0.name) }
+    fileprivate func registerForEvents() {
+        let favoriteBollardObservable = self.tableView.rx.modelSelected(Bollard.self).map { ($0.symbol, $0.name) }
         let nearestStopAction = self.nearestStopPointView.action.map { ($0.id, $0.name) }
         
         Observable.of(favoriteBollardObservable, nearestStopAction)
@@ -94,7 +94,7 @@ final class FavoriteViewController: UIViewController {
 }
 
 extension FavoriteViewController: BollardCellDelegate {
-    func toggleFavorite(bollard: Bollard) {
+    func toggleFavorite(_ bollard: Bollard) {
         self.viewModel.toggleFavorite(bollard)
     }
 }

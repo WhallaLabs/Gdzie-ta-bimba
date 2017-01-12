@@ -10,7 +10,7 @@ import Foundation
 import Swinject
 
 extension Container {
-    func registerPerContainerLifetime<Service>(serviceType: Service.Type, name: String? = nil, factory: ResolverType -> Service) -> ServiceEntry<Service> {
+    func registerPerContainerLifetime<Service>(_ serviceType: Service.Type, name: String? = nil, factory: @escaping (Resolver) -> Service) -> ServiceEntry<Service> {
         var instance: Service?
         return self.register(serviceType, name: name) { resolver in
             if instance == nil {

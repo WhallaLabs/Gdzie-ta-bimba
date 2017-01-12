@@ -11,5 +11,5 @@ import RxSwift
 
 protocol RecentSearchRepository {
     func searchHistory() -> Observable<[SearchResult]>
-    func save(searchResult: SearchResult)
+    func save(_ searchResult: SearchResult)
 }

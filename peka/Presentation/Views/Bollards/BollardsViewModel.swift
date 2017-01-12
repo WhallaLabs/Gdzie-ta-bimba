@@ -10,26 +10,26 @@ import Foundation
 import RxSwift
 
 final class BollardsViewModel {
-    private let executor: Executor
+    fileprivate let executor: Executor
     let bollards = Variable<[GroupedDirections]>([])
     
     init(executor: Executor) {
         self.executor = executor
     }
     
-    func loadBollardsByStopPoint(stopPoint: StopPoint) -> Disposable {
+    func loadBollardsByStopPoint(_ stopPoint: StopPoint) -> Disposable {
         let observable: Observable<[GroupedDirections]> = self.executor.execute(GetBollardsByStopPointQuery(stopPoint: stopPoint))
         
         return observable.bindTo(self.bollards)
     }
     
-    func loadBollardsByStreet(street: String) -> Disposable {
+    func loadBollardsByStreet(_ street: String) -> Disposable {
         let observable: Observable<[GroupedDirections]> = self.executor.execute(GetBollardsByStreetQuery(street: street))
         
         return observable.bindTo(self.bollards)
     }
     
-    func toggleFavorite(bollard: Bollard) {
+    func toggleFavorite(_ bollard: Bollard) {
         self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
     }
 }

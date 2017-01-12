@@ -9,7 +9,7 @@
 import Foundation
 
 final class ToOptionalConverter<T>: Convertible {
-    func convert(value: T) -> T? {
+    func convert(_ value: T) -> T? {
         return value
     }
 }

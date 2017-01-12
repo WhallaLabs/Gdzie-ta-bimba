@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 final class HubViewModel {
-    private let executor: Executor
+    fileprivate let executor: Executor
     
     init(executor: Executor) {
         self.executor = executor

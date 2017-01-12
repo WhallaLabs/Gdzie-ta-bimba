@@ -9,11 +9,11 @@
 import UIKit
 
 final class TimeCell: UITableViewCell {
-    @IBOutlet private weak var roundBackgroundView: UIView!
-    @IBOutlet private weak var lineLabel: UILabel!
-    @IBOutlet private weak var directionLabel: UILabel!
-    @IBOutlet private weak var minutesLabel: UILabel!
-    @IBOutlet private weak var departureTimeLabel: UILabel!
+    @IBOutlet fileprivate weak var roundBackgroundView: UIView!
+    @IBOutlet fileprivate weak var lineLabel: UILabel!
+    @IBOutlet fileprivate weak var directionLabel: UILabel!
+    @IBOutlet fileprivate weak var minutesLabel: UILabel!
+    @IBOutlet fileprivate weak var departureTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +27,7 @@ extension TimeCell: NibLoadableView {
 }
 
 extension TimeCell: Configurable {
-	func configure(model: Time) {
+	func configure(_ model: Time) {
         self.lineLabel.text = model.line
         self.directionLabel.text = "➙ \(model.directionName)"
         self.minutesLabel.text = "\(model.minutes) min"
@@ -37,7 +37,7 @@ extension TimeCell: Configurable {
         if model.realTime {
             self.minutesLabel.textColor = UIColor(argbHex: 0xFF43BAEE)
         } else {
-            self.minutesLabel.textColor = UIColor(color: .MainLight)
+            self.minutesLabel.textColor = UIColor(color: .mainLight)
         }
         
         if model.minutes < 3 {

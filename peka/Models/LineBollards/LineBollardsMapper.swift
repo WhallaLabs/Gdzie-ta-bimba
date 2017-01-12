@@ -12,11 +12,11 @@ import SwiftyJSON
 
 final class LineBollardsMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> LineBollards? {
+    func mapToObject(_ json: JSON) -> LineBollards? {
     	let arrayMapper = ArrayMapper(BollardMapper())
         let directionMapper = DirectionMapper()
         guard let direction = directionMapper.mapToObject(json["direction"]),
-            bollards = arrayMapper.mapToObject(json["bollards"]) else {
+            let bollards = arrayMapper.mapToObject(json["bollards"]) else {
                 return nil
         }
         let lineBollards = LineBollards(direction: direction, bollards: bollards)

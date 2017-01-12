@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 final class MapScaleConverter: Convertible {
-    private let mapView: MKMapView
+    fileprivate let mapView: MKMapView
     
     init(mapView: MKMapView) {
         self.mapView = mapView

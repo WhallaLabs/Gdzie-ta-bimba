@@ -11,5 +11,5 @@ import SwiftyJSON
 
 protocol JsonMappable {
     associatedtype T
-    func mapToJson(object: T) -> JSON?
+    func mapToJson(_ object: T) -> JSON?
 }

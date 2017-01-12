@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-enum ApiProviderError: ErrorType {
-    case HttpError(status: Int, json: JSON)
-    case JsonMapping
-    case NoResponse
+enum ApiProviderError: Error {
+    case httpError(status: Int, json: JSON)
+    case jsonMapping
+    case noResponse
 }

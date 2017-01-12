@@ -9,7 +9,7 @@
 import Foundation
 
 struct Time: DirectionDescription {
-    let departure: NSDate
+    let departure: Date
     let directionName: String
     let line: String
     let minutes: Int

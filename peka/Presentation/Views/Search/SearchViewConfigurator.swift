@@ -10,8 +10,8 @@ import UIKit
 
 final class SearchViewConfigurator: NSObject {
 
-	@IBOutlet private weak var viewController: SearchViewController!
-    @IBOutlet private weak var tableView: UITableView!
+	@IBOutlet fileprivate weak var viewController: SearchViewController!
+    @IBOutlet fileprivate weak var tableView: UITableView!
 
 	func configure() {
         self.tableView.register(SearchResultCell.self)

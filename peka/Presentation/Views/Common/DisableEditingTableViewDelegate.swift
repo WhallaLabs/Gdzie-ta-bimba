@@ -9,7 +9,7 @@
 import UIKit
 
 final class DisableEditingTableViewDelegate: NSObject, UITableViewDelegate {
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .None
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
     }
 }

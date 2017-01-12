@@ -9,8 +9,8 @@
 import Foundation
 
 protocol QueryRequestBuilder: BodyRequestBuilder {
-    func add(resource resource: String) -> QueryRequestBuilder
-    func add(pathParameter pathParameter: String?) -> QueryRequestBuilder
-    func add(queryParameters queryParameters: [String: String]) -> BodyRequestBuilder
+    func add(resource: String) -> QueryRequestBuilder
+    func add(pathParameter: String?) -> QueryRequestBuilder
+    func add(queryParameters: [String: String]) -> BodyRequestBuilder
     func add(bodyParameters parameters: [HttpBodyParameter]) -> BodyRequestBuilder
 }

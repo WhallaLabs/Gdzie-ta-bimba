@@ -10,16 +10,16 @@ import Foundation
 
 final class LineNameToRouteTypeConverter: Convertible {
     
-    private let tramLines: [String] = {
+    fileprivate let tramLines: [String] = {
         var lines = Array(0...29)
         lines.append(201)
         return lines.map { "\($0)" }
     }()
     
-    func convert(value: String) -> RouteType {
+    func convert(_ value: String) -> RouteType {
         if self.tramLines.contains(value) {
-            return .Tram
+            return .tram
         }
-        return .Bus
+        return .bus
     }
 }

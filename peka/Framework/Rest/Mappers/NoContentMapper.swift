@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 final class NoContentMapper: ObjectMappable {
-    func mapToObject(json: JSON) -> Void? {
+    func mapToObject(_ json: JSON) -> Void? {
         return ()
     }
 }

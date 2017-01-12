@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CommandHandler {
-    func handle(command: Command) -> Any
+    func handle(_ command: Command) -> Any
 }
