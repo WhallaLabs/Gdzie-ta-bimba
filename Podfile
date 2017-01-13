@@ -22,3 +22,6 @@ pod 'RealmSwift'
 pod 'RxRealm'
 #pod 'FBAnnotationClusteringSwift'
 pod 'TTTAttributedLabel'
+
+pod 'Fabric'
+pod 'Crashlytics'
