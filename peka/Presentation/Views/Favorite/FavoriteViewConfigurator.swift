@@ -15,6 +15,7 @@ final class FavoriteViewConfigurator: NSObject {
     
 	func configure() {
 		self.tableView.register(BollardCell.self)
+        self.tableView.register(StopPointCell.self)
         self.tableView.register(ImageHeaderView.self)
         self.viewController.updateTitle("Moje przystanki")
 	}

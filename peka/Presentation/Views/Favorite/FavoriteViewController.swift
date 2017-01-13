@@ -57,9 +57,9 @@ final class FavoriteViewController: UIViewController {
         self.dataSource.configureCell = self.cellFactory.create()
         self.dataSource.titleForHeaderInSection = { dataSource, index in return "x" }
         
-        self.viewModel.bollards.asObservable()
+        let anyStopPointsObservable = self.viewModel.bollards.asObservable()
             .map { $0.any() }
-            .bindTo(self.emptyState.rx.isHidden)
+        anyStopPointsObservable.bindTo(self.emptyState.rx.isHidden)
             .addDisposableTo(self.disposables)
     }
     

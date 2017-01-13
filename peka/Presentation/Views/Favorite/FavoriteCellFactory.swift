@@ -21,7 +21,8 @@ final class FavoriteCellFactory {
                 cell.delegate = self.delegate
                 return cell
             case .nearest(let stopPoint):
-                let cell: BollardCell = tableView.dequeueReusableCell(forIndexPath: index)
+                let cell: StopPointCell = tableView.dequeueReusableCell(forIndexPath: index)
+                cell.configure(stopPoint)
                 return cell
             }
         }
