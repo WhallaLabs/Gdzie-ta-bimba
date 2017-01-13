@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import MapKit
 import RxOptional
+import GoogleMobileAds
 
 private let poznanCoordinates = CLLocationCoordinate2DMake(52.407720, 16.933497)
 
@@ -22,6 +23,7 @@ final class MapViewController: UIViewController {
     fileprivate var navigationDelegate: MapNavigationControllerDelegate!
     fileprivate let clusteringManager = FBClusteringManager()
 
+    @IBOutlet fileprivate weak var adBannerView: GADBannerView!
 	@IBOutlet fileprivate weak var viewConfigurator: MapViewConfigurator!
     @IBOutlet fileprivate weak var mapView: MKMapView!
     @IBOutlet fileprivate weak var showUserLocationButton: UIButton!
@@ -39,6 +41,11 @@ final class MapViewController: UIViewController {
 		self.viewConfigurator.configure()
         self.registerForEvents()
         self.setupBinding()
+        
+        
+        self.adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        self.adBannerView.rootViewController = self
+        self.adBannerView.load(GADRequest())
 	}
     
     override func viewWillAppear(_ animated: Bool) {
