@@ -119,7 +119,7 @@ final class ApiProvider: RestApiProvider {
                 if let response = response as? HTTPURLResponse,
                     let data = data {
                     let json = JSON(data: data)
-                    print(json)
+                    //print(json)
                     if requestBuilder.httpMethod.isSuccessResponse(response.statusCode) {
                         if let mappedObject = mapper.mapToObject(json) {
                             observer.onNext(mappedObject)
