@@ -16,6 +16,8 @@ enum ImageAssets: String {
     case Tram = "tram"
     case Street = "street"
     case Pushpin = "pushpin"
+    case favorite = "star-small"
+    case gps = "location-arrow"
 }
 
 extension UIImage {

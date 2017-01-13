@@ -25,3 +25,9 @@ extension ObservableType {
     }
 
 }
+
+extension ObservableType where E: Sequence, E.Iterator.Element: Equatable {
+    func distinctUntilChanged() -> Observable<Self.E> {
+        return self.distinctUntilChanged { Array($0.0) == Array($0.1) }
+    }
+}

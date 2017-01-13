@@ -17,6 +17,12 @@
 		3826AE891D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */; };
 		3826AE8D1D5141AE0020678C /* GetFavoriteBollardsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */; };
 		3826AE8E1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */; };
+		382705EF1E28D71D00C1BB14 /* ImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382705ED1E28D71D00C1BB14 /* ImageHeaderView.swift */; };
+		382705F01E28D71D00C1BB14 /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382705EE1E28D71D00C1BB14 /* ImageHeaderView.xib */; };
+		382705F21E28E33000C1BB14 /* StopPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382705F11E28E33000C1BB14 /* StopPointType.swift */; };
+		382705F41E28E3F200C1BB14 /* FavoriteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382705F31E28E3F200C1BB14 /* FavoriteSection.swift */; };
+		382705F61E28EC1700C1BB14 /* FavoriteCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382705F51E28EC1700C1BB14 /* FavoriteCellFactory.swift */; };
+		382705F81E28F01300C1BB14 /* StopPointIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382705F71E28F01300C1BB14 /* StopPointIdentity.swift */; };
 		383214A41D5631E000DBD22E /* MapScaleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383214A31D5631E000DBD22E /* MapScaleConverter.swift */; };
 		383214A61D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383214A51D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift */; };
 		383214A81D563CF000DBD22E /* Pushpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383214A71D563CF000DBD22E /* Pushpin.swift */; };
@@ -250,6 +256,12 @@
 		3826AE871D5135A10020678C /* ToggleBollardFavoriteCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleBollardFavoriteCommandHandler.swift; sourceTree = "<group>"; };
 		3826AE8B1D5141AE0020678C /* GetFavoriteBollardsQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQuery.swift; sourceTree = "<group>"; };
 		3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFavoriteBollardsQueryHandler.swift; sourceTree = "<group>"; };
+		382705ED1E28D71D00C1BB14 /* ImageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHeaderView.swift; sourceTree = "<group>"; };
+		382705EE1E28D71D00C1BB14 /* ImageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageHeaderView.xib; sourceTree = "<group>"; };
+		382705F11E28E33000C1BB14 /* StopPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointType.swift; sourceTree = "<group>"; };
+		382705F31E28E3F200C1BB14 /* FavoriteSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSection.swift; sourceTree = "<group>"; };
+		382705F51E28EC1700C1BB14 /* FavoriteCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCellFactory.swift; sourceTree = "<group>"; };
+		382705F71E28F01300C1BB14 /* StopPointIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointIdentity.swift; sourceTree = "<group>"; };
 		383214A31D5631E000DBD22E /* MapScaleConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScaleConverter.swift; sourceTree = "<group>"; };
 		383214A51D56383E00DBD22E /* FBAnnotationClusterViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterViewExtensions.swift; sourceTree = "<group>"; };
 		383214A71D563CF000DBD22E /* Pushpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pushpin.swift; sourceTree = "<group>"; };
@@ -533,6 +545,15 @@
 				3826AE8C1D5141AE0020678C /* GetFavoriteBollardsQueryHandler.swift */,
 			);
 			path = GetFavoriteBollards;
+			sourceTree = "<group>";
+		};
+		382705EC1E28D6B100C1BB14 /* ImageHeader */ = {
+			isa = PBXGroup;
+			children = (
+				382705ED1E28D71D00C1BB14 /* ImageHeaderView.swift */,
+				382705EE1E28D71D00C1BB14 /* ImageHeaderView.xib */,
+			);
+			name = ImageHeader;
 			sourceTree = "<group>";
 		};
 		3833CFA91D539260000B74C2 /* SearchBar */ = {
@@ -924,6 +945,7 @@
 				385736E71D4B4C1E00C8D772 /* LineMapper.swift */,
 				38B1639F1D621EE200D512F2 /* MessageMapper.swift */,
 				385736E51D4B4BC700C8D772 /* StreetMapper.swift */,
+				382705F71E28F01300C1BB14 /* StopPointIdentity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1161,6 +1183,9 @@
 				38FE8D801D4F55F100E6B5BF /* FavoriteViewConfigurator.swift */,
 				38FE8D811D4F55F100E6B5BF /* FavoriteViewController.swift */,
 				38FE8D821D4F55F100E6B5BF /* FavoriteViewModel.swift */,
+				382705F11E28E33000C1BB14 /* StopPointType.swift */,
+				382705F31E28E3F200C1BB14 /* FavoriteSection.swift */,
+				382705F51E28EC1700C1BB14 /* FavoriteCellFactory.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -1194,6 +1219,7 @@
 		38FE8DF11D4F810C00E6B5BF /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				382705EC1E28D6B100C1BB14 /* ImageHeader */,
 				385587181D54D3D60011C6BE /* DirectionHeader */,
 				38B163A31D6225BC00D512F2 /* MessageBubble */,
 				389BE9751D5223C20033FF87 /* NearestStopPoint */,
@@ -1375,6 +1401,7 @@
 				38FE8D831D4F55F100E6B5BF /* Favorite.storyboard in Resources */,
 				3855871C1D54D5F00011C6BE /* DirectionHeader.xib in Resources */,
 				38FE8D8C1D4F561100E6B5BF /* Search.storyboard in Resources */,
+				382705F01E28D71D00C1BB14 /* ImageHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1553,6 +1580,7 @@
 				385736E61D4B4BC700C8D772 /* StreetMapper.swift in Sources */,
 				385736EA1D4B4C6800C8D772 /* SearchResult.swift in Sources */,
 				38F3918E1D4A5AE2005F4A42 /* RestApiProvider.swift in Sources */,
+				382705F81E28F01300C1BB14 /* StopPointIdentity.swift in Sources */,
 				38FE8E0C1D4F919700E6B5BF /* BollardsViewController.swift in Sources */,
 				38F7778F1D5086C70070265E /* PekaLocationManager.swift in Sources */,
 				3855871E1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift in Sources */,
@@ -1568,12 +1596,14 @@
 				3826AE881D5135A10020678C /* ToggleBollardFavoriteCommand.swift in Sources */,
 				38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */,
 				3833CF9E1D534238000B74C2 /* UIViewControllerExtensions.swift in Sources */,
+				382705F61E28EC1700C1BB14 /* FavoriteCellFactory.swift in Sources */,
 				38ABF50A1D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift in Sources */,
 				38F3918A1D4A59E9005F4A42 /* NoContentMapper.swift in Sources */,
 				38F3917E1D4A58EE005F4A42 /* Command.swift in Sources */,
 				3826AE7A1D50E4340020678C /* FavoriteBollardsRepository.swift in Sources */,
 				385736F01D4B4CFC00C8D772 /* SearchQueryHandler.swift in Sources */,
 				38D7FFE61D50081700937FD2 /* BollardCell.swift in Sources */,
+				382705F21E28E33000C1BB14 /* StopPointType.swift in Sources */,
 				38F391691D4A5664005F4A42 /* ObservableExtensions.swift in Sources */,
 				38E895811E27B97B00B9E097 /* FBQuadTreeNode.swift in Sources */,
 				38E8957A1E27B97B00B9E097 /* FBAnnotationClusterTemplate.swift in Sources */,
@@ -1593,6 +1623,7 @@
 				38B163A01D621EE200D512F2 /* MessageMapper.swift in Sources */,
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				3895023B1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift in Sources */,
+				382705F41E28E3F200C1BB14 /* FavoriteSection.swift in Sources */,
 				38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */,
 				3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
@@ -1632,6 +1663,7 @@
 				38E8957E1E27B97B00B9E097 /* FBBoundingBox+MapKit.swift in Sources */,
 				38B163A21D6221E800D512F2 /* ToOptionalConverter.swift in Sources */,
 				38FE8D8E1D4F561100E6B5BF /* SearchViewController.swift in Sources */,
+				382705EF1E28D71D00C1BB14 /* ImageHeaderView.swift in Sources */,
 				38F391531D4A525C005F4A42 /* Configurable.swift in Sources */,
 				38E8958C1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				38E895801E27B97B00B9E097 /* FBQuadTree.swift in Sources */,

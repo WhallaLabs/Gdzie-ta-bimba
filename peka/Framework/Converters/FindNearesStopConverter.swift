@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class FindNearesStopConverter: Convertible {
+final class FindNearestStopConverter: Convertible {
     
     let coordinates: Coordinates
     
@@ -16,12 +16,14 @@ final class FindNearesStopConverter: Convertible {
         self.coordinates = coordinates
     }
     
-    func convert(_ value: [StopPointPushpin]) -> StopPointPushpin {
-        return value.sorted { (lStopPoint, rStopPoint) -> Bool in
+    func convert(_ value: [StopPointPushpin]) -> [StopPointPushpin] {
+        let nearest = value.sorted { (lStopPoint, rStopPoint) -> Bool in
             let lDistance = self.distanceFromCoordinate(lStopPoint.coordinates, toCoordinates: self.coordinates)
             let rDistance = self.distanceFromCoordinate(rStopPoint.coordinates, toCoordinates: self.coordinates)
             return lDistance < rDistance
-            }.first!
+            }
+        let first = nearest.first!
+        return nearest.filter { $0.name == first.name }
     }
     
     fileprivate func distanceFromCoordinate(_ fromCoordinate: Coordinates, toCoordinates: Coordinates) -> Double {
