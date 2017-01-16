@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3824C1401E2CC3C40087D542 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824C13E1E2CC3C40087D542 /* AdBannerView.swift */; };
+		3824C1431E2CC7930087D542 /* AdsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824C1421E2CC7930087D542 /* AdsSettings.swift */; };
 		3826AE771D50E1490020678C /* BollardRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE761D50E1490020678C /* BollardRealm.swift */; };
 		3826AE7A1D50E4340020678C /* FavoriteBollardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */; };
 		3826AE7C1D50E4860020678C /* RealmFavoriteBollardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE7B1D50E4860020678C /* RealmFavoriteBollardsRepository.swift */; };
@@ -249,6 +251,8 @@
 /* Begin PBXFileReference section */
 		0C69FE4B7E69D0F004F07DB7 /* Pods_peka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_peka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		263E1854A96347164565C55F /* Pods-pekaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3824C13E1E2CC3C40087D542 /* AdBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
+		3824C1421E2CC7930087D542 /* AdsSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsSettings.swift; sourceTree = "<group>"; };
 		3826AE761D50E1490020678C /* BollardRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BollardRealm.swift; sourceTree = "<group>"; };
 		3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteBollardsRepository.swift; sourceTree = "<group>"; };
 		3826AE7B1D50E4860020678C /* RealmFavoriteBollardsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmFavoriteBollardsRepository.swift; sourceTree = "<group>"; };
@@ -508,6 +512,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3824C13D1E2CC3960087D542 /* AdBanner */ = {
+			isa = PBXGroup;
+			children = (
+				3824C13E1E2CC3C40087D542 /* AdBannerView.swift */,
+			);
+			name = AdBanner;
+			sourceTree = "<group>";
+		};
 		3826AE781D50E4180020678C /* DAL */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,6 +1037,7 @@
 				38ABF5041D51E2F600B6E9F7 /* FavoriteBollards */,
 				38F7778B1D5086090070265E /* LocationManager */,
 				38ABF5031D51E2EB00B6E9F7 /* Rest */,
+				3824C1421E2CC7930087D542 /* AdsSettings.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1235,6 +1248,7 @@
 		38FE8DF11D4F810C00E6B5BF /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				3824C13D1E2CC3960087D542 /* AdBanner */,
 				382705EC1E28D6B100C1BB14 /* ImageHeader */,
 				385587181D54D3D60011C6BE /* DirectionHeader */,
 				38B163A31D6225BC00D512F2 /* MessageBubble */,
@@ -1552,6 +1566,7 @@
 				386898C41D4FAF48004CA51B /* LineBollardsViewConfigurator.swift in Sources */,
 				38D7FFFD1D50103600937FD2 /* BollardNavigationControllerDelegate.swift in Sources */,
 				385736C51D4B40F700C8D772 /* Coordinates.swift in Sources */,
+				3824C1401E2CC3C40087D542 /* AdBannerView.swift in Sources */,
 				385737141D4B69B500C8D772 /* GroupedDirections.swift in Sources */,
 				38E3326E1D52784E001A5077 /* GroupStopPointsConverter.swift in Sources */,
 				385736FA1D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift in Sources */,
@@ -1661,6 +1676,7 @@
 				3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
 				3833CFA01D535233000B74C2 /* FavoriteStateToImageConverter.swift in Sources */,
+				3824C1431E2CC7930087D542 /* AdsSettings.swift in Sources */,
 				38F391811D4A58F9005F4A42 /* Executor.swift in Sources */,
 				38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */,
 				38A68B081D50D54300BBC087 /* MapNavigationController.swift in Sources */,
@@ -1875,6 +1891,7 @@
 				INFOPLIST_FILE = peka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whallalabs.peka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

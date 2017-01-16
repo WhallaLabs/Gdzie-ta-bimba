@@ -24,6 +24,7 @@ final class FavoriteViewController: UIViewController {
 	@IBOutlet fileprivate weak var viewConfigurator: FavoriteViewConfigurator!
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet fileprivate weak var emptyState: UIView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
     
 	func installDependencies(_ viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
 		self.viewModel = viewModel
@@ -39,6 +40,7 @@ final class FavoriteViewController: UIViewController {
         self.setupBinding()
         self.registerForEvents()
         self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
 	}
 	
     override func viewWillAppear(_ animated: Bool) {

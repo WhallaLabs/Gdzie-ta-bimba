@@ -29,6 +29,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(HttpHeadersProvider.self) { _ in PekaHttpHeadersProvider() }
         defaultContainer.register(FormBodyBuilder.self) { _ in FormUrlEncodedBuilder() }
         defaultContainer.registerPerContainerLifetime(LocationManager.self) { _ in PekaLocationManager() }
+        
+        defaultContainer.register(AdsSettings.self) { _ in AdsSettings() }
+            .inObjectScope(.container)
     }
     
     fileprivate class func registerProviders() {

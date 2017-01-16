@@ -22,6 +22,7 @@ final class SearchViewController: UIViewController {
     @IBOutlet fileprivate weak var searchBar: SearchBarView!
     @IBOutlet fileprivate weak var emptyState: UIView!
     @IBOutlet fileprivate weak var noResults: UIView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
     
 	func installDependencies(_ viewModel: SearchViewModel, _ navigationDelegate: SearchNavigationControllerDelegate) {
 		self.viewModel = viewModel
@@ -36,6 +37,7 @@ final class SearchViewController: UIViewController {
         self.resigsterForEvents()
         self.viewModel.loadSearchHistory().addDisposableTo(self.disposables)
         self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
 	}
     
     override func viewWillAppear(_ animated: Bool) {

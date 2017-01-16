@@ -22,6 +22,8 @@ final class BollardViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet fileprivate weak var toggleFavoriteButton: UIBarButtonItem!
     @IBOutlet fileprivate weak var messageBubble: MessageBubbleView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
+    
 	func installDependencies(_ viewModel: BollardViewModel, _ navigationDelegate: BollardNavigationControllerDelegate) {
 		self.viewModel = viewModel
 		self.navigationDelegate = navigationDelegate
@@ -39,7 +41,8 @@ final class BollardViewController: UIViewController {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
         self.setupBinding()
-        self.tableView.rx.setDelegate(self.disableEditingBehavior)
+        self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
 	}
 	
     fileprivate func setupBinding() {

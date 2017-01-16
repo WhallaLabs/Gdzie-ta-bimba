@@ -30,7 +30,7 @@
                                     <action selector="showUserOnMap" destination="udh-io-FZk" eventType="touchUpInside" id="HTj-3p-OVW"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOL-md-XRF" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOL-md-XRF" customClass="AdBannerView" customModule="peka" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="568" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

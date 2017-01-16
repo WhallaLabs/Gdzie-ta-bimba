@@ -21,6 +21,7 @@ final class LineBollardsViewController: UIViewController {
 
 	@IBOutlet fileprivate weak var viewConfigurator: LineBollardsViewConfigurator!
     @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
     
 	func installDependencies(_ viewModel: LineBollardsViewModel, _ navigationDelegate: LineBollardsNavigationControllerDelegate) {
 		self.viewModel = viewModel
@@ -40,6 +41,7 @@ final class LineBollardsViewController: UIViewController {
         self.registerForEvents()
         self.updateTitle(self.line)
         self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
 	}
 	
     fileprivate func setupBinding() {

@@ -19,6 +19,7 @@ final class BollardsViewController: UIViewController {
 
 	@IBOutlet fileprivate weak var viewConfigurator: BollardsViewConfigurator!
     @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
     
 	func installDependencies(_ viewModel: BollardsViewModel, _ navigationDelegate: BollardsNavigationControllerDelegate) {
 		self.viewModel = viewModel
@@ -42,6 +43,7 @@ final class BollardsViewController: UIViewController {
         self.registerForEvents()
         self.updateTitle(self.title!)
         self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
 	}
 	
     fileprivate func setupBinding() {

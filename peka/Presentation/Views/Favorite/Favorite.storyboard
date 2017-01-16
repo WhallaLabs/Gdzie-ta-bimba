@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-O5-Jhc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="4lX-op-ngV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -58,16 +58,26 @@
                                     </constraints>
                                 </view>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8N1-IG-Bi1" customClass="AdBannerView" customModule="peka" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dlu-4m-oo0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="APj-xg-UPx"/>
-                            <constraint firstAttribute="bottom" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="AxC-4l-2fs"/>
+                            <constraint firstItem="8N1-IG-Bi1" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="F8e-Jo-w9y"/>
+                            <constraint firstAttribute="bottom" secondItem="8N1-IG-Bi1" secondAttribute="bottom" id="LPK-cW-M2X"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="Vch-w2-7Hn"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="eLq-Ya-LAP"/>
+                            <constraint firstItem="8N1-IG-Bi1" firstAttribute="top" secondItem="UWU-O5-Jhc" secondAttribute="bottom" id="i0e-B9-BsG"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="iKQ-tf-i72"/>
                             <constraint firstItem="UWU-O5-Jhc" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="mUi-0e-cxM"/>
                             <constraint firstAttribute="trailing" secondItem="UWU-O5-Jhc" secondAttribute="trailing" id="ydp-xP-0jL"/>
+                            <constraint firstAttribute="trailing" secondItem="8N1-IG-Bi1" secondAttribute="trailing" id="zOr-h0-xK1"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -79,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wxv-lE-I25"/>
                     <connections>
+                        <outlet property="adBannerView" destination="8N1-IG-Bi1" id="OBJ-sE-0lM"/>
                         <outlet property="emptyState" destination="qMK-Tf-2A7" id="gKq-Zl-R2D"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="PQV-bQ-gGI"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
