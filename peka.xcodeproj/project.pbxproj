@@ -790,7 +790,6 @@
 				38784BFE1E2D10A70019599D /* RestoreTransactionsCommand.swift */,
 				38784C001E2D10C40019599D /* RestoreTransactionsCommandHandler.swift */,
 			);
-			name = RestoreTransactions;
 			path = RestoreTransactions;
 			sourceTree = "<group>";
 		};

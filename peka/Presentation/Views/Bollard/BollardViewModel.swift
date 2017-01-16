@@ -41,6 +41,7 @@ final class BollardViewModel {
         let messageObservable: Observable<NSAttributedString> = self.executor.execute(messageQuery)
         
         let messageDisposable = messageObservable.map(ToOptionalConverter())
+            .catchErrorJustReturn(nil)
             .bindTo(self.message)
         return CompositeDisposable(timesDisposable, messageDisposable)
     }
