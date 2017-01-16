@@ -16,7 +16,7 @@ struct Constants {
 #if DEBUG
     static let adBannerUnitId = "ca-app-pub-3940256099942544/2934735716"
 #else
-    static let adBannerUnitId = "ca-app-pub-1986565751919761/7766331939"
+    static let adBannerUnitId = "ca-app-pub-1891682170220364/1572958132"
 #endif
     
     static let removeAdsInAppId = "remove_ads"

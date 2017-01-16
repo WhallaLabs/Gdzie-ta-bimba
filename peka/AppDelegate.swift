@@ -21,7 +21,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
         FIRApp.configure()
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-1986565751919761~4812865538")
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-1891682170220364~5192892530")
         return true
     }
 
