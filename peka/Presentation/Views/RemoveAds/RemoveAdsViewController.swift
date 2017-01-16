@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 final class RemoveAdsViewController: UIViewController {
 
@@ -36,18 +37,28 @@ final class RemoveAdsViewController: UIViewController {
 	}
     
     @IBAction func removeAds() {
-        self.viewModel.removeAds().subscribe(onNext: { [unowned self] in
-            self.navigationController?.popViewController(animated: true)
-        }, onError: { (error) in
-            
-        }, onCompleted: nil, onDisposed: nil).addDisposableTo(self.disposables)
+        self.subscribeTransaction(observable: self.viewModel.removeAds())
     }
     
     @IBAction func restoreTransactions() {
-        self.viewModel.restoreTransactions()
+        self.subscribeTransaction(observable: self.viewModel.restoreTransactions())
     }
     
     @IBAction func restoreAds() {
         self.viewModel.restoreAds()
+    }
+    
+    private func subscribeTransaction(observable: Observable<Void>) {
+        HUD.show(.progress)
+        observable.subscribe(
+            onNext: nil,
+            onError: { (error) in
+                HUD.hide()
+            },
+            onCompleted: { [unowned self] in
+                HUD.hide()
+                self.navigationController?.popViewController(animated: true)
+            },
+            onDisposed: nil).addDisposableTo(self.disposables)
     }
 }

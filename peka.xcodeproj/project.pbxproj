@@ -93,6 +93,8 @@
 		386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */; };
 		386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */; };
 		3872714C1D52A1710074B570 /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872714B1D52A1710074B570 /* RouteType.swift */; };
+		38784BFF1E2D10A70019599D /* RestoreTransactionsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38784BFE1E2D10A70019599D /* RestoreTransactionsCommand.swift */; };
+		38784C011E2D10C40019599D /* RestoreTransactionsCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38784C001E2D10C40019599D /* RestoreTransactionsCommandHandler.swift */; };
 		388205191D533E1E0000F58E /* PekaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388205181D533E1E0000F58E /* PekaNavigationController.swift */; };
 		3882051B1D5340600000F58E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882051A1D5340600000F58E /* UIColorExtensions.swift */; };
 		3895023B1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3895023A1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift */; };
@@ -352,6 +354,8 @@
 		386898BF1D4FAF48004CA51B /* LineBollardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewController.swift; sourceTree = "<group>"; };
 		386898C01D4FAF48004CA51B /* LineBollardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBollardsViewModel.swift; sourceTree = "<group>"; };
 		3872714B1D52A1710074B570 /* RouteType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
+		38784BFE1E2D10A70019599D /* RestoreTransactionsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoreTransactionsCommand.swift; sourceTree = "<group>"; };
+		38784C001E2D10C40019599D /* RestoreTransactionsCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoreTransactionsCommandHandler.swift; sourceTree = "<group>"; };
 		388205181D533E1E0000F58E /* PekaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PekaNavigationController.swift; sourceTree = "<group>"; };
 		3882051A1D5340600000F58E /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		3895023A1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupBollardDirectionsConverter.swift; sourceTree = "<group>"; };
@@ -427,20 +431,20 @@
 		38E2C1241D523DB70071C9E7 /* QueryRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryRequestBuilder.swift; sourceTree = "<group>"; };
 		38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStopPointsConverter.swift; sourceTree = "<group>"; };
 		38E3326F1D529BB0001A5077 /* DateMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateMapper.swift; sourceTree = "<group>"; };
-		38E8956D1E27B97B00B9E097 /* FBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBAnnotation.swift; path = FBAnnotation.swift; sourceTree = "<group>"; };
-		38E8956E1E27B97B00B9E097 /* FBAnnotationCluster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBAnnotationCluster.swift; path = FBAnnotationCluster.swift; sourceTree = "<group>"; };
-		38E8956F1E27B97B00B9E097 /* FBAnnotationClusterTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBAnnotationClusterTemplate.swift; path = FBAnnotationClusterTemplate.swift; sourceTree = "<group>"; };
-		38E895701E27B97B00B9E097 /* FBAnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBAnnotationClusterView.swift; path = FBAnnotationClusterView.swift; sourceTree = "<group>"; };
-		38E895711E27B97B00B9E097 /* FBAnnotationClusterViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBAnnotationClusterViewConfiguration.swift; path = FBAnnotationClusterViewConfiguration.swift; sourceTree = "<group>"; };
-		38E895721E27B97B00B9E097 /* FBBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBBoundingBox.swift; path = FBBoundingBox.swift; sourceTree = "<group>"; };
-		38E895731E27B97B00B9E097 /* FBBoundingBox+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FBBoundingBox+MapKit.swift"; path = "FBBoundingBox+MapKit.swift"; sourceTree = "<group>"; };
-		38E895741E27B97B00B9E097 /* FBClusteringManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBClusteringManager.swift; path = FBClusteringManager.swift; sourceTree = "<group>"; };
-		38E895751E27B97B00B9E097 /* FBQuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBQuadTree.swift; path = FBQuadTree.swift; sourceTree = "<group>"; };
-		38E895761E27B97B00B9E097 /* FBQuadTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBQuadTreeNode.swift; path = FBQuadTreeNode.swift; sourceTree = "<group>"; };
-		38E895771E27B97B00B9E097 /* FBZoomLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBZoomLevel.swift; path = FBZoomLevel.swift; sourceTree = "<group>"; };
-		38E895841E27B99B00B9E097 /* MKMapView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MKMapView+Rx.swift"; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
-		38E895851E27B99B00B9E097 /* RxMKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RxMKMapView.h; path = RxMKMapView.h; sourceTree = "<group>"; };
-		38E895861E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxMKMapViewDelegateProxy.swift; path = RxMKMapViewDelegateProxy.swift; sourceTree = "<group>"; };
+		38E8956D1E27B97B00B9E097 /* FBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotation.swift; sourceTree = "<group>"; };
+		38E8956E1E27B97B00B9E097 /* FBAnnotationCluster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationCluster.swift; sourceTree = "<group>"; };
+		38E8956F1E27B97B00B9E097 /* FBAnnotationClusterTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterTemplate.swift; sourceTree = "<group>"; };
+		38E895701E27B97B00B9E097 /* FBAnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterView.swift; sourceTree = "<group>"; };
+		38E895711E27B97B00B9E097 /* FBAnnotationClusterViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterViewConfiguration.swift; sourceTree = "<group>"; };
+		38E895721E27B97B00B9E097 /* FBBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBBoundingBox.swift; sourceTree = "<group>"; };
+		38E895731E27B97B00B9E097 /* FBBoundingBox+MapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBBoundingBox+MapKit.swift"; sourceTree = "<group>"; };
+		38E895741E27B97B00B9E097 /* FBClusteringManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBClusteringManager.swift; sourceTree = "<group>"; };
+		38E895751E27B97B00B9E097 /* FBQuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTree.swift; sourceTree = "<group>"; };
+		38E895761E27B97B00B9E097 /* FBQuadTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTreeNode.swift; sourceTree = "<group>"; };
+		38E895771E27B97B00B9E097 /* FBZoomLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBZoomLevel.swift; sourceTree = "<group>"; };
+		38E895841E27B99B00B9E097 /* MKMapView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
+		38E895851E27B99B00B9E097 /* RxMKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxMKMapView.h; sourceTree = "<group>"; };
+		38E895861E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMKMapViewDelegateProxy.swift; sourceTree = "<group>"; };
 		38E895891E27C0FE00B9E097 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		38E8958B1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		38F391501D4A523F005F4A42 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -545,7 +549,6 @@
 			children = (
 				3824C13E1E2CC3C40087D542 /* AdBannerView.swift */,
 			);
-			name = AdBanner;
 			path = AdBanner;
 			sourceTree = "<group>";
 		};
@@ -571,6 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				38A84F5E1E2CFCF000D8FE0B /* RemoveAds */,
+				38784BFD1E2D108E0019599D /* RestoreTransactions */,
 				38ABF52A1D5207CA00B6E9F7 /* SaveSearchResult */,
 				3826AE851D5135880020678C /* ToggleBollardFavorite */,
 			);
@@ -601,7 +605,6 @@
 				382705ED1E28D71D00C1BB14 /* ImageHeaderView.swift */,
 				382705EE1E28D71D00C1BB14 /* ImageHeaderView.xib */,
 			);
-			name = ImageHeader;
 			path = ImageHeader;
 			sourceTree = "<group>";
 		};
@@ -611,7 +614,6 @@
 				382705FA1E28FCBB00C1BB14 /* StopPointCell.swift */,
 				382705FB1E28FCBB00C1BB14 /* StopPointCell.xib */,
 			);
-			name = StopPoint;
 			path = StopPoint;
 			sourceTree = "<group>";
 		};
@@ -782,6 +784,16 @@
 			path = LineBollards;
 			sourceTree = "<group>";
 		};
+		38784BFD1E2D108E0019599D /* RestoreTransactions */ = {
+			isa = PBXGroup;
+			children = (
+				38784BFE1E2D10A70019599D /* RestoreTransactionsCommand.swift */,
+				38784C001E2D10C40019599D /* RestoreTransactionsCommandHandler.swift */,
+			);
+			name = RestoreTransactions;
+			path = RestoreTransactions;
+			sourceTree = "<group>";
+		};
 		388205171D533E0C0000F58E /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -809,7 +821,6 @@
 				38A84F421E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift */,
 				38A84F431E2CD8BA00D8FE0B /* SettingsViewController.swift */,
 			);
-			name = Settings;
 			path = Settings;
 			sourceTree = "<group>";
 		};
@@ -821,7 +832,6 @@
 				38A84F541E2CE93500D8FE0B /* RemoveAdsViewController.swift */,
 				38A84F551E2CE93500D8FE0B /* RemoveAdsViewModel.swift */,
 			);
-			name = RemoveAds;
 			path = RemoveAds;
 			sourceTree = "<group>";
 		};
@@ -831,7 +841,6 @@
 				38A84F5F1E2CFD0100D8FE0B /* RemoveAdsCommand.swift */,
 				38A84F611E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift */,
 			);
-			name = RemoveAds;
 			path = RemoveAds;
 			sourceTree = "<group>";
 		};
@@ -1131,7 +1140,6 @@
 				38E8956C1E27B97100B9E097 /* FBAnnotationClusteringSwift */,
 				38E895831E27B98A00B9E097 /* RxMKMapView */,
 			);
-			name = Libs;
 			path = Libs;
 			sourceTree = "<group>";
 		};
@@ -1150,7 +1158,6 @@
 				38E895761E27B97B00B9E097 /* FBQuadTreeNode.swift */,
 				38E895771E27B97B00B9E097 /* FBZoomLevel.swift */,
 			);
-			name = FBAnnotationClusteringSwift;
 			path = FBAnnotationClusteringSwift;
 			sourceTree = "<group>";
 		};
@@ -1161,7 +1168,6 @@
 				38E895851E27B99B00B9E097 /* RxMKMapView.h */,
 				38E895861E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift */,
 			);
-			name = RxMKMapView;
 			path = RxMKMapView;
 			sourceTree = "<group>";
 		};
@@ -1714,6 +1720,7 @@
 				38F7778F1D5086C70070265E /* PekaLocationManager.swift in Sources */,
 				3855871E1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift in Sources */,
 				386898C61D4FAF48004CA51B /* LineBollardsViewModel.swift in Sources */,
+				38784BFF1E2D10A70019599D /* RestoreTransactionsCommand.swift in Sources */,
 				38B163A91D623D1600D512F2 /* IsNilConverter.swift in Sources */,
 				386898C21D4FAF48004CA51B /* LineBollardsNavigationController.swift in Sources */,
 				3833CFA21D5352D7000B74C2 /* UIImageExtensions.swift in Sources */,
@@ -1819,6 +1826,7 @@
 				38A84F621E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift in Sources */,
 				38FE8E0A1D4F919700E6B5BF /* BollardsNavigationControllerDelegate.swift in Sources */,
 				38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */,
+				38784C011E2D10C40019599D /* RestoreTransactionsCommandHandler.swift in Sources */,
 				38ABF5291D52074B00B6E9F7 /* GetSearchHistoryQueryHandler.swift in Sources */,
 				3882051B1D5340600000F58E /* UIColorExtensions.swift in Sources */,
 				3857370B1D4B618B00C8D772 /* TimeMapper.swift in Sources */,
