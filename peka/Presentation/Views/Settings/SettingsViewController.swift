@@ -36,7 +36,7 @@ final class SettingsViewController: UIViewController {
             .addDisposableTo(self.disposables)
         
         if let version = AppInfo.version {
-            self.versionLabel.text = "wer. \(version)"
+            self.versionLabel.text = "wersja: \(version)"
         }
 	}
 	

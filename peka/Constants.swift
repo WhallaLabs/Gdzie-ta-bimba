@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    static let appID = "324684580"
+    static let appID = "1195530580"
     static let itunesURL = "https://itunes.apple.com/pl/app/id" + Constants.appID
     static let appstoreURL = "itms-apps://itunes.apple.com/app/id"  + Constants.appID
     
