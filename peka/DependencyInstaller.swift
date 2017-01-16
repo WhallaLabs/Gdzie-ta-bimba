@@ -67,34 +67,42 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(SearchViewController.self) { r, c in
             let navigationController = r.resolve(SearchNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(SearchViewModel.self)!
-            c.installDependencies(viewModel, navigationController)
+            c.installDependencies(viewModel, navigationController, r.resolve(AdsSettings.self)!)
         }
         defaultContainer.storyboardInitCompleted(BollardsViewController.self) { r, c in
             let navigationController = r.resolve(BollardsNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(BollardsViewModel.self)!
-            c.installDependencies(viewModel, navigationController)
+            c.installDependencies(viewModel, navigationController, r.resolve(AdsSettings.self)!)
         }
         defaultContainer.storyboardInitCompleted(LineBollardsViewController.self) { r, c in
             let navigationController = r.resolve(LineBollardsNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(LineBollardsViewModel.self)!
-            c.installDependencies(viewModel, navigationController)
+            c.installDependencies(viewModel, navigationController, r.resolve(AdsSettings.self)!)
         }
         defaultContainer.storyboardInitCompleted(BollardViewController.self) { r, c in
             let navigationController = r.resolve(BollardNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(BollardViewModel.self)!
-            c.installDependencies(viewModel, navigationController)
+            c.installDependencies(viewModel, navigationController, r.resolve(AdsSettings.self)!)
         }
         defaultContainer.storyboardInitCompleted(MapViewController.self) { r, c in
             let navigationController = r.resolve(MapNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(MapViewModel.self)!
             let locationManager = r.resolve(LocationManager.self)!
-            c.installDependencies(viewModel, navigationController, locationManager)
+            c.installDependencies(viewModel, navigationController, locationManager, r.resolve(AdsSettings.self)!)
         }
         defaultContainer.storyboardInitCompleted(FavoriteViewController.self) { r, c in
             let navigationController = r.resolve(FavoriteNavigationControllerDelegate.self, argument: c)!
             let viewModel = r.resolve(FavoriteViewModel.self)!
             let locationManager = r.resolve(LocationManager.self)!
-            c.installDependencies(viewModel, navigationController, locationManager)
+            c.installDependencies(viewModel, navigationController, locationManager, r.resolve(AdsSettings.self)!)
+        }
+        defaultContainer.storyboardInitCompleted(SettingsViewController.self) { r, c in
+            let navigationController = r.resolve(SettingsFlowControllerDelegate.self, argument: c)!
+            c.installDependencies(navigationController, r.resolve(AdsSettings.self)!)
+        }
+        defaultContainer.storyboardInitCompleted(RemoveAdsViewController.self) { r, c in
+            let viewModel = r.resolve(RemoveAdsViewModel.self)!
+            c.installDependencies(viewModel, r.resolve(AdsSettings.self)!)
         }
     }
     
@@ -119,6 +127,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(FavoriteViewModel.self) { r in
             FavoriteViewModel(executor: r.resolve(Executor.self)!)
+        }
+        defaultContainer.register(RemoveAdsViewModel.self) { r in
+            RemoveAdsViewModel(executor: r.resolve(Executor.self)!, adsSettings: r.resolve(AdsSettings.self)!)
         }
     }
     
@@ -185,6 +196,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(FavoriteNavigationControllerDelegate.self) { (_, arg: FavoriteViewController) in
             FavoriteNavigationController(viewController: arg)
+        }
+        defaultContainer.register(SettingsFlowControllerDelegate.self) { (_, arg: SettingsViewController) in
+            SettingsFlowController(viewController: arg)
         }
     }
 }

@@ -13,6 +13,7 @@ import RxCocoa
 final class BollardsViewController: UIViewController {
 
 	fileprivate let disposables = DisposeBag()
+    private var adsSettings: AdsSettings!
     fileprivate let disableEditingBehavior = DisableEditingTableViewDelegate()
 	fileprivate var viewModel: BollardsViewModel!
 	fileprivate var navigationDelegate: BollardsNavigationControllerDelegate!
@@ -20,10 +21,12 @@ final class BollardsViewController: UIViewController {
 	@IBOutlet fileprivate weak var viewConfigurator: BollardsViewConfigurator!
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
     
-	func installDependencies(_ viewModel: BollardsViewModel, _ navigationDelegate: BollardsNavigationControllerDelegate) {
+	func installDependencies(_ viewModel: BollardsViewModel, _ navigationDelegate: BollardsNavigationControllerDelegate, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
 		self.navigationDelegate = navigationDelegate
+        self.adsSettings = adsSettings
 	}
     
     func loadBollardsByStopPoint(_ stopPoint: StopPoint) {
@@ -44,6 +47,9 @@ final class BollardsViewController: UIViewController {
         self.updateTitle(self.title!)
         self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
         self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
 	
     fileprivate func setupBinding() {

@@ -12,8 +12,8 @@ final class HubViewConfigurator: NSObject {
 
 	@IBOutlet fileprivate weak var viewController: HubViewController!
     
-    fileprivate let selectedColor = UIColor(argbHex: 0xFFB3C6D3).withAlphaComponent(0.6)
-    fileprivate let unselectedColor = UIColor(argbHex: 0xFFB3C6D3)
+    fileprivate let selectedColor = UIColor.white//UIColor(argbHex: 0xFFB3C6D3).withAlphaComponent(0.6) //B3C6D3
+    fileprivate let unselectedColor = UIColor(argbHex: 0xFFB3C6D3).withAlphaComponent(0.6)
 
 	func configure() {
 		self.configureTabBar()
@@ -25,7 +25,8 @@ final class HubViewConfigurator: NSObject {
         tabBar.barTintColor = UIColor(color: .backgroundLight)
         tabBar.tintColor = self.selectedColor
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : self.unselectedColor], for: UIControlState())
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : self.unselectedColor], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : self.selectedColor], for: .selected)
     }
     
     func configureTabBarItems() {

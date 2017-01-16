@@ -82,6 +82,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="adBannerView" destination="gFk-FA-QG9" id="HVj-jg-kxg"/>
+                        <outlet property="adHeightConstraint" destination="e2j-xc-wuz" id="gjM-T3-51A"/>
                         <outlet property="messageBubble" destination="lyj-gx-sPM" id="Gg7-oS-vv5"/>
                         <outlet property="tableView" destination="KtG-NC-xZK" id="gXa-iT-LyB"/>
                         <outlet property="toggleFavoriteButton" destination="hm0-Zj-hZ6" id="6wo-fn-MEB"/>

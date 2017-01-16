@@ -15,6 +15,7 @@ final class FavoriteViewController: UIViewController {
 
 	fileprivate let disposables = DisposeBag()
     fileprivate var viewDisposables = DisposeBag()
+    private var adsSettings: AdsSettings!
 	fileprivate var viewModel: FavoriteViewModel!
     fileprivate var navigationDelegate: FavoriteNavigationControllerDelegate!
     fileprivate var locationManager: LocationManager!
@@ -25,11 +26,13 @@ final class FavoriteViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet fileprivate weak var emptyState: UIView!
     @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
     
-	func installDependencies(_ viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
+	func installDependencies(_ viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
         self.navigationDelegate = navigationDelegate
         self.locationManager = locationManager
+        self.adsSettings = adsSettings
 	}
 
 	override func viewDidLoad() {
@@ -41,6 +44,9 @@ final class FavoriteViewController: UIViewController {
         self.registerForEvents()
         self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
         self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
 	
     override func viewWillAppear(_ animated: Bool) {

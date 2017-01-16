@@ -17,7 +17,8 @@ private let poznanCoordinates = CLLocationCoordinate2DMake(52.407720, 16.933497)
 final class MapViewController: UIViewController {
 
 	fileprivate let disposables = DisposeBag()
-	fileprivate var viewModel: MapViewModel!
+    fileprivate var viewModel: MapViewModel!
+    private var adsSettings: AdsSettings!
     fileprivate var locationManager: LocationManager!
     fileprivate var navigationDelegate: MapNavigationControllerDelegate!
     fileprivate let clusteringManager = FBClusteringManager()
@@ -26,11 +27,13 @@ final class MapViewController: UIViewController {
 	@IBOutlet fileprivate weak var viewConfigurator: MapViewConfigurator!
     @IBOutlet fileprivate weak var mapView: MKMapView!
     @IBOutlet fileprivate weak var showUserLocationButton: UIButton!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
 
-	func installDependencies(_ viewModel: MapViewModel, _ navigationDelegate: MapNavigationControllerDelegate, _ locationManager: LocationManager) {
+	func installDependencies(_ viewModel: MapViewModel, _ navigationDelegate: MapNavigationControllerDelegate, _ locationManager: LocationManager, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
         self.navigationDelegate = navigationDelegate
         self.locationManager = locationManager
+        self.adsSettings = adsSettings
 	}
 
 	override func viewDidLoad() {
@@ -41,6 +44,9 @@ final class MapViewController: UIViewController {
         self.registerForEvents()
         self.setupBinding()
         self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
     
     override func viewWillAppear(_ animated: Bool) {

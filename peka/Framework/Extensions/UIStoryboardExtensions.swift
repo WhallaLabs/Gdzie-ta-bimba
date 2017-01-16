@@ -10,7 +10,7 @@ import UIKit
 
 extension UIStoryboard {
     class func instantiateInitialViewController<T: UIViewController>() -> T {
-        let storyboardName = NSStringFromClass(T)
+        let storyboardName = NSStringFromClass(T.self)
             .components(separatedBy: ".").last!
             .replacingOccurrences(of: "ViewController", with: "")
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)

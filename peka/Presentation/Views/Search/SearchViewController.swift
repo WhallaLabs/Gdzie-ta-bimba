@@ -16,6 +16,7 @@ final class SearchViewController: UIViewController {
     fileprivate let disableEditingBehavior = DisableEditingTableViewDelegate()
 	fileprivate var viewModel: SearchViewModel!
     fileprivate var navigationDelegate: SearchNavigationControllerDelegate!
+    private var adsSettings: AdsSettings!
 
 	@IBOutlet fileprivate weak var viewConfigurator: SearchViewConfigurator!
     @IBOutlet fileprivate weak var tableView: UITableView!
@@ -23,10 +24,12 @@ final class SearchViewController: UIViewController {
     @IBOutlet fileprivate weak var emptyState: UIView!
     @IBOutlet fileprivate weak var noResults: UIView!
     @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
     
-	func installDependencies(_ viewModel: SearchViewModel, _ navigationDelegate: SearchNavigationControllerDelegate) {
+	func installDependencies(_ viewModel: SearchViewModel, _ navigationDelegate: SearchNavigationControllerDelegate, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
         self.navigationDelegate = navigationDelegate
+        self.adsSettings = adsSettings
 	}
 
 	override func viewDidLoad() {
@@ -38,6 +41,9 @@ final class SearchViewController: UIViewController {
         self.viewModel.loadSearchHistory().addDisposableTo(self.disposables)
         self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
         self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
     
     override func viewWillAppear(_ animated: Bool) {

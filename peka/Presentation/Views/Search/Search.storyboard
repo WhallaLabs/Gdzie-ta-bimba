@@ -138,6 +138,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="adBannerView" destination="yI8-7q-JSW" id="iPI-QN-nce"/>
+                        <outlet property="adHeightConstraint" destination="Gfz-vz-vFE" id="aiX-Ua-7O7"/>
                         <outlet property="emptyState" destination="HI2-v0-kfo" id="0of-GF-64V"/>
                         <outlet property="noResults" destination="t9Y-eM-I1L" id="vSo-nU-9kC"/>
                         <outlet property="searchBar" destination="AvV-DT-JdW" id="Eix-qH-Clv"/>

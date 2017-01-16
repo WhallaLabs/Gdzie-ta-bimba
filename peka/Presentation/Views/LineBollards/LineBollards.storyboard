@@ -50,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="adBannerView" destination="7OG-Jg-bgT" id="6Qp-p4-keh"/>
+                        <outlet property="adHeightConstraint" destination="zdY-X4-E88" id="hQy-ZR-DeX"/>
                         <outlet property="tableView" destination="1gO-QJ-Luw" id="bFc-K6-hK3"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>

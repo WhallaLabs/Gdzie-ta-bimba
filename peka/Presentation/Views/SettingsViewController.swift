@@ -12,17 +12,18 @@ import RxCocoa
 
 final class SettingsViewController: UIViewController {
 
-	private let disposables = DisposeBag()
-	private var viewModel: SettingsViewModel!
+    private let disposables = DisposeBag()
+    private var adsSettings: AdsSettings!
 	private var flowController: SettingsFlowControllerDelegate!
 
 	@IBOutlet private weak var viewConfigurator: SettingsViewConfigurator!
     @IBOutlet private weak var adBannerView: AdBannerView!
     @IBOutlet private weak var versionLabel: UILabel!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
 
-	func installDependencies(viewModel: SettingsViewModel, _ flowController: SettingsFlowControllerDelegate) {
-		self.viewModel = viewModel
+	func installDependencies(_ flowController: SettingsFlowControllerDelegate, _ adsSettings: AdsSettings) {
 		self.flowController = flowController
+        self.adsSettings = adsSettings
 	}
 
 	override func viewDidLoad() {
@@ -30,6 +31,9 @@ final class SettingsViewController: UIViewController {
 		self.viewConfigurator.configure()
         self.updateTitle("Więcej")
         self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
         
         if let version = AppInfo.version {
             self.versionLabel.text = "wer. \(version)"
@@ -37,7 +41,7 @@ final class SettingsViewController: UIViewController {
 	}
 	
     @IBAction func disableAds() {
-        
+        self.flowController.showAdsSettings()
     }
     
     @IBAction func rateApp() {

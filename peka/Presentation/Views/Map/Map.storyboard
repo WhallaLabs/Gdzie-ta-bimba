@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jJz-sa-BjR">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jJz-sa-BjR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azk-jN-K4H">
@@ -64,6 +64,7 @@
                     <navigationItem key="navigationItem" id="nXR-Fp-2Sz"/>
                     <connections>
                         <outlet property="adBannerView" destination="XOL-md-XRF" id="MQ6-1Z-eEG"/>
+                        <outlet property="adHeightConstraint" destination="103-sx-hSb" id="bxO-hN-0DR"/>
                         <outlet property="mapView" destination="jJz-sa-BjR" id="6Ss-pj-plB"/>
                         <outlet property="showUserLocationButton" destination="Azk-jN-K4H" id="pKg-c9-J1J"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>

@@ -14,6 +14,7 @@ import RxDataSources
 final class LineBollardsViewController: UIViewController {
 
     fileprivate let disposables = DisposeBag()
+    private var adsSettings: AdsSettings!
 	fileprivate var viewModel: LineBollardsViewModel!
 	fileprivate var navigationDelegate: LineBollardsNavigationControllerDelegate!
     fileprivate let dataSource = RxTableViewSectionedReloadDataSource<LineBollards>()
@@ -22,10 +23,12 @@ final class LineBollardsViewController: UIViewController {
 	@IBOutlet fileprivate weak var viewConfigurator: LineBollardsViewConfigurator!
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
     
-	func installDependencies(_ viewModel: LineBollardsViewModel, _ navigationDelegate: LineBollardsNavigationControllerDelegate) {
+	func installDependencies(_ viewModel: LineBollardsViewModel, _ navigationDelegate: LineBollardsNavigationControllerDelegate, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
-		self.navigationDelegate = navigationDelegate
+        self.navigationDelegate = navigationDelegate
+        self.adsSettings = adsSettings
 	}
     
     func loadBollards(_ line: String) {
@@ -42,6 +45,9 @@ final class LineBollardsViewController: UIViewController {
         self.updateTitle(self.line)
         self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
         self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
 	
     fileprivate func setupBinding() {

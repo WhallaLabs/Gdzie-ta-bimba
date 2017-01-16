@@ -15,4 +15,8 @@ final class SettingsFlowController: SettingsFlowControllerDelegate {
 		self.viewController = viewController
 	}
 	
+    func showAdsSettings() {
+        let viewController: RemoveAdsViewController = UIStoryboard.instantiateInitialViewController()
+        self.viewController?.show(viewController, sender: nil)  
+    }
 }

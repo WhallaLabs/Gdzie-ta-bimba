@@ -14,7 +14,8 @@ final class BollardViewController: UIViewController {
 
     fileprivate let disposables = DisposeBag()
     fileprivate let disableEditingBehavior = DisableEditingTableViewDelegate()
-	fileprivate var viewModel: BollardViewModel!
+    fileprivate var viewModel: BollardViewModel!
+    private var adsSettings: AdsSettings!
 	fileprivate var navigationDelegate: BollardNavigationControllerDelegate!
     fileprivate let favoriteStateToImageConverter = FavoriteStateToImageConverter()
 
@@ -23,10 +24,12 @@ final class BollardViewController: UIViewController {
     @IBOutlet fileprivate weak var toggleFavoriteButton: UIBarButtonItem!
     @IBOutlet fileprivate weak var messageBubble: MessageBubbleView!
     @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
     
-	func installDependencies(_ viewModel: BollardViewModel, _ navigationDelegate: BollardNavigationControllerDelegate) {
+	func installDependencies(_ viewModel: BollardViewModel, _ navigationDelegate: BollardNavigationControllerDelegate, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
 		self.navigationDelegate = navigationDelegate
+        self.adsSettings = adsSettings
 	}
     
     func loadBollard(_ symbol: String) {
@@ -43,6 +46,9 @@ final class BollardViewController: UIViewController {
         self.setupBinding()
         self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
         self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
 	
     fileprivate func setupBinding() {
