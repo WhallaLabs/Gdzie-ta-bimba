@@ -102,6 +102,14 @@
 		38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */; };
 		38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */; };
 		38A68B081D50D54300BBC087 /* MapNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B071D50D54300BBC087 /* MapNavigationController.swift */; };
+		38A84F451E2CD8BA00D8FE0B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A84F3F1E2CD8BA00D8FE0B /* Settings.storyboard */; };
+		38A84F461E2CD8BA00D8FE0B /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F401E2CD8BA00D8FE0B /* SettingsFlowController.swift */; };
+		38A84F471E2CD8BA00D8FE0B /* SettingsFlowControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F411E2CD8BA00D8FE0B /* SettingsFlowControllerDelegate.swift */; };
+		38A84F481E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F421E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift */; };
+		38A84F491E2CD8BA00D8FE0B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F431E2CD8BA00D8FE0B /* SettingsViewController.swift */; };
+		38A84F4A1E2CD8BA00D8FE0B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F441E2CD8BA00D8FE0B /* SettingsViewModel.swift */; };
+		38A84F4C1E2CE30800D8FE0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F4B1E2CE30800D8FE0B /* Constants.swift */; };
+		38A84F4E1E2CE57600D8FE0B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F4D1E2CE57600D8FE0B /* AppInfo.swift */; };
 		38ABF5061D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */; };
 		38ABF5081D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */; };
 		38ABF50A1D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */; };
@@ -347,6 +355,14 @@
 		38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointAnnotation.swift; sourceTree = "<group>"; };
 		38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		38A68B071D50D54300BBC087 /* MapNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationController.swift; sourceTree = "<group>"; };
+		38A84F3F1E2CD8BA00D8FE0B /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		38A84F401E2CD8BA00D8FE0B /* SettingsFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
+		38A84F411E2CD8BA00D8FE0B /* SettingsFlowControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsFlowControllerDelegate.swift; sourceTree = "<group>"; };
+		38A84F421E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewConfigurator.swift; sourceTree = "<group>"; };
+		38A84F431E2CD8BA00D8FE0B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		38A84F441E2CD8BA00D8FE0B /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		38A84F4B1E2CE30800D8FE0B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		38A84F4D1E2CE57600D8FE0B /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteLineBollardComparator.swift; sourceTree = "<group>"; };
 		38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteGroupedDirectionsComparator.swift; sourceTree = "<group>"; };
 		38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -768,6 +784,19 @@
 			path = NearestStopPoint;
 			sourceTree = "<group>";
 		};
+		38A84F3E1E2CD89200D8FE0B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				38A84F3F1E2CD8BA00D8FE0B /* Settings.storyboard */,
+				38A84F401E2CD8BA00D8FE0B /* SettingsFlowController.swift */,
+				38A84F411E2CD8BA00D8FE0B /* SettingsFlowControllerDelegate.swift */,
+				38A84F421E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift */,
+				38A84F431E2CD8BA00D8FE0B /* SettingsViewController.swift */,
+				38A84F441E2CD8BA00D8FE0B /* SettingsViewModel.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		38ABF5021D51DF5600B6E9F7 /* FavoriteBollardsRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,6 +965,7 @@
 				38F391971D4A5D1F005F4A42 /* DependencyInstaller.swift */,
 				38DAC1D01D4A49F4001DF664 /* Info.plist */,
 				38B880871E2932A000D05572 /* GoogleService-Info.plist */,
+				38A84F4B1E2CE30800D8FE0B /* Constants.swift */,
 			);
 			path = peka;
 			sourceTree = "<group>";
@@ -993,6 +1023,7 @@
 		38DAC1E71D4A4A2C001DF664 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				38A84F3E1E2CD89200D8FE0B /* Settings */,
 				38D7FFF41D50102300937FD2 /* Bollard */,
 				38FE8E011D4F914B00E6B5BF /* Bollards */,
 				388205171D533E0C0000F58E /* Common */,
@@ -1038,6 +1069,7 @@
 				38F7778B1D5086090070265E /* LocationManager */,
 				38ABF5031D51E2EB00B6E9F7 /* Rest */,
 				3824C1421E2CC7930087D542 /* AdsSettings.swift */,
+				38A84F4D1E2CE57600D8FE0B /* AppInfo.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1422,6 +1454,7 @@
 				38FE8D951D4F562700E6B5BF /* Map.storyboard in Resources */,
 				38D7FFE71D50081700937FD2 /* BollardCell.xib in Resources */,
 				38D7FFFB1D50103600937FD2 /* Bollard.storyboard in Resources */,
+				38A84F451E2CD8BA00D8FE0B /* Settings.storyboard in Resources */,
 				3833CFAD1D539270000B74C2 /* SearchBarView.xib in Resources */,
 				38FE8E001D4F8F6900E6B5BF /* GroupedDirectionsCell.xib in Resources */,
 				382705FD1E28FCBB00C1BB14 /* StopPointCell.xib in Resources */,
@@ -1560,6 +1593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3833CFA81D538029000B74C2 /* DisableEditingTableViewDelegate.swift in Sources */,
+				38A84F4C1E2CE30800D8FE0B /* Constants.swift in Sources */,
 				38F3917B1D4A58D9005F4A42 /* QueryHandler.swift in Sources */,
 				38FE8E0B1D4F919700E6B5BF /* BollardsViewConfigurator.swift in Sources */,
 				38F391611D4A53A9005F4A42 /* ArrayExtensions.swift in Sources */,
@@ -1599,6 +1633,7 @@
 				38D7FFF21D500DED00937FD2 /* GetTimesQuery.swift in Sources */,
 				38FE8D8D1D4F561100E6B5BF /* SearchViewConfigurator.swift in Sources */,
 				38D7FFFE1D50103600937FD2 /* BollardViewConfigurator.swift in Sources */,
+				38A84F4E1E2CE57600D8FE0B /* AppInfo.swift in Sources */,
 				38FE8D981D4F562700E6B5BF /* MapViewModel.swift in Sources */,
 				385736D91D4B470A00C8D772 /* GetStopPointPushpinsQuery.swift in Sources */,
 				38E895781E27B97B00B9E097 /* FBAnnotation.swift in Sources */,
@@ -1606,6 +1641,7 @@
 				38F391701D4A576C005F4A42 /* HttpMethod.swift in Sources */,
 				38403F9B1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift in Sources */,
 				38FE8D961D4F562700E6B5BF /* MapViewConfigurator.swift in Sources */,
+				38A84F4A1E2CD8BA00D8FE0B /* SettingsViewModel.swift in Sources */,
 				38DAC2011D4A4B7D001DF664 /* HubViewConfigurator.swift in Sources */,
 				38F391721D4A57A0005F4A42 /* HttpResponseCode.swift in Sources */,
 				385736F41D4B4F0E00C8D772 /* WrappedObjectMapper.swift in Sources */,
@@ -1656,6 +1692,7 @@
 				38E895811E27B97B00B9E097 /* FBQuadTreeNode.swift in Sources */,
 				38E8957A1E27B97B00B9E097 /* FBAnnotationClusterTemplate.swift in Sources */,
 				38F391571D4A528A005F4A42 /* NibLoadableView.swift in Sources */,
+				38A84F471E2CD8BA00D8FE0B /* SettingsFlowControllerDelegate.swift in Sources */,
 				38F3915B1D4A52C0005F4A42 /* ReusableView.swift in Sources */,
 				38E332701D529BB0001A5077 /* DateMapper.swift in Sources */,
 				385736D51D4B463B00C8D772 /* StopPointMapper.swift in Sources */,
@@ -1665,6 +1702,7 @@
 				38E895821E27B97B00B9E097 /* FBZoomLevel.swift in Sources */,
 				3833CFAF1D5395AF000B74C2 /* TextFieldWithInset.swift in Sources */,
 				3826AE7E1D50E6A70020678C /* BollardRealmMapper.swift in Sources */,
+				38A84F491E2CD8BA00D8FE0B /* SettingsViewController.swift in Sources */,
 				38E895881E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift in Sources */,
 				38ABF52E1D5207D800B6E9F7 /* SaveSearchResultCommandHandler.swift in Sources */,
 				38FE8DEE1D4F731800E6B5BF /* UIStoryboardExtensions.swift in Sources */,
@@ -1727,6 +1765,7 @@
 				3855871A1D54D5B70011C6BE /* DirectionHeader.swift in Sources */,
 				38F78BDA1D5552FF006EB5C8 /* SearchResultsDistinctOrderedConverter.swift in Sources */,
 				38D7FFFF1D50103600937FD2 /* BollardViewController.swift in Sources */,
+				38A84F461E2CD8BA00D8FE0B /* SettingsFlowController.swift in Sources */,
 				385736FC1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift in Sources */,
 				386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */,
 				38F3917A1D4A58D9005F4A42 /* Query.swift in Sources */,
@@ -1743,6 +1782,7 @@
 				38DAC2021D4A4B7D001DF664 /* HubViewController.swift in Sources */,
 				38FE8D7B1D4F470C00E6B5BF /* StopPointPushpinsCache.swift in Sources */,
 				38F391981D4A5D1F005F4A42 /* DependencyInstaller.swift in Sources */,
+				38A84F481E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift in Sources */,
 				38FE8E091D4F919700E6B5BF /* BollardsNavigationController.swift in Sources */,
 				389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */,
 				38F391631D4A54F3005F4A42 /* Filtering.swift in Sources */,

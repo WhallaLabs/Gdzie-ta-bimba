@@ -18,11 +18,7 @@ final class AdBannerView: GADBannerView {
         if settings.adsDisabled {
             return
         }
-    #if DEBUG
-        self.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-    #else
-        self.adUnitID = "ca-app-pub-1986565751919761/7766331939"
-    #endif
+        self.adUnitID = Constants.adBannerUnitId
         self.rootViewController = viewController
         self.load(GADRequest())
     }
