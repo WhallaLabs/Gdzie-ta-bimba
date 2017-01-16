@@ -36,7 +36,11 @@ final class RemoveAdsViewController: UIViewController {
 	}
     
     @IBAction func removeAds() {
-        self.viewModel.removeAds()
+        self.viewModel.removeAds().subscribe(onNext: { [unowned self] in
+            self.navigationController?.popViewController(animated: true)
+        }, onError: { (error) in
+            
+        }, onCompleted: nil, onDisposed: nil).addDisposableTo(self.disposables)
     }
     
     @IBAction func restoreTransactions() {

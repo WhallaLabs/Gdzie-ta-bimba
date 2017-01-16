@@ -18,8 +18,12 @@ final class RemoveAdsViewModel {
         self.adsSettings = adsSettings
     }
     
-    func removeAds() {
-        self.adsSettings.adsDisabled = true
+    func removeAds() -> Observable<Void> {
+        let observable: Observable<Void> = self.executor.execute(RemoveAdsCommand())
+        return observable.map { [unowned self] in
+            self.adsSettings.adsDisabled = true
+            return ()
+        }
     }
     
     func restoreTransactions() {

@@ -140,6 +140,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(CommandHandler.self, name: NSStringFromClass(SaveSearchResultCommand.self)) { r in
             SaveSearchResultCommandHandler(recentSearchRepository: r.resolve(RecentSearchRepository.self)!)
         }
+        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(RemoveAdsCommand.self)) { r in
+            RemoveAdsCommandHandler()
+        }
     }
     
     fileprivate class func registerQueries() {
