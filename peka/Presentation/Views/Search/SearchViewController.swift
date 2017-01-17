@@ -55,7 +55,7 @@ final class SearchViewController: UIViewController {
         self.searchBar.text.bindTo(self.viewModel.searchPhrase)
             .addDisposableTo(self.disposables)
         
-        let searchIsEmptyObservable = self.searchBar.text.map { $0.isEmpty }
+        let searchIsEmptyObservable = self.viewModel.searchPhrase.asObservable().map { $0.isEmpty }
         
         let seachItemsObservable = Observable<[SearchResult]>.combineLatest(searchIsEmptyObservable, self.viewModel.searchResult, self.viewModel.searchHistory.asObservable()) { searchIsEmpty, searchResult, searchHistory in
             if searchIsEmpty {
@@ -68,7 +68,7 @@ final class SearchViewController: UIViewController {
         seachItemsObservable.bindTo(self.tableView.configurableCells(SearchResultCell.self))
             .addDisposableTo(self.disposables)
         
-        Observable<Bool>.combineLatest(searchIsEmptyObservable, seachItemsObservable.map { $0.any() == false }) { $0 && $1 }
+        Observable<Bool>.combineLatest(searchIsEmptyObservable, seachItemsObservable.map { $0.isEmpty }) { $0 && $1 }
             .map { $0 == false }
             .bindTo(self.emptyState.rx.isHidden)
             .addDisposableTo(self.disposables)
