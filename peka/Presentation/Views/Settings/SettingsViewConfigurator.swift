@@ -17,5 +17,8 @@ final class SettingsViewConfigurator: NSObject {
 	func configure() {
         self.disableAdsButton.layer.cornerRadius = 5
         self.rateAppButton.layer.cornerRadius = 5
+        
+        self.disableAdsButton.setTitle("Ads".localized, for: .normal)
+        self.rateAppButton.setTitle("RateApp".localized, for: .normal)
 	}
 }

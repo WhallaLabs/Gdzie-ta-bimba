@@ -50,9 +50,9 @@ extension FavoriteSection: ImageHeaderModelType {
     var text: String {
         switch self.identity {
         case .favorite:
-            return "Ulubione"
+            return "Favorite".localized
         case .nearest:
-            return "Najbliższe przystanki"
+            return "NearestStops".localized
         }
     }
 }

@@ -19,5 +19,9 @@ final class RemoveAdsViewConfigurator: NSObject {
         self.removeAdsButton.layer.cornerRadius = 5
         self.restoreTransactionsButton.layer.cornerRadius = 5
         self.restoreAdsButton.layer.cornerRadius = 5
+        
+        self.removeAdsButton.setTitle("RemoveAds".localized, for: .normal)
+        self.restoreTransactionsButton.setTitle("RestoreTransactions".localized, for: .normal)
+        self.restoreAdsButton.setTitle("RestoreAds".localized, for: .normal)
 	}
 }

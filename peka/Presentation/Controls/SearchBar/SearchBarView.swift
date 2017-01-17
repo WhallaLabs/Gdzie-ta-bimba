@@ -50,7 +50,7 @@ final class SearchBarView: UIView {
     fileprivate func configure() {
         self.roundBackgroundView.layer.cornerRadius = 5
         self.searchField.delegate = self
-        self.searchField.attributedPlaceholder = AttributedTextBuilder(string: self.searchField.placeholder!)
+        self.searchField.attributedPlaceholder = AttributedTextBuilder(string: "SearchBarPlaceholder".localized)
             .setColor(UIColor.white)
             .attributedText
     }

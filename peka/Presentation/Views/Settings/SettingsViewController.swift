@@ -29,14 +29,14 @@ final class SettingsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
-        self.updateTitle("Więcej")
+        self.updateTitle("More".localized)
         self.adBannerView.load(viewController: self)
         self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
         
         if let version = AppInfo.version {
-            self.versionLabel.text = "wersja: \(version)"
+            self.versionLabel.text = "\("Version".localized): \(version)"
         }
 	}
 	

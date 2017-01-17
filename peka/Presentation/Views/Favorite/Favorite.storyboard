@@ -99,6 +99,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-8n-4Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="opz-Br-oXO" customClass="FavoriteViewConfigurator" customModule="peka" customModuleProvider="target">
                     <connections>
+                        <outlet property="emptyStateLabel" destination="Ljs-Ov-Jbo" id="8Xj-bO-Wsj"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="Z8C-Fs-6TX"/>
                         <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>
                     </connections>

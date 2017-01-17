@@ -33,9 +33,10 @@ final class HubViewConfigurator: NSObject {
         guard let items = self.viewController.tabBar.items else {
             return
         }
-        
+        var titles = ["MyStops", "Search", "Map", "More"]
         for item in items {
             item.image = item.image?.imageWithColor(self.unselectedColor).withRenderingMode(.alwaysOriginal)
+            item.title = titles.removeFirst().localized
         }
     }
 }

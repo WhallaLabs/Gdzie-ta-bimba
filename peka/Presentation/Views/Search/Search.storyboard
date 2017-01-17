@@ -149,6 +149,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-8n-4Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="opz-Br-oXO" customClass="SearchViewConfigurator" customModule="peka" customModuleProvider="target">
                     <connections>
+                        <outlet property="emptyStateLabel" destination="wTN-Z1-TqP" id="5wF-r4-yK1"/>
+                        <outlet property="noResultsLabel" destination="JpX-zf-Uz5" id="gTy-Zk-tU9"/>
+                        <outlet property="noResultsOpsLabel" destination="pN3-YT-adV" id="dHX-Nd-89D"/>
                         <outlet property="tableView" destination="LgO-i7-bYU" id="scG-ad-xbn"/>
                         <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>
                     </connections>

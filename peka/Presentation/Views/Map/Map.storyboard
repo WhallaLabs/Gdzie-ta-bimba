@@ -79,11 +79,11 @@
             </objects>
             <point key="canvasLocation" x="1245.5999999999999" y="365.66716641679164"/>
         </scene>
-        <!--Mapa-->
+        <!--Peka Navigaiton Controller-->
         <scene sceneID="eDv-9T-nU0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maV-nZ-G94" customClass="PekaNavigaitonController" customModule="peka" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mapa" image="map" id="fBi-Gg-4WI"/>
+                    <tabBarItem key="tabBarItem" title="" image="map" id="fBi-Gg-4WI"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3HS-sc-XjF">
