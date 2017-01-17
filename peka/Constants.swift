@@ -13,11 +13,17 @@ struct Constants {
     static let itunesURL = "https://itunes.apple.com/pl/app/id" + Constants.appID
     static let appstoreURL = "itms-apps://itunes.apple.com/app/id"  + Constants.appID
     
-#if DEBUG
-    static let adBannerUnitId = "ca-app-pub-3940256099942544/2934735716"
-#else
-    static let adBannerUnitId = "ca-app-pub-1891682170220364/1572958132"
-#endif
+    struct AdMob {
+        static let appId = "ca-app-pub-1891682170220364~5192892530"
+        
+    #if DEBUG
+        static let bannerUnitId = "ca-app-pub-3940256099942544/2934735716"
+    #else
+        static let bannerUnitId = "ca-app-pub-1891682170220364/1572958132"
+    #endif
+    }
     
-    static let removeAdsInAppId = "remove_ads"
+    struct InApp {
+        static let removeAds = "remove_ads"
+    }
 }

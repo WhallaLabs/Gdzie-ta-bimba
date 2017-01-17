@@ -23,13 +23,13 @@ final class RestoreTransactionsCommandHandler: NSObject, CommandHandler {
                 SKPaymentQueue.default().remove(self)
             }
         }
-        return observable
+        return observable.shareReplayLatestWhileConnected()
     }
 }
 
 extension RestoreTransactionsCommandHandler: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        let transaction = transactions.filter { $0.payment.productIdentifier == Constants.removeAdsInAppId }.first
+        let transaction = transactions.filter { $0.payment.productIdentifier == Constants.InApp.removeAds }.first
         guard let removeAdsTransaction = transaction else {
             observer.onError(NSError())
             return
@@ -41,5 +41,9 @@ extension RestoreTransactionsCommandHandler: SKPaymentTransactionObserver {
         default:
             observer.onError(NSError())
         }
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        observer.onError(error)
     }
 }

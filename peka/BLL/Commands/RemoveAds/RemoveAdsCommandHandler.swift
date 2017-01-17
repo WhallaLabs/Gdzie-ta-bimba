@@ -26,7 +26,7 @@ final class RemoveAdsCommandHandler: NSObject, CommandHandler {
                 observer.onError(NSError())
                 return Disposables.create()
             }
-            let request = SKProductsRequest(productIdentifiers: [Constants.removeAdsInAppId])
+            let request = SKProductsRequest(productIdentifiers: [Constants.InApp.removeAds])
             self.productObservers[request] = observer
             request.delegate = self
             request.start()

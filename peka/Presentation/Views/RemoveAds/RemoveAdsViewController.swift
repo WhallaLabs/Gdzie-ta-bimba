@@ -53,11 +53,12 @@ final class RemoveAdsViewController: UIViewController {
         observable.subscribe(
             onNext: nil,
             onError: { (error) in
-                HUD.hide()
+                HUD.flash(.error)
             },
             onCompleted: { [unowned self] in
-                HUD.hide()
-                self.navigationController?.popViewController(animated: true)
+                HUD.flash(.success, onView: nil, delay: 0) { _ in
+                    _ = self.navigationController?.popToRootViewController(animated: true)
+                }
             },
             onDisposed: nil).addDisposableTo(self.disposables)
     }
