@@ -21,10 +21,6 @@ struct Bollard {
         self.symbol = symbol
         self.tag = tag
         self.isFavorite = isFavorite
-        
-        if symbol.contains("OGDY") || tag.contains("OGDY") {
-            print(self)
-        }
     }
 }
 
@@ -35,5 +31,5 @@ extension Bollard: Hashable {
 }
 
 func ==(lhs: Bollard, rhs: Bollard) -> Bool {
-    return lhs.symbol == rhs.symbol //|| lhs.symbol == rhs.tag
+    return lhs.symbol == rhs.symbol
 }
