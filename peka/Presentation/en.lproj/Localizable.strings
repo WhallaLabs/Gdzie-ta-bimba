@@ -6,20 +6,21 @@
  Copyright © 2017 WhallaLabs. All rights reserved.
  */
 
-"Favorite" = "Ulubione";
-"MyStops" = "Moje przystanki";
-"Search" = "Wyszukaj";
-"Map" = "Mapa";
-"More" = "Więcej";
-"NearestStops" = "Najbliższe przystanki";
-"Favorite:EmptyState" = "Dodaj tablice odjazdów do\nulubionych, żeby sprawdzać je\nbez wyszukiwania";
-"Search:EmptyState" = "Podaj przystanek, linię\nlub ulicę i sprawdź, kiedy\nodjedzie Twój autobus lub\ntramwaj.";
-"Search:NoResultsHeader" = "Ups...";
-"Search:NoResults" = "Nie możemy znaleźć\ntego, czego szukasz.\nSprawdź, czy Twoje\nzapytanie jest poprawne.";
-"SearchBarPlaceholder" = "Szukaj przystanków, linii i ulic";
-"Version" = "wersja";
-"Ads" = "Reklamy";
-"RateApp" = "Oceń aplikacje";
-"RemoveAds" = "Usuń reklamy";
-"RestoreTransactions" = "Przywróć transakcje";
-"RestoreAds" = "Przywróć reklamy";
+"Favorite" = "Favorite";
+"MyStops" = "My stops";
+"Search" = "Search";
+"Map" = "Map";
+"More" = "More";
+"NearestStops" = "Nearest stops";
+"Favorite:EmptyState" = "Add stop to favorite to check it without searching";
+"Search:EmptyState" = "Add stop, line or street to check when your bus or tram is leaving";
+"Search:NoResultsHeader" = "Oops...";
+"Search:NoResults" = "We couldn't find what you're looking for. Check if your query is correct.";
+"SearchBarPlaceholder" = "Search for stops, lines and streets.";
+"Version" = "version";
+"Ads" = "Ads";
+"RateApp" = "Rate the app";
+"RemoveAds" = "Remove ads";
+"RestoreTransactions" = "Restore transactions";
+"RestoreAds" = "Restore ads";
+"MinuteShortcut" = "min";

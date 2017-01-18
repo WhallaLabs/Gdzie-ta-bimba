@@ -30,7 +30,7 @@ extension TimeCell: Configurable {
 	func configure(_ model: Time) {
         self.lineLabel.text = model.line
         self.directionLabel.text = "➙ \(model.directionName)"
-        self.minutesLabel.text = "\(model.minutes) min"
+        self.minutesLabel.text = "\(model.minutes) \("MinuteShortcut".localized)"
         let converter = DepartureTimeToStringConverter()
         self.departureTimeLabel.text = converter.convert(model.departure)
         
