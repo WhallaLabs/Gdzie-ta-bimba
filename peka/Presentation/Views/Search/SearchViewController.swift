@@ -44,6 +44,10 @@ final class SearchViewController: UIViewController {
         self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
+        
+        self.viewModel.noResults.map { $0 == false }
+            .bindTo(self.noResults.rx.isHidden)
+            .addDisposableTo(self.disposables)
 	}
     
     override func viewWillAppear(_ animated: Bool) {

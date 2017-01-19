@@ -64,7 +64,7 @@ final class FavoriteViewController: UIViewController {
     fileprivate func setupBinding() {
         self.viewModel.stopPoints.bindTo(self.tableView.rx.items(dataSource: self.dataSource)).addDisposableTo(self.disposables)
         self.dataSource.configureCell = self.cellFactory.create()
-        self.dataSource.titleForHeaderInSection = { dataSource, index in return "x" }
+        self.dataSource.titleForHeaderInSection = { _, _ in return "x" }
         
         self.viewModel.bollards.asObservable()
             .map { $0.isNotEmpty }

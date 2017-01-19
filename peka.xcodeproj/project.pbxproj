@@ -180,6 +180,7 @@
 		38E8958A1E27C0FE00B9E097 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E895891E27C0FE00B9E097 /* CLLocationManager+Rx.swift */; };
 		38E8958C1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E8958B1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift */; };
 		38EFD2E31E2FDDA300A932CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */; };
+		38EFD2E51E30CC9000A932CE /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */; };
 		38F391511D4A523F005F4A42 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391501D4A523F005F4A42 /* Box.swift */; };
 		38F391531D4A525C005F4A42 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391521D4A525C005F4A42 /* Configurable.swift */; };
 		38F391551D4A5271005F4A42 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391541D4A5271005F4A42 /* Convertible.swift */; };
@@ -447,6 +448,7 @@
 		38E895891E27C0FE00B9E097 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		38E8958B1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		38F391501D4A523F005F4A42 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		38F391521D4A525C005F4A42 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		38F391541D4A5271005F4A42 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
@@ -1098,6 +1100,7 @@
 				38F391821D4A5952005F4A42 /* AttributedTextBuilder.swift */,
 				38F391501D4A523F005F4A42 /* Box.swift */,
 				38F391581D4A52A6005F4A42 /* XibLoader.swift */,
+				38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -1816,6 +1819,7 @@
 				38D7FFFF1D50103600937FD2 /* BollardViewController.swift in Sources */,
 				38A84F461E2CD8BA00D8FE0B /* SettingsFlowController.swift in Sources */,
 				385736FC1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift in Sources */,
+				38EFD2E51E30CC9000A932CE /* ActivityIndicator.swift in Sources */,
 				386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */,
 				38F3917A1D4A58D9005F4A42 /* Query.swift in Sources */,
 				38A84F621E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift in Sources */,
