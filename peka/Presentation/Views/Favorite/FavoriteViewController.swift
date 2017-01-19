@@ -24,9 +24,9 @@ final class FavoriteViewController: UIViewController {
 
 	@IBOutlet fileprivate weak var viewConfigurator: FavoriteViewConfigurator!
     @IBOutlet fileprivate weak var tableView: UITableView!
-    @IBOutlet fileprivate weak var emptyState: UIView!
     @IBOutlet private weak var adBannerView: AdBannerView!
     @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
+    private var emptyStateFooterView: UIView?
     
 	func installDependencies(_ viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
@@ -37,6 +37,7 @@ final class FavoriteViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        self.emptyStateFooterView = self.tableView.tableFooterView
         self.cellFactory.delegate = self
 		self.viewConfigurator.configure()
         self.viewModel.loadFavouriteBollards().addDisposableTo(self.disposables)
@@ -65,16 +66,26 @@ final class FavoriteViewController: UIViewController {
         self.dataSource.configureCell = self.cellFactory.create()
         self.dataSource.titleForHeaderInSection = { dataSource, index in return "x" }
         
-        let anyStopPointsObservable = self.viewModel.bollards.asObservable()
-            .map { $0.any() }
-        anyStopPointsObservable.bindTo(self.emptyState.rx.isHidden)
-            .addDisposableTo(self.disposables)
+        self.viewModel.bollards.asObservable()
+            .map { $0.isNotEmpty }
+            .distinctUntilChanged()
+            .subscribeNext { [unowned self] (isTableNotEmpty) in
+                if isTableNotEmpty {
+                    self.tableView.tableFooterView = UIView()
+                } else {
+                    self.tableView.tableFooterView = self.emptyStateFooterView
+                }
+            }.addDisposableTo(self.disposables)
     }
     
     fileprivate func registerForEvents() {
         self.tableView.rx.modelSelected(StopPointIdentity.self).subscribeNext { [unowned self] (stopPoint) in
             self.navigationDelegate.showBollard(stopPoint.symbol, name: stopPoint.name)
         }.addDisposableTo(self.disposables)
+    }
+    
+    deinit {
+        self.emptyStateFooterView = nil
     }
 }
 

@@ -99,8 +99,6 @@
 		3882051B1D5340600000F58E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882051A1D5340600000F58E /* UIColorExtensions.swift */; };
 		388844581E2E6AF300B3A559 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3888445A1E2E6AF300B3A559 /* Localizable.strings */; };
 		3895023B1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3895023A1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift */; };
-		389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */; };
-		389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BE9781D5223F70033FF87 /* NearestStopPointView.swift */; };
 		38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */; };
 		38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */; };
 		38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */; };
@@ -362,8 +360,6 @@
 		388844591E2E6AF300B3A559 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3888445B1E2E6AF700B3A559 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3895023A1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupBollardDirectionsConverter.swift; sourceTree = "<group>"; };
-		389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearestStopPointView.xib; sourceTree = "<group>"; };
-		389BE9781D5223F70033FF87 /* NearestStopPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearestStopPointView.swift; sourceTree = "<group>"; };
 		38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointPushpinsToAnnotationsConverter.swift; sourceTree = "<group>"; };
 		38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointAnnotation.swift; sourceTree = "<group>"; };
 		38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -804,15 +800,6 @@
 				388205181D533E1E0000F58E /* PekaNavigationController.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		389BE9751D5223C20033FF87 /* NearestStopPoint */ = {
-			isa = PBXGroup;
-			children = (
-				389BE9781D5223F70033FF87 /* NearestStopPointView.swift */,
-				389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */,
-			);
-			path = NearestStopPoint;
 			sourceTree = "<group>";
 		};
 		38A84F3E1E2CD89200D8FE0B /* Settings */ = {
@@ -1338,7 +1325,6 @@
 				385587181D54D3D60011C6BE /* DirectionHeader */,
 				382705EC1E28D6B100C1BB14 /* ImageHeader */,
 				38B163A31D6225BC00D512F2 /* MessageBubble */,
-				389BE9751D5223C20033FF87 /* NearestStopPoint */,
 				3833CFA91D539260000B74C2 /* SearchBar */,
 				383214A71D563CF000DBD22E /* Pushpin.swift */,
 				3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */,
@@ -1522,7 +1508,6 @@
 				38FE8DFB1D4F825300E6B5BF /* SearchResultCell.xib in Resources */,
 				38A84F561E2CE93500D8FE0B /* RemoveAds.storyboard in Resources */,
 				38B163A71D6225CD00D512F2 /* MessageBubbleView.xib in Resources */,
-				389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */,
 				38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */,
 				38FE8D831D4F55F100E6B5BF /* Favorite.storyboard in Resources */,
 				3855871C1D54D5F00011C6BE /* DirectionHeader.xib in Resources */,
@@ -1850,7 +1835,6 @@
 				38F391981D4A5D1F005F4A42 /* DependencyInstaller.swift in Sources */,
 				38A84F481E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift in Sources */,
 				38FE8E091D4F919700E6B5BF /* BollardsNavigationController.swift in Sources */,
-				389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */,
 				38F391631D4A54F3005F4A42 /* Filtering.swift in Sources */,
 				385736CF1D4B437E00C8D772 /* StopPointPushpin.swift in Sources */,
 				38ABF50C1D51EE2700B6E9F7 /* FavoriteNavigationController.swift in Sources */,

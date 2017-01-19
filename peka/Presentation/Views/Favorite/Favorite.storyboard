@@ -91,7 +91,6 @@
                     <connections>
                         <outlet property="adBannerView" destination="8N1-IG-Bi1" id="OBJ-sE-0lM"/>
                         <outlet property="adHeightConstraint" destination="dlu-4m-oo0" id="BNB-RB-e9l"/>
-                        <outlet property="emptyState" destination="qMK-Tf-2A7" id="gKq-Zl-R2D"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="PQV-bQ-gGI"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
