@@ -8,19 +8,20 @@
 
 
 import Foundation
+import RxSwift
 
 final class GetNearestStopQueryHandler: QueryHandler {
     
-    fileprivate let stopPointsCache: StopPointPushpinsCache
+    private let executor: Executor
     
-    init(stopPointsCache: StopPointPushpinsCache) {
-        self.stopPointsCache = stopPointsCache
+    init(executor: Executor) {
+        self.executor = executor
     }
     
     func handle(_ query: Query) -> Any {
         let query = query as! GetNearestStopQuery
-        let cachedObservable = self.stopPointsCache.cached().filter { $0.any() }
-        let nearestObservable = cachedObservable.map(FindNearestStopConverter(coordinates: query.coordinates))
+        let observable: Observable<[StopPointPushpin]> = self.executor.execute(GetStopPointPushpinsQuery())
+        let nearestObservable = observable.map(FindNearestStopConverter(coordinates: query.coordinates))
         return nearestObservable
     }
 }

@@ -33,7 +33,7 @@ final class FavoriteViewModel {
     }
     
     func initializeNearestStopPoints(_ locationObservable: Observable<Coordinates>) -> Disposable {
-        return locationObservable.throttle(1, scheduler: MainScheduler.instance)
+        return locationObservable.debounce(0.8, scheduler: MainScheduler.instance)
             .flatMap { [unowned self] coordinates in self.nearesStop(coordinates) }
             .distinctUntilChanged()
             .bindTo(self.nearestStopPoint)

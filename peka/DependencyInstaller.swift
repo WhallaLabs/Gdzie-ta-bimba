@@ -180,7 +180,7 @@ extension SwinjectStoryboard {
             GetSearchHistoryQueryHandler(recentSearchRepository: r.resolve(RecentSearchRepository.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetNearestStopQuery.self)) { r in
-            GetNearestStopQueryHandler(stopPointsCache: r.resolve(StopPointPushpinsCache.self)!)
+            GetNearestStopQueryHandler(executor: r.resolve(Executor.self)!)
         }
     }
     
