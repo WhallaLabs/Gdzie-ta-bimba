@@ -146,6 +146,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(CommandHandler.self, name: NSStringFromClass(RestoreTransactionsCommand.self)) { r in
             RestoreTransactionsCommandHandler()
         }
+        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(SaveOrderCommand.self)) { r in
+            SaveOrderCommandHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
+        }
     }
     
     fileprivate class func registerQueries() {

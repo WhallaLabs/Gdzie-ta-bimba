@@ -48,6 +48,12 @@ final class FavoriteViewController: UIViewController {
         self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
+        
+        self.dataSource.canMoveRowAtIndexPath = { _, _ in return true }
+        
+        self.dataSource.canEditRowAtIndexPath = { dataSource, indexPath in
+            return indexPath.section != 0
+        }
 	}
 	
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +90,19 @@ final class FavoriteViewController: UIViewController {
         }.addDisposableTo(self.disposables)
     }
     
+    @IBAction func edit(_ sender: UIBarButtonItem) {
+        if self.tableView.isEditing {
+            self.viewModel.saveOrder(sections: self.dataSource.sectionModels)
+            self.tableView.setEditing(false, animated: true)
+            sender.style = .plain
+            sender.title = "Edit".localized
+        } else {
+            self.tableView.setEditing(true, animated: true)
+            sender.style = .done
+            sender.title = "Done".localized
+        }
+    }
+    
     deinit {
         self.emptyStateFooterView = nil
     }
@@ -106,5 +125,16 @@ extension FavoriteViewController: UITableViewDelegate {
         view.configure(model)
         
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if sourceIndexPath.section == proposedDestinationIndexPath.section {
+            return proposedDestinationIndexPath
+        }
+        return IndexPath(row: 0, section: sourceIndexPath.section)
     }
 }

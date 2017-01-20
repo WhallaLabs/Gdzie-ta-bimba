@@ -14,6 +14,7 @@ struct Bollard {
     let symbol: String
     let tag: String
     var isFavorite: Bool
+    var order: Int? = nil
     
     init(mainBollard: Bool, name: String, symbol: String, tag: String, isFavorite: Bool) {
         self.mainBollard = mainBollard

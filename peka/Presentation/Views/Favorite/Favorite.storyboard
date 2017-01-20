@@ -87,7 +87,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Wxv-lE-I25"/>
+                    <navigationItem key="navigationItem" id="Wxv-lE-I25">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="MtE-Fn-6fV">
+                            <connections>
+                                <action selector="edit:" destination="udh-io-FZk" id="fa4-ds-Vx9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="adBannerView" destination="8N1-IG-Bi1" id="OBJ-sE-0lM"/>
                         <outlet property="adHeightConstraint" destination="dlu-4m-oo0" id="BNB-RB-e9l"/>
@@ -98,6 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-8n-4Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="opz-Br-oXO" customClass="FavoriteViewConfigurator" customModule="peka" customModuleProvider="target">
                     <connections>
+                        <outlet property="editButton" destination="MtE-Fn-6fV" id="ZAc-zE-fvt"/>
                         <outlet property="emptyStateLabel" destination="Ljs-Ov-Jbo" id="8Xj-bO-Wsj"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="Z8C-Fs-6TX"/>
                         <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>

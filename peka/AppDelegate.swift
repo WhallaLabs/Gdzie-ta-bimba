@@ -22,6 +22,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         FIRApp.configure()
         GADMobileAds.configure(withApplicationID: Constants.AdMob.appId)
+        RealmMigration.performMigrations()
         return true
     }
 

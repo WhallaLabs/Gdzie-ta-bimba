@@ -181,6 +181,10 @@
 		38E8958C1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E8958B1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift */; };
 		38EFD2E31E2FDDA300A932CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */; };
 		38EFD2E51E30CC9000A932CE /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */; };
+		38EFD2E71E32332C00A932CE /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2E61E32332C00A932CE /* RealmMigration.swift */; };
+		38EFD2E91E3237BD00A932CE /* StopPointTypeToBollardConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2E81E3237BD00A932CE /* StopPointTypeToBollardConverter.swift */; };
+		38EFD2EC1E3238C500A932CE /* SaveOrderCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2EB1E3238C500A932CE /* SaveOrderCommand.swift */; };
+		38EFD2EE1E3238CE00A932CE /* SaveOrderCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2ED1E3238CE00A932CE /* SaveOrderCommandHandler.swift */; };
 		38F391511D4A523F005F4A42 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391501D4A523F005F4A42 /* Box.swift */; };
 		38F391531D4A525C005F4A42 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391521D4A525C005F4A42 /* Configurable.swift */; };
 		38F391551D4A5271005F4A42 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391541D4A5271005F4A42 /* Convertible.swift */; };
@@ -449,6 +453,10 @@
 		38E8958B1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		38EFD2E61E32332C00A932CE /* RealmMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
+		38EFD2E81E3237BD00A932CE /* StopPointTypeToBollardConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointTypeToBollardConverter.swift; sourceTree = "<group>"; };
+		38EFD2EB1E3238C500A932CE /* SaveOrderCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOrderCommand.swift; sourceTree = "<group>"; };
+		38EFD2ED1E3238CE00A932CE /* SaveOrderCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOrderCommandHandler.swift; sourceTree = "<group>"; };
 		38F391501D4A523F005F4A42 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		38F391521D4A525C005F4A42 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		38F391541D4A5271005F4A42 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
@@ -577,6 +585,7 @@
 			children = (
 				38A84F5E1E2CFCF000D8FE0B /* RemoveAds */,
 				38784BFD1E2D108E0019599D /* RestoreTransactions */,
+				38EFD2EA1E3238AA00A932CE /* SaveOrder */,
 				38ABF52A1D5207CA00B6E9F7 /* SaveSearchResult */,
 				3826AE851D5135880020678C /* ToggleBollardFavorite */,
 			);
@@ -1051,11 +1060,11 @@
 		38DAC1E61D4A4A1B001DF664 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */,
 				38FE8DF21D4F811A00E6B5BF /* Cells */,
 				38FE8DF11D4F810C00E6B5BF /* Controls */,
 				38DAC1E71D4A4A2C001DF664 /* Views */,
 				38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */,
+				38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */,
 				3888445A1E2E6AF300B3A559 /* Localizable.strings */,
 			);
 			path = Presentation;
@@ -1097,10 +1106,10 @@
 				38F3915F1D4A534F005F4A42 /* Extensions */,
 				38F3914F1D4A521F005F4A42 /* Protocols */,
 				38F3916A1D4A56C0005F4A42 /* Rest */,
+				38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */,
 				38F391821D4A5952005F4A42 /* AttributedTextBuilder.swift */,
 				38F391501D4A523F005F4A42 /* Box.swift */,
 				38F391581D4A52A6005F4A42 /* XibLoader.swift */,
-				38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -1113,6 +1122,7 @@
 				38ABF5031D51E2EB00B6E9F7 /* Rest */,
 				3824C1421E2CC7930087D542 /* AdsSettings.swift */,
 				38A84F4D1E2CE57600D8FE0B /* AppInfo.swift */,
+				38EFD2E61E32332C00A932CE /* RealmMigration.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1166,6 +1176,16 @@
 			path = RxMKMapView;
 			sourceTree = "<group>";
 		};
+		38EFD2EA1E3238AA00A932CE /* SaveOrder */ = {
+			isa = PBXGroup;
+			children = (
+				38EFD2EB1E3238C500A932CE /* SaveOrderCommand.swift */,
+				38EFD2ED1E3238CE00A932CE /* SaveOrderCommandHandler.swift */,
+			);
+			name = SaveOrder;
+			path = SaveOrder;
+			sourceTree = "<group>";
+		};
 		38F3914F1D4A521F005F4A42 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -1198,6 +1218,7 @@
 				38F78BD91D5552FF006EB5C8 /* SearchResultsDistinctOrderedConverter.swift */,
 				3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */,
 				38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */,
+				38EFD2E81E3237BD00A932CE /* StopPointTypeToBollardConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
 				38B163A11D6221E800D512F2 /* ToOptionalConverter.swift */,
@@ -1670,10 +1691,12 @@
 				38ABF5281D52074B00B6E9F7 /* GetSearchHistoryQuery.swift in Sources */,
 				385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */,
 				38B163A61D6225CD00D512F2 /* MessageBubbleView.swift in Sources */,
+				38EFD2E91E3237BD00A932CE /* StopPointTypeToBollardConverter.swift in Sources */,
 				386898C31D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift in Sources */,
 				38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */,
 				385736F61D4B531A00C8D772 /* RequestBodyBuilder.swift in Sources */,
 				3872714C1D52A1710074B570 /* RouteType.swift in Sources */,
+				38EFD2EC1E3238C500A932CE /* SaveOrderCommand.swift in Sources */,
 				38ABF5101D51F23A00B6E9F7 /* GetBollardMessageQuery.swift in Sources */,
 				386898B31D4FA81F004CA51B /* GetBollardsByLineQuery.swift in Sources */,
 				38D7FFF31D500DED00937FD2 /* GetTimesQueryHandler.swift in Sources */,
@@ -1702,6 +1725,7 @@
 				385736E81D4B4C1E00C8D772 /* LineMapper.swift in Sources */,
 				3857370D1D4B619C00C8D772 /* Time.swift in Sources */,
 				38FE8D861D4F55F100E6B5BF /* FavoriteViewModel.swift in Sources */,
+				38EFD2E71E32332C00A932CE /* RealmMigration.swift in Sources */,
 				3826AE831D511C620020678C /* GetBollardQueryHandler.swift in Sources */,
 				38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */,
 				38F391881D4A59DE005F4A42 /* JsonMappable.swift in Sources */,
@@ -1795,6 +1819,7 @@
 				385736FE1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift in Sources */,
 				386898AE1D4F9F7F004CA51B /* GetBollardsByStopPointQuery.swift in Sources */,
 				38F3915D1D4A52DF005F4A42 /* SegueHandler.swift in Sources */,
+				38EFD2EE1E3238CE00A932CE /* SaveOrderCommandHandler.swift in Sources */,
 				383214A81D563CF000DBD22E /* Pushpin.swift in Sources */,
 				38D7FFFC1D50103600937FD2 /* BollardNavigationController.swift in Sources */,
 				38F391901D4A5B28005F4A42 /* ApiProvider.swift in Sources */,
