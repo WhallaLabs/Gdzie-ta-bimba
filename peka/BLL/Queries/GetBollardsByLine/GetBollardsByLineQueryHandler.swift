@@ -11,9 +11,9 @@ import Foundation
 
 final class GetBollardsByLineQueryHandler: QueryHandler {
     
-    private let apiProvider: RestApiProvider
-    private let favoriteLineBollardsComparator: FavoriteLineBollardComparator
-    private let bodyBuilder: RequestBodyBuilder
+    fileprivate let apiProvider: RestApiProvider
+    fileprivate let favoriteLineBollardsComparator: FavoriteLineBollardComparator
+    fileprivate let bodyBuilder: RequestBodyBuilder
     
     init(apiProvider: RestApiProvider, favoriteLineBollardsComparator: FavoriteLineBollardComparator) {
         self.apiProvider = apiProvider
@@ -21,7 +21,7 @@ final class GetBollardsByLineQueryHandler: QueryHandler {
         self.bodyBuilder = RequestBodyBuilder()
     }
     
-    func handle(query: Query) -> Any {
+    func handle(_ query: Query) -> Any {
         let query = query as! GetBollardsByLineQuery
         let params = self.bodyBuilder.getBollardsByLine(query.line)
         let mapper = WrappedObjectMapper(ArrayMapper(LineBollardsMapper()), pathToObject: "success", "directions")

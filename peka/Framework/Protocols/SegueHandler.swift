@@ -14,17 +14,17 @@ protocol SegueHandler {
 
 extension SegueHandler where Self: UIViewController, SegueIdentifier.RawValue == String {
     
-    func performSegue(identifier: SegueIdentifier) {
-        self.performSegueWithIdentifier(identifier.rawValue, sender: nil)
+    func performSegue(_ identifier: SegueIdentifier) {
+        self.performSegue(withIdentifier: identifier.rawValue, sender: nil)
     }
     
-    func performSegue<T>(identifier: SegueIdentifier, parameter: T) {
-        self.performSegueWithIdentifier(identifier.rawValue, sender: Box(parameter))
+    func performSegue<T>(_ identifier: SegueIdentifier, parameter: T) {
+        self.performSegue(withIdentifier: identifier.rawValue, sender: Box(parameter))
     }
     
-    func segueIdentifierForSegue(segue: UIStoryboardSegue) -> SegueIdentifier {
+    func segueIdentifierForSegue(_ segue: UIStoryboardSegue) -> SegueIdentifier {
         guard let identifier = segue.identifier,
-            segueIdentifier = SegueIdentifier(rawValue: identifier) else {
+            let segueIdentifier = SegueIdentifier(rawValue: identifier) else {
                 fatalError("Invalid segue identifier \(segue.identifier)")
         }
         

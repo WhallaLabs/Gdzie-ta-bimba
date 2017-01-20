@@ -12,13 +12,13 @@ import UIKit
 final class TextFieldWithInset: UITextField {
     
     @IBInspectable
-    var inset: CGPoint = CGPointMake(15, 0)
+    var inset: CGPoint = CGPoint(x: 15, y: 0)
     
-    override func textRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds, self.inset.x, self.inset.y)
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: self.inset.x, dy: self.inset.y)
     }
     
-    override func editingRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds, self.inset.x, self.inset.y)
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: self.inset.x, dy: self.inset.y)
     }
 }

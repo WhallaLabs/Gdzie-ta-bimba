@@ -16,7 +16,7 @@ final class ArrayMapper<U: ObjectMappable>: ObjectMappable {
         self.mapper = mapper
     }
     
-    func mapToObject(json: JSON) -> [U.T]? {
+    func mapToObject(_ json: JSON) -> [U.T]? {
         guard let array = json.array else {
             return nil
         }

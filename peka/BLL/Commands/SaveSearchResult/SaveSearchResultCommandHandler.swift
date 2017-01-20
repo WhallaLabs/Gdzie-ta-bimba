@@ -11,13 +11,13 @@ import Foundation
 
 final class SaveSearchResultCommandHandler: CommandHandler {
     
-    private let recentSearchRepository: RecentSearchRepository
+    fileprivate let recentSearchRepository: RecentSearchRepository
     
     init(recentSearchRepository: RecentSearchRepository) {
         self.recentSearchRepository = recentSearchRepository
     }
     
-    func handle(command: Command) -> Any {
+    func handle(_ command: Command) -> Any {
         let command = command as! SaveSearchResultCommand
         self.recentSearchRepository.save(command.searchResult)
         return ()

@@ -13,24 +13,24 @@ import RxRealm
 
 final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
     
-    private let realm = try! Realm()
+    fileprivate let realm = try! Realm()
     
     func favoriteBollards() -> Observable<[Bollard]> {
-        return realm.objects(BollardRealm.self)
-            .asObservableArray()
+        
+        return Observable.arrayFrom(realm.objects(BollardRealm.self))
             .map(BollardsRealmToBollardsMapper())
             .shareReplayLatestWhileConnected()
     }
     
-    func add(bollard: Bollard) {
+    func add(_ bollard: Bollard) {
         let bollardRealm = self.mapToRealmObject(bollard)
         try! self.realm.write {
             self.realm.add(bollardRealm)
         }
     }
     
-    func remove(bollard: Bollard) -> Bool {
-        guard let bollardRealm = self.realm.objectForPrimaryKey(BollardRealm.self, key: bollard.symbol) ?? self.realm.objectForPrimaryKey(BollardRealm.self, key: bollard.tag) else {
+    func remove(_ bollard: Bollard) -> Bool {
+        guard let bollardRealm = self.realm.object(ofType: BollardRealm.self, forPrimaryKey: bollard.symbol) ?? self.realm.object(ofType: BollardRealm.self, forPrimaryKey: bollard.tag) else {
             return false
         }
         try! self.realm.write {
@@ -39,7 +39,7 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
         return true
     }
     
-    private func mapToRealmObject(bollard: Bollard) -> BollardRealm {
+    fileprivate func mapToRealmObject(_ bollard: Bollard) -> BollardRealm {
         let mapper = BollardToBollardRealmMapper()
         let bollardRealm = mapper.convert(bollard)
         return bollardRealm

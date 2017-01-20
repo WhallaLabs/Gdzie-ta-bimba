@@ -9,92 +9,91 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
-private let nearestStopPointDefaultHeight: CGFloat = 97
-private let heightAnimationDuration: NSTimeInterval = 0.3
+import RxDataSources
 
 final class FavoriteViewController: UIViewController {
 
-	private let disposables = DisposeBag()
-    private var viewDisposables = DisposeBag()
-    private let disableEditingBehavior = DisableEditingTableViewDelegate()
-	private var viewModel: FavoriteViewModel!
-    private var navigationDelegate: FavoriteNavigationControllerDelegate!
-    private var locationManager: LocationManager!
+	fileprivate let disposables = DisposeBag()
+    fileprivate var viewDisposables = DisposeBag()
+    private var adsSettings: AdsSettings!
+	fileprivate var viewModel: FavoriteViewModel!
+    fileprivate var navigationDelegate: FavoriteNavigationControllerDelegate!
+    fileprivate var locationManager: LocationManager!
+    fileprivate let dataSource = RxTableViewSectionedAnimatedDataSource<FavoriteSection>()
+    private let cellFactory = FavoriteCellFactory()
 
-	@IBOutlet private weak var viewConfigurator: FavoriteViewConfigurator!
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var nearestStopPointView: NearestStopPointView!
-    @IBOutlet private weak var nearestStopPointHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var emptyState: UIView!
+	@IBOutlet fileprivate weak var viewConfigurator: FavoriteViewConfigurator!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var emptyState: UIView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
     
-	func installDependencies(viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager!) {
+	func installDependencies(_ viewModel: FavoriteViewModel, _ navigationDelegate: FavoriteNavigationControllerDelegate, _ locationManager: LocationManager, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
         self.navigationDelegate = navigationDelegate
         self.locationManager = locationManager
+        self.adsSettings = adsSettings
 	}
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        self.nearestStopPointView.animationDelay = heightAnimationDuration
+        self.cellFactory.delegate = self
 		self.viewConfigurator.configure()
         self.viewModel.loadFavouriteBollards().addDisposableTo(self.disposables)
         self.setupBinding()
         self.registerForEvents()
-        self.tableView.rx_setDelegate(self.disableEditingBehavior)
+        self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
 	
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.viewModel.initializeNearestStopPoint(self.locationManager.userLocation()).addDisposableTo(self.viewDisposables)
+        self.viewModel.initializeNearestStopPoints(self.locationManager.userLocation()).addDisposableTo(self.viewDisposables)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.viewDisposables = DisposeBag()
     }
     
-    private func setupBinding() {
-        self.viewModel.bollards.asObservable()
-            .bindTo(self.tableView.rx_itemsWithCellIdentifier(BollardCell.identifier, cellType: BollardCell.self)) { [unowned self] _, model, cell in
-                cell.configure(model)
-                cell.delegate = self
-            }.addDisposableTo(self.disposables)
+    fileprivate func setupBinding() {
+        self.viewModel.stopPoints.bindTo(self.tableView.rx.items(dataSource: self.dataSource)).addDisposableTo(self.disposables)
+        self.dataSource.configureCell = self.cellFactory.create()
+        self.dataSource.titleForHeaderInSection = { dataSource, index in return "x" }
         
-        self.viewModel.nearestStopPoint.asObservable()
-            .bindTo(self.nearestStopPointView.stopPoint)
-            .addDisposableTo(self.disposables)
-        
-        self.viewModel.nearestStopPoint.asObservable()
-            .map {  $0 == nil ? 0 : nearestStopPointDefaultHeight }
-            .subscribeNext { [unowned self] height in
-                self.nearestStopPointHeightConstraint.constant = height
-                UIView.animateWithDuration(heightAnimationDuration) {
-                    self.view.layoutIfNeeded()
-                }
-            }.addDisposableTo(self.disposables)
-        
-        self.viewModel.bollards.asObservable()
+        let anyStopPointsObservable = self.viewModel.bollards.asObservable()
             .map { $0.any() }
-            .bindTo(self.emptyState.rx_hidden)
+        anyStopPointsObservable.bindTo(self.emptyState.rx.isHidden)
             .addDisposableTo(self.disposables)
     }
     
-    private func registerForEvents() {
-        let favoriteBollardObservable = self.tableView.rx_modelSelected(Bollard.self).map { ($0.symbol, $0.name) }
-        let nearestStopAction = self.nearestStopPointView.action.map { ($0.id, $0.name) }
-        
-        Observable.of(favoriteBollardObservable, nearestStopAction)
-            .merge()
-            .subscribeNext { [unowned self] symbol, name in
-                self.navigationDelegate.showBollard(symbol, name: name)
-            }.addDisposableTo(self.disposables)
+    fileprivate func registerForEvents() {
+        self.tableView.rx.modelSelected(StopPointIdentity.self).subscribeNext { [unowned self] (stopPoint) in
+            self.navigationDelegate.showBollard(stopPoint.symbol, name: stopPoint.name)
+        }.addDisposableTo(self.disposables)
     }
 }
 
 extension FavoriteViewController: BollardCellDelegate {
-    func toggleFavorite(bollard: Bollard) {
+    func toggleFavorite(_ bollard: Bollard) {
         self.viewModel.toggleFavorite(bollard)
+    }
+}
+
+extension FavoriteViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let model = self.dataSource.sectionModels[section]
+        let view: ImageHeaderView = tableView.dequeueReusableHeaderFooter()
+        view.configure(model)
+        
+        return view
     }
 }

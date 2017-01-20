@@ -13,21 +13,25 @@ import RxDataSources
 
 final class LineBollardsViewController: UIViewController {
 
-    private let disposables = DisposeBag()
-	private var viewModel: LineBollardsViewModel!
-	private var navigationDelegate: LineBollardsNavigationControllerDelegate!
-    private let dataSource = RxTableViewSectionedReloadDataSource<LineBollards>()
-    private var line: String!
+    fileprivate let disposables = DisposeBag()
+    private var adsSettings: AdsSettings!
+	fileprivate var viewModel: LineBollardsViewModel!
+	fileprivate var navigationDelegate: LineBollardsNavigationControllerDelegate!
+    fileprivate let dataSource = RxTableViewSectionedReloadDataSource<LineBollards>()
+    fileprivate var line: String!
 
-	@IBOutlet private weak var viewConfigurator: LineBollardsViewConfigurator!
-    @IBOutlet private weak var tableView: UITableView!
+	@IBOutlet fileprivate weak var viewConfigurator: LineBollardsViewConfigurator!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
     
-	func installDependencies(viewModel: LineBollardsViewModel, _ navigationDelegate: LineBollardsNavigationControllerDelegate) {
+	func installDependencies(_ viewModel: LineBollardsViewModel, _ navigationDelegate: LineBollardsNavigationControllerDelegate, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
-		self.navigationDelegate = navigationDelegate
+        self.navigationDelegate = navigationDelegate
+        self.adsSettings = adsSettings
 	}
     
-    func loadBollards(line: String) {
+    func loadBollards(_ line: String) {
         self.line = line
         self.viewModel.loadBollards(line).addDisposableTo(self.disposables)
     }
@@ -39,22 +43,26 @@ final class LineBollardsViewController: UIViewController {
         self.configure()
         self.registerForEvents()
         self.updateTitle(self.line)
-        self.tableView.rx_setDelegate(self)
+        self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
 	
-    private func setupBinding() {
+    fileprivate func setupBinding() {
         self.viewModel.lineBollards.asObservable()
-            .bindTo(self.tableView.rx_itemsWithDataSource(self.dataSource))
+            .bindTo(self.tableView.rx.items(dataSource: self.dataSource))
             .addDisposableTo(self.disposables)
     }
     
-    private func registerForEvents() {
-        self.tableView.rx_modelSelected(Bollard.self).subscribeNext { [unowned self] bollard in
+    fileprivate func registerForEvents() {
+        self.tableView.rx.modelSelected(Bollard.self).subscribeNext { [unowned self] bollard in
             self.navigationDelegate.showTimes(bollard)
         }.addDisposableTo(self.disposables)
     }
     
-    private func configure() {
+    fileprivate func configure() {
         self.dataSource.configureCell = { [unowned self] dataSource, tableView, indexPath, bollard in
             let cell: BollardCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.configure(bollard)
@@ -65,19 +73,19 @@ final class LineBollardsViewController: UIViewController {
 }
 
 extension LineBollardsViewController: BollardCellDelegate {
-    func toggleFavorite(bollard: Bollard) {
+    func toggleFavorite(_ bollard: Bollard) {
         self.viewModel.toggleFavorite(bollard)
     }
 }
 
 extension LineBollardsViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .None
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view: DirectionHeader = tableView.dequeueReusableHeaderFooter()
-        let model = self.dataSource.sectionAtIndex(section)
+        let model = self.dataSource.sectionModels[section]
         view.configure(model.direction)
         return view
     }

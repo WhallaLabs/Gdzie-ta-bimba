@@ -11,13 +11,13 @@ import Foundation
 
 final class GetFavoriteBollardsQueryHandler: QueryHandler {
     
-    private let favoriteBollardsRepository: FavoriteBollardsRepository
+    fileprivate let favoriteBollardsRepository: FavoriteBollardsRepository
     
     init(favoriteBollardsRepository: FavoriteBollardsRepository) {
         self.favoriteBollardsRepository = favoriteBollardsRepository
     }
     
-    func handle(query: Query) -> Any {
+    func handle(_ query: Query) -> Any {
         let observable = self.favoriteBollardsRepository.favoriteBollards()
         return observable
     }

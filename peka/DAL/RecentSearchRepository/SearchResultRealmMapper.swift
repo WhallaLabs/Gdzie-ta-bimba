@@ -9,44 +9,44 @@
 import Foundation
 
 final class SearchResultRealmToSearchResultMapper: Convertible {
-    func convert(value: SearchResultRealm) -> SearchResult {
+    func convert(_ value: SearchResultRealm) -> SearchResult {
         switch value.type {
-        case .Line:
-            return .Line(name: value.name)
-        case .StopPoint:
+        case .line:
+            return .line(name: value.name)
+        case .stopPoint:
             let stopPoint = StopPoint(id: value.id!, name: value.name)
-            return .Stop(model: stopPoint)
-        case .Street:
-            return .Street(name: value.name)
+            return .stop(model: stopPoint)
+        case .street:
+            return .street(name: value.name)
         }
     }
 }
 
 final class SearchResultsRealmToSearchResultsMapper: Convertible {
-    func convert(value: [SearchResultRealm]) -> [SearchResult] {
+    func convert(_ value: [SearchResultRealm]) -> [SearchResult] {
         let mapper = SearchResultRealmToSearchResultMapper()
         return value.map(mapper)
     }
 }
 
 final class SearchResultToSearchResultRealmMapper: Convertible {
-    func convert(value: SearchResult) -> SearchResultRealm {
+    func convert(_ value: SearchResult) -> SearchResultRealm {
         switch value {
-        case .Line(let name):
+        case .line(let name):
             let line = SearchResultRealm()
             line.name = name
-            line.type = .Line
+            line.type = .line
             return line
-        case .Stop(let model):
+        case .stop(let model):
             let stopPoint = SearchResultRealm()
             stopPoint.id = model.id
             stopPoint.name = model.name
-            stopPoint.type = .StopPoint
+            stopPoint.type = .stopPoint
             return stopPoint
-        case .Street(let name):
+        case .street(let name):
             let street = SearchResultRealm()
             street.name = name
-            street.type = .Street
+            street.type = .street
             return street
         }
     }

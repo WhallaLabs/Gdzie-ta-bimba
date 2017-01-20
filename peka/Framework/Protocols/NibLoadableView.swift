@@ -14,10 +14,10 @@ protocol NibLoadableView: class {
 
 extension NibLoadableView where Self: UIView {
     static var nibName: String {
-        return NSStringFromClass(self).componentsSeparatedByString(".").last!
+        return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
-    func setupXib(autoresizingOptions: UIViewAutoresizing = [.FlexibleWidth, .FlexibleHeight]) {
+    func setupXib(_ autoresizingOptions: UIViewAutoresizing = [.flexibleWidth, .flexibleHeight]) {
         let view = XibLoader(xibName: Self.nibName).load(self, autoresizingOptions: autoresizingOptions)
         self.addSubview(view)
     }

@@ -12,6 +12,7 @@ import RxSwift
 final class SearchViewModel {
     private let executor: Executor
     private let searchResultSubject = PublishSubject<[SearchResult]>()
+    
     let searchPhrase = Variable(String.empty)
     var searchResult: Observable<[SearchResult]> {
         return self.searchResultSubject.asObservable()
@@ -25,7 +26,7 @@ final class SearchViewModel {
     
     func initializeSearch() -> Disposable {
         return self.searchPhrase.asObservable()
-            .throttle(0.3, scheduler: MainScheduler.instance)
+            .debounce(0.3, scheduler: MainScheduler.instance)
             .flatMap { [unowned self] phrase -> Observable<[SearchResult]> in
                 if phrase.isEmpty {
                     return Observable.just([])
@@ -41,7 +42,7 @@ final class SearchViewModel {
         return observable.bindTo(self.searchHistory)
     }
     
-    func saveSearch(searchResult: SearchResult) {
+    func saveSearch(_ searchResult: SearchResult) {
         self.executor.execute(SaveSearchResultCommand(searchResult: searchResult))
     }
 }

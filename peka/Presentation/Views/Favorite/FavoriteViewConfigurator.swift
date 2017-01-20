@@ -10,11 +10,15 @@ import UIKit
 
 final class FavoriteViewConfigurator: NSObject {
 
-	@IBOutlet private weak var viewController: FavoriteViewController!
-    @IBOutlet private weak var tableView: UITableView!
+	@IBOutlet fileprivate weak var viewController: FavoriteViewController!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet private weak var emptyStateLabel: UILabel!
     
 	func configure() {
 		self.tableView.register(BollardCell.self)
-        self.viewController.updateTitle("Moje przystanki")
+        self.tableView.register(StopPointCell.self)
+        self.tableView.register(ImageHeaderView.self)
+        self.viewController.updateTitle("MyStops".localized)
+        self.emptyStateLabel.text = "Favorite:EmptyState".localized
 	}
 }

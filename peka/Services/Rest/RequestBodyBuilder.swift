@@ -9,49 +9,49 @@
 import Foundation
 
 final class RequestBodyBuilder {
-    func search(methodName: SearchMethod, pattern: String) -> [HttpBodyParameter] {
+    func search(_ methodName: SearchMethod, pattern: String) -> [HttpBodyParameter] {
         let patternJson = self.patternJson(pattern)
         return self.methodParamter(methodName, value: patternJson)
     }
     
-    func getBollardsByStopPoint(name: String) -> [HttpBodyParameter] {
+    func getBollardsByStopPoint(_ name: String) -> [HttpBodyParameter] {
         let nameJson = self.nameJson(name)
         return self.methodParamter(ApiConfig.getBollardsByStopPoint, value: nameJson)
     }
     
-    func getBollardsByLine(name: String) -> [HttpBodyParameter] {
+    func getBollardsByLine(_ name: String) -> [HttpBodyParameter] {
         let nameJson = self.nameJson(name)
         return self.methodParamter(ApiConfig.getBollardsByLine, value: nameJson)
     }
     
-    func getBollardsByStreet(name: String) -> [HttpBodyParameter] {
+    func getBollardsByStreet(_ name: String) -> [HttpBodyParameter] {
         let nameJson = self.nameJson(name)
         return self.methodParamter(ApiConfig.getBollardsByStreet, value: nameJson)
     }
     
-    func getTimes(bollardSymbol: String) -> [HttpBodyParameter] {
+    func getTimes(_ bollardSymbol: String) -> [HttpBodyParameter] {
         let symbolJson = self.symbolJson(bollardSymbol)
         return self.methodParamter(ApiConfig.getTimes, value: symbolJson)
     }
     
-    func bollardMessage(bollardSymbol: String) -> [HttpBodyParameter] {
+    func bollardMessage(_ bollardSymbol: String) -> [HttpBodyParameter] {
         let symbolJson = self.symbolJson(bollardSymbol)
         return self.methodParamter(ApiConfig.findMessagesForBollard, value: symbolJson)
     }
     
-    private func patternJson(pattern: String) -> String {
+    fileprivate func patternJson(_ pattern: String) -> String {
         return "{\"pattern\":\"\(pattern)\"}"
     }
     
-    private func nameJson(name: String) -> String {
+    fileprivate func nameJson(_ name: String) -> String {
         return "{\"name\":\"\(name)\"}"
     }
     
-    private func symbolJson(name: String) -> String {
+    fileprivate func symbolJson(_ name: String) -> String {
         return "{\"symbol\":\"\(name)\"}"
     }
     
-    private func methodParamter(methodName: String, value: String) -> [HttpBodyParameter] {
-        return [.Form(name: "p0", value: value), .Form(name: "method", value: methodName)]
+    fileprivate func methodParamter(_ methodName: String, value: String) -> [HttpBodyParameter] {
+        return [.form(name: "p0", value: value), .form(name: "method", value: methodName)]
     }
 }

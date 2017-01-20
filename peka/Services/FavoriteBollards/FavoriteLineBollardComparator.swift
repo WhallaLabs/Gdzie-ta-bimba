@@ -11,13 +11,13 @@ import RxSwift
 
 final class FavoriteLineBollardComparator {
     
-    private let favoriteBollardsRepository: FavoriteBollardsRepository
+    fileprivate let favoriteBollardsRepository: FavoriteBollardsRepository
     
     init(favoriteBollardsRepository: FavoriteBollardsRepository) {
         self.favoriteBollardsRepository = favoriteBollardsRepository
     }
     
-    func checkFavorite(observable: Observable<[LineBollards]>) -> Observable<[LineBollards]> {
+    func checkFavorite(_ observable: Observable<[LineBollards]>) -> Observable<[LineBollards]> {
         return Observable.combineLatest(observable, self.favoriteBollardsRepository.favoriteBollards()) { lineBollards, favouriteBollards in
             var result: [LineBollards] = []
             for lineBollard in lineBollards {

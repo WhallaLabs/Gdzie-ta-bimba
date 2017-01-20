@@ -11,7 +11,7 @@ import RxSwift
 
 final class StopPointPushpinsCache: Caching {
     
-    private var cachedStopPoints: [StopPointPushpin]?
+    fileprivate var cachedStopPoints: [StopPointPushpin]?
     
     func cached() -> Observable<[StopPointPushpin]> {
         guard let stopPoints = self.cachedStopPoints else {
@@ -20,7 +20,7 @@ final class StopPointPushpinsCache: Caching {
         return Observable.just(stopPoints)
     }
     
-    func save(data: [StopPointPushpin]) -> Observable<[StopPointPushpin]> {
+    func save(_ data: [StopPointPushpin]) -> Observable<[StopPointPushpin]> {
         self.cachedStopPoints = data
         return Observable.just(data)
     }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol LineBollardsNavigationControllerDelegate {
-    func showTimes(bollard: Bollard)
+    func showTimes(_ bollard: Bollard)
 }

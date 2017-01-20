@@ -10,13 +10,13 @@ import Foundation
 import RealmSwift
 
 enum SearchResultType: Int {
-    case StopPoint
-    case Line
-    case Street
+    case stopPoint
+    case line
+    case street
 }
 
 final class SearchResultRealm: Object {
-    private dynamic var typeRaw: Int = SearchResultType.StopPoint.rawValue
+    fileprivate dynamic var typeRaw: Int = SearchResultType.stopPoint.rawValue
     dynamic var id: String? = nil
     dynamic var name: String = ""
     

@@ -10,28 +10,30 @@ import UIKit
 import RxSwift
 import RxCocoa
 import MapKit
-import RxMKMapView
 import RxOptional
-import FBAnnotationClusteringSwift
 
 private let poznanCoordinates = CLLocationCoordinate2DMake(52.407720, 16.933497)
 
 final class MapViewController: UIViewController {
 
-	private let disposables = DisposeBag()
-	private var viewModel: MapViewModel!
-    private var locationManager: LocationManager!
-    private var navigationDelegate: MapNavigationControllerDelegate!
-    private let clusteringManager = FBClusteringManager()
+	fileprivate let disposables = DisposeBag()
+    fileprivate var viewModel: MapViewModel!
+    private var adsSettings: AdsSettings!
+    fileprivate var locationManager: LocationManager!
+    fileprivate var navigationDelegate: MapNavigationControllerDelegate!
+    fileprivate let clusteringManager = FBClusteringManager()
 
-	@IBOutlet private weak var viewConfigurator: MapViewConfigurator!
-    @IBOutlet private weak var mapView: MKMapView!
-    @IBOutlet private weak var showUserLocationButton: UIButton!
+    @IBOutlet fileprivate weak var adBannerView: AdBannerView!
+	@IBOutlet fileprivate weak var viewConfigurator: MapViewConfigurator!
+    @IBOutlet fileprivate weak var mapView: MKMapView!
+    @IBOutlet fileprivate weak var showUserLocationButton: UIButton!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
 
-	func installDependencies(viewModel: MapViewModel, _ navigationDelegate: MapNavigationControllerDelegate, _ locationManager: LocationManager) {
+	func installDependencies(_ viewModel: MapViewModel, _ navigationDelegate: MapNavigationControllerDelegate, _ locationManager: LocationManager, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
         self.navigationDelegate = navigationDelegate
         self.locationManager = locationManager
+        self.adsSettings = adsSettings
 	}
 
 	override func viewDidLoad() {
@@ -41,69 +43,73 @@ final class MapViewController: UIViewController {
 		self.viewConfigurator.configure()
         self.registerForEvents()
         self.setupBinding()
+        self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.mapView.showsUserLocation = self.locationManager.hasPermission
-        self.showUserLocationButton.hidden = self.locationManager.hasPermission == false
+        self.showUserLocationButton.isHidden = self.locationManager.hasPermission == false
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.mapView.showsUserLocation = false
     }
 	
-    private func registerForEvents() {
-        self.mapView.rx_didUpdateUserLocation.take(1)
+    fileprivate func registerForEvents() {
+        self.mapView.rx.didUpdateUserLocation.take(1)
             .map { $0.coordinate }
             .startWith(poznanCoordinates)
             .subscribeNext { [unowned self] coordinates in
                 self.showRegion(coordinates)
             }.addDisposableTo(self.disposables)
         
-        self.mapView.rx_didSelectAnnotationView.filter { $0.annotation is StopPointAnnotation }
+        self.mapView.rx.didSelectAnnotationView.filter { $0.annotation is StopPointAnnotation }
             .subscribeNext { annotationView in
-                let button = UIButton(type: .DetailDisclosure)
-                button.tintColor = UIColor(color: .BackgroundLight)
+                let button = UIButton(type: .detailDisclosure)
+                button.tintColor = UIColor(color: .backgroundLight)
                 annotationView.rightCalloutAccessoryView = button
             }.addDisposableTo(self.disposables)
         
-        self.mapView.rx_didSelectAnnotationView.map { $0.annotation as? FBAnnotationCluster }
+        self.mapView.rx.didSelectAnnotationView.map { $0.annotation as? FBAnnotationCluster }
             .filterNil()
             .map { $0.coordinate }
             .subscribeNext { [unowned self] coordinate in
                 self.zoomToCluster(coordinate)
             }.addDisposableTo(self.disposables)
         
-        self.mapView.rx_annotationViewCalloutAccessoryControlTapped.map { $0.view.annotation as? StopPointAnnotation }
+        self.mapView.rx.annotationViewCalloutAccessoryControlTapped.map { $0.view.annotation as? StopPointAnnotation }
             .filterNil()
             .subscribeNext { [unowned self] stopPointAnnotation in
                 self.navigationDelegate.showBollard(stopPointAnnotation)
             }.addDisposableTo(self.disposables)
     }
     
-    private func setupBinding() {
+    fileprivate func setupBinding() {
         self.viewModel.pushpins.asObservable()
             .filter{ $0.any() }
             .map(StopPointPushpinsToAnnotationsConverter())
             .subscribeNext { [unowned self] annotations in
-                self.clusteringManager.addAnnotations(annotations)
+                self.clusteringManager.add(annotations: annotations)
             }.addDisposableTo(self.disposables)
     }
     
-    @IBAction private func showUserOnMap() {
+    @IBAction fileprivate func showUserOnMap() {
         let location = self.mapView.userLocation.coordinate
         self.showRegion(location)
     }
     
-    private func showRegion(coordinates: CLLocationCoordinate2D) {
+    fileprivate func showRegion(_ coordinates: CLLocationCoordinate2D) {
         let region = MKCoordinateRegionMakeWithDistance(coordinates, 1000, 1000)
         self.mapView.setRegion(region, animated: true)
     }
     
-    private func zoomToCluster(coordinates: CLLocationCoordinate2D) {
+    fileprivate func zoomToCluster(_ coordinates: CLLocationCoordinate2D) {
         var span = self.mapView.region.span
         span.latitudeDelta = span.latitudeDelta / 2
         span.longitudeDelta = span.longitudeDelta / 2
@@ -113,25 +119,24 @@ final class MapViewController: UIViewController {
 }
 
 extension MapViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let clusterAnnotation = annotation as? FBAnnotationCluster {
             return FBAnnotationClusterView(annotation: clusterAnnotation)
         }
         if let stopPointAnnotation = annotation as? StopPointAnnotation {
-            let pushpinView = mapView.dequeueReusableAnnotationViewWithIdentifier(Pushpin.identifier) as? Pushpin ?? Pushpin(pushpinAnnotation: stopPointAnnotation)
+            let pushpinView = mapView.dequeueReusableAnnotationView(withIdentifier: Pushpin.identifier) as? Pushpin ?? Pushpin(pushpinAnnotation: stopPointAnnotation)
             return pushpinView
         }
         return nil
     }
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        NSOperationQueue().addOperationWithBlock { 
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        OperationQueue().addOperation { 
             let mapBoundsWidth = Double(self.mapView.bounds.size.width)
             let mapRectWidth: Double = self.mapView.visibleMapRect.size.width
             let scale: Double = mapBoundsWidth / mapRectWidth
-            
-            let annotations = self.clusteringManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
-            self.clusteringManager.displayAnnotations(annotations, onMapView: self.mapView)
+            let annotations = self.clusteringManager.clusteredAnnotations(withinMapRect: self.mapView.visibleMapRect, zoomScale: scale)
+            self.clusteringManager.display(annotations: annotations, onMapView: self.mapView)
         }
     }
 }

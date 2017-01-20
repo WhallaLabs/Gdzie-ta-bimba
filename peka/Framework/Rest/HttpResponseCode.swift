@@ -9,11 +9,11 @@
 import Foundation
 
 enum HttpResponseCode: Int {
-    case OK = 200
-    case Created = 201
-    case Accepted = 202
-    case NonAuthoritativeInformation = 203
-    case NoContent = 204
-    case ResetContent = 205
-    case PartialContent = 206
+    case ok = 200
+    case created = 201
+    case accepted = 202
+    case nonAuthoritativeInformation = 203
+    case noContent = 204
+    case resetContent = 205
+    case partialContent = 206
 }

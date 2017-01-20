@@ -9,9 +9,9 @@
 import UIKit
 
 enum AppColors: UInt64 {
-    case Background = 0xFF0D2540
-    case BackgroundLight = 0xFF275482
-    case MainLight = 0xFFB3C6D3
+    case background = 0xFF0D2540
+    case backgroundLight = 0xFF275482
+    case mainLight = 0xFFB3C6D3
 }
 
 extension UIColor {

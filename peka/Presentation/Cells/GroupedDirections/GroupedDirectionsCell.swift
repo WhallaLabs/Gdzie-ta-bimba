@@ -9,16 +9,17 @@
 import UIKit
 
 protocol GroupedDirectionsCellDelegate: class {
-    func toggleFavorite(bollard: Bollard)
+    func toggleFavorite(_ bollard: Bollard)
 }
 
 final class GroupedDirectionsCell: UITableViewCell {
-    @IBOutlet private weak var directionsLabel: UILabel!
-    @IBOutlet private weak var roundBackgroundView: UIView!
-    @IBOutlet private weak var favoriteButton: UIButton!
-    private let converter = FavoriteStateToImageConverter()
+    @IBOutlet fileprivate weak var directionsLabel: UILabel!
+    @IBOutlet fileprivate weak var roundBackgroundView: UIView!
+    @IBOutlet fileprivate weak var favoriteButton: UIButton!
+    @IBOutlet fileprivate weak var stopPointNameLabel: UILabel!
+    fileprivate let converter = FavoriteStateToImageConverter()
     
-    private var bollard: Bollard!
+    fileprivate var bollard: Bollard!
     
     weak var delegate: GroupedDirectionsCellDelegate?
     
@@ -27,17 +28,17 @@ final class GroupedDirectionsCell: UITableViewCell {
         self.roundBackgroundView.layer.cornerRadius = 5
     }
     
-    @IBAction private func toggleFavorite() {
+    @IBAction fileprivate func toggleFavorite() {
         self.delegate?.toggleFavorite(self.bollard)
     }
     
-    private func directionAttributedString(direction: Direction, appendSeperator: Bool) -> NSAttributedString {
-        let directionDescription: NSString = "\(direction.description)\(appendSeperator ? "\u{00a0}⋮ " : String.empty)"
-        let lineRange = directionDescription.rangeOfString(direction.line)
+    fileprivate func directionAttributedString(_ direction: Direction, appendSeperator: Bool) -> NSAttributedString {
+        let directionDescription = "\(direction.description)\(appendSeperator ? "\u{00a0}\n" : String.empty)"
+        let lineRange = (directionDescription as NSString).range(of: direction.line)
         let attributedString = AttributedTextBuilder(string: directionDescription as String)
-            .setFont(UIFont.systemFontOfSize(14, weight: UIFontWeightMedium))
-            .setColor(UIColor(color: .MainLight))
-            .setFont(UIFont.systemFontOfSize(14, weight: UIFontWeightBold), textRange: lineRange)
+            .setFont(UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium))
+            .setColor(UIColor(color: .mainLight))
+            .setFont(UIFont.systemFont(ofSize: 14, weight: UIFontWeightBold), textRange: lineRange)
             .setColor(UIColor(argbHex: 0xFF718EA6), textRange: lineRange)
             .attributedText
         return attributedString
@@ -49,15 +50,20 @@ extension GroupedDirectionsCell: NibLoadableView {
 }
 
 extension GroupedDirectionsCell: Configurable {
-	func configure(model: GroupedDirections) {
+	func configure(_ model: GroupedDirections) {
         self.bollard = model.bollard
         let attributedString = NSMutableAttributedString()
-        for (index, direction) in model.directions.enumerate() {
-            let directionString = self.directionAttributedString(direction, appendSeperator: index < model.directions.count - 1)
-            attributedString.appendAttributedString(directionString)
+        let grouped = model.directions.categorise { $0.directionName }
+        for (index, directions) in grouped.enumerated() {
+            let lines = directions.value.map { $0.line }.joined(separator: ",\u{00a0}")
+            let direction = Direction(directionName: directions.key, line: lines, returnVariant: true)
+            let directionString = self.directionAttributedString(direction, appendSeperator: index < grouped.count - 1)
+            attributedString.append(directionString)
         }
         self.directionsLabel.attributedText = attributedString
         
-        self.favoriteButton.setImage(self.converter.convert(model.bollard), forState: .Normal)
+        self.favoriteButton.setImage(self.converter.convert(model.bollard), for: UIControlState())
+        
+        self.stopPointNameLabel.text = model.bollard.name
     }
 }

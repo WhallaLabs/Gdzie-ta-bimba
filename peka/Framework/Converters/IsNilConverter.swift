@@ -10,7 +10,7 @@ import Foundation
 import RxOptional
 
 final class IsNilConverter<T: OptionalType>: Convertible {
-    func convert(value: T) -> Bool {
+    func convert(_ value: T) -> Bool {
         return value.value == nil
     }
 }

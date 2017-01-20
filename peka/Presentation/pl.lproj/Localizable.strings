@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  peka
+
+  Created by Tomasz Pikć on 17/01/2017.
+  Copyright © 2017 WhallaLabs. All rights reserved.
+*/
+
+"Favorite" = "Ulubione";
+"MyStops" = "Moje przystanki";
+"Search" = "Wyszukaj";
+"Map" = "Mapa";
+"More" = "Więcej";
+"NearestStops" = "Najbliższe przystanki";
+"Favorite:EmptyState" = "Dodaj tablice odjazdów do\nulubionych, żeby sprawdzać je\nbez wyszukiwania";
+"Search:EmptyState" = "Podaj przystanek, linię\nlub ulicę i sprawdź, kiedy\nodjedzie Twój autobus lub\ntramwaj.";
+"Search:NoResultsHeader" = "Ups...";
+"Search:NoResults" = "Nie możemy znaleźć\ntego, czego szukasz.\nSprawdź, czy Twoje\nzapytanie jest poprawne.";
+"SearchBarPlaceholder" = "Szukaj przystanków, linii i ulic";
+"Version" = "wersja";
+"Ads" = "Reklamy";
+"RateApp" = "Oceń aplikacje";
+"RemoveAds" = "Usuń reklamy";
+"RestoreTransactions" = "Przywróć transakcje";
+"RestoreAds" = "Przywróć reklamy";
+"MinuteShortcut" = "min";

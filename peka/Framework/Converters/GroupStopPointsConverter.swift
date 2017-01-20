@@ -9,9 +9,9 @@
 import Foundation
 
 final class GroupStopPointsConverter: Convertible {
-    func convert(value: [StopPointPushpin]) -> [StopPointPushpin] {
+    func convert(_ value: [StopPointPushpin]) -> [StopPointPushpin] {
         return value.categorise { $0 }.map { (key, value) in
-            let headsigns = value.map { $0.headsigns }.joinWithSeparator(", ")
+            let headsigns = value.map { $0.headsigns }.joined(separator: ", ")
             let routeTypes = value.flatMap { $0.routeTypes }.distinct()
             return StopPointPushpin(id: key.id,
                 name: key.name,

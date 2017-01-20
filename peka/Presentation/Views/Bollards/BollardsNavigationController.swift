@@ -9,13 +9,13 @@
 import UIKit
 
 final class BollardsNavigationController: BollardsNavigationControllerDelegate {
-	private weak var viewController: BollardsViewController?
+	fileprivate weak var viewController: BollardsViewController?
 
 	init(viewController: BollardsViewController) {
 		self.viewController = viewController
 	}
     
-    func showBollard(bollard: Bollard) {
+    func showBollard(_ bollard: Bollard) {
         let viewController: BollardViewController = UIStoryboard.instantiateInitialViewController()
         viewController.loadTimes(bollard)
         viewController.title = bollard.name

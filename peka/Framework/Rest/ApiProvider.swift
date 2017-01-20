@@ -11,9 +11,9 @@ import RxSwift
 import SwiftyJSON
 
 final class ApiProvider: RestApiProvider {
-    private let endpoint: String
-    private let headersProvider: HttpHeadersProvider
-    private let formBodyBuilder: FormBodyBuilder
+    fileprivate let endpoint: String
+    fileprivate let headersProvider: HttpHeadersProvider
+    fileprivate let formBodyBuilder: FormBodyBuilder
     
     init(endpoint: String, httpHeadersProvider: HttpHeadersProvider, formBodyBuilder: FormBodyBuilder) {
         self.endpoint = endpoint
@@ -21,11 +21,11 @@ final class ApiProvider: RestApiProvider {
         self.formBodyBuilder = formBodyBuilder
     }
     
-    func get<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T> {
+    func get<T: ObjectMappable>(_ resource: String, mapper: T) -> Observable<T.T> {
         return self.get(resource, queryParameters: [ : ], mapper: mapper)
     }
     
-    func get<T: ObjectMappable>(resource: String, queryParameters: [String : String], mapper: T) -> Observable<T.T> {
+    func get<T: ObjectMappable>(_ resource: String, queryParameters: [String : String], mapper: T) -> Observable<T.T> {
         let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(queryParameters: queryParameters)
@@ -34,18 +34,18 @@ final class ApiProvider: RestApiProvider {
         return self.execute(request, mapper: mapper)
     }
     
-    func post<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T> {
+    func post<T: ObjectMappable>(_ resource: String, mapper: T) -> Observable<T.T> {
         return self.post(resource, json: nil, mapper: mapper)
     }
     
-    func post<T : ObjectMappable, U : JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> {
+    func post<T : ObjectMappable, U : JsonMappable, R>(_ resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> where R == U.T {
         guard let json = bodyMapper.mapToJson(bodyObject) else {
-            return Observable.error(ApiProviderError.JsonMapping)
+            return Observable.error(ApiProviderError.jsonMapping)
         }
         return self.post(resource, json: json, mapper: resultMapper)
     }
     
-    func post<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
+    func post<T: ObjectMappable>(_ resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
         let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(json: json)
@@ -54,7 +54,7 @@ final class ApiProvider: RestApiProvider {
         return self.execute(request, mapper: mapper)
     }
     
-    func post<T: ObjectMappable>(resource: String, bodyParameters: [HttpBodyParameter], mapper: T) -> Observable<T.T> {
+    func post<T: ObjectMappable>(_ resource: String, bodyParameters: [HttpBodyParameter], mapper: T) -> Observable<T.T> {
         let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(bodyParameters: bodyParameters)
@@ -63,18 +63,18 @@ final class ApiProvider: RestApiProvider {
         return self.execute(request,mapper: mapper)
     }
     
-    func put<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T> {
+    func put<T: ObjectMappable>(_ resource: String, mapper: T) -> Observable<T.T> {
         return self.put(resource, json: nil, mapper: mapper)
     }
     
-    func put<T : ObjectMappable, U : JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> {
+    func put<T : ObjectMappable, U : JsonMappable, R>(_ resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> where R == U.T {
         guard let json = bodyMapper.mapToJson(bodyObject) else {
-            return Observable.error(ApiProviderError.JsonMapping)
+            return Observable.error(ApiProviderError.jsonMapping)
         }
         return self.put(resource, json: json, mapper: resultMapper)
     }
     
-    func put<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
+    func put<T: ObjectMappable>(_ resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
         let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(json: json)
@@ -83,18 +83,18 @@ final class ApiProvider: RestApiProvider {
         return self.execute(request, mapper: mapper)
     }
     
-    func delete<T: ObjectMappable>(resource: String, mapper: T) -> Observable<T.T> {
+    func delete<T: ObjectMappable>(_ resource: String, mapper: T) -> Observable<T.T> {
         return self.delete(resource, json: nil, mapper: mapper)
     }
     
-    func delete<T : ObjectMappable, U : JsonMappable, R where R == U.T>(resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> {
+    func delete<T : ObjectMappable, U : JsonMappable, R>(_ resource: String, bodyObject: R, bodyMapper: U, resultMapper: T) -> Observable<T.T> where R == U.T {
         guard let json = bodyMapper.mapToJson(bodyObject) else {
-            return Observable.error(ApiProviderError.JsonMapping)
+            return Observable.error(ApiProviderError.jsonMapping)
         }
         return self.delete(resource, json: json, mapper: resultMapper)
     }
     
-    func delete<T: ObjectMappable>(resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
+    func delete<T: ObjectMappable>(_ resource: String, json: JSON?, mapper: T) -> Observable<T.T> {
         let request = RequestBuilder(endpoint: self.endpoint, formBodyBuilder: self.formBodyBuilder)
             .add(resource: resource)
             .add(json: json)
@@ -103,7 +103,7 @@ final class ApiProvider: RestApiProvider {
         return self.execute(request, mapper: mapper)
     }
     
-    func execute<T: ObjectMappable>(requestBuilder: BodyRequestBuilder, mapper: T) -> Observable<T.T> {
+    func execute<T: ObjectMappable>(_ requestBuilder: BodyRequestBuilder, mapper: T) -> Observable<T.T> {
         let headersProvider = self.headersProvider
         let observable: Observable<T.T> = Observable.create { observer in
             let headers = headersProvider.prepareHeaders()
@@ -112,32 +112,32 @@ final class ApiProvider: RestApiProvider {
                 .add(headers: headers)
                 .getRequest()
             
-            let task = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration()).dataTaskWithRequest(urlRequest) { (data, response, error) in
+            let task = URLSession(configuration: URLSessionConfiguration.default).dataTask(with: urlRequest as URLRequest) { (data, response, error) in
                 if let error = error {
                     observer.onError(error)
                 }
-                if let response = response as? NSHTTPURLResponse,
-                    data = data {
+                if let response = response as? HTTPURLResponse,
+                    let data = data {
                     let json = JSON(data: data)
-                    
+                    //print(json)
                     if requestBuilder.httpMethod.isSuccessResponse(response.statusCode) {
                         if let mappedObject = mapper.mapToObject(json) {
                             observer.onNext(mappedObject)
                         }
                         else {
-                            observer.onError(ApiProviderError.JsonMapping)
+                            observer.onError(ApiProviderError.jsonMapping)
                         }
                     } else {
-                        let error = ApiProviderError.HttpError(status: response.statusCode, json: json)
+                        let error = ApiProviderError.httpError(status: response.statusCode, json: json)
                         observer.onError(error)
                     }
                 } else {
-                    observer.onError(ApiProviderError.NoResponse)
+                    observer.onError(ApiProviderError.noResponse)
                 }
                 observer.onCompleted()
             }
             task.resume()
-            return AnonymousDisposable {
+            return Disposables.create {
                 task.cancel()
             }
         }

@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="udh-io-FZk">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="udh-io-FZk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,28 +17,40 @@
                         <viewControllerLayoutGuide type="bottom" id="aWz-Ju-CN4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="670-f4-S5G">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-V0-hq9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="auk-GV-8qK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mr4-gQ-b4c" customClass="AdBannerView" customModule="peka" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OGA-ha-PVW"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.050980392159999999" green="0.1450980392" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.050980392159999999" green="0.1450980392" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Mr4-gQ-b4c" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="5dd-Nb-T02"/>
+                            <constraint firstItem="Mr4-gQ-b4c" firstAttribute="top" secondItem="jpf-V0-hq9" secondAttribute="bottom" id="75y-Z8-sb0"/>
                             <constraint firstItem="jpf-V0-hq9" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="J02-1r-pJr"/>
                             <constraint firstAttribute="trailing" secondItem="jpf-V0-hq9" secondAttribute="trailing" id="L1D-8x-kfl"/>
-                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="jpf-V0-hq9" secondAttribute="bottom" id="cyd-Qs-KW9"/>
+                            <constraint firstAttribute="trailing" secondItem="Mr4-gQ-b4c" secondAttribute="trailing" id="Wgx-Kd-4EL"/>
                             <constraint firstItem="jpf-V0-hq9" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="eSH-ah-vEE"/>
+                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="Mr4-gQ-b4c" secondAttribute="bottom" id="hqg-8D-pzS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="adBannerView" destination="Mr4-gQ-b4c" id="LOT-dM-yQf"/>
+                        <outlet property="adHeightConstraint" destination="OGA-ha-PVW" id="lGI-YY-KvZ"/>
                         <outlet property="tableView" destination="jpf-V0-hq9" id="Vhi-M1-R4Z"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
@@ -47,7 +63,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="434" y="366"/>
+            <point key="canvasLocation" x="432.80000000000001" y="365.66716641679164"/>
         </scene>
     </scenes>
 </document>

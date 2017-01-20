@@ -12,20 +12,20 @@ import SwiftyJSON
 
 final class StopPointPushpinMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> StopPointPushpin? {
+    func mapToObject(_ json: JSON) -> StopPointPushpin? {
         let propertiesJson = json["properties"]
         guard let id = json["id"].string,
-            name = propertiesJson["stop_name"].string,
-            headsigns = propertiesJson["headsigns"].string,
-            routeTypeRawValueString = propertiesJson["route_type"].string,
-            routeTypeRawValue = Int(routeTypeRawValueString),
-            zone = propertiesJson["zone"].string else {
+            let name = propertiesJson["stop_name"].string,
+            let headsigns = propertiesJson["headsigns"].string,
+            let routeTypeRawValueString = propertiesJson["route_type"].string,
+            let routeTypeRawValue = Int(routeTypeRawValueString),
+            let zone = propertiesJson["zone"].string else {
                 return nil
         }
         let mapper = CoordinatesMapper()
         let coordinatesJson = json["geometry"]
         guard let coordinates = mapper.mapToObject(coordinatesJson),
-            routeType = RouteType(rawValue: routeTypeRawValue) else {
+            let routeType = RouteType(rawValue: routeTypeRawValue) else {
                 return nil
         }
         

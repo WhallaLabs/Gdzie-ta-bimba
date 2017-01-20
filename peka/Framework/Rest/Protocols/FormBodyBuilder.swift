@@ -10,5 +10,5 @@ import Foundation
 
 protocol FormBodyBuilder {
     func prepareHeaders() -> [String : String]
-    func createBody(parameters: [HttpBodyParameter]) -> NSData
+    func createBody(_ parameters: [HttpBodyParameter]) -> Data
 }

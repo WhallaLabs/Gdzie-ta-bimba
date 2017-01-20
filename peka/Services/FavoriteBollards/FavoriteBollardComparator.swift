@@ -11,13 +11,13 @@ import RxSwift
 
 final class FavoriteBollardComparator {
     
-    private let favoriteBollardsRepository: FavoriteBollardsRepository
+    fileprivate let favoriteBollardsRepository: FavoriteBollardsRepository
     
     init(favoriteBollardsRepository: FavoriteBollardsRepository) {
         self.favoriteBollardsRepository = favoriteBollardsRepository
     }
     
-    func checkFavorite(observable: Observable<Bollard>) -> Observable<Bollard> {
+    func checkFavorite(_ observable: Observable<Bollard>) -> Observable<Bollard> {
         return Observable.combineLatest(observable, self.favoriteBollardsRepository.favoriteBollards()) { bollard, favouriteBollards in
             let favoriteBollard = favouriteBollards.firstOrDefault { $0 == bollard }
             if let favoriteBollard = favoriteBollard {

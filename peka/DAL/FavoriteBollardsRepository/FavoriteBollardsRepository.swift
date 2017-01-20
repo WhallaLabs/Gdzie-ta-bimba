@@ -11,6 +11,6 @@ import RxSwift
 
 protocol FavoriteBollardsRepository {
     func favoriteBollards() -> Observable<[Bollard]>
-    func remove(bollard: Bollard) -> Bool
-    func add(bollard: Bollard)
+    func remove(_ bollard: Bollard) -> Bool
+    func add(_ bollard: Bollard)
 }

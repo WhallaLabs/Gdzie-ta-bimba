@@ -10,9 +10,9 @@ import UIKit
 
 final class BollardViewConfigurator: NSObject {
 
-	@IBOutlet private weak var viewController: BollardViewController!
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var toggleFavoriteButton: UIBarButtonItem!
+	@IBOutlet fileprivate weak var viewController: BollardViewController!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var toggleFavoriteButton: UIBarButtonItem!
     
 	func configure() {
 		self.tableView.register(TimeCell.self)

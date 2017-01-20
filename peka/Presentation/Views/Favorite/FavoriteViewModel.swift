@@ -10,10 +10,18 @@ import Foundation
 import RxSwift
 
 final class FavoriteViewModel {
-    private let executor: Executor
+    fileprivate let executor: Executor
     
     let bollards = Variable<[Bollard]>([])
-    let nearestStopPoint = Variable<StopPointPushpin?>(nil)
+    let nearestStopPoint = Variable<[StopPointPushpin]>([])
+    
+    var stopPoints: Observable<[FavoriteSection]> {
+        return Observable.combineLatest(self.bollards.asObservable(), self.nearestStopPoint.asObservable()) { favorite, nearestStopPoints in
+            let favoriteSection = FavoriteSection(favorite: favorite)
+            let nearestSection = FavoriteSection(nearestStopPoints: nearestStopPoints)
+            return [nearestSection, favoriteSection]
+        }
+    }
     
     init(executor: Executor) {
         self.executor = executor
@@ -24,20 +32,19 @@ final class FavoriteViewModel {
         return observable.bindTo(self.bollards)
     }
     
-    func initializeNearestStopPoint(locationObservable: Observable<Coordinates>) -> Disposable {
+    func initializeNearestStopPoints(_ locationObservable: Observable<Coordinates>) -> Disposable {
         return locationObservable.throttle(1, scheduler: MainScheduler.instance)
             .flatMap { [unowned self] coordinates in self.nearesStop(coordinates) }
             .distinctUntilChanged()
-            .map { $0 as StopPointPushpin? }
             .bindTo(self.nearestStopPoint)
     }
     
-    func toggleFavorite(bollard: Bollard) {
+    func toggleFavorite(_ bollard: Bollard) {
         self.executor.execute(ToggleBollardFavoriteCommand(bollard: bollard))
     }
     
-    private func nearesStop(coordinates: Coordinates) -> Observable<StopPointPushpin> {
-        let observable: Observable<StopPointPushpin> = self.executor.execute(GetNearestStopQuery(coordinates: coordinates))
+    fileprivate func nearesStop(_ coordinates: Coordinates) -> Observable<[StopPointPushpin]> {
+        let observable: Observable<[StopPointPushpin]> = self.executor.execute(GetNearestStopQuery(coordinates: coordinates))
         return observable
     }
 }

@@ -13,16 +13,16 @@ final class FormUrlEncodedBuilder: FormBodyBuilder {
         return ["Content-Type" : "application/x-www-form-urlencoded"]
     }
     
-    func createBody(parameters: [HttpBodyParameter]) -> NSData {
-        let stringData = parameters.map(BodyParameterToKeyValueString()).joinWithSeparator("&")
-        let data = stringData.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+    func createBody(_ parameters: [HttpBodyParameter]) -> Data {
+        let stringData = parameters.map(BodyParameterToKeyValueString()).joined(separator: "&")
+        let data = stringData.data(using: String.Encoding.utf8, allowLossyConversion: true)!
         return data
     }
 }
 
 private class BodyParameterToKeyValueString: Convertible {
-    func convert(value: HttpBodyParameter) -> String {
-        guard case .Form(let name, let value) = value else {
+    func convert(_ value: HttpBodyParameter) -> String {
+        guard case .form(let name, let value) = value else {
             return String.empty
         }
         return "\(name)=\(value)"

@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 final class MapViewModel {
-    private let executor: Executor
+    fileprivate let executor: Executor
     
     let pushpins = Variable<[StopPointPushpin]>([])
     

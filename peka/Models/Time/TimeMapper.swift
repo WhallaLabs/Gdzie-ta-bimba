@@ -12,12 +12,12 @@ import SwiftyJSON
 
 final class TimeMapper: ObjectMappable {
     
-    func mapToObject(json: JSON) -> Time? {
+    func mapToObject(_ json: JSON) -> Time? {
         guard let direction = json["direction"].string,
-            line = json["line"].string,
-            minutes = json["minutes"].int,
-            onStopPoint = json["onStopPoint"].bool,
-            realTime = json["realTime"].bool else {
+            let line = json["line"].string,
+            let minutes = json["minutes"].int,
+            let onStopPoint = json["onStopPoint"].bool,
+            let realTime = json["realTime"].bool else {
                 return nil
         }
         let dateMapper = DateMapper(format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")

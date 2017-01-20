@@ -9,14 +9,14 @@
 import UIKit
 
 final class RouteTypeToIconImageConverter: Convertible {
-    private let tramImage =  UIImage(asset: .Tram)
-    private let busImage = UIImage(asset: .Bus)
+    fileprivate let tramImage =  UIImage(asset: .Tram)
+    fileprivate let busImage = UIImage(asset: .Bus)
     
-    func convert(value: RouteType) -> UIImage {
+    func convert(_ value: RouteType) -> UIImage {
         switch value {
-        case .Bus:
+        case .bus:
             return self.busImage
-        case .Tram:
+        case .tram:
             return self.tramImage
         }
     }

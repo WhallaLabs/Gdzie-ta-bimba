@@ -10,8 +10,8 @@ import Foundation
 
 extension NSMutableData {
     
-    func appendString(string: String) {
-        let data = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
-        appendData(data)
+    func appendString(_ string: String) {
+        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)!
+        append(data)
     }
 }

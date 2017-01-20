@@ -9,7 +9,7 @@
 import Foundation
 
 final class StreetsToSearchResultsConverter: Convertible {
-    func convert(value: [String]) -> [SearchResult] {
-        return value.map { SearchResult.Street(name: $0) }
+    func convert(_ value: [String]) -> [SearchResult] {
+        return value.map { SearchResult.street(name: $0) }
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 final class BollardNavigationController: BollardNavigationControllerDelegate {
-	private weak var viewController: BollardViewController?
+	fileprivate weak var viewController: BollardViewController?
 
 	init(viewController: BollardViewController) {
 		self.viewController = viewController

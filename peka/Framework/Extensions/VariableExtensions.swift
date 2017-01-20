@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 extension Variable {
-    func twoWayBind<O: protocol<ObserverType, ObservableType> where O.E == E>(observer: O) -> Disposable {
+    func twoWayBind<O: ObserverType & ObservableType>(_ observer: O) -> Disposable where O.E == E {
         let d1 = self.asObservable().bindTo(observer)
         let d2 = observer.subscribeNext { [weak self] next in
             self?.value = next

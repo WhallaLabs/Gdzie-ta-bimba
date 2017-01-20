@@ -13,5 +13,5 @@ protocol Caching {
     associatedtype T
     
     func cached() -> Observable<T>
-    func save(data: T) -> Observable<T>
+    func save(_ data: T) -> Observable<T>
 }

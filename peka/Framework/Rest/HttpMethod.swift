@@ -14,17 +14,17 @@ enum HttpMethod: String {
     case POST = "POST"
     case PUT = "PUT"
     
-    func isSuccessResponse(statusCode: Int) -> Bool {
+    func isSuccessResponse(_ statusCode: Int) -> Bool {
         guard let responseCode = HttpResponseCode(rawValue: statusCode) else {
             return false
         }
         switch self {
         case .DELETE:
-            return [HttpResponseCode.OK, HttpResponseCode.NoContent].contains(responseCode)
+            return [HttpResponseCode.ok, HttpResponseCode.noContent].contains(responseCode)
         case .POST:
-            return [HttpResponseCode.OK, HttpResponseCode.Created, HttpResponseCode.NoContent].contains(responseCode)
+            return [HttpResponseCode.ok, HttpResponseCode.created, HttpResponseCode.noContent].contains(responseCode)
         default:
-            return responseCode == HttpResponseCode.OK
+            return responseCode == HttpResponseCode.ok
         }
     }
 }

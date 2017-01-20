@@ -12,26 +12,31 @@ import RxCocoa
 
 final class BollardViewController: UIViewController {
 
-    private let disposables = DisposeBag()
-    private let disableEditingBehavior = DisableEditingTableViewDelegate()
-	private var viewModel: BollardViewModel!
-	private var navigationDelegate: BollardNavigationControllerDelegate!
-    private let favoriteStateToImageConverter = FavoriteStateToImageConverter()
+    fileprivate let disposables = DisposeBag()
+    fileprivate let disableEditingBehavior = DisableEditingTableViewDelegate()
+    fileprivate var viewModel: BollardViewModel!
+    private var adsSettings: AdsSettings!
+	fileprivate var navigationDelegate: BollardNavigationControllerDelegate!
+    fileprivate let favoriteStateToImageConverter = FavoriteStateToImageConverter()
 
-	@IBOutlet private weak var viewConfigurator: BollardViewConfigurator!
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var toggleFavoriteButton: UIBarButtonItem!
-    @IBOutlet private weak var messageBubble: MessageBubbleView!
-	func installDependencies(viewModel: BollardViewModel, _ navigationDelegate: BollardNavigationControllerDelegate) {
+	@IBOutlet fileprivate weak var viewConfigurator: BollardViewConfigurator!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var toggleFavoriteButton: UIBarButtonItem!
+    @IBOutlet fileprivate weak var messageBubble: MessageBubbleView!
+    @IBOutlet private weak var adBannerView: AdBannerView!
+    @IBOutlet private weak var adHeightConstraint: NSLayoutConstraint!
+    
+	func installDependencies(_ viewModel: BollardViewModel, _ navigationDelegate: BollardNavigationControllerDelegate, _ adsSettings: AdsSettings) {
 		self.viewModel = viewModel
 		self.navigationDelegate = navigationDelegate
+        self.adsSettings = adsSettings
 	}
     
-    func loadBollard(symbol: String) {
+    func loadBollard(_ symbol: String) {
         self.viewModel.loadBollard(symbol).addDisposableTo(self.disposables)
     }
     
-    func loadTimes(bollard: Bollard) {
+    func loadTimes(_ bollard: Bollard) {
         self.viewModel.loadTimesForBollard(bollard).addDisposableTo(self.disposables)
     }
 
@@ -39,10 +44,14 @@ final class BollardViewController: UIViewController {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
         self.setupBinding()
-        self.tableView.rx_setDelegate(self.disableEditingBehavior)
+        self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
+        self.adBannerView.load(viewController: self)
+        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+            .bindTo(self.adHeightConstraint.rx.constant)
+            .addDisposableTo(self.disposables)
 	}
 	
-    private func setupBinding() {
+    fileprivate func setupBinding() {
         self.viewModel.times.asObservable()
             .bindTo(self.tableView.configurableCells(TimeCell.self))
             .addDisposableTo(self.disposables)
@@ -67,7 +76,7 @@ final class BollardViewController: UIViewController {
             }.addDisposableTo(self.disposables)
     }
     
-    @IBAction private func toggleFavorite() {
+    @IBAction fileprivate func toggleFavorite() {
         self.viewModel.toggleFavorite()
     }
 }

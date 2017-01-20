@@ -9,19 +9,19 @@
 import Foundation
 
 final class DepartureTimeToStringConverter: Convertible {
-    private static let dateFormatter = NSDateFormatter()
-    private let format: String
+    fileprivate static let dateFormatter = DateFormatter()
+    fileprivate let format: String
     
     init(format: String = "H:mm") {
         self.format = format
         
         let timeZone = "GMT"
-        DepartureTimeToStringConverter.dateFormatter.timeZone = NSTimeZone(name: timeZone)
+        DepartureTimeToStringConverter.dateFormatter.timeZone = TimeZone(identifier: timeZone)
     }
     
-    func convert(value: NSDate) -> String {
+    func convert(_ value: Date) -> String {
         DepartureTimeToStringConverter.dateFormatter.dateFormat = self.format
-        let dateString = DepartureTimeToStringConverter.dateFormatter.stringFromDate(value)
+        let dateString = DepartureTimeToStringConverter.dateFormatter.string(from: value)
         return dateString
     }
 }

@@ -10,5 +10,5 @@ import Foundation
 
 protocol Configurable {
     associatedtype T
-    func configure(model: T)
+    func configure(_ model: T)
 }

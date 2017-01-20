@@ -12,15 +12,15 @@ import RxSwift
 
 final class GetBollardMessageQueryHandler: QueryHandler {
     
-    private let apiProvider: RestApiProvider
-    private let bodyBuilder: RequestBodyBuilder
+    fileprivate let apiProvider: RestApiProvider
+    fileprivate let bodyBuilder: RequestBodyBuilder
     
     init(apiProvider: RestApiProvider) {
         self.apiProvider = apiProvider
         self.bodyBuilder = RequestBodyBuilder()
     }
     
-    func handle(query: Query) -> Any {
+    func handle(_ query: Query) -> Any {
         let query = query as! GetBollardMessageQuery
         let parameters = self.bodyBuilder.bollardMessage(query.symbol)
         

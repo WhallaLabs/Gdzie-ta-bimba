@@ -13,25 +13,25 @@ import SwiftyJSON
 
 final class MessageMapper: ObjectMappable {
     
-    private let pattern = "[\\s]{2,}"
-    private let linkHtml = "<a href="
+    fileprivate let pattern = "[\\s]{2,}"
+    fileprivate let linkHtml = "<a href="
     
-    func mapToObject(json: JSON) -> NSAttributedString? {
+    func mapToObject(_ json: JSON) -> NSAttributedString? {
         guard let htmlContent = json["success"].array?.first?["content"].string,
-            regex = try? NSRegularExpression(pattern: self.pattern, options: .CaseInsensitive) else {
+            let regex = try? NSRegularExpression(pattern: self.pattern, options: .caseInsensitive) else {
                 return nil
         }
-        var content = htmlContent.stringByReplacingOccurrencesOfString(self.linkHtml, withString: " \(self.linkHtml)")
-        content = regex.stringByReplacingMatchesInString(content,
-                                                         options: .ReportProgress,
-                                                         range: NSMakeRange(0, content.characters.count),
-                                                         withTemplate: " ")
+        var content = htmlContent.replacingOccurrences(of: self.linkHtml, with: " \(self.linkHtml)")
+        content = regex.stringByReplacingMatches(in: content,
+                                                 options: .reportProgress,
+                                                 range: NSMakeRange(0, content.characters.count),
+                                                 withTemplate: " ")
         
-        guard let data = content.dataUsingEncoding(NSUTF8StringEncoding) else {
+        guard let data = content.data(using: String.Encoding.utf8) else {
             return nil
         }
-        let options: [String : AnyObject] = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType,
-                                             NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding]
+        let options: [String : AnyObject] = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType as AnyObject,
+                                             NSCharacterEncodingDocumentAttribute : String.Encoding.utf8 as AnyObject]
         let attributedString = try? NSAttributedString(data: data, options: options,  documentAttributes: nil)
         return attributedString
     }

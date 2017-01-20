@@ -12,44 +12,44 @@ import RxSwift
 
 extension UITableView {
     
-    func register<T: UITableViewCell where T: ReusableView>(_: T.Type) {
-        self.registerClass(T.self, forCellReuseIdentifier: T.identifier)
+    func register<T: UITableViewCell>(_: T.Type) where T: ReusableView {
+        self.register(T.self, forCellReuseIdentifier: T.identifier)
     }
     
-    func register<T: UITableViewCell where T: protocol<ReusableView, NibLoadableView>>(_: T.Type) {
+    func register<T: UITableViewCell>(_: T.Type) where T: ReusableView & NibLoadableView {
         let nib = UINib(nibName: T.nibName, bundle: nil)
-        self.registerNib(nib, forCellReuseIdentifier: T.identifier)
+        self.register(nib, forCellReuseIdentifier: T.identifier)
     }
     
-    func register<T: UITableViewHeaderFooterView where T: ReusableView>(_: T.Type) {
-        self.registerClass(T.self, forHeaderFooterViewReuseIdentifier: T.identifier)
+    func register<T: UITableViewHeaderFooterView>(_: T.Type) where T: ReusableView {
+        self.register(T.self, forHeaderFooterViewReuseIdentifier: T.identifier)
     }
     
-    func register<T: UITableViewHeaderFooterView where T: protocol<ReusableView, NibLoadableView>>(_: T.Type) {
+    func register<T: UITableViewHeaderFooterView>(_: T.Type) where T: ReusableView & NibLoadableView {
         let nib = UINib(nibName: T.nibName, bundle: nil)
-        self.registerNib(nib, forHeaderFooterViewReuseIdentifier: T.identifier)
+        self.register(nib, forHeaderFooterViewReuseIdentifier: T.identifier)
     }
     
-    func dequeueReusableCell<T: UITableViewCell where T: ReusableView>(forIndexPath indexPath: NSIndexPath) -> T {
-        guard let cell = self.dequeueReusableCellWithIdentifier(T.identifier, forIndexPath: indexPath) as? T else {
+    func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableView {
+        guard let cell = self.dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.identifier)")
         }
         return cell
     }
     
-    func dequeueReusableHeaderFooter<T: UITableViewHeaderFooterView where T: ReusableView>() -> T {
-        guard let headerFooter = self.dequeueReusableHeaderFooterViewWithIdentifier(T.identifier) as? T else {
+    func dequeueReusableHeaderFooter<T: UITableViewHeaderFooterView>() -> T where T: ReusableView {
+        guard let headerFooter = self.dequeueReusableHeaderFooterView(withIdentifier: T.identifier) as? T else {
             fatalError("Could not dequeue HeaderFooterView with identifier: \(T.identifier)")
         }
         return headerFooter
     }
     
-    func configurableCells<S: SequenceType, Cell: UITableViewCell, O : ObservableType where O.E == S, Cell: protocol<ReusableView, Configurable>, Cell.T == S.Generator.Element>
+    func configurableCells<S: Sequence, Cell: UITableViewCell, O : ObservableType>
         (_: Cell.Type)
-        -> (source: O)
-        -> Disposable {
+        -> (_ source: O)
+        -> Disposable where O.E == S, Cell: ReusableView & Configurable, Cell.T == S.Iterator.Element {
             return { source in
-                return source.bindTo(self.rx_itemsWithCellIdentifier(Cell.identifier, cellType: Cell.self)) { _, model, cell in
+                return source.bindTo(self.rx.items(cellIdentifier: Cell.identifier, cellType: Cell.self)) { _, model, cell in
                     cell.configure(model)
                 }
             }

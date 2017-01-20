@@ -9,12 +9,12 @@
 import UIKit
 
 final class SearchResultCell: UITableViewCell {
-    @IBOutlet private weak var roundBackgroundView: UIView!
-    @IBOutlet private weak var iconImage: UIImageView!
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var roundBackgroundView: UIView!
+    @IBOutlet fileprivate weak var iconImage: UIImageView!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
     
-    private let lineNameToRouteTypeConverter = LineNameToRouteTypeConverter()
-    private let routeTypeToImageConverter = RouteTypeToIconImageConverter()
+    fileprivate let lineNameToRouteTypeConverter = LineNameToRouteTypeConverter()
+    fileprivate let routeTypeToImageConverter = RouteTypeToIconImageConverter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,16 +27,16 @@ extension SearchResultCell: NibLoadableView {
 }
 
 extension SearchResultCell: Configurable {
-    func configure(model: SearchResult) {
+    func configure(_ model: SearchResult) {
         switch model {
-        case .Line(let name):
+        case .line(let name):
             self.nameLabel.text = name
             let routeType = self.lineNameToRouteTypeConverter.convert(name)
             self.iconImage.image = self.routeTypeToImageConverter.convert(routeType)
-        case .Stop(let model):
+        case .stop(let model):
             self.nameLabel.text = model.name
             self.iconImage.image = UIImage(asset: .PushpinEmpty)
-        case .Street(let name):
+        case .street(let name):
             self.nameLabel.text = name
             self.iconImage.image = UIImage(asset: .Street)
         }

@@ -10,7 +10,7 @@ import UIKit
 
 final class MapViewConfigurator: NSObject {
 
-	@IBOutlet private weak var viewController: MapViewController!
+	@IBOutlet fileprivate weak var viewController: MapViewController!
 
 	func configure() {
         self.viewController.updateTitle("")

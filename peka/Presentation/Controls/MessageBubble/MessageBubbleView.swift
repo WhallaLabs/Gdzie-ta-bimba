@@ -13,13 +13,13 @@ import TTTAttributedLabel
 
 @IBDesignable
 final class MessageBubbleView: UIView {
-    private let disposables = DisposeBag()
-    private let layoutSubviewsSubject = PublishSubject<Void>()
+    fileprivate let disposables = DisposeBag()
+    fileprivate let layoutSubviewsSubject = PublishSubject<Void>()
     
     let content: Variable<NSAttributedString?> = Variable(nil)
 
-    @IBOutlet private weak var leftConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var label: TTTAttributedLabel!
+    @IBOutlet fileprivate weak var leftConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var label: TTTAttributedLabel!
     
 	required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,12 +44,12 @@ final class MessageBubbleView: UIView {
         self.layoutSubviewsSubject.onNext()
     }
     
-    private func setupBinding() {
+    fileprivate func setupBinding() {
         
         let contentObservable = self.content.asObservable()
-        
+
         contentObservable.map(IsNilConverter())
-            .bindTo(self.rx_hidden)
+            .bindTo(self.rx.isHidden)
             .addDisposableTo(self.disposables)
         
         let resumeObservable = self.layoutSubviewsSubject.asObservable()
@@ -64,34 +64,34 @@ final class MessageBubbleView: UIView {
             }.addDisposableTo(self.disposables)
     }
     
-    private func configureLabel() {
+    fileprivate func configureLabel() {
         self.label.delegate = self
-        self.label.userInteractionEnabled = true
+        self.label.isUserInteractionEnabled = true
         self.label.enabledTextCheckingTypes = NSTextCheckingAllTypes
-        self.label.linkAttributes = [kCTUnderlineStyleAttributeName : NSNumber(int: CTUnderlineStyle.None.rawValue)]
+        self.label.linkAttributes = [kCTUnderlineStyleAttributeName as AnyHashable : NSNumber(value: 0)]
     }
     
-    private func updateMessage(attributedString: NSAttributedString) {
+    fileprivate func updateMessage(_ attributedString: NSAttributedString) {
         let range = NSMakeRange(0, attributedString.length)
         let mutableString = NSMutableAttributedString(attributedString: attributedString)
-        let attributes: [String : AnyObject] = [NSForegroundColorAttributeName : UIColor(color: .MainLight),
-                                                NSFontAttributeName : UIFont.systemFontOfSize(16, weight: UIFontWeightBold)]
+        let attributes: [String : AnyObject] = [NSForegroundColorAttributeName : UIColor(color: .mainLight),
+                                                NSFontAttributeName : UIFont.systemFont(ofSize: 16, weight: UIFontWeightBold)]
         mutableString.addAttributes(attributes, range: range)
         
         self.label.setText(mutableString)
         self.beginAnimation()
     }
     
-    private func beginAnimation() {
+    fileprivate func beginAnimation() {
         self.layer.removeAllAnimations()
         self.label.layer.removeAllAnimations()
         
         self.label.sizeToFit()
         
-        let width = CGRectGetWidth(self.frame)
-        let animateTo = -CGRectGetWidth(self.label.frame)
+        let width = self.frame.width
+        let animateTo = -(self.label.frame).width
         
-        let labelWidth = CGRectGetWidth(self.label.frame)
+        let labelWidth = (self.label.frame).width
         guard labelWidth > width else {
             self.leftConstraint.constant = 0
             self.setNeedsLayout()
@@ -103,11 +103,11 @@ final class MessageBubbleView: UIView {
         self.leftConstraint.constant = animateTo
         
         let onePixelAnimationDuration: CGFloat = 0.007
-        let duration = NSTimeInterval(onePixelAnimationDuration * labelWidth)
+        let duration = TimeInterval(onePixelAnimationDuration * labelWidth)
         
-        UIView.animateWithDuration(duration,
+        UIView.animate(withDuration: duration,
                                    delay: 0,
-                                   options: [.TransitionNone, .Repeat, .CurveLinear],
+                                   options: [.repeat, .curveLinear],
                                    animations: {
                                     self.layoutIfNeeded()
             },
@@ -123,7 +123,7 @@ extension MessageBubbleView: NibLoadableView {
 }
 
 extension MessageBubbleView: TTTAttributedLabelDelegate {
-    func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL!) {
         print(url)
     }
 }

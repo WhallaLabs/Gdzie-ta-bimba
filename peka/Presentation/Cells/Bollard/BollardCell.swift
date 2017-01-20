@@ -9,16 +9,16 @@
 import UIKit
 
 protocol BollardCellDelegate: class {
-    func toggleFavorite(bollard: Bollard)
+    func toggleFavorite(_ bollard: Bollard)
 }
 
 final class BollardCell: UITableViewCell {
-    @IBOutlet private weak var roundBackgroundView: UIView!
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var symbolLabel: UILabel!
-    @IBOutlet private weak var favoriteButton: UIButton!
-    private let favoriteStateToImageConverter = FavoriteStateToImageConverter()
-    private var bollard: Bollard!
+    @IBOutlet fileprivate weak var roundBackgroundView: UIView!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var symbolLabel: UILabel!
+    @IBOutlet fileprivate weak var favoriteButton: UIButton!
+    fileprivate let favoriteStateToImageConverter = FavoriteStateToImageConverter()
+    fileprivate var bollard: Bollard!
     
     weak var delegate: BollardCellDelegate?
     
@@ -27,7 +27,7 @@ final class BollardCell: UITableViewCell {
         self.roundBackgroundView.layer.cornerRadius = 5
     }
     
-    @IBAction private func toggleFavorite() {
+    @IBAction fileprivate func toggleFavorite() {
         self.delegate?.toggleFavorite(self.bollard)
     }
 }
@@ -37,11 +37,11 @@ extension BollardCell: NibLoadableView {
 }
 
 extension BollardCell: Configurable {
-	func configure(model: Bollard) {
+	func configure(_ model: Bollard) {
         self.bollard = model
         self.nameLabel.text = model.name
         self.symbolLabel.text = model.symbol
         
-        self.favoriteButton.setImage(self.favoriteStateToImageConverter.convert(model), forState: .Normal)
+        self.favoriteButton.setImage(self.favoriteStateToImageConverter.convert(model), for: UIControlState())
     }
 }

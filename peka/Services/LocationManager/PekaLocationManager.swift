@@ -8,14 +8,15 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 import CoreLocation
 
 final class PekaLocationManager : LocationManager {
     
-    private let manager = CLLocationManager()
+    fileprivate let manager = CLLocationManager()
     
     var hasPermission: Bool {
-        return CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse
+        return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
     }
     
     init() {
@@ -30,11 +31,13 @@ final class PekaLocationManager : LocationManager {
         let startTrackingObservable = Observable<Void>.create { observer in
             self.manager.startUpdatingLocation()
             observer.onNext()
-            return AnonymousDisposable {
+            
+            return Disposables.create {
                 self.manager.stopUpdatingLocation()
             }
         }
-        let locationObservable = self.manager.rx_didUpdateLocations.flatMap { $0.toObservable() }
+        
+        let locationObservable = self.manager.rx.didUpdateLocations.flatMap { Observable.from($0) }
             .map(CLLocationToCoordinatesConverter())
             .shareReplayLatestWhileConnected()
         

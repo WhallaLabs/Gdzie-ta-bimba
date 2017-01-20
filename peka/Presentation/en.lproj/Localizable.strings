@@ -1,0 +1,26 @@
+/*
+ Localizable.strings
+ peka
+ 
+ Created by Tomasz Pikć on 17/01/2017.
+ Copyright © 2017 WhallaLabs. All rights reserved.
+ */
+
+"Favorite" = "Favorite";
+"MyStops" = "My stops";
+"Search" = "Search";
+"Map" = "Map";
+"More" = "More";
+"NearestStops" = "Nearest stops";
+"Favorite:EmptyState" = "Add stop to favorite to check it without searching";
+"Search:EmptyState" = "Add stop, line or street to check when your bus or tram is leaving";
+"Search:NoResultsHeader" = "Oops...";
+"Search:NoResults" = "We couldn't find what you're looking for. Check if your query is correct.";
+"SearchBarPlaceholder" = "Search for stops, lines and streets.";
+"Version" = "version";
+"Ads" = "Ads";
+"RateApp" = "Rate the app";
+"RemoveAds" = "Remove ads";
+"RestoreTransactions" = "Restore transactions";
+"RestoreAds" = "Restore ads";
+"MinuteShortcut" = "min";

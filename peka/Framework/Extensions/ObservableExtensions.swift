@@ -10,14 +10,24 @@ import Foundation
 import RxSwift
 
 extension ObservableType {
-    func map<T: Convertible where T.TIn == E>(converter: T) -> Observable<T.TOut> {
+    func map<T: Convertible>(_ converter: T) -> Observable<T.TOut> where T.TIn == E {
         return self.map { value -> T.TOut in
             return converter.convert(value)
         }
     }
     
-    func filter<T: Filtering where T.T == E>(filter: T) -> Observable<E> {
+    func filter<T: Filtering>(_ filter: T) -> Observable<E> where T.T == E {
         return self.filter { filter.filter($0) }
     }
+    
+    func subscribeNext(_ onNext: @escaping ((E) -> Void)) -> Disposable {
+        return self.subscribe(onNext: onNext, onError: nil, onCompleted: nil, onDisposed: nil)
+    }
 
+}
+
+extension ObservableType where E: Sequence, E.Iterator.Element: Equatable {
+    func distinctUntilChanged() -> Observable<Self.E> {
+        return self.distinctUntilChanged { Array($0.0) == Array($0.1) }
+    }
 }

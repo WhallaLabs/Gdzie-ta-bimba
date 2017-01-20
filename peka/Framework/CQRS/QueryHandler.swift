@@ -9,5 +9,5 @@
 import Foundation
 
 protocol QueryHandler {
-    func handle(query: Query) -> Any
+    func handle(_ query: Query) -> Any
 }

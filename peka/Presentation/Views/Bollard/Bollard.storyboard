@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="udh-io-FZk">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="udh-io-FZk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,21 +17,21 @@
                         <viewControllerLayoutGuide type="bottom" id="aWz-Ju-CN4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="670-f4-S5G">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-NC-xZK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                                <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="dHU-g2-MA4">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-gx-sPM" customClass="MessageBubbleView" customModule="peka" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="520" width="600" height="36"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="581" width="375" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="bnc-R1-NIv"/>
                                     <constraint firstAttribute="height" constant="36" id="eJm-HO-Byp"/>
@@ -38,15 +42,25 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFk-FA-QG9" customClass="AdBannerView" customModule="peka" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="e2j-xc-wuz"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gFk-FA-QG9" firstAttribute="top" secondItem="KtG-NC-xZK" secondAttribute="bottom" id="2ig-VI-Ri7"/>
                             <constraint firstAttribute="trailing" secondItem="lyj-gx-sPM" secondAttribute="trailing" id="3zI-aR-AVC"/>
-                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="KtG-NC-xZK" secondAttribute="bottom" id="4dj-qR-Jt6"/>
                             <constraint firstItem="KtG-NC-xZK" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="Idg-OQ-zTo"/>
                             <constraint firstItem="lyj-gx-sPM" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="JOt-Xg-Zoz"/>
+                            <constraint firstItem="lyj-gx-sPM" firstAttribute="bottom" secondItem="KtG-NC-xZK" secondAttribute="bottom" id="OWf-cU-HLw"/>
+                            <constraint firstAttribute="bottom" secondItem="gFk-FA-QG9" secondAttribute="bottom" id="Yqx-57-eSA"/>
+                            <constraint firstItem="gFk-FA-QG9" firstAttribute="leading" secondItem="670-f4-S5G" secondAttribute="leading" id="ZGe-VM-Z9K"/>
                             <constraint firstItem="lyj-gx-sPM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9BR-G4-HyS" secondAttribute="bottom" id="a7m-P3-gpJ"/>
-                            <constraint firstItem="aWz-Ju-CN4" firstAttribute="top" secondItem="lyj-gx-sPM" secondAttribute="bottom" id="bQb-Ah-2R9"/>
+                            <constraint firstAttribute="trailing" secondItem="gFk-FA-QG9" secondAttribute="trailing" id="b4g-a6-NWe"/>
                             <constraint firstAttribute="trailing" secondItem="KtG-NC-xZK" secondAttribute="trailing" id="uHI-YH-jGc"/>
                             <constraint firstItem="KtG-NC-xZK" firstAttribute="top" secondItem="670-f4-S5G" secondAttribute="top" id="whf-jb-cig"/>
                         </constraints>
@@ -67,6 +81,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="adBannerView" destination="gFk-FA-QG9" id="HVj-jg-kxg"/>
+                        <outlet property="adHeightConstraint" destination="e2j-xc-wuz" id="gjM-T3-51A"/>
                         <outlet property="messageBubble" destination="lyj-gx-sPM" id="Gg7-oS-vv5"/>
                         <outlet property="tableView" destination="KtG-NC-xZK" id="gXa-iT-LyB"/>
                         <outlet property="toggleFavoriteButton" destination="hm0-Zj-hZ6" id="6wo-fn-MEB"/>
@@ -82,7 +98,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1246" y="366"/>
+            <point key="canvasLocation" x="1245.5999999999999" y="365.66716641679164"/>
         </scene>
     </scenes>
     <resources>

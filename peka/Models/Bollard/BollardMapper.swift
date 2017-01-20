@@ -12,13 +12,13 @@ import SwiftyJSON
 
 final class BollardMapper: ObjectMappable {
     
-    private let stopPointNameConverter = StopPointNameRemoveNumberConverter()
+    fileprivate let stopPointNameConverter = StopPointNameRemoveNumberConverter()
     
-    func mapToObject(json: JSON) -> Bollard? {
+    func mapToObject(_ json: JSON) -> Bollard? {
         guard let mainBollard = json["mainBollard"].bool,
-            name = json["name"].string,
-            tag = json["tag"].string,
-            symbol = json["symbol"].string else {
+            let name = json["name"].string,
+            let tag = json["tag"].string,
+            let symbol = json["symbol"].string else {
                 return nil
         }
         let convertedName = stopPointNameConverter.convert(name)

@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 final class CLLocationToCoordinatesConverter: Convertible {
-    func convert(value: CLLocation) -> Coordinates {
+    func convert(_ value: CLLocation) -> Coordinates {
         return Coordinates(latitude: value.coordinate.latitude, longitude: value.coordinate.longitude)
     }
 }

@@ -13,15 +13,15 @@ import RxSwift
 
 final class SearchQueryHandler: QueryHandler {
     
-    private let apiProvider: RestApiProvider
-    private let bodyBuilder: RequestBodyBuilder
+    fileprivate let apiProvider: RestApiProvider
+    fileprivate let bodyBuilder: RequestBodyBuilder
     
     init(apiProvider: RestApiProvider) {
         self.apiProvider = apiProvider
         self.bodyBuilder = RequestBodyBuilder()
     }
     
-    func handle(query: Query) -> Any {
+    func handle(_ query: Query) -> Any {
         let query = query as! SearchQuery
         
         let stopPointsObservable = self.observableForMethod(ApiConfig.getStopPoints, query: query, mapper: StopPointMapper()).map(StopPointsToSearchResultsConverter())
@@ -38,7 +38,7 @@ final class SearchQueryHandler: QueryHandler {
         return searchResultObservable
     }
     
-    func observableForMethod<T: ObjectMappable>(method: SearchMethod, query: SearchQuery, mapper: T) -> Observable<[T.T]> {
+    func observableForMethod<T: ObjectMappable>(_ method: SearchMethod, query: SearchQuery, mapper: T) -> Observable<[T.T]> {
         let responseMapper = WrappedObjectMapper(ArrayMapper(mapper), pathToObject: "success")
         let parameters = self.bodyBuilder.search(method, pattern: query.phrase)
         let observable = self.apiProvider.post(parameters, mapper: responseMapper)

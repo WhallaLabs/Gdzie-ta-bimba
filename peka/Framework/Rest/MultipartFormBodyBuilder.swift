@@ -9,30 +9,30 @@
 import Foundation
 
 final class MultipartFormBodyBuilder: FormBodyBuilder {
-    private let boundary = "Boundary-\(NSUUID().UUIDString)"
+    fileprivate let boundary = "Boundary-\(UUID().uuidString)"
     
     func prepareHeaders() -> [String : String] {
         return ["Content-Type" : "multipart/form-data; boundary=\(self.boundary)"]
     }
     
-    func createBody(parameters: [HttpBodyParameter]) -> NSData {
+    func createBody(_ parameters: [HttpBodyParameter]) -> Data {
         let body = NSMutableData()
         
         for parameter in parameters {
             body.appendString("--\(self.boundary)\r\n")
             switch parameter {
-            case .Form(let name, let value):
+            case .form(let name, let value):
                 body.appendString("Content-Disposition: form-data; name=\"\(name)\"\r\n\r\n")
                 body.appendString(value)
-            case .File(let name, let data, let fileName, let mime):
+            case .file(let name, let data, let fileName, let mime):
                 body.appendString("Content-Disposition: form-data; name=\"\(name)\"; filename=\"\(fileName)\"\r\n")
                 body.appendString("Content-Type: \(mime)\r\n\r\n")
-                body.appendData(data)
+                body.append(data)
             }
             body.appendString("\r\n")
         }
         body.appendString("--\(boundary)--\r\n")
         
-        return body
+        return body as Data
     }
 }

@@ -12,8 +12,8 @@ import SwiftyJSON
 protocol BodyRequestBuilder {
     var url: String { get }
     var httpMethod: HttpMethod { get }
-    func add(json json: JSON?) -> BodyRequestBuilder
-    func add(headers headers: [String: String]) -> BodyRequestBuilder
+    func add(json: JSON?) -> BodyRequestBuilder
+    func add(headers: [String: String]) -> BodyRequestBuilder
     func getRequest() -> NSMutableURLRequest
-    func setMethod(method: HttpMethod) -> BodyRequestBuilder
+    func setMethod(_ method: HttpMethod) -> BodyRequestBuilder
 }

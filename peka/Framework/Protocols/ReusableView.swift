@@ -14,7 +14,7 @@ protocol ReusableView {
 
 extension ReusableView where Self: UIView {
     static var identifier: String {
-        return NSStringFromClass(self).componentsSeparatedByString(".").last!
+        return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 }
 

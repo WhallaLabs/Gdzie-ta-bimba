@@ -9,6 +9,6 @@
 import Foundation
 
 enum RouteType: Int {
-    case Tram = 0
-    case Bus = 3
+    case tram = 0
+    case bus = 3
 }

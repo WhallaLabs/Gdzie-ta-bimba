@@ -12,13 +12,13 @@ import RxCocoa
 
 final class HubViewController: UITabBarController {
 
-	private let disposables = DisposeBag()
-	private var viewModel: HubViewModel!
-    private var locationManager: LocationManager!
+	fileprivate let disposables = DisposeBag()
+	fileprivate var viewModel: HubViewModel!
+    fileprivate var locationManager: LocationManager!
 
-	@IBOutlet private weak var viewConfigurator: HubViewConfigurator!
+	@IBOutlet fileprivate weak var viewConfigurator: HubViewConfigurator!
 
-	func installDependencies(viewModel: HubViewModel, _ locationManager: LocationManager) {
+	func installDependencies(_ viewModel: HubViewModel, _ locationManager: LocationManager) {
 		self.viewModel = viewModel
         self.locationManager = locationManager
 	}
@@ -30,7 +30,7 @@ final class HubViewController: UITabBarController {
         self.viewModel.prepareStopPoints().addDisposableTo(self.disposables)
 	}
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewConfigurator.configureTabBarItems()
     }

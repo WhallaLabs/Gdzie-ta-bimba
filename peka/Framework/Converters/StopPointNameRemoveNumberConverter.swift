@@ -9,14 +9,14 @@
 import Foundation
 
 final class StopPointNameRemoveNumberConverter: Convertible {
-    private let regexPattern = " - \\d+$"
-    private lazy var regex: NSRegularExpression = {
-        return try! NSRegularExpression(pattern: self.regexPattern, options: .CaseInsensitive)
+    fileprivate let regexPattern = " - \\d+$"
+    fileprivate lazy var regex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: self.regexPattern, options: .caseInsensitive)
     }()
     
-    func convert(value: String) -> String {
+    func convert(_ value: String) -> String {
         let range = NSMakeRange(0, value.characters.count)
-        let name = self.regex.stringByReplacingMatchesInString(value, options: .ReportProgress, range: range, withTemplate: String.empty)
+        let name = self.regex.stringByReplacingMatches(in: value, options: .reportProgress, range: range, withTemplate: String.empty)
         return name
     }
 }
