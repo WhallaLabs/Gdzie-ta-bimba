@@ -55,7 +55,7 @@ final class SearchViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 	
-    fileprivate func setupBinding() {
+    private func setupBinding() {
         self.searchBar.text.bindTo(self.viewModel.searchPhrase)
             .addDisposableTo(self.disposables)
         
@@ -78,7 +78,7 @@ final class SearchViewController: UIViewController {
             .addDisposableTo(self.disposables)
     }
     
-    fileprivate func resigsterForEvents() {
+    private func resigsterForEvents() {
         self.tableView.rx.modelSelected(SearchResult.self)
             .subscribeNext { [unowned self] searchResult in
                 self.viewModel.saveSearch(searchResult)

@@ -1182,7 +1182,6 @@
 				38EFD2EB1E3238C500A932CE /* SaveOrderCommand.swift */,
 				38EFD2ED1E3238CE00A932CE /* SaveOrderCommandHandler.swift */,
 			);
-			name = SaveOrder;
 			path = SaveOrder;
 			sourceTree = "<group>";
 		};

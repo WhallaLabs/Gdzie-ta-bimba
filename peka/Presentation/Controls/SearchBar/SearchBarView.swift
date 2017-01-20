@@ -47,14 +47,18 @@ final class SearchBarView: UIView {
         return self.searchField.resignFirstResponder()
     }
     
-    fileprivate func configure() {
+    private func configure() {
         self.roundBackgroundView.layer.cornerRadius = 5
         self.searchField.delegate = self
         self.searchField.attributedPlaceholder = AttributedTextBuilder(string: "SearchBarPlaceholder".localized)
             .setColor(UIColor.white)
             .attributedText
     }
+    
     @IBAction fileprivate func clearText() {
+        if self.searchField.text?.isEmpty == true {
+            self.resignFirstResponder()
+        }
         self.searchField.text = String.empty
     }
 }
