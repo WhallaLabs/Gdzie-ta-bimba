@@ -54,7 +54,7 @@ DEPENDENCIES:
   - Fabric
   - Firebase/AdMob
   - Firebase/Core
-  - PKHUD
+  - PKHUD (~> 4.1)
   - RealmSwift
   - RxCocoa
   - RxDataSources (~> 1.0)
@@ -90,6 +90,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: a0fdd8b30b2ca9bd2806b90c44d6e52a042638e9
+PODFILE CHECKSUM: 34a015f97e50d3158c5c23b5afac5070686aeca0
 
 COCOAPODS: 1.1.1
