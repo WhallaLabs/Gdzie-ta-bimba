@@ -8,6 +8,8 @@
 
 import UIKit
 import RxSwift
+import SwinjectStoryboard
+import Swinject
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
@@ -20,27 +22,31 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         self.preferredContentSize = CGSize(width:self.view.frame.size.width, height:400)
-        self.locationManager = PekaLocationManager()
-        self.viewModel = TodayViewModel(executor: Executor())
         
         if #available(iOS 10.0, *) {
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
         
     }
-    
+//   
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        SwinjectStoryboard.setupWidget()
+//    }
+//    
     @available(iOS 10.0, *)
     @available(iOSApplicationExtension 10.0, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .expanded {
             self.preferredContentSize = CGSize(width: self.view.frame.size.width, height: 400)
-        }else if activeDisplayMode == .compact{
+        } else if activeDisplayMode == .compact{
             self.preferredContentSize = CGSize(width: maxSize.width, height: 110)
         }
     }
     
     func installDependencies(_ viewModel: TodayViewModel, _ locationManager: LocationManager) {
-        
+        self.viewModel = viewModel
+        self.locationManager = locationManager
     }
     
     override func didReceiveMemoryWarning() {

@@ -252,6 +252,22 @@
 		38FE8E0F1D4F932800E6B5BF /* SearchNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE8E0E1D4F932800E6B5BF /* SearchNavigationControllerDelegate.swift */; };
 		38FE8E111D4F937700E6B5BF /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE8E101D4F937700E6B5BF /* SearchNavigationController.swift */; };
 		ABA6F11A1F413546E980D45D /* Pods_pekaWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557F7561DF0DB91EE3EFC7B5 /* Pods_pekaWidget.framework */; };
+		D1074F311E4C5D3500E85A59 /* WidgetDependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */; };
+		D1074F321E4C5E0600E85A59 /* WidgetDependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */; };
+		D1074F331E4C5F3700E85A59 /* RestApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3918D1D4A5AE2005F4A42 /* RestApiProvider.swift */; };
+		D1074F341E4C5F5000E85A59 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3918F1D4A5B28005F4A42 /* ApiProvider.swift */; };
+		D1074F351E4C5F5B00E85A59 /* HttpHeadersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3916B1D4A56ED005F4A42 /* HttpHeadersProvider.swift */; };
+		D1074F361E4C5F7400E85A59 /* FormBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F961D4B798B006AB84C /* FormBodyBuilder.swift */; };
+		D1074F371E4C5FC600E85A59 /* HttpBodyParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3916D1D4A5702005F4A42 /* HttpBodyParameter.swift */; };
+		D1074F381E4C5FCE00E85A59 /* BodyRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C1221D523DAC0071C9E7 /* BodyRequestBuilder.swift */; };
+		D1074F391E4C5FD700E85A59 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391731D4A57DD005F4A42 /* RequestBuilder.swift */; };
+		D1074F3A1E4C5FDF00E85A59 /* ApiProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391911D4A5C5D005F4A42 /* ApiProviderError.swift */; };
+		D1074F3B1E4C5FED00E85A59 /* QueryRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C1241D523DB70071C9E7 /* QueryRequestBuilder.swift */; };
+		D1074F3C1E4C5FF400E85A59 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3916F1D4A576C005F4A42 /* HttpMethod.swift */; };
+		D1074F3D1E4C600200E85A59 /* HttpResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391711D4A57A0005F4A42 /* HttpResponseCode.swift */; };
+		D1074F3E1E4C602E00E85A59 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391751D4A5814005F4A42 /* StringExtensions.swift */; };
+		D1074F3F1E4C61CA00E85A59 /* PekaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388205181D533E1E0000F58E /* PekaNavigationController.swift */; };
+		D1074F401E4C61ED00E85A59 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882051A1D5340600000F58E /* UIColorExtensions.swift */; };
 		D193D2B21E36075E000D9BD9 /* GetNearestStopQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5301D5219DA00B6E9F7 /* GetNearestStopQuery.swift */; };
 		D193D2B31E36075E000D9BD9 /* GetNearestStopQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5311D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift */; };
 		D193D2B41E36075E000D9BD9 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736DB1D4B47B300C8D772 /* ApiConfig.swift */; };
@@ -591,6 +607,7 @@
 		8A75947E3757F05569707599 /* Pods-pekaWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pekaWidget/Pods-pekaWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		9628844EC4934B069C5EC9C7 /* Pods-pekaWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-pekaWidget/Pods-pekaWidget.release.xcconfig"; sourceTree = "<group>"; };
 		9EA520050966D3BB131EDAFE /* Pods_pekaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pekaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetDependencyInstaller.swift; path = ../WidgetDependencyInstaller.swift; sourceTree = "<group>"; };
 		D1C423231E3206C9004973D0 /* pekaWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = pekaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C423241E3206CA004973D0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		D1C423271E3206CA004973D0 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -1099,6 +1116,7 @@
 				38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */,
 				38A84F4B1E2CE30800D8FE0B /* Constants.swift */,
 				38F391971D4A5D1F005F4A42 /* DependencyInstaller.swift */,
+				D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */,
 				38B880871E2932A000D05572 /* GoogleService-Info.plist */,
 				38DAC1D01D4A49F4001DF664 /* Info.plist */,
 			);
@@ -1936,6 +1954,7 @@
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				3895023B1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift in Sources */,
 				382705F41E28E3F200C1BB14 /* FavoriteSection.swift in Sources */,
+				D1074F311E4C5D3500E85A59 /* WidgetDependencyInstaller.swift in Sources */,
 				38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */,
 				3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
@@ -2048,6 +2067,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1074F401E4C61ED00E85A59 /* UIColorExtensions.swift in Sources */,
+				D1074F3F1E4C61CA00E85A59 /* PekaNavigationController.swift in Sources */,
+				D1074F3E1E4C602E00E85A59 /* StringExtensions.swift in Sources */,
+				D1074F3D1E4C600200E85A59 /* HttpResponseCode.swift in Sources */,
+				D1074F3C1E4C5FF400E85A59 /* HttpMethod.swift in Sources */,
+				D1074F3B1E4C5FED00E85A59 /* QueryRequestBuilder.swift in Sources */,
+				D1074F3A1E4C5FDF00E85A59 /* ApiProviderError.swift in Sources */,
+				D1074F391E4C5FD700E85A59 /* RequestBuilder.swift in Sources */,
+				D1074F381E4C5FCE00E85A59 /* BodyRequestBuilder.swift in Sources */,
+				D1074F371E4C5FC600E85A59 /* HttpBodyParameter.swift in Sources */,
+				D1074F361E4C5F7400E85A59 /* FormBodyBuilder.swift in Sources */,
+				D1074F351E4C5F5B00E85A59 /* HttpHeadersProvider.swift in Sources */,
+				D1074F341E4C5F5000E85A59 /* ApiProvider.swift in Sources */,
+				D1074F331E4C5F3700E85A59 /* RestApiProvider.swift in Sources */,
+				D1074F321E4C5E0600E85A59 /* WidgetDependencyInstaller.swift in Sources */,
 				D193D2D61E3616E3000D9BD9 /* RxMKMapViewDelegateProxy.swift in Sources */,
 				D193D2D51E3616C9000D9BD9 /* MKMapView+Rx.swift in Sources */,
 				D193D2D41E361676000D9BD9 /* RxCLLocationManagerDelegateProxy.swift in Sources */,

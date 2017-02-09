@@ -104,11 +104,6 @@ extension SwinjectStoryboard {
             let viewModel = r.resolve(RemoveAdsViewModel.self)!
             c.installDependencies(viewModel, r.resolve(AdsSettings.self)!)
         }
-        defaultContainer.storyboardInitCompleted(TodayViewController.self) { r, c in
-            let viewModel = r.resolve(TodayViewModel.self)!
-            c.installDependencies(viewModel, r.resolve(LocationManager.self)!)
-        }
-        
     }
     
     fileprivate class func registerViewModels() {
@@ -135,9 +130,6 @@ extension SwinjectStoryboard {
         }
         defaultContainer.register(RemoveAdsViewModel.self) { r in
             RemoveAdsViewModel(executor: r.resolve(Executor.self)!, adsSettings: r.resolve(AdsSettings.self)!)
-        }
-        defaultContainer.register(TodayViewModel.self) { r in
-            TodayViewModel(executor: r.resolve(Executor.self)!)
         }
     }
     
