@@ -77,8 +77,8 @@ extension Sequence {
 }
 
 extension Array {
-    func any() -> Bool {
-        return self.count > 0
+    func any(_ predicate: (Array.Iterator.Element) -> Bool) -> Bool {
+        return self.filter(predicate).isNotEmpty
     }
     
     mutating func remove(_ predicate: ((Array.Iterator.Element) -> Bool)) -> Iterator.Element? {

@@ -44,6 +44,10 @@ final class SearchViewController: UIViewController {
         self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
+        
+        self.viewModel.noResults.map { $0 == false }
+            .bindTo(self.noResults.rx.isHidden)
+            .addDisposableTo(self.disposables)
 	}
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +55,7 @@ final class SearchViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 	
-    fileprivate func setupBinding() {
+    private func setupBinding() {
         self.searchBar.text.bindTo(self.viewModel.searchPhrase)
             .addDisposableTo(self.disposables)
         
@@ -74,7 +78,7 @@ final class SearchViewController: UIViewController {
             .addDisposableTo(self.disposables)
     }
     
-    fileprivate func resigsterForEvents() {
+    private func resigsterForEvents() {
         self.tableView.rx.modelSelected(SearchResult.self)
             .subscribeNext { [unowned self] searchResult in
                 self.viewModel.saveSearch(searchResult)

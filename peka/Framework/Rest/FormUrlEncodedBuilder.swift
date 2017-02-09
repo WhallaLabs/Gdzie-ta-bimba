@@ -10,7 +10,7 @@ import Foundation
 
 final class FormUrlEncodedBuilder: FormBodyBuilder {
     func prepareHeaders() -> [String : String] {
-        return ["Content-Type" : "application/x-www-form-urlencoded"]
+        return ["Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8"]
     }
     
     func createBody(_ parameters: [HttpBodyParameter]) -> Data {

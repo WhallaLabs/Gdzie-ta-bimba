@@ -146,6 +146,9 @@ extension SwinjectStoryboard {
         defaultContainer.register(CommandHandler.self, name: NSStringFromClass(RestoreTransactionsCommand.self)) { r in
             RestoreTransactionsCommandHandler()
         }
+        defaultContainer.register(CommandHandler.self, name: NSStringFromClass(SaveOrderCommand.self)) { r in
+            SaveOrderCommandHandler(favoriteBollardsRepository: r.resolve(FavoriteBollardsRepository.self)!)
+        }
     }
     
     fileprivate class func registerQueries() {
@@ -180,7 +183,7 @@ extension SwinjectStoryboard {
             GetSearchHistoryQueryHandler(recentSearchRepository: r.resolve(RecentSearchRepository.self)!)
         }
         defaultContainer.register(QueryHandler.self, name: NSStringFromClass(GetNearestStopQuery.self)) { r in
-            GetNearestStopQueryHandler(stopPointsCache: r.resolve(StopPointPushpinsCache.self)!)
+            GetNearestStopQueryHandler(executor: r.resolve(Executor.self)!)
         }
     }
     

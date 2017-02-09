@@ -12,6 +12,7 @@ import RxSwift
 final class SearchViewModel {
     private let executor: Executor
     private let searchResultSubject = PublishSubject<[SearchResult]>()
+    let activityIndicator = ActivityIndicator()
     
     let searchPhrase = Variable(String.empty)
     var searchResult: Observable<[SearchResult]> {
@@ -19,6 +20,19 @@ final class SearchViewModel {
     }
     
     let searchHistory = Variable<[SearchResult]>([])
+    
+    var noResults: Observable<Bool> {
+        let sampler = self.activityIndicator.asObservable()
+            .skip(1)
+            .filter { $0 == false }
+        
+        let noResults = self.searchResult.map { $0.isEmpty }
+        let isNotEmpty = self.searchPhrase.asObservable()
+            .map { $0.isNotEmpty }
+        
+        return Observable.combineLatest(noResults.sample(sampler), isNotEmpty) { $0.0 && $0.1 }
+            .distinctUntilChanged()
+    }
     
     init(executor: Executor) {
         self.executor = executor
@@ -31,7 +45,8 @@ final class SearchViewModel {
                 if phrase.isEmpty {
                     return Observable.just([])
                 }
-                return self.executor.execute(SearchQuery(phrase: phrase))
+                let observable: Observable<[SearchResult]> = self.executor.execute(SearchQuery(phrase: phrase))
+                return observable.trackActivity(self.activityIndicator)
             }.startWith([])
             .catchErrorJustReturn([])
             .bindTo(self.searchResultSubject)

@@ -13,7 +13,7 @@ import SwiftyJSON
 final class GroupedDirectionsMapper: ObjectMappable {
     
     func mapToObject(_ json: JSON) -> GroupedDirections? {
-    	let bollardMapper = BollardMapper()
+    	let bollardMapper = BollardMapper(swapTagSymbol: true)
         let directionsMapper = ArrayMapper(DirectionMapper())
         guard let bollard = bollardMapper.mapToObject(json["bollard"]),
             let directions = directionsMapper.mapToObject(json["directions"]) else {

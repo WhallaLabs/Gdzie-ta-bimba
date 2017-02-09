@@ -12,10 +12,10 @@
 "Map" = "Map";
 "More" = "More";
 "NearestStops" = "Nearest stops";
-"Favorite:EmptyState" = "Add stop to favorite to check it without searching";
-"Search:EmptyState" = "Add stop, line or street to check when your bus or tram is leaving";
+"Favorite:EmptyState" = "Add stop to favorite\nto check it without searching";
+"Search:EmptyState" = "Add stop, line or street\nto check when your bus\nor tram is leaving";
 "Search:NoResultsHeader" = "Oops...";
-"Search:NoResults" = "We couldn't find what you're looking for. Check if your query is correct.";
+"Search:NoResults" = "We couldn't find\nwhat you're looking for.\nCheck if your query is correct.";
 "SearchBarPlaceholder" = "Search for stops, lines and streets.";
 "Version" = "version";
 "Ads" = "Ads";
@@ -25,3 +25,5 @@
 "RestoreAds" = "Restore ads";
 "MinuteShortcut" = "min";
 "RefreshDepartures" = "REFRESH DEPARTURES";
+"Done" = "Done";
+"Edit" = "Edit";

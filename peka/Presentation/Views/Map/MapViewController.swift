@@ -92,7 +92,7 @@ final class MapViewController: UIViewController {
     
     fileprivate func setupBinding() {
         self.viewModel.pushpins.asObservable()
-            .filter{ $0.any() }
+            .filter { $0.isNotEmpty }
             .map(StopPointPushpinsToAnnotationsConverter())
             .subscribeNext { [unowned self] annotations in
                 self.clusteringManager.add(annotations: annotations)

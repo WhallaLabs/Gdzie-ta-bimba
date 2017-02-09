@@ -13,4 +13,5 @@ protocol FavoriteBollardsRepository {
     func favoriteBollards() -> Observable<[Bollard]>
     func remove(_ bollard: Bollard) -> Bool
     func add(_ bollard: Bollard)
+    func updateMany(bollards: [Bollard])
 }

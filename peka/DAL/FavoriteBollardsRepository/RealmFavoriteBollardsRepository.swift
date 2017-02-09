@@ -18,25 +18,38 @@ final class RealmFavoriteBollardsRepository: FavoriteBollardsRepository {
     func favoriteBollards() -> Observable<[Bollard]> {
         
         return Observable.arrayFrom(realm.objects(BollardRealm.self))
+            .map { $0.sorted() }
             .map(BollardsRealmToBollardsMapper())
             .shareReplayLatestWhileConnected()
     }
     
     func add(_ bollard: Bollard) {
         let bollardRealm = self.mapToRealmObject(bollard)
+        let results = self.realm.objects(BollardRealm.self)
+        let maxOrder: Int? = results.max(ofProperty: "order")
+        let order = (maxOrder ?? -1) + 1
+        bollardRealm.order = bollard.order ?? order
         try! self.realm.write {
-            self.realm.add(bollardRealm)
+            self.realm.add(bollardRealm, update: true)
         }
     }
     
     func remove(_ bollard: Bollard) -> Bool {
-        guard let bollardRealm = self.realm.object(ofType: BollardRealm.self, forPrimaryKey: bollard.symbol) ?? self.realm.object(ofType: BollardRealm.self, forPrimaryKey: bollard.tag) else {
+        guard let bollardRealm = self.realm.object(ofType: BollardRealm.self, forPrimaryKey: bollard.symbol) else {
             return false
         }
         try! self.realm.write {
             self.realm.delete(bollardRealm)
         }
         return true
+    }
+    
+    
+    func updateMany(bollards: [Bollard]) {
+        let realmBollards = bollards.map(BollardToBollardRealmMapper())
+        try! self.realm.write {
+            self.realm.add(realmBollards, update: true)
+        }
     }
     
     fileprivate func mapToRealmObject(_ bollard: Bollard) -> BollardRealm {
