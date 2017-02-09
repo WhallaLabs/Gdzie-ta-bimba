@@ -10,6 +10,6 @@ import Foundation
 
 final class PekaHttpHeadersProvider: HttpHeadersProvider {
     func prepareHeaders() -> [String : String] {
-        return [:]
+        return [:]//["Content-type" : "application/x-www-form-urlencoded; charset=UTF-8"]
     }
 }

@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-O5-Jhc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="56" sectionHeaderHeight="32" sectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="UWU-O5-Jhc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.14509803921568626" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="4lX-op-ngV">
@@ -87,11 +87,16 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Wxv-lE-I25"/>
+                    <navigationItem key="navigationItem" id="Wxv-lE-I25">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="MtE-Fn-6fV">
+                            <connections>
+                                <action selector="edit:" destination="udh-io-FZk" id="fa4-ds-Vx9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="adBannerView" destination="8N1-IG-Bi1" id="OBJ-sE-0lM"/>
                         <outlet property="adHeightConstraint" destination="dlu-4m-oo0" id="BNB-RB-e9l"/>
-                        <outlet property="emptyState" destination="qMK-Tf-2A7" id="gKq-Zl-R2D"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="PQV-bQ-gGI"/>
                         <outlet property="viewConfigurator" destination="opz-Br-oXO" id="22d-9F-KdB"/>
                     </connections>
@@ -99,6 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-8n-4Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="opz-Br-oXO" customClass="FavoriteViewConfigurator" customModule="peka" customModuleProvider="target">
                     <connections>
+                        <outlet property="editButton" destination="MtE-Fn-6fV" id="ZAc-zE-fvt"/>
                         <outlet property="emptyStateLabel" destination="Ljs-Ov-Jbo" id="8Xj-bO-Wsj"/>
                         <outlet property="tableView" destination="UWU-O5-Jhc" id="Z8C-Fs-6TX"/>
                         <outlet property="viewController" destination="udh-io-FZk" id="4Ai-Yg-cy9"/>

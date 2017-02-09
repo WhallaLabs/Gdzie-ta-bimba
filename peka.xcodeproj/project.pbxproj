@@ -99,8 +99,6 @@
 		3882051B1D5340600000F58E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882051A1D5340600000F58E /* UIColorExtensions.swift */; };
 		388844581E2E6AF300B3A559 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3888445A1E2E6AF300B3A559 /* Localizable.strings */; };
 		3895023B1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3895023A1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift */; };
-		389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */; };
-		389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389BE9781D5223F70033FF87 /* NearestStopPointView.swift */; };
 		38A68B021D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */; };
 		38A68B041D50C59700BBC087 /* StopPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */; };
 		38A68B061D50D4D800BBC087 /* MapNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */; };
@@ -158,7 +156,6 @@
 		38DA92061D4FB0BC00B3EA08 /* LineBollardsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA92051D4FB0BC00B3EA08 /* LineBollardsSection.swift */; };
 		38DAC1C51D4A49F4001DF664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */; };
 		38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */; };
-		38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */; };
 		38DAC2001D4A4B7D001DF664 /* Hub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1FC1D4A4B7D001DF664 /* Hub.storyboard */; };
 		38DAC2011D4A4B7D001DF664 /* HubViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FD1D4A4B7D001DF664 /* HubViewConfigurator.swift */; };
 		38DAC2021D4A4B7D001DF664 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAC1FE1D4A4B7D001DF664 /* HubViewController.swift */; };
@@ -182,6 +179,12 @@
 		38E895881E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E895861E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift */; };
 		38E8958A1E27C0FE00B9E097 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E895891E27C0FE00B9E097 /* CLLocationManager+Rx.swift */; };
 		38E8958C1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E8958B1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift */; };
+		38EFD2E31E2FDDA300A932CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */; };
+		38EFD2E51E30CC9000A932CE /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */; };
+		38EFD2E71E32332C00A932CE /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2E61E32332C00A932CE /* RealmMigration.swift */; };
+		38EFD2E91E3237BD00A932CE /* StopPointTypeToBollardConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2E81E3237BD00A932CE /* StopPointTypeToBollardConverter.swift */; };
+		38EFD2EC1E3238C500A932CE /* SaveOrderCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2EB1E3238C500A932CE /* SaveOrderCommand.swift */; };
+		38EFD2EE1E3238CE00A932CE /* SaveOrderCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2ED1E3238CE00A932CE /* SaveOrderCommandHandler.swift */; };
 		38F391511D4A523F005F4A42 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391501D4A523F005F4A42 /* Box.swift */; };
 		38F391531D4A525C005F4A42 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391521D4A525C005F4A42 /* Configurable.swift */; };
 		38F391551D4A5271005F4A42 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391541D4A5271005F4A42 /* Convertible.swift */; };
@@ -359,13 +362,9 @@
 		38784C001E2D10C40019599D /* RestoreTransactionsCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoreTransactionsCommandHandler.swift; sourceTree = "<group>"; };
 		388205181D533E1E0000F58E /* PekaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PekaNavigationController.swift; sourceTree = "<group>"; };
 		3882051A1D5340600000F58E /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		388844561E2E6AE200B3A559 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		388844571E2E6AEA00B3A559 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		388844591E2E6AF300B3A559 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3888445B1E2E6AF700B3A559 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3895023A1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupBollardDirectionsConverter.swift; sourceTree = "<group>"; };
-		389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearestStopPointView.xib; sourceTree = "<group>"; };
-		389BE9781D5223F70033FF87 /* NearestStopPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearestStopPointView.swift; sourceTree = "<group>"; };
 		38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointPushpinsToAnnotationsConverter.swift; sourceTree = "<group>"; };
 		38A68B031D50C59700BBC087 /* StopPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointAnnotation.swift; sourceTree = "<group>"; };
 		38A68B051D50D4D800BBC087 /* MapNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -384,6 +383,7 @@
 		38A84F5C1E2CF11C00D8FE0B /* AddSettingsToBannerHeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSettingsToBannerHeightConverter.swift; sourceTree = "<group>"; };
 		38A84F5F1E2CFD0100D8FE0B /* RemoveAdsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsCommand.swift; sourceTree = "<group>"; };
 		38A84F611E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsCommandHandler.swift; sourceTree = "<group>"; };
+		38AB745A1E2FD95C001C1840 /* peka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = peka.entitlements; sourceTree = "<group>"; };
 		38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteLineBollardComparator.swift; sourceTree = "<group>"; };
 		38ABF5071D51E8FD00B6E9F7 /* FavoriteGroupedDirectionsComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteGroupedDirectionsComparator.swift; sourceTree = "<group>"; };
 		38ABF5091D51EE0300B6E9F7 /* FavoriteNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -424,7 +424,6 @@
 		38DAC1C11D4A49F4001DF664 /* peka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		38DAC1CE1D4A49F4001DF664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38DAC1D01D4A49F4001DF664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38DAC1D51D4A49F4001DF664 /* pekaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pekaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DAC1DB1D4A49F4001DF664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -452,6 +451,12 @@
 		38E895861E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMKMapViewDelegateProxy.swift; sourceTree = "<group>"; };
 		38E895891E27C0FE00B9E097 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		38E8958B1E27C3DF00B9E097 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		38EFD2E61E32332C00A932CE /* RealmMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
+		38EFD2E81E3237BD00A932CE /* StopPointTypeToBollardConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPointTypeToBollardConverter.swift; sourceTree = "<group>"; };
+		38EFD2EB1E3238C500A932CE /* SaveOrderCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOrderCommand.swift; sourceTree = "<group>"; };
+		38EFD2ED1E3238CE00A932CE /* SaveOrderCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOrderCommandHandler.swift; sourceTree = "<group>"; };
 		38F391501D4A523F005F4A42 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		38F391521D4A525C005F4A42 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		38F391541D4A5271005F4A42 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
@@ -580,6 +585,7 @@
 			children = (
 				38A84F5E1E2CFCF000D8FE0B /* RemoveAds */,
 				38784BFD1E2D108E0019599D /* RestoreTransactions */,
+				38EFD2EA1E3238AA00A932CE /* SaveOrder */,
 				38ABF52A1D5207CA00B6E9F7 /* SaveSearchResult */,
 				3826AE851D5135880020678C /* ToggleBollardFavorite */,
 			);
@@ -807,15 +813,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		389BE9751D5223C20033FF87 /* NearestStopPoint */ = {
-			isa = PBXGroup;
-			children = (
-				389BE9781D5223F70033FF87 /* NearestStopPointView.swift */,
-				389BE9761D5223EB0033FF87 /* NearestStopPointView.xib */,
-			);
-			path = NearestStopPoint;
-			sourceTree = "<group>";
-		};
 		38A84F3E1E2CD89200D8FE0B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1014,7 @@
 				38F391971D4A5D1F005F4A42 /* DependencyInstaller.swift */,
 				38B880871E2932A000D05572 /* GoogleService-Info.plist */,
 				38DAC1D01D4A49F4001DF664 /* Info.plist */,
+				38AB745A1E2FD95C001C1840 /* peka.entitlements */,
 			);
 			path = peka;
 			sourceTree = "<group>";
@@ -1066,7 +1064,7 @@
 				38FE8DF11D4F810C00E6B5BF /* Controls */,
 				38DAC1E71D4A4A2C001DF664 /* Views */,
 				38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */,
-				38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */,
+				38EFD2E21E2FDDA300A932CE /* LaunchScreen.storyboard */,
 				3888445A1E2E6AF300B3A559 /* Localizable.strings */,
 			);
 			path = Presentation;
@@ -1108,6 +1106,7 @@
 				38F3915F1D4A534F005F4A42 /* Extensions */,
 				38F3914F1D4A521F005F4A42 /* Protocols */,
 				38F3916A1D4A56C0005F4A42 /* Rest */,
+				38EFD2E41E30CC9000A932CE /* ActivityIndicator.swift */,
 				38F391821D4A5952005F4A42 /* AttributedTextBuilder.swift */,
 				38F391501D4A523F005F4A42 /* Box.swift */,
 				38F391581D4A52A6005F4A42 /* XibLoader.swift */,
@@ -1123,6 +1122,7 @@
 				38ABF5031D51E2EB00B6E9F7 /* Rest */,
 				3824C1421E2CC7930087D542 /* AdsSettings.swift */,
 				38A84F4D1E2CE57600D8FE0B /* AppInfo.swift */,
+				38EFD2E61E32332C00A932CE /* RealmMigration.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1176,6 +1176,15 @@
 			path = RxMKMapView;
 			sourceTree = "<group>";
 		};
+		38EFD2EA1E3238AA00A932CE /* SaveOrder */ = {
+			isa = PBXGroup;
+			children = (
+				38EFD2EB1E3238C500A932CE /* SaveOrderCommand.swift */,
+				38EFD2ED1E3238CE00A932CE /* SaveOrderCommandHandler.swift */,
+			);
+			path = SaveOrder;
+			sourceTree = "<group>";
+		};
 		38F3914F1D4A521F005F4A42 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,6 +1217,7 @@
 				38F78BD91D5552FF006EB5C8 /* SearchResultsDistinctOrderedConverter.swift */,
 				3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */,
 				38A68B011D50C57A00BBC087 /* StopPointPushpinsToAnnotationsConverter.swift */,
+				38EFD2E81E3237BD00A932CE /* StopPointTypeToBollardConverter.swift */,
 				385736F91D4B59D800C8D772 /* StopPointsToSearchResultsConverter.swift */,
 				385736FD1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift */,
 				38B163A11D6221E800D512F2 /* ToOptionalConverter.swift */,
@@ -1338,7 +1348,6 @@
 				385587181D54D3D60011C6BE /* DirectionHeader */,
 				382705EC1E28D6B100C1BB14 /* ImageHeader */,
 				38B163A31D6225BC00D512F2 /* MessageBubble */,
-				389BE9751D5223C20033FF87 /* NearestStopPoint */,
 				3833CFA91D539260000B74C2 /* SearchBar */,
 				383214A71D563CF000DBD22E /* Pushpin.swift */,
 				3833CFAE1D5395AF000B74C2 /* TextFieldWithInset.swift */,
@@ -1470,6 +1479,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7B5S8VZN35;
 						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					38DAC1D41D4A49F4001DF664 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1483,7 +1497,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				pl,
 			);
 			mainGroup = 38DAC1B81D4A49F4001DF664;
@@ -1511,14 +1524,13 @@
 				38D7FFFB1D50103600937FD2 /* Bollard.storyboard in Resources */,
 				38A84F451E2CD8BA00D8FE0B /* Settings.storyboard in Resources */,
 				3833CFAD1D539270000B74C2 /* SearchBarView.xib in Resources */,
+				38EFD2E31E2FDDA300A932CE /* LaunchScreen.storyboard in Resources */,
 				38FE8E001D4F8F6900E6B5BF /* GroupedDirectionsCell.xib in Resources */,
 				382705FD1E28FCBB00C1BB14 /* StopPointCell.xib in Resources */,
 				38FE8E081D4F919700E6B5BF /* Bollards.storyboard in Resources */,
 				38FE8DFB1D4F825300E6B5BF /* SearchResultCell.xib in Resources */,
-				38DAC1CF1D4A49F4001DF664 /* LaunchScreen.storyboard in Resources */,
 				38A84F561E2CE93500D8FE0B /* RemoveAds.storyboard in Resources */,
 				38B163A71D6225CD00D512F2 /* MessageBubbleView.xib in Resources */,
-				389BE9771D5223EB0033FF87 /* NearestStopPointView.xib in Resources */,
 				38DAC1CC1D4A49F4001DF664 /* Assets.xcassets in Resources */,
 				38FE8D831D4F55F100E6B5BF /* Favorite.storyboard in Resources */,
 				3855871C1D54D5F00011C6BE /* DirectionHeader.xib in Resources */,
@@ -1678,10 +1690,12 @@
 				38ABF5281D52074B00B6E9F7 /* GetSearchHistoryQuery.swift in Sources */,
 				385736CA1D4B418600C8D772 /* CoordinatesMapper.swift in Sources */,
 				38B163A61D6225CD00D512F2 /* MessageBubbleView.swift in Sources */,
+				38EFD2E91E3237BD00A932CE /* StopPointTypeToBollardConverter.swift in Sources */,
 				386898C31D4FAF48004CA51B /* LineBollardsNavigationControllerDelegate.swift in Sources */,
 				38403F991D4B7A2C006AB84C /* MultipartFormBodyBuilder.swift in Sources */,
 				385736F61D4B531A00C8D772 /* RequestBodyBuilder.swift in Sources */,
 				3872714C1D52A1710074B570 /* RouteType.swift in Sources */,
+				38EFD2EC1E3238C500A932CE /* SaveOrderCommand.swift in Sources */,
 				38ABF5101D51F23A00B6E9F7 /* GetBollardMessageQuery.swift in Sources */,
 				386898B31D4FA81F004CA51B /* GetBollardsByLineQuery.swift in Sources */,
 				38D7FFF31D500DED00937FD2 /* GetTimesQueryHandler.swift in Sources */,
@@ -1710,6 +1724,7 @@
 				385736E81D4B4C1E00C8D772 /* LineMapper.swift in Sources */,
 				3857370D1D4B619C00C8D772 /* Time.swift in Sources */,
 				38FE8D861D4F55F100E6B5BF /* FavoriteViewModel.swift in Sources */,
+				38EFD2E71E32332C00A932CE /* RealmMigration.swift in Sources */,
 				3826AE831D511C620020678C /* GetBollardQueryHandler.swift in Sources */,
 				38D700001D50103600937FD2 /* BollardViewModel.swift in Sources */,
 				38F391881D4A59DE005F4A42 /* JsonMappable.swift in Sources */,
@@ -1803,6 +1818,7 @@
 				385736FE1D4B5A9600C8D772 /* StreetsToSearchResultsConverter.swift in Sources */,
 				386898AE1D4F9F7F004CA51B /* GetBollardsByStopPointQuery.swift in Sources */,
 				38F3915D1D4A52DF005F4A42 /* SegueHandler.swift in Sources */,
+				38EFD2EE1E3238CE00A932CE /* SaveOrderCommandHandler.swift in Sources */,
 				383214A81D563CF000DBD22E /* Pushpin.swift in Sources */,
 				38D7FFFC1D50103600937FD2 /* BollardNavigationController.swift in Sources */,
 				38F391901D4A5B28005F4A42 /* ApiProvider.swift in Sources */,
@@ -1827,6 +1843,7 @@
 				38D7FFFF1D50103600937FD2 /* BollardViewController.swift in Sources */,
 				38A84F461E2CD8BA00D8FE0B /* SettingsFlowController.swift in Sources */,
 				385736FC1D4B5A5700C8D772 /* LinesToSearchResultsConverter.swift in Sources */,
+				38EFD2E51E30CC9000A932CE /* ActivityIndicator.swift in Sources */,
 				386898C51D4FAF48004CA51B /* LineBollardsViewController.swift in Sources */,
 				38F3917A1D4A58D9005F4A42 /* Query.swift in Sources */,
 				38A84F621E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift in Sources */,
@@ -1846,7 +1863,6 @@
 				38F391981D4A5D1F005F4A42 /* DependencyInstaller.swift in Sources */,
 				38A84F481E2CD8BA00D8FE0B /* SettingsViewConfigurator.swift in Sources */,
 				38FE8E091D4F919700E6B5BF /* BollardsNavigationController.swift in Sources */,
-				389BE9791D5223F70033FF87 /* NearestStopPointView.swift in Sources */,
 				38F391631D4A54F3005F4A42 /* Filtering.swift in Sources */,
 				385736CF1D4B437E00C8D772 /* StopPointPushpin.swift in Sources */,
 				38ABF50C1D51EE2700B6E9F7 /* FavoriteNavigationController.swift in Sources */,
@@ -1895,16 +1911,6 @@
 				3888445B1E2E6AF700B3A559 /* pl */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		38DAC1CD1D4A49F4001DF664 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				38DAC1CE1D4A49F4001DF664 /* Base */,
-				388844561E2E6AE200B3A559 /* en */,
-				388844571E2E6AEA00B3A559 /* pl */,
-			);
-			name = LaunchScreen.storyboard;
 			path = .;
 			sourceTree = "<group>";
 		};
@@ -2002,6 +2008,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = peka/peka.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7B5S8VZN35;
 				INFOPLIST_FILE = peka/Info.plist;
@@ -2013,6 +2020,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2022,6 +2030,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = peka/peka.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7B5S8VZN35;
 				INFOPLIST_FILE = peka/Info.plist;
@@ -2031,6 +2040,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

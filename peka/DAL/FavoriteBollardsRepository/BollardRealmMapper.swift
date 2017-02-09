@@ -11,11 +11,13 @@ import Foundation
 final class BollardRealmToBollardMapper: Convertible {
     
     func convert(_ value: BollardRealm) -> Bollard {
-        return Bollard(mainBollard: value.mainBollard,
+        var bollard = Bollard(mainBollard: value.mainBollard,
                        name: value.name,
                        symbol: value.symbol,
                        tag: value.tag,
                        isFavorite: true)
+        bollard.order = value.order
+        return bollard
     }
 }
 
@@ -35,6 +37,7 @@ final class BollardToBollardRealmMapper: Convertible {
         bollard.name = value.name
         bollard.symbol = value.symbol
         bollard.tag = value.tag
+        bollard.order = value.order ?? 0
         return bollard
     }
 }
