@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxOptional
 
 extension Array where Element: Hashable {
     func distinct() -> [Element] {

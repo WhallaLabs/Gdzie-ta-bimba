@@ -271,6 +271,50 @@
 		D1074F3E1E4C602E00E85A59 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391751D4A5814005F4A42 /* StringExtensions.swift */; };
 		D1074F3F1E4C61CA00E85A59 /* PekaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388205181D533E1E0000F58E /* PekaNavigationController.swift */; };
 		D1074F401E4C61ED00E85A59 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882051A1D5340600000F58E /* UIColorExtensions.swift */; };
+		D1074F411E4C91F800E85A59 /* GetStopPointPushpinsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736D71D4B470A00C8D772 /* GetStopPointPushpinsQuery.swift */; };
+		D1074F421E4C91F800E85A59 /* GetStopPointPushpinsQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736D81D4B470A00C8D772 /* GetStopPointPushpinsQueryHandler.swift */; };
+		D1074F431E4C921500E85A59 /* StopPointPushpinMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736D01D4B43C500C8D772 /* StopPointPushpinMapper.swift */; };
+		D1074F441E4C921F00E85A59 /* GroupStopPointsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3326D1D52784E001A5077 /* GroupStopPointsConverter.swift */; };
+		D1074F451E4C9A0100E85A59 /* GetTimesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFF01D500DED00937FD2 /* GetTimesQuery.swift */; };
+		D1074F461E4C9A0100E85A59 /* GetTimesQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFF11D500DED00937FD2 /* GetTimesQueryHandler.swift */; };
+		D1074F471E4C9A0D00E85A59 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857370C1D4B619C00C8D772 /* Time.swift */; };
+		D1074F481E4C9A0D00E85A59 /* TimeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857370A1D4B618B00C8D772 /* TimeMapper.swift */; };
+		D1074F491E4C9A2000E85A59 /* GetBollardMessageQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF50E1D51F23A00B6E9F7 /* GetBollardMessageQuery.swift */; };
+		D1074F4A1E4C9A2000E85A59 /* GetBollardMessageQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF50F1D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift */; };
+		D1074F4B1E4C9A3600E85A59 /* Bollard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737001D4B5F1900C8D772 /* Bollard.swift */; };
+		D1074F4C1E4C9A3600E85A59 /* BollardMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385737021D4B5F6900C8D772 /* BollardMapper.swift */; };
+		D1074F4D1E4C9A3600E85A59 /* BollardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE41D50081700937FD2 /* BollardCell.swift */; };
+		D1074F4E1E4C9A3600E85A59 /* BollardCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE51D50081700937FD2 /* BollardCell.xib */; };
+		D1074F4F1E4C9A4500E85A59 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391561D4A528A005F4A42 /* NibLoadableView.swift */; };
+		D1074F501E4C9A4C00E85A59 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391521D4A525C005F4A42 /* Configurable.swift */; };
+		D1074F511E4C9A5300E85A59 /* DirectionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFED1D500C3800937FD2 /* DirectionDescription.swift */; };
+		D1074F521E4C9A5D00E85A59 /* FavoriteStateToImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */; };
+		D1074F531E4C9A6400E85A59 /* DateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E3326F1D529BB0001A5077 /* DateMapper.swift */; };
+		D1074F541E4C9A7100E85A59 /* StopPointNameRemoveNumberConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855871D1D54DCCC0011C6BE /* StopPointNameRemoveNumberConverter.swift */; };
+		D1074F551E4C9A7800E85A59 /* RequestBodyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736F51D4B531A00C8D772 /* RequestBodyBuilder.swift */; };
+		D1074F561E4C9A8500E85A59 /* MessageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1639F1D621EE200D512F2 /* MessageMapper.swift */; };
+		D1074F571E4C9A9400E85A59 /* XibLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391581D4A52A6005F4A42 /* XibLoader.swift */; };
+		D1074F581E4C9AA600E85A59 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA11D5352D7000B74C2 /* UIImageExtensions.swift */; };
+		D1074F591E4C9ADC00E85A59 /* GetBollardQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE801D511C620020678C /* GetBollardQuery.swift */; };
+		D1074F5A1E4C9ADC00E85A59 /* GetBollardQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE811D511C620020678C /* GetBollardQueryHandler.swift */; };
+		D1074F5B1E4C9AE600E85A59 /* ToOptionalConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B163A11D6221E800D512F2 /* ToOptionalConverter.swift */; };
+		D1074F5C1E4C9AF800E85A59 /* FavoriteBollardComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855871F1D54E7570011C6BE /* FavoriteBollardComparator.swift */; };
+		D1074F5D1E4C9B0800E85A59 /* FavoriteBollardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AE791D50E4340020678C /* FavoriteBollardsRepository.swift */; };
+		D1074F5E1E4C9CF400E85A59 /* PekaApiProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736F71D4B56AA00C8D772 /* PekaApiProviderExtension.swift */; };
+		D1074F5F1E4C9D8400E85A59 /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFE91D500BCF00937FD2 /* TimeCell.swift */; };
+		D1074F601E4C9D8400E85A59 /* TimeCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 38D7FFEA1D500BCF00937FD2 /* TimeCell.xib */; };
+		D1074F611E4C9D9800E85A59 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391661D4A5645005F4A42 /* UITableViewExtensions.swift */; };
+		D1074F621E4C9DA200E85A59 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3915A1D4A52C0005F4A42 /* ReusableView.swift */; };
+		D1074F631E4C9DAD00E85A59 /* DepartureTimeToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */; };
+		D1074F641E4DB55500E85A59 /* PekaHttpHeadersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736DD1D4B4A1A00C8D772 /* PekaHttpHeadersProvider.swift */; };
+		D1074F651E4DB5A400E85A59 /* FormUrlEncodedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38403F9A1D4B7CBA006AB84C /* FormUrlEncodedBuilder.swift */; };
+		D1074F661E4DB7AA00E85A59 /* DisableEditingTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833CFA71D538029000B74C2 /* DisableEditingTableViewDelegate.swift */; };
+		D1074F6A1E4DC88400E85A59 /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074F681E4DC88400E85A59 /* WidgetCell.swift */; };
+		D1074F6B1E4DC88400E85A59 /* WidgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1074F691E4DC88400E85A59 /* WidgetCell.xib */; };
+		D1074F6C1E4DCA6100E85A59 /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074F681E4DC88400E85A59 /* WidgetCell.swift */; };
+		D1074F6D1E4DCA6100E85A59 /* WidgetCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = D1074F691E4DC88400E85A59 /* WidgetCell.xib */; };
+		D1074F881E4DE7D900E85A59 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C4232C1E3206CA004973D0 /* Info.plist */; };
+		D1074F891E4DE97000E85A59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3888445A1E2E6AF300B3A559 /* Localizable.strings */; };
 		D193D2B21E36075E000D9BD9 /* GetNearestStopQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5301D5219DA00B6E9F7 /* GetNearestStopQuery.swift */; };
 		D193D2B31E36075E000D9BD9 /* GetNearestStopQueryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5311D5219DA00B6E9F7 /* GetNearestStopQueryHandler.swift */; };
 		D193D2B41E36075E000D9BD9 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385736DB1D4B47B300C8D772 /* ApiConfig.swift */; };
@@ -612,12 +656,14 @@
 		8A75947E3757F05569707599 /* Pods-pekaWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pekaWidget/Pods-pekaWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		9628844EC4934B069C5EC9C7 /* Pods-pekaWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-pekaWidget/Pods-pekaWidget.release.xcconfig"; sourceTree = "<group>"; };
 		9EA520050966D3BB131EDAFE /* Pods_pekaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pekaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetDependencyInstaller.swift; path = ../WidgetDependencyInstaller.swift; sourceTree = "<group>"; };
+		D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDependencyInstaller.swift; sourceTree = "<group>"; };
+		D1074F681E4DC88400E85A59 /* WidgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
+		D1074F691E4DC88400E85A59 /* WidgetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
 		D1C423231E3206C9004973D0 /* pekaWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = pekaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C423241E3206CA004973D0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		D1C423271E3206CA004973D0 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D1C4232A1E3206CA004973D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		D1C4232C1E3206CA004973D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1C4232C1E3206CA004973D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C423351E32558D004973D0 /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		F5DB40B2BE57C38384049AA8 /* Pods-pekaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1081,12 +1127,12 @@
 		38DAC1B81D4A49F4001DF664 = {
 			isa = PBXGroup;
 			children = (
-				D1C423261E3206CA004973D0 /* pekaWidget */,
 				D5CB4B0F6A4A0D388E4CE91C /* Frameworks */,
 				B1C719E493AEF8D3A3B6330A /* Pods */,
 				38DAC1C21D4A49F4001DF664 /* Products */,
 				38DAC1C31D4A49F4001DF664 /* peka */,
 				38DAC1D81D4A49F4001DF664 /* pekaTests */,
+				D1C423261E3206CA004973D0 /* pekaWidget */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1113,9 +1159,9 @@
 				38DAC1C41D4A49F4001DF664 /* AppDelegate.swift */,
 				38A84F4B1E2CE30800D8FE0B /* Constants.swift */,
 				38F391971D4A5D1F005F4A42 /* DependencyInstaller.swift */,
-				D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */,
 				38B880871E2932A000D05572 /* GoogleService-Info.plist */,
 				38DAC1D01D4A49F4001DF664 /* Info.plist */,
+				D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */,
 				38AB745A1E2FD95C001C1840 /* peka.entitlements */,
 			);
 			path = peka;
@@ -1465,6 +1511,7 @@
 				38FE8DF71D4F824700E6B5BF /* SearchResult */,
 				382705F91E28FC2F00C1BB14 /* StopPoint */,
 				38D7FFE81D500BC500937FD2 /* Time */,
+				D1074F671E4DC87600E85A59 /* Widget */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1513,12 +1560,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D1074F671E4DC87600E85A59 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				D1074F681E4DC88400E85A59 /* WidgetCell.swift */,
+				D1074F691E4DC88400E85A59 /* WidgetCell.xib */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		D1C423261E3206CA004973D0 /* pekaWidget */ = {
 			isa = PBXGroup;
 			children = (
-				D1C423271E3206CA004973D0 /* TodayViewController.swift */,
-				D1C423291E3206CA004973D0 /* MainInterface.storyboard */,
 				D1C4232C1E3206CA004973D0 /* Info.plist */,
+				D1C423291E3206CA004973D0 /* MainInterface.storyboard */,
+				D1C423271E3206CA004973D0 /* TodayViewController.swift */,
 				D1C423351E32558D004973D0 /* TodayViewModel.swift */,
 			);
 			path = pekaWidget;
@@ -1641,6 +1697,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				pl,
+				en,
 			);
 			mainGroup = 38DAC1B81D4A49F4001DF664;
 			productRefGroup = 38DAC1C21D4A49F4001DF664 /* Products */;
@@ -1669,6 +1726,7 @@
 				38A84F451E2CD8BA00D8FE0B /* Settings.storyboard in Resources */,
 				3833CFAD1D539270000B74C2 /* SearchBarView.xib in Resources */,
 				38EFD2E31E2FDDA300A932CE /* LaunchScreen.storyboard in Resources */,
+				D1074F6B1E4DC88400E85A59 /* WidgetCell.xib in Resources */,
 				38FE8E001D4F8F6900E6B5BF /* GroupedDirectionsCell.xib in Resources */,
 				382705FD1E28FCBB00C1BB14 /* StopPointCell.xib in Resources */,
 				38FE8E081D4F919700E6B5BF /* Bollards.storyboard in Resources */,
@@ -1695,6 +1753,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1074F891E4DE97000E85A59 /* Localizable.strings in Resources */,
+				D1074F881E4DE7D900E85A59 /* Info.plist in Resources */,
 				D1C423341E324335004973D0 /* Assets.xcassets in Resources */,
 				D1C4232B1E3206CA004973D0 /* MainInterface.storyboard in Resources */,
 			);
@@ -1904,6 +1964,7 @@
 				385736CD1D4B434700C8D772 /* StopPoint.swift in Sources */,
 				38F391921D4A5C5D005F4A42 /* ApiProviderError.swift in Sources */,
 				385737161D4B6A1500C8D772 /* GroupedDirectionsMapper.swift in Sources */,
+				D1074F6A1E4DC88400E85A59 /* WidgetCell.swift in Sources */,
 				38E2C1231D523DAC0071C9E7 /* BodyRequestBuilder.swift in Sources */,
 				38FE8E0D1D4F919700E6B5BF /* BollardsViewModel.swift in Sources */,
 				385736E81D4B4C1E00C8D772 /* LineMapper.swift in Sources */,
@@ -2083,6 +2144,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1074F6C1E4DCA6100E85A59 /* WidgetCell.swift in Sources */,
+				D1074F6D1E4DCA6100E85A59 /* WidgetCell.xib in Sources */,
+				D1074F661E4DB7AA00E85A59 /* DisableEditingTableViewDelegate.swift in Sources */,
+				D1074F651E4DB5A400E85A59 /* FormUrlEncodedBuilder.swift in Sources */,
+				D1074F641E4DB55500E85A59 /* PekaHttpHeadersProvider.swift in Sources */,
+				D1074F631E4C9DAD00E85A59 /* DepartureTimeToStringConverter.swift in Sources */,
+				D1074F621E4C9DA200E85A59 /* ReusableView.swift in Sources */,
+				D1074F611E4C9D9800E85A59 /* UITableViewExtensions.swift in Sources */,
+				D1074F5F1E4C9D8400E85A59 /* TimeCell.swift in Sources */,
+				D1074F601E4C9D8400E85A59 /* TimeCell.xib in Sources */,
+				D1074F5E1E4C9CF400E85A59 /* PekaApiProviderExtension.swift in Sources */,
+				D1074F5D1E4C9B0800E85A59 /* FavoriteBollardsRepository.swift in Sources */,
+				D1074F5C1E4C9AF800E85A59 /* FavoriteBollardComparator.swift in Sources */,
+				D1074F5B1E4C9AE600E85A59 /* ToOptionalConverter.swift in Sources */,
+				D1074F591E4C9ADC00E85A59 /* GetBollardQuery.swift in Sources */,
+				D1074F5A1E4C9ADC00E85A59 /* GetBollardQueryHandler.swift in Sources */,
+				D1074F581E4C9AA600E85A59 /* UIImageExtensions.swift in Sources */,
+				D1074F571E4C9A9400E85A59 /* XibLoader.swift in Sources */,
+				D1074F561E4C9A8500E85A59 /* MessageMapper.swift in Sources */,
+				D1074F551E4C9A7800E85A59 /* RequestBodyBuilder.swift in Sources */,
+				D1074F541E4C9A7100E85A59 /* StopPointNameRemoveNumberConverter.swift in Sources */,
+				D1074F531E4C9A6400E85A59 /* DateMapper.swift in Sources */,
+				D1074F521E4C9A5D00E85A59 /* FavoriteStateToImageConverter.swift in Sources */,
+				D1074F511E4C9A5300E85A59 /* DirectionDescription.swift in Sources */,
+				D1074F501E4C9A4C00E85A59 /* Configurable.swift in Sources */,
+				D1074F4F1E4C9A4500E85A59 /* NibLoadableView.swift in Sources */,
+				D1074F4B1E4C9A3600E85A59 /* Bollard.swift in Sources */,
+				D1074F4C1E4C9A3600E85A59 /* BollardMapper.swift in Sources */,
+				D1074F4D1E4C9A3600E85A59 /* BollardCell.swift in Sources */,
+				D1074F4E1E4C9A3600E85A59 /* BollardCell.xib in Sources */,
+				D1074F491E4C9A2000E85A59 /* GetBollardMessageQuery.swift in Sources */,
+				D1074F4A1E4C9A2000E85A59 /* GetBollardMessageQueryHandler.swift in Sources */,
+				D1074F471E4C9A0D00E85A59 /* Time.swift in Sources */,
+				D1074F481E4C9A0D00E85A59 /* TimeMapper.swift in Sources */,
+				D1074F451E4C9A0100E85A59 /* GetTimesQuery.swift in Sources */,
+				D1074F461E4C9A0100E85A59 /* GetTimesQueryHandler.swift in Sources */,
+				D1074F441E4C921F00E85A59 /* GroupStopPointsConverter.swift in Sources */,
+				D1074F431E4C921500E85A59 /* StopPointPushpinMapper.swift in Sources */,
+				D1074F411E4C91F800E85A59 /* GetStopPointPushpinsQuery.swift in Sources */,
+				D1074F421E4C91F800E85A59 /* GetStopPointPushpinsQueryHandler.swift in Sources */,
 				D1074F401E4C61ED00E85A59 /* UIColorExtensions.swift in Sources */,
 				D1074F3F1E4C61CA00E85A59 /* PekaNavigationController.swift in Sources */,
 				D1074F3E1E4C602E00E85A59 /* StringExtensions.swift in Sources */,
@@ -2169,6 +2270,7 @@
 				D1C4232A1E3206CA004973D0 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
