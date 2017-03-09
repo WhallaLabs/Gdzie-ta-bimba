@@ -13,16 +13,16 @@ private let stopPointsApiProvider = "stopPointsApiProvider"
 
 extension SwinjectStoryboard {
 
-    class func setupWidget() {
+    class func setup() {
         self.registerServices()
         self.registerProviders()
         
-        defaultContainer.register(TodayViewModel.self) { r in
-            TodayViewModel(executor: r.resolve(Executor.self)!)
+        defaultContainer.register(NearestStopPointViewModel.self) { r in
+            NearestStopPointViewModel(executor: r.resolve(Executor.self)!)
         }
         
-        defaultContainer.storyboardInitCompleted(TodayViewController.self) { r, c in
-            let viewModel = r.resolve(TodayViewModel.self)!
+        defaultContainer.storyboardInitCompleted(NearestStopPointViewController.self) { r, c in
+            let viewModel = r.resolve(NearestStopPointViewModel.self)!
             c.installDependencies(viewModel, r.resolve(LocationManager.self)!)
         }
         

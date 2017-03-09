@@ -255,7 +255,6 @@
 		38FE8E0F1D4F932800E6B5BF /* SearchNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE8E0E1D4F932800E6B5BF /* SearchNavigationControllerDelegate.swift */; };
 		38FE8E111D4F937700E6B5BF /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE8E101D4F937700E6B5BF /* SearchNavigationController.swift */; };
 		ABA6F11A1F413546E980D45D /* Pods_pekaWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557F7561DF0DB91EE3EFC7B5 /* Pods_pekaWidget.framework */; };
-		D1074F311E4C5D3500E85A59 /* WidgetDependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */; };
 		D1074F321E4C5E0600E85A59 /* WidgetDependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074F301E4C5D3500E85A59 /* WidgetDependencyInstaller.swift */; };
 		D1074F331E4C5F3700E85A59 /* RestApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3918D1D4A5AE2005F4A42 /* RestApiProvider.swift */; };
 		D1074F341E4C5F5000E85A59 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F3918F1D4A5B28005F4A42 /* ApiProvider.swift */; };
@@ -342,8 +341,8 @@
 		D193D2CB1E360833000D9BD9 /* JsonMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391871D4A59DE005F4A42 /* JsonMappable.swift */; };
 		D193D2CC1E360A23000D9BD9 /* ObservableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F391681D4A5664005F4A42 /* ObservableExtensions.swift */; };
 		D193D2CD1E360A85000D9BD9 /* VariableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3844220F1D4A5F9B007B44FA /* VariableExtensions.swift */; };
-		D193D2CE1E360B61000D9BD9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423271E3206CA004973D0 /* TodayViewController.swift */; };
-		D193D2CF1E360B61000D9BD9 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423351E32558D004973D0 /* TodayViewModel.swift */; };
+		D193D2CE1E360B61000D9BD9 /* NearestStopPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423271E3206CA004973D0 /* NearestStopPointViewController.swift */; };
+		D193D2CF1E360B61000D9BD9 /* NearestStopPointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423351E32558D004973D0 /* NearestStopPointViewModel.swift */; };
 		D193D2D01E360BF8000D9BD9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7778C1D50861A0070265E /* LocationManager.swift */; };
 		D193D2D11E36156E000D9BD9 /* PekaLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7778E1D5086C70070265E /* PekaLocationManager.swift */; };
 		D193D2D21E361611000D9BD9 /* CLLocationToCoordinatesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F78BDB1D555916006EB5C8 /* CLLocationToCoordinatesConverter.swift */; };
@@ -352,11 +351,11 @@
 		D193D2D51E3616C9000D9BD9 /* MKMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E895841E27B99B00B9E097 /* MKMapView+Rx.swift */; };
 		D193D2D61E3616E3000D9BD9 /* RxMKMapViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E895861E27B99B00B9E097 /* RxMKMapViewDelegateProxy.swift */; };
 		D1C423251E3206CA004973D0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C423241E3206CA004973D0 /* NotificationCenter.framework */; };
-		D1C423281E3206CA004973D0 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423271E3206CA004973D0 /* TodayViewController.swift */; };
-		D1C4232B1E3206CA004973D0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C423291E3206CA004973D0 /* MainInterface.storyboard */; };
+		D1C423281E3206CA004973D0 /* NearestStopPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423271E3206CA004973D0 /* NearestStopPointViewController.swift */; };
+		D1C4232B1E3206CA004973D0 /* NearestStopPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C423291E3206CA004973D0 /* NearestStopPoint.storyboard */; };
 		D1C4232F1E3206CA004973D0 /* pekaWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D1C423231E3206C9004973D0 /* pekaWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D1C423341E324335004973D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DAC1CB1D4A49F4001DF664 /* Assets.xcassets */; };
-		D1C423361E32558D004973D0 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423351E32558D004973D0 /* TodayViewModel.swift */; };
+		D1C423361E32558D004973D0 /* NearestStopPointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C423351E32558D004973D0 /* NearestStopPointViewModel.swift */; };
 		DDCA5DF07725D04D42D3BC28 /* Pods_pekaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA520050966D3BB131EDAFE /* Pods_pekaTests.framework */; };
 		F58146E762DAE6DA0ACC5F91 /* Pods_peka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C69FE4B7E69D0F004F07DB7 /* Pods_peka.framework */; };
 /* End PBXBuildFile section */
@@ -661,10 +660,10 @@
 		D1074F691E4DC88400E85A59 /* WidgetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
 		D1C423231E3206C9004973D0 /* pekaWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = pekaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C423241E3206CA004973D0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		D1C423271E3206CA004973D0 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		D1C4232A1E3206CA004973D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D1C423271E3206CA004973D0 /* NearestStopPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStopPointViewController.swift; sourceTree = "<group>"; };
+		D1C4232A1E3206CA004973D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NearestStopPoint.storyboard; sourceTree = "<group>"; };
 		D1C4232C1E3206CA004973D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1C423351E32558D004973D0 /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		D1C423351E32558D004973D0 /* NearestStopPointViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearestStopPointViewModel.swift; sourceTree = "<group>"; };
 		F5DB40B2BE57C38384049AA8 /* Pods-pekaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pekaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pekaTests/Pods-pekaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1573,9 +1572,9 @@
 			isa = PBXGroup;
 			children = (
 				D1C4232C1E3206CA004973D0 /* Info.plist */,
-				D1C423291E3206CA004973D0 /* MainInterface.storyboard */,
-				D1C423271E3206CA004973D0 /* TodayViewController.swift */,
-				D1C423351E32558D004973D0 /* TodayViewModel.swift */,
+				D1C423291E3206CA004973D0 /* NearestStopPoint.storyboard */,
+				D1C423271E3206CA004973D0 /* NearestStopPointViewController.swift */,
+				D1C423351E32558D004973D0 /* NearestStopPointViewModel.swift */,
 			);
 			path = pekaWidget;
 			sourceTree = "<group>";
@@ -1756,7 +1755,7 @@
 				D1074F891E4DE97000E85A59 /* Localizable.strings in Resources */,
 				D1074F881E4DE7D900E85A59 /* Info.plist in Resources */,
 				D1C423341E324335004973D0 /* Assets.xcassets in Resources */,
-				D1C4232B1E3206CA004973D0 /* MainInterface.storyboard in Resources */,
+				D1C4232B1E3206CA004973D0 /* NearestStopPoint.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1903,8 +1902,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D193D2CE1E360B61000D9BD9 /* TodayViewController.swift in Sources */,
-				D193D2CF1E360B61000D9BD9 /* TodayViewModel.swift in Sources */,
+				D193D2CE1E360B61000D9BD9 /* NearestStopPointViewController.swift in Sources */,
+				D193D2CF1E360B61000D9BD9 /* NearestStopPointViewModel.swift in Sources */,
 				3833CFA81D538029000B74C2 /* DisableEditingTableViewDelegate.swift in Sources */,
 				38A84F4C1E2CE30800D8FE0B /* Constants.swift in Sources */,
 				38F3917B1D4A58D9005F4A42 /* QueryHandler.swift in Sources */,
@@ -2030,7 +2029,6 @@
 				386898B91D4FA90A004CA51B /* GetBollardsByStreetQueryHandler.swift in Sources */,
 				3895023B1D550BAC00877A8D /* GroupBollardDirectionsConverter.swift in Sources */,
 				382705F41E28E3F200C1BB14 /* FavoriteSection.swift in Sources */,
-				D1074F311E4C5D3500E85A59 /* WidgetDependencyInstaller.swift in Sources */,
 				38ABF5111D51F23A00B6E9F7 /* GetBollardMessageQueryHandler.swift in Sources */,
 				3833CFA41D535F30000B74C2 /* DepartureTimeToStringConverter.swift in Sources */,
 				38DAC2031D4A4B7D001DF664 /* HubViewModel.swift in Sources */,
@@ -2233,8 +2231,8 @@
 				D193D2BC1E36075E000D9BD9 /* Caching.swift in Sources */,
 				D193D2BD1E36075E000D9BD9 /* ArrayMapper.swift in Sources */,
 				D193D2BE1E36075E000D9BD9 /* WrappedObjectMapper.swift in Sources */,
-				D1C423361E32558D004973D0 /* TodayViewModel.swift in Sources */,
-				D1C423281E3206CA004973D0 /* TodayViewController.swift in Sources */,
+				D1C423361E32558D004973D0 /* NearestStopPointViewModel.swift in Sources */,
+				D1C423281E3206CA004973D0 /* NearestStopPointViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2264,12 +2262,12 @@
 			path = .;
 			sourceTree = "<group>";
 		};
-		D1C423291E3206CA004973D0 /* MainInterface.storyboard */ = {
+		D1C423291E3206CA004973D0 /* NearestStopPoint.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D1C4232A1E3206CA004973D0 /* Base */,
 			);
-			name = MainInterface.storyboard;
+			name = NearestStopPoint.storyboard;
 			path = .;
 			sourceTree = "<group>";
 		};
@@ -2365,7 +2363,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 459517C145CE71468CF27A37 /* Pods-peka.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = peka/peka.entitlements;
@@ -2388,7 +2386,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3DD5637EB6E58D6DB8BF16E1 /* Pods-peka.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = peka/peka.entitlements;
