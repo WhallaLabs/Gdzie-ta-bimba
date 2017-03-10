@@ -114,7 +114,7 @@
 		38A84F591E2CE93500D8FE0B /* RemoveAdsViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F531E2CE93500D8FE0B /* RemoveAdsViewConfigurator.swift */; };
 		38A84F5A1E2CE93500D8FE0B /* RemoveAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F541E2CE93500D8FE0B /* RemoveAdsViewController.swift */; };
 		38A84F5B1E2CE93500D8FE0B /* RemoveAdsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F551E2CE93500D8FE0B /* RemoveAdsViewModel.swift */; };
-		38A84F5D1E2CF11C00D8FE0B /* AddSettingsToBannerHeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F5C1E2CF11C00D8FE0B /* AddSettingsToBannerHeightConverter.swift */; };
+		38A84F5D1E2CF11C00D8FE0B /* AdsSettingsToBannerHeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F5C1E2CF11C00D8FE0B /* AdsSettingsToBannerHeightConverter.swift */; };
 		38A84F601E2CFD0100D8FE0B /* RemoveAdsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F5F1E2CFD0100D8FE0B /* RemoveAdsCommand.swift */; };
 		38A84F621E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A84F611E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift */; };
 		38ABF5061D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABF5051D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift */; };
@@ -503,7 +503,7 @@
 		38A84F531E2CE93500D8FE0B /* RemoveAdsViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsViewConfigurator.swift; sourceTree = "<group>"; };
 		38A84F541E2CE93500D8FE0B /* RemoveAdsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsViewController.swift; sourceTree = "<group>"; };
 		38A84F551E2CE93500D8FE0B /* RemoveAdsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsViewModel.swift; sourceTree = "<group>"; };
-		38A84F5C1E2CF11C00D8FE0B /* AddSettingsToBannerHeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSettingsToBannerHeightConverter.swift; sourceTree = "<group>"; };
+		38A84F5C1E2CF11C00D8FE0B /* AdsSettingsToBannerHeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsSettingsToBannerHeightConverter.swift; sourceTree = "<group>"; };
 		38A84F5F1E2CFD0100D8FE0B /* RemoveAdsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsCommand.swift; sourceTree = "<group>"; };
 		38A84F611E2CFD2000D8FE0B /* RemoveAdsCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAdsCommandHandler.swift; sourceTree = "<group>"; };
 		38AB745A1E2FD95C001C1840 /* peka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = peka.entitlements; sourceTree = "<group>"; };
@@ -1349,7 +1349,7 @@
 		38F3915E1D4A532B005F4A42 /* Converters */ = {
 			isa = PBXGroup;
 			children = (
-				38A84F5C1E2CF11C00D8FE0B /* AddSettingsToBannerHeightConverter.swift */,
+				38A84F5C1E2CF11C00D8FE0B /* AdsSettingsToBannerHeightConverter.swift */,
 				38F78BDB1D555916006EB5C8 /* CLLocationToCoordinatesConverter.swift */,
 				3833CFA31D535F30000B74C2 /* DepartureTimeToStringConverter.swift */,
 				3833CF9F1D535233000B74C2 /* FavoriteStateToImageConverter.swift */,
@@ -2116,7 +2116,7 @@
 				38ABF5061D51E34900B6E9F7 /* FavoriteLineBollardComparator.swift in Sources */,
 				38FE8D8F1D4F561100E6B5BF /* SearchViewModel.swift in Sources */,
 				38F3916E1D4A5702005F4A42 /* HttpBodyParameter.swift in Sources */,
-				38A84F5D1E2CF11C00D8FE0B /* AddSettingsToBannerHeightConverter.swift in Sources */,
+				38A84F5D1E2CF11C00D8FE0B /* AdsSettingsToBannerHeightConverter.swift in Sources */,
 				38E8957C1E27B97B00B9E097 /* FBAnnotationClusterViewConfiguration.swift in Sources */,
 				383214A41D5631E000DBD22E /* MapScaleConverter.swift in Sources */,
 				385737121D4B642B00C8D772 /* LineBollards.swift in Sources */,
