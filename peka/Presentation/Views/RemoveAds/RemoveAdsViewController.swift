@@ -31,7 +31,7 @@ final class RemoveAdsViewController: UIViewController {
 		self.viewConfigurator.configure()
         self.updateTitle("Ads".localized)
         self.adBannerView.load(viewController: self)
-        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+        self.adsSettings.adsDisabledObservable.map(AdsSettingsToBannerHeightConverter())
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
 	}

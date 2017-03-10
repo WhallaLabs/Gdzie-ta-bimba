@@ -1,5 +1,5 @@
 //
-//  AddSettingsToBannerHeightConverter.swift
+//  AdsSettingsToBannerHeightConverter.swift
 //  peka
 //
 //  Created by Tomasz Pikć on 16/01/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AddSettingsToBannerHeightConverter: Convertible {
+final class AdsSettingsToBannerHeightConverter: Convertible {
     func convert(_ value: Bool) -> CGFloat {
         return value ? 0 : 50
     }

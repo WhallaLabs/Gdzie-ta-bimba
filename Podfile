@@ -3,10 +3,14 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'peka' do
-
+pod 'PKHUD', '~> 4.1'
 end
 
 target 'pekaTests' do
+
+end
+
+target 'pekaWidget' do
 
 end
 
@@ -28,4 +32,3 @@ pod 'Crashlytics'
 
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
-pod 'PKHUD'

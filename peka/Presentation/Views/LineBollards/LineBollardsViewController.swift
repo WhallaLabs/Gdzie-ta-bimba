@@ -45,7 +45,7 @@ final class LineBollardsViewController: UIViewController {
         self.updateTitle(self.line)
         self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
         self.adBannerView.load(viewController: self)
-        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+        self.adsSettings.adsDisabledObservable.map(AdsSettingsToBannerHeightConverter())
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
 	}

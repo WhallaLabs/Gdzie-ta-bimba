@@ -41,7 +41,7 @@ final class SearchViewController: UIViewController {
         self.viewModel.loadSearchHistory().addDisposableTo(self.disposables)
         self.tableView.rx.setDelegate(self.disableEditingBehavior).addDisposableTo(self.disposables)
         self.adBannerView.load(viewController: self)
-        self.adsSettings.adsDisabledObservable.map(AddSettingsToBannerHeightConverter())
+        self.adsSettings.adsDisabledObservable.map(AdsSettingsToBannerHeightConverter())
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
         
