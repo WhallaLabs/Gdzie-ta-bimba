@@ -31,7 +31,7 @@ final class NearestStopPointViewModel {
         let timesQuery = GetTimesQuery(bollard: symbol)
         let timesObservable: Observable<[Time]> = self.executor.execute(timesQuery)
         return timesObservable.retry(3).map { times in
-            self.times.value = times
+            self.times.value = times.take(6)
         }
     }
 }

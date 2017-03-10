@@ -39,7 +39,11 @@ final class NearestStopPointViewController: UIViewController, NCWidgetProviding 
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         switch activeDisplayMode {
         case .expanded:
-            self.preferredContentSize = CGSize(width: maxSize.width, height: 400)
+            let headerHeight = CGFloat(28)
+            let rowHeight = CGFloat(40)
+            let rows = CGFloat(max(1, self.viewModel.times.value.count))
+            let height = rows * rowHeight + headerHeight
+            self.preferredContentSize = CGSize(width: maxSize.width, height: height)
         case .compact:
             self.preferredContentSize = maxSize
         }
