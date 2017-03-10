@@ -31,7 +31,7 @@ final class MessageMapper: ObjectMappable {
             return nil
         }
         let options: [String : AnyObject] = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType as AnyObject,
-                                             NSCharacterEncodingDocumentAttribute : String.Encoding.utf8 as AnyObject]
+                                             NSCharacterEncodingDocumentAttribute : NSNumber(value: String.Encoding.utf8.rawValue)]
         let attributedString = try? NSAttributedString(data: data, options: options,  documentAttributes: nil)
         return attributedString
     }
