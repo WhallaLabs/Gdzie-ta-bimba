@@ -1,4 +1,7 @@
+[Available in AppStore](https://itunes.apple.com/gb/app/antidate/id1195530580)
 # Gdzie-ta-bimba
 Gdzie ta bimba is a simple application that allows users in Poznań, Poland to find out when their tram or bus is leaving.
 ![alt tag](https://cloud.githubusercontent.com/assets/20815468/17508771/de03103e-5e16-11e6-9bdb-580d3db23162.jpg)
-<h2>Project description</h2>
+
+
+[Available in AppStore](https://itunes.apple.com/gb/app/antidate/id1195530580)
