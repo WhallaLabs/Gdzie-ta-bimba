@@ -10,16 +10,16 @@
 import Foundation
 import SwiftyJSON
 
-final class WrappedObjectMapper<T: ObjectMappable>: ObjectMappable {
-    fileprivate let mapper: T
+final class WrappedObjectMapper<Mapper: ObjectMappable>: ObjectMappable {
+    fileprivate let mapper: Mapper
     fileprivate let pathToObject: [String]
     
-    init(_ mapper: T, pathToObject: String...) {
+    init(_ mapper: Mapper, pathToObject: String...) {
         self.mapper = mapper
         self.pathToObject = pathToObject
     }
     
-    func mapToObject(_ json: JSON) -> T.T? {
+    func mapToObject(_ json: JSON) -> Mapper.T? {
         var json = json
         for field in self.pathToObject {
             json = json[field]

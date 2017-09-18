@@ -41,6 +41,7 @@ final class FavoriteViewController: UIViewController {
         self.cellFactory.delegate = self
 		self.viewConfigurator.configure()
         self.viewModel.loadFavouriteBollards().addDisposableTo(self.disposables)
+        self.configureDataSource()
         self.setupBinding()
         self.registerForEvents()
         self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)
@@ -49,11 +50,7 @@ final class FavoriteViewController: UIViewController {
             .bindTo(self.adHeightConstraint.rx.constant)
             .addDisposableTo(self.disposables)
         
-        self.dataSource.canMoveRowAtIndexPath = { _, _ in return true }
         
-        self.dataSource.canEditRowAtIndexPath = { dataSource, indexPath in
-            return indexPath.section != 0
-        }
 	}
 	
     override func viewWillAppear(_ animated: Bool) {
@@ -67,10 +64,18 @@ final class FavoriteViewController: UIViewController {
         self.viewDisposables = DisposeBag()
     }
     
-    fileprivate func setupBinding() {
-        self.viewModel.stopPoints.bindTo(self.tableView.rx.items(dataSource: self.dataSource)).addDisposableTo(self.disposables)
+    private func configureDataSource() {
         self.dataSource.configureCell = self.cellFactory.create()
         self.dataSource.titleForHeaderInSection = { _, _ in return "x" }
+        self.dataSource.canMoveRowAtIndexPath = { _, _ in return true }
+        
+        self.dataSource.canEditRowAtIndexPath = { dataSource, indexPath in
+            return indexPath.section != 0
+        }
+    }
+    
+    private func setupBinding() {
+        self.viewModel.stopPoints.bindTo(self.tableView.rx.items(dataSource: self.dataSource)).addDisposableTo(self.disposables)
         
         self.viewModel.bollards.asObservable()
             .map { $0.isNotEmpty }
