@@ -21,7 +21,7 @@ final class ToggleBollardFavoriteCommandHandler: CommandHandler {
         let command = command as! ToggleBollardFavoriteCommand
         let bollard = command.bollard
         if bollard.isFavorite {
-            self.favoriteBollardsRepository.remove(bollard)
+            _ = self.favoriteBollardsRepository.remove(bollard)
         } else {
             self.favoriteBollardsRepository.add(bollard)
         }

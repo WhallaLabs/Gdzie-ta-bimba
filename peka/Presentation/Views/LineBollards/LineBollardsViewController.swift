@@ -39,8 +39,8 @@ final class LineBollardsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.viewConfigurator.configure()
-        self.setupBinding()
         self.configure()
+        self.setupBinding()
         self.registerForEvents()
         self.updateTitle(self.line)
         self.tableView.rx.setDelegate(self).addDisposableTo(self.disposables)

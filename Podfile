@@ -2,6 +2,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
+inhibit_all_warnings!
+
 target 'peka' do
 pod 'PKHUD', '~> 4.1'
 end
@@ -22,7 +24,7 @@ pod 'SwinjectStoryboard'
 pod 'SwiftyJSON'
 pod 'RxDataSources', '~> 1.0'
 #pod 'RxMKMapView'
-pod 'RealmSwift'
+pod 'RealmSwift', '~> 2.10.2'
 pod 'RxRealm'
 #pod 'FBAnnotationClusteringSwift'
 pod 'TTTAttributedLabel'

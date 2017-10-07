@@ -44,7 +44,7 @@ final class RequestBuilder: QueryRequestBuilder {
     }
     
     func add(json: JSON?) -> BodyRequestBuilder {
-        self.getRequest()
+        _ = self.getRequest()
         if let jsonObject = json {
             if let data = try? jsonObject.rawData() {
                 self.request!.httpBody = data
@@ -54,7 +54,7 @@ final class RequestBuilder: QueryRequestBuilder {
     }
     
     func add(bodyParameters parameters: [HttpBodyParameter]) -> BodyRequestBuilder {
-        self.getRequest()
+        _ = self.getRequest()
         let headers = self.formBodyBuilder.prepareHeaders()
         for (key, value) in headers {
             self.request!.setValue(value, forHTTPHeaderField: key)
@@ -65,7 +65,7 @@ final class RequestBuilder: QueryRequestBuilder {
     }
     
     func add(headers: [String: String]) -> BodyRequestBuilder {
-        self.getRequest()
+        _ = self.getRequest()
         for header in headers {
             if request!.value(forHTTPHeaderField: header.key) == nil {
                 request!.addValue(header.value, forHTTPHeaderField: header.key)
@@ -75,7 +75,7 @@ final class RequestBuilder: QueryRequestBuilder {
     }
     
     func setMethod(_ method: HttpMethod) -> BodyRequestBuilder {
-        self.getRequest()
+        _ = self.getRequest()
         self.httpMethod = method
         self.request!.httpMethod = method.rawValue
         

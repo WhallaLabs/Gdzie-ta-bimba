@@ -26,11 +26,11 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - PKHUD (4.1.0)
-  - Realm (2.1.2):
-    - Realm/Headers (= 2.1.2)
-  - Realm/Headers (2.1.2)
-  - RealmSwift (2.1.2):
-    - Realm (= 2.1.2)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
   - RxCocoa (3.1.0):
     - RxSwift (~> 3.1)
   - RxDataSources (1.0.2):
@@ -55,7 +55,7 @@ DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
   - PKHUD (~> 4.1)
-  - RealmSwift
+  - RealmSwift (~> 2.10.2)
   - RxCocoa
   - RxDataSources (~> 1.0)
   - RxOptional
@@ -78,8 +78,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   PKHUD: a0ecdee9f67d9b462c0c5e4ba38400292ea6ae6e
-  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
-  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxDataSources: 1de77880bf5b7fcee42102adcd5a5d65e5b81541
   RxOptional: b97b59183af80d1e729ac9e51d09a10be668d6a8
@@ -90,6 +90,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 34a015f97e50d3158c5c23b5afac5070686aeca0
+PODFILE CHECKSUM: a4dd5cdc8742f30be241aa3049886a6b297cc812
 
 COCOAPODS: 1.2.1

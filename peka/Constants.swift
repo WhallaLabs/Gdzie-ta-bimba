@@ -14,12 +14,12 @@ struct Constants {
     static let appstoreURL = "itms-apps://itunes.apple.com/app/id"  + Constants.appID
     
     struct AdMob {
-        static let appId = "ca-app-pub-1891682170220364~5192892530"
+        static let appId = "ca-app-pub-2344436403384102~3004188788"//"ca-app-pub-1891682170220364~5192892530"
         
     #if DEBUG
         static let bannerUnitId = "ca-app-pub-3940256099942544/2934735716"
     #else
-        static let bannerUnitId = "ca-app-pub-1891682170220364/1572958132"
+        static let bannerUnitId = "ca-app-pub-2344436403384102/8051489570"//"ca-app-pub-1891682170220364/1572958132"
     #endif
     }
     

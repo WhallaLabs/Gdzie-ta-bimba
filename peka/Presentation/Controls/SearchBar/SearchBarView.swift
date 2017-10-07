@@ -57,7 +57,7 @@ final class SearchBarView: UIView {
     
     @IBAction fileprivate func clearText() {
         if self.searchField.text?.isEmpty == true {
-            self.resignFirstResponder()
+            _ = self.resignFirstResponder()
         }
         self.searchField.text = String.empty
     }
@@ -69,7 +69,7 @@ extension SearchBarView: NibLoadableView {
 
 extension SearchBarView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.resignFirstResponder()
+        _ = self.resignFirstResponder()
         return false
     }
 }

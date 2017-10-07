@@ -10,8 +10,8 @@ import UIKit
 
 final class SearchViewConfigurator: NSObject {
 
-	@IBOutlet fileprivate weak var viewController: SearchViewController!
-    @IBOutlet fileprivate weak var tableView: UITableView!
+	@IBOutlet private weak var viewController: SearchViewController!
+    @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var emptyStateLabel: UILabel!
     @IBOutlet private weak var noResultsOpsLabel: UILabel!
     @IBOutlet private weak var noResultsLabel: UILabel!
@@ -19,8 +19,8 @@ final class SearchViewConfigurator: NSObject {
 	func configure() {
         self.tableView.register(SearchResultCell.self)
         self.viewController.updateTitle("")
-        self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
-        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(-20, 0, 0, 0)
+        self.tableView.contentInset = .zero
+        self.tableView.scrollIndicatorInsets = .zero
         
         self.emptyStateLabel.text = "Search:EmptyState".localized
         self.noResultsOpsLabel.text = "Search:NoResultsHeader".localized

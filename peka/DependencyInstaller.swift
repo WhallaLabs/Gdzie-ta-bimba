@@ -28,7 +28,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(Executor.self) { _ in Executor() }
         defaultContainer.register(HttpHeadersProvider.self) { _ in PekaHttpHeadersProvider() }
         defaultContainer.register(FormBodyBuilder.self) { _ in FormUrlEncodedBuilder() }
-        defaultContainer.registerPerContainerLifetime(LocationManager.self) { _ in PekaLocationManager() }
+        _ = defaultContainer.registerPerContainerLifetime(LocationManager.self) { _ in PekaLocationManager() }
         
         defaultContainer.register(AdsSettings.self) { _ in AdsSettings() }
             .inObjectScope(.container)
@@ -46,7 +46,7 @@ extension SwinjectStoryboard {
                         formBodyBuilder: r.resolve(FormBodyBuilder.self)!)
         }
         
-        defaultContainer.registerPerContainerLifetime(StopPointPushpinsCache.self) { _ in StopPointPushpinsCache() }
+        _ = defaultContainer.registerPerContainerLifetime(StopPointPushpinsCache.self) { _ in StopPointPushpinsCache() }
         defaultContainer.register(FavoriteBollardsRepository.self) { _ in RealmFavoriteBollardsRepository() }
         defaultContainer.register(RecentSearchRepository.self) { _ in RealmRecentSearchRepository() }
         defaultContainer.register(FavoriteGroupedDirectionsComparator.self) { r in
