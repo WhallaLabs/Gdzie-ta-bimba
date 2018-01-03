@@ -49,16 +49,16 @@ final class RemoveAdsViewController: UIViewController {
     }
     
     private func subscribeTransaction(observable: Observable<Void>) {
-        HUD.show(.progress)
+//        HUD.show(.progress, onView: view)
         observable.subscribe(
             onNext: nil,
             onError: { (error) in
-                HUD.flash(.error)
+//                HUD.flash(.error, onView: self?.view)
             },
             onCompleted: { [unowned self] in
-                HUD.flash(.success, onView: nil, delay: 0) { _ in
+//                HUD.flash(.success, onView: self.view, delay: 0) { _ in
                     _ = self.navigationController?.popToRootViewController(animated: true)
-                }
+//                }
             },
             onDisposed: nil).addDisposableTo(self.disposables)
     }

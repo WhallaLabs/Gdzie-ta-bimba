@@ -24,7 +24,7 @@ final class MessageMapper: ObjectMappable {
         var content = htmlContent.replacingOccurrences(of: self.linkHtml, with: " \(self.linkHtml)")
         content = regex.stringByReplacingMatches(in: content,
                                                  options: .reportProgress,
-                                                 range: NSMakeRange(0, content.characters.count),
+                                                 range: NSMakeRange(0, content.count),
                                                  withTemplate: " ")
         
         guard let data = content.data(using: String.Encoding.utf8) else {

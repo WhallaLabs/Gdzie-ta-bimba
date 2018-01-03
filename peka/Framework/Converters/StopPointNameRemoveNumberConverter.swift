@@ -15,7 +15,7 @@ final class StopPointNameRemoveNumberConverter: Convertible {
     }()
     
     func convert(_ value: String) -> String {
-        let range = NSMakeRange(0, value.characters.count)
+        let range = NSMakeRange(0, value.count)
         let name = self.regex.stringByReplacingMatches(in: value, options: .reportProgress, range: range, withTemplate: String.empty)
         return name
     }
