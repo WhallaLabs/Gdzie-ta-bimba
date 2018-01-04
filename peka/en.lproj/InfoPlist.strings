@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  peka
+
+  Created by Tomasz Pikć on 04/01/2018.
+  Copyright © 2018 WhallaLabs. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "The app will search for stops in your area and display your location on the map.";
